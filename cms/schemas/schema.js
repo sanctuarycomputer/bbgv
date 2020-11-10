@@ -20,6 +20,7 @@ export default createSchema({
   types: schemaTypes.concat([
     /** Global */
     GlobalSettings,
+
     /** Pages */
 
     /** Layouts */
