@@ -2,8 +2,7 @@ import React from 'react';
 import 'styles/App.scss';
 
 function App() {
-  return <div className="App"></div>;
+  return <div className="App">BBGV</div>;
 }
-BBGV;
 
 export default App;
