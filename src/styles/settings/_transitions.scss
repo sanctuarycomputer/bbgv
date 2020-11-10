@@ -1,0 +1,34 @@
+$transition-duration-shortest: 0.15s;
+$transition-duration-shorter: 0.2s;
+$transition-duration-short: 0.3s;
+$transition-duration-medium: 0.4s;
+$transition-duration-long: 1s;
+$transition-cubic-bezier: cubic-bezier(0.15, 0.85, 0.45, 1);
+$transition: $transition-duration-short $transition-cubic-bezier;
+
+.transition-shortest,
+%transition-shortest {
+  transition: all $transition-duration-shortest $transition-cubic-bezier;
+}
+
+.transition-shorter {
+  transition: all $transition-duration-shorter $transition-cubic-bezier;
+}
+
+.transition-short,
+%transition-short {
+  transition: all $transition-duration-short $transition-cubic-bezier;
+}
+
+.transition,
+%transition {
+  transition: all $transition-duration-medium $transition-cubic-bezier;
+}
+
+.transition-medium {
+  transition: all $transition-duration-medium $transition-cubic-bezier;
+}
+
+.transition-long {
+  transition: all $transition-duration-long $transition-cubic-bezier;
+}
