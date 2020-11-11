@@ -15,7 +15,6 @@ class HomeView extends View<Props> {
       return null;
     }
 
-    console.log(model);
     return <div className="HomeView">Home</div>;
   }
 }
