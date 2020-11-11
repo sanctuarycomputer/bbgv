@@ -1,0 +1,21 @@
+@each $name, $color in $colors {
+  @if type-of($color) == color {
+    .hover-darken-#{$name} {
+      &:hover {
+        color: darken($color, 20%);
+      }
+    }
+
+    .hover-bg-color-#{$name} {
+      &:hover {
+        background-color: $color;
+      }
+    }
+
+    .hover-color-#{$name} {
+      &:hover {
+        color: $color;
+      }
+    }
+  }
+}

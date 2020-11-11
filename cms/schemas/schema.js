@@ -11,11 +11,16 @@ import GlobalSettings from './GlobalSettings';
 import HomePage from './pages/home';
 
 /** Layouts */
+import HomeHeroModule from './layouts/homeHeroModule';
 
 /** References */
+import Founder from './references/founder';
 
 /* Fields */
 import SeoSettings from './fields/seoSettings';
+import ImageField from './fields/imageField';
+import PortableText from './fields/portableText';
+import ButtonField from './fields/buttonField';
 
 export default createSchema({
   name: 'default',
@@ -27,10 +32,15 @@ export default createSchema({
     HomePage,
 
     /** Layouts */
+    HomeHeroModule,
 
     /** References */
+    Founder,
 
     /* Fields */
     SeoSettings,
+    ImageField,
+    PortableText,
+    ButtonField,
   ]),
 });

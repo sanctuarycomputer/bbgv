@@ -1,6 +1,7 @@
 import React from 'react';
 import { HomePage } from '../lib/cms/types';
 import { View } from 'types';
+import HomeHero from 'components/layouts/HomeHero';
 
 interface Props {
   model: HomePage | null;
@@ -15,7 +16,12 @@ class HomeView extends View<Props> {
       return null;
     }
 
-    return <div className="HomeView">Home</div>;
+    console.log(model);
+    return (
+      <div className="HomeView primary-xxl">
+        <HomeHero founders={model.hero.founders} />
+      </div>
+    );
   }
 }
 

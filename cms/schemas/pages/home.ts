@@ -16,6 +16,15 @@ export default {
       type: 'seoSettings',
       fieldset: 'seo',
     },
+    {
+      title: 'Hero',
+      name: 'hero',
+      type: 'homeHeroModule',
+      options: {
+        collapsible: true,
+        collapsed: false,
+      },
+    },
   ],
   preview: {
     prepare() {
