@@ -6,7 +6,6 @@ export default () =>
     .items([
       S.listItem()
         .title('Settings')
-        .child(
-          S.editor().schemaType('globalSettings').documentId('af74fa4d-70d2-44c3-9a0a-c54991dc5076')
-        ),
+        .child(S.editor().schemaType('globalSettings').documentId('_globalSettings')),
+      S.listItem().title('Home Page').child(S.editor().schemaType('home').documentId('_home')),
     ]);

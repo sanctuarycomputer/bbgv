@@ -7,6 +7,5 @@ const getEnv = (name: string) => {
 export default {
   DEVELOPMENT: process.env.NODE_ENV === 'development',
   PRODUCTION: process.env.NODE_ENV === 'production',
-
   SANITY_PROJECT_ID: getEnv('REACT_APP_SANITY_PROJECT_ID'),
 };

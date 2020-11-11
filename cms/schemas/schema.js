@@ -8,12 +8,14 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import GlobalSettings from './GlobalSettings';
 
 /** Pages */
+import HomePage from './pages/home';
 
 /** Layouts */
 
 /** References */
 
 /* Fields */
+import SeoSettings from './fields/seoSettings';
 
 export default createSchema({
   name: 'default',
@@ -22,11 +24,13 @@ export default createSchema({
     GlobalSettings,
 
     /** Pages */
+    HomePage,
 
     /** Layouts */
 
     /** References */
 
     /* Fields */
+    SeoSettings,
   ]),
 });
