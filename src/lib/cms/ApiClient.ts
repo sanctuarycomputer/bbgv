@@ -3,8 +3,8 @@ import Sanity from 'lib/cms/config';
 import SeoSettingsGroq from './groq/SeoSettings';
 
 const ApiClient: {
-  fetchGlobalSettings(): Promise<Cms.GlobalSettings | unknown>;
-  fetchHome(): Promise<Cms.HomePage | unknown>;
+  fetchGlobalSettings(): Promise<Cms.GlobalSettings | any>;
+  fetchHome(): Promise<Cms.HomePage | any>;
 } = {
   async fetchGlobalSettings() {
     const response = await Sanity.fetch(`*[_type == 'globalSettings'][0]`);
