@@ -1,0 +1,18 @@
+$z: (
+  'below': -1,
+  '0': 0,
+  '1': 1,
+  '2': 2,
+  'nav': 600,
+  'overlay': 800,
+);
+
+@function z($index) {
+  @return map-get($z, $index);
+}
+
+@each $name, $z-index in $z {
+  .z-#{$name} {
+    z-index: #{$z-index};
+  }
+}

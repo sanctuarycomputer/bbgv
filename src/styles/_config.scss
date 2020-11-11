@@ -1,0 +1,19 @@
+@import 'settings';
+
+$spacing-units: 0rem, 0.25rem, 0.5rem, 0.625rem, 0.75rem, 1rem, 1.25rem, 1.375rem, 1.5rem, 1.75rem,
+  2rem, 2.5rem, 2.75rem, 3rem, 3.5rem, 3.75rem, 4rem, 5rem, 6rem, 7rem, 8rem, 10rem;
+
+$breakpoints: (
+  'xxs': 375px,
+  'xs': 600px,
+  'sm': 768px,
+  'md': 1024px,
+  'lg': 1440px,
+  'xl': 2600px,
+);
+
+$additional-class-definitions: (
+  'debug': (
+    border: 1px solid red,
+  ),
+);
