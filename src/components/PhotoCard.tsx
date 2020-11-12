@@ -1,8 +1,7 @@
 import React from 'react';
 import Language from 'constants/Language';
 import { Img } from 'components/base';
-import { Founder, Image } from 'lib/cms/types';
-// import sanityImgUtil from 'utils/sanityImgUtil';
+import { Founder } from 'lib/cms/types';
 
 type Props = {
   founder: Founder;

@@ -77,10 +77,13 @@ const HomeHero: React.FC<Props> = ({ founders, firstLine, secondLine }) => {
               )}
             </Button>
             <div
-              className={cx('HomeHero__photo-card absolute transition-short opacity-0 z-overlay', {
-                'PhotoCard--active opacity-1': index === activeFounderIndex,
-                'opacity-0 events-none': index !== activeFounderIndex,
-              })}
+              className={cx(
+                'HomeHero__photo-card absolute transition-shorter opacity-0 z-overlay',
+                {
+                  'PhotoCard--active opacity-1': index === activeFounderIndex,
+                  'opacity-0 events-none': index !== activeFounderIndex,
+                }
+              )}
             >
               <PhotoCard founder={founder} />
             </div>
