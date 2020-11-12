@@ -1,3 +1,5 @@
+/** Global site sizing */
+
 .site-max-width {
   max-width: $site-max-width;
 }
@@ -10,4 +12,8 @@
     padding-left: $site-padding-x-desktop;
     padding-right: $site-padding-x-desktop;
   }
+}
+
+.hyphens {
+  hyphens: auto;
 }

@@ -16,25 +16,23 @@ type Props = {
 const HomeHero: React.FC<Props> = ({ founders, firstLine, secondLine }) => {
   return (
     <div className="HomeHero primary-xxl site-max-width site-padding-x mxauto">
-      <span className="HomeHero__first-section">
-        <span className="HomeHero__logo-container">
-          <Button
-            className="items-center bg-color-transparent text-decoration-none inline"
-            ariaLabel=""
-            to={RouteMap.HOME.path}
-          >
-            <Img
-              className="HomeHero__logo pr1_5 md:pr2_25"
-              src="/assets/images/bbgv-full-logo.svg"
-              alt=""
-            />
-          </Button>
-        </span>
-
-        <span className="HomeHero__first-line color-mulberry">{firstLine}</span>
+      <span className="HomeHero__logo-container">
+        <Button
+          className="items-center bg-color-transparent text-decoration-none inline"
+          ariaLabel=""
+          to={RouteMap.HOME.path}
+        >
+          <Img
+            className="HomeHero__logo pr1_5 md:pr2_25"
+            src="/assets/images/bbgv-full-logo.svg"
+            alt=""
+          />
+        </Button>
       </span>
 
-      <span className="color-mulberry"> {secondLine}</span>
+      <span className="HomeHero__first-line hyphens color-mulberry">{firstLine}</span>
+
+      <span className="color-mulberry hyphens"> {secondLine}</span>
       <span className="color-charcoal primary-sm px2_25 md:px3_75">
         {Language.t('Home.hero.ourFounders')}
       </span>
