@@ -18,14 +18,6 @@ type Props = {
 const HomeHero: React.FC<Props> = ({ founders, firstLine, secondLine }) => {
   const [activeFounderIndex, setActiveFounderIndex] = useState(-1);
 
-  const togglePhotoCard = (index: number) => {
-    if (activeFounderIndex === index) {
-      setActiveFounderIndex(-1);
-    } else {
-      setActiveFounderIndex(index);
-    }
-  };
-
   return (
     <div className="HomeHero primary-xxl site-max-width site-padding-x mxauto">
       <span className="HomeHero__logo-container">
