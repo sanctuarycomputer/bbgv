@@ -65,6 +65,7 @@ const HomeHero: React.FC<Props> = ({ founders, headline }) => {
               )}
             </Button>
             <div
+<<<<<<< HEAD
               className={cx(
                 'HomeHero__photo-card absolute transition-shorter opacity-0 z-overlay',
                 {
@@ -72,6 +73,12 @@ const HomeHero: React.FC<Props> = ({ founders, headline }) => {
                   'opacity-0 events-none': index !== activeFounderIndex,
                 }
               )}
+=======
+              className={cx('HomeHero__photo-card absolute transition-short opacity-0 z-overlay', {
+                'PhotoCard--active opacity-1': index === activeFounderIndex,
+                'opacity-0 events-none': index !== activeFounderIndex,
+              })}
+>>>>>>> Add copy to photocard
             >
               <PhotoCard founder={founder} />
             </div>
