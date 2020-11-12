@@ -11,7 +11,7 @@ type Props = {
   secondLine: string;
 };
 
-//TO-DO: add generate founder detail page url util
+//TO-DO: generate Company Detail page links
 
 const HomeHero: React.FC<Props> = ({ founders, firstLine, secondLine }) => {
   return (
