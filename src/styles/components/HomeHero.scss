@@ -1,0 +1,9 @@
+.HomeHero {
+  &__founder {
+    color: color('lilac');
+
+    @include media('md-up') {
+      color: color('charcoal');
+    }
+  }
+}

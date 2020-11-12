@@ -1,3 +1,9 @@
 {
-  "global": {}
+  "global": {},
+  "home": {
+    "hero": {
+      "ourFounders": "Our founders",
+      "others": "others"
+    }
+  }
 }
