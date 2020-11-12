@@ -12,7 +12,7 @@ export default {
       title: 'Link',
       name: 'link',
       type: 'url',
-      validation: (Rule: any) =>
+      validation: (Rule) =>
         Rule.uri({
           allowRelative: true,
         }),

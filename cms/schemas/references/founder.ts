@@ -14,26 +14,26 @@ export default {
       title: 'Founder Portrait',
       name: 'founderPortrait',
       type: 'imageField',
-      validation: (Rule: any) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'company',
       title: 'Company',
       description: 'Add the Company name here.',
       type: 'string',
-      validation: (Rule: any) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'First Name',
       name: 'firstName',
       type: 'string',
-      validation: (Rule: any) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Last Name',
       name: 'lastName',
       type: 'string',
-      validation: (Rule: any) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Bio',
@@ -44,7 +44,7 @@ export default {
       title: 'Job Title',
       name: 'jobTitle',
       type: 'string',
-      validation: (Rule: any) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'LinkedIn',
@@ -55,7 +55,7 @@ export default {
           title: 'Link',
           name: 'link',
           type: 'url',
-          validation: (Rule: any) =>
+          validation: (Rule) =>
             Rule.uri({
               allowRelative: true,
             }),
@@ -72,7 +72,7 @@ export default {
           title: 'Link',
           name: 'link',
           type: 'url',
-          validation: (Rule: any) =>
+          validation: (Rule) =>
             Rule.uri({
               allowRelative: true,
             }),
@@ -89,7 +89,7 @@ export default {
           title: 'Link',
           name: 'link',
           type: 'url',
-          validation: (Rule: any) =>
+          validation: (Rule) =>
             Rule.uri({
               allowRelative: true,
             }),

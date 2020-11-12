@@ -17,7 +17,7 @@ export default {
                 title: 'URL',
                 description:
                   "Internal links within the BBG Ventures website, must be preceded with '/' (e.g. '/about'). External links must be preceded with 'https' or 'http' (e.g. 'https://www.website.com').",
-                validation: (Rule: any) =>
+                validation: (Rule) =>
                   Rule.uri({
                     allowRelative: true,
                     scheme: ['http', 'https', 'mailto', 'tel'],

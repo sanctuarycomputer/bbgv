@@ -20,7 +20,7 @@ export default {
         'This text is the first line of the headline copy, that appears to the right of the logo.',
       type: 'string',
       fieldset: 'copy',
-      validation: (Rule: any) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'secondLine',
@@ -28,7 +28,7 @@ export default {
       description: 'This text is the second line of the headline copy.',
       type: 'string',
       fieldset: 'copy',
-      validation: (Rule: any) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Founders',
