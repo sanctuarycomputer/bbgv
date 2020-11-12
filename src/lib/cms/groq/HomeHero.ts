@@ -2,5 +2,7 @@ import FounderGroq from './Founder';
 
 export default `{
   'founders': hero.founders[]->${FounderGroq},
-  _type,
+  'type': hero._type,
+  'firstLine': hero.firstLine,
+  'secondLine': hero.secondLine
 }`;

@@ -15,6 +15,7 @@ import HomeHeroModule from './layouts/homeHeroModule';
 
 /** References */
 import Founder from './references/founder';
+import Company from './references/company';
 
 /* Fields */
 import SeoSettings from './fields/seoSettings';
@@ -36,6 +37,7 @@ export default createSchema({
 
     /** References */
     Founder,
+    Company,
 
     /* Fields */
     SeoSettings,

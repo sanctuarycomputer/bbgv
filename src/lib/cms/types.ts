@@ -25,6 +25,16 @@ export const Block = t.type({
   ),
 });
 
+export type Company = t.TypeOf<typeof Company>;
+export const Company = t.partial({
+  _type: t.string,
+  description: t.array(Block),
+  tag: t.string,
+  sector: t.string,
+  logo: Image,
+  name: t.string,
+});
+
 export type Founder = t.TypeOf<typeof Founder>;
 export const Founder = t.partial({
   _type: t.string,
@@ -35,18 +45,30 @@ export const Founder = t.partial({
   twitter: t.string,
   instagram: t.string,
   linkedIn: t.string,
-  companyDescription: t.array(Block),
-  status: t.string,
-  sector: t.string,
   founderPortrait: Image,
-  companyLogo: Image,
-  companyName: t.string,
+  company: Company,
 });
 
 export type HomeHero = t.TypeOf<typeof HomeHero>;
 export const HomeHero = t.type({
   _type: t.string,
   founders: t.array(Founder),
+  firstLine: t.string,
+  secondLine: t.string,
+});
+
+export type ImageDimensions = t.TypeOf<typeof ImageDimensions>;
+export const ImageDimensions = t.type({
+  width: t.number,
+  height: t.number,
+});
+
+export type ImageCrop = t.TypeOf<typeof ImageCrop>;
+export const ImageCrop = t.type({
+  bottom: t.union([t.number, t.undefined]),
+  left: t.union([t.number, t.undefined]),
+  top: t.union([t.number, t.undefined]),
+  right: t.union([t.number, t.undefined]),
 });
 
 export type SeoSettings = t.TypeOf<typeof SeoSettings>;

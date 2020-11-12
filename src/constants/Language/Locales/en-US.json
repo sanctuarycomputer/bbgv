@@ -1,9 +1,13 @@
 {
-  "global": {},
-  "home": {
+  "Global": {},
+  "Home": {
     "hero": {
       "ourFounders": "Our founders",
-      "others": "others"
+      "others": "others",
+      "othersButtonAriaLabel": "View entire list of founders"
     }
+  },
+  "Founder": {
+    "viewDetailPageButtonAriaLabel": "View %{founderFullName}'s detail page"
   }
 }

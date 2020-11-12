@@ -8,17 +8,19 @@ export default {
       title: 'Social Media Links',
       options: { collapsible: true, collapsed: false },
     },
-    {
-      name: 'company',
-      title: 'Company',
-      options: { collapsible: true, collapsed: false },
-    },
   ],
   fields: [
     {
       title: 'Founder Portrait',
       name: 'founderPortrait',
       type: 'imageField',
+      validation: (Rule: any) => Rule.required(),
+    },
+    {
+      name: 'company',
+      title: 'Company',
+      description: 'Add the Company name here.',
+      type: 'string',
       validation: (Rule: any) => Rule.required(),
     },
     {
@@ -43,28 +45,6 @@ export default {
       name: 'jobTitle',
       type: 'string',
       validation: (Rule: any) => Rule.required(),
-    },
-    {
-      title: 'Status',
-      name: 'status',
-      type: 'string',
-      fieldset: 'company',
-      description:
-        "This can be the status of a company. It will be displayed in the Current Portfolio listing, on the top left of a founder's portrait.",
-    },
-    {
-      title: 'Brief Company Description',
-      name: 'companyDescription',
-      description:
-        "This is a brief description that will show on the Companies page, when you hover over a Founder's portrait in the Current Portfolio listing.",
-      type: 'portableText',
-      fieldset: 'company',
-    },
-    {
-      title: 'Sector',
-      name: 'sector',
-      type: 'string',
-      fieldset: 'company',
     },
     {
       title: 'LinkedIn',
@@ -116,20 +96,6 @@ export default {
         },
       ],
       fieldset: 'socialMediaLinks',
-    },
-    {
-      title: 'Company Logo',
-      name: 'companyLogo',
-      type: 'imageField',
-      fieldset: 'company',
-      validation: (Rule: any) => Rule.required(),
-    },
-    {
-      title: 'Company Name',
-      name: 'companyName',
-      type: 'string',
-      fieldset: 'company',
-      validation: (Rule: any) => Rule.required(),
     },
   ],
   preview: {

@@ -10,4 +10,5 @@ export default () =>
         .child(S.editor().schemaType('globalSettings').documentId('_globalSettings')),
       S.divider(),
       S.documentTypeListItem('founder'),
+      S.documentTypeListItem('company'),
     ]);
