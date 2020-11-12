@@ -46,7 +46,8 @@ export const Founder = t.partial({
   instagram: t.string,
   linkedIn: t.string,
   founderPortrait: Image,
-  company: Company,
+  company: t.string,
+  sector: t.string,
 });
 
 export type HomeHero = t.TypeOf<typeof HomeHero>;

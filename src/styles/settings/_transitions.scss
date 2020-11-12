@@ -32,3 +32,15 @@ $transition: $transition-duration-short $transition-cubic-bezier;
 .transition-long {
   transition: all $transition-duration-long $transition-cubic-bezier;
 }
+
+$transition-animate-fade-in: animate-fade-in $transition-duration-medium;
+
+@keyframes animate-fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

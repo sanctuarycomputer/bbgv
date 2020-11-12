@@ -1,7 +1,8 @@
 {
   "Global": {
     "navigateToHome": "Navigate to home page of BBG Ventures",
-    "logoAltLabel": "BBG Ventures Logo"
+    "logoAltLabel": "BBG Ventures Logo",
+    "fallbackAltLabel": "Image from BBG Ventures site"
   },
   "Home": {
     "hero": {
