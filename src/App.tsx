@@ -1,8 +1,18 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Routes from 'constants/routes';
 import 'styles/App.scss';
 
 function App() {
-  return <div className="App">BBGV</div>;
+  return (
+    <main>
+      <div className="App">
+        <Router>
+          <Routes />
+        </Router>
+      </div>
+    </main>
+  );
 }
 
 export default App;

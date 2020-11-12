@@ -31,4 +31,3 @@ workflows:
     build:
       jobs:
         - build
-        - deploy-featurepeek
