@@ -1,5 +1,5 @@
 import * as Cms from 'lib/cms/types';
-import Sanity from 'lib/cms/config';
+import Sanity from 'lib/cms/SanityClient';
 import SeoSettingsGroq from './groq/SeoSettings';
 import HomeHeroGroq from './groq/HomeHero';
 
