@@ -19,13 +19,13 @@ const HomeHero: React.FC<Props> = ({ founders, firstLine, secondLine }) => {
       <span className="HomeHero__logo-container">
         <Button
           className="items-center bg-color-transparent text-decoration-none inline"
-          ariaLabel=""
+          ariaLabel={Language.t('Global.navigateToHome')}
           to={RouteMap.HOME.path}
         >
           <Img
             className="HomeHero__logo pr1_5 md:pr2_25"
             src="/assets/images/bbgv-full-logo.svg"
-            alt=""
+            alt={Language.t('Global.logoAltLabel')}
           />
         </Button>
       </span>
