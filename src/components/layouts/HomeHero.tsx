@@ -39,9 +39,8 @@ const HomeHero: React.FC<Props> = ({ founders, headline }) => {
       </span>
       <span className="color-charcoal primary-xxl">
         {founders.map((founder: Founder, index: number) => (
-          <span className="HomeHero__founder relative">
+          <span key={founder.firstName} className="HomeHero__founder relative">
             <Button
-              key={founder.firstName}
               className="HomeHero__founder inline text-decoration-none hover-color-lilac transition"
               ariaLabel={Language.t('Founder.viewDetailPageButtonAriaLabel', {
                 founderFullName: generateFounderFullName(founder),
