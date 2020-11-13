@@ -27,7 +27,7 @@ export default {
       name: 'sector',
       title: 'Sector',
       type: 'string',
-      validation: (Rule: any) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'First Name',
