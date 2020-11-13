@@ -1,0 +1,17 @@
+.HomeHero {
+  &__logo {
+    width: $home-hero-logo-width-mobile;
+
+    @include media('md-up') {
+      width: $home-hero-logo-width-desktop;
+    }
+  }
+
+  &__founder {
+    color: color('lilac');
+
+    @include media('md-up') {
+      color: color('charcoal');
+    }
+  }
+}

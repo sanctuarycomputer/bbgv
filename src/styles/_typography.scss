@@ -1,0 +1,147 @@
+$abcdiatype: 'ABCDiatype-Regular-Trial', sans-serif;
+$abcdiatype-bold: 'ABCDiatype-Bold-Trial', sans-serif;
+$benton: 'benton', sans-serif;
+
+/** Families */
+.font-primary {
+  font-family: $abcdiatype;
+}
+
+.font-primary-bold {
+  font-family: $abcdiatype-bold;
+}
+
+.font-secondary {
+  font-family: $benton;
+}
+
+/** Styles */
+
+.font-italic {
+  font-style: italic;
+}
+
+/** Sizes */
+
+.primary-xxl {
+  font-family: $benton;
+  font-size: 3.125rem;
+  line-height: 3.125rem;
+
+  @include media('md-up') {
+    font-size: 6.25rem;
+    line-height: 6.25rem;
+  }
+}
+
+.primary-xl {
+  font-family: $benton;
+  font-size: 2.25rem;
+  line-height: 2.3625rem;
+
+  @include media('md-up') {
+    font-size: 4.5rem;
+    line-height: 4.75rem;
+  }
+}
+
+.primary-lg {
+  font-family: $benton;
+  font-size: 2.25rem;
+  line-height: 2.3625rem;
+
+  @include media('md-up') {
+    font-size: 3.375rem;
+    line-height: 3.54375rem;
+  }
+}
+
+.primary-md {
+  font-family: $benton;
+  font-size: 1.5rem;
+  line-height: 1.65rem;
+
+  @include media('md-up') {
+    font-size: 2.25rem;
+    line-height: 2.3625rem;
+  }
+}
+
+.primary-sm {
+  font-family: $benton;
+  font-size: 0.875rem;
+  line-height: 0.91875rem;
+
+  @include media('md-up') {
+    font-size: 2.8125rem;
+    line-height: 3.75rem;
+  }
+}
+
+.primary-xs {
+  font-family: $benton;
+  font-size: 0.875rem;
+  line-height: 0.91875rem;
+}
+
+.secondary-sm {
+  font-family: $abcdiatype;
+  font-size: 0.875rem;
+  line-height: 1.0625rem;
+
+  @include media('md-up') {
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+  }
+}
+
+.secondary-xs {
+  font-family: $abcdiatype;
+  font-size: 0.625rem;
+  line-height: 0.8125rem;
+  letter-spacing: 0.01rem;
+
+  @include media('md-up') {
+    font-size: 0.875rem;
+    line-height: 1.0625rem;
+    letter-spacing: 0;
+  }
+}
+
+.secondary-xxs {
+  font-family: $abcdiatype;
+  font-size: 0.625rem;
+  line-height: 0.8125rem;
+  letter-spacing: 0.01rem;
+}
+
+.secondary-bold-sm {
+  font-family: $abcdiatype-bold;
+  font-size: 0.875rem;
+  line-height: 1.0625rem;
+
+  @include media('md-up') {
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+  }
+}
+
+.secondary-bold-xs {
+  font-family: $abcdiatype-bold;
+  font-size: 0.625rem;
+  line-height: 0.8125rem;
+  letter-spacing: 0.01rem;
+
+  @include media('md-up') {
+    font-size: 0.875rem;
+    line-height: 1.0625rem;
+    letter-spacing: 0;
+  }
+}
+
+.secondary-bold-xxs {
+  font-family: $abcdiatype-bold;
+  font-size: 0.625rem;
+  line-height: 0.8125rem;
+  letter-spacing: 0.01rem;
+}

@@ -1,9 +1,10 @@
 import SanityClient from '@sanity/client';
-import Config from 'lib/config';
 import hashify from 'object-hash';
 
+const ProjectId = 'z4thcwkh';
+
 const Sanity = SanityClient({
-  projectId: Config.SANITY_PROJECT_ID,
+  projectId: ProjectId,
   dataset: 'production',
   useCdn: true,
 });
