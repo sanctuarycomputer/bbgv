@@ -17,7 +17,10 @@
   "Footer": {
     "resources": "Resources",
     "resourcesButtonAriaLabel": "Navigate to Resources page",
-    "connect": "Connect"
+    "connect": "Connect",
+    "copyrightLabel": "© %{year}",
+    "allRightsReserved": "All Rights Reserved",
+    "bbgv": "BBG Ventures, LLC"
   },
   "Home": {
     "hero": {
