@@ -22,7 +22,6 @@ import SeoSettings from './fields/seoSettings';
 import ImageField from './fields/imageField';
 import PortableText from './fields/portableText';
 import ButtonField from './fields/buttonField';
-import LinksListAndHeader from './fields/linksListAndHeader';
 
 export default createSchema({
   name: 'default',
@@ -45,6 +44,5 @@ export default createSchema({
     ImageField,
     PortableText,
     ButtonField,
-    LinksListAndHeader,
   ]),
 });
