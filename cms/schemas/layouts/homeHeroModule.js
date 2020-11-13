@@ -14,18 +14,8 @@ export default {
   ],
   fields: [
     {
-      name: 'firstLine',
-      title: 'First Line of Headline Text',
-      description:
-        'This text is the first line of the headline copy, that appears to the right of the logo.',
-      type: 'string',
-      fieldset: 'copy',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'secondLine',
-      title: 'Second Line of Headline Text',
-      description: 'This text is the second line of the headline copy.',
+      name: 'headline',
+      title: 'Headline',
       type: 'string',
       fieldset: 'copy',
       validation: (Rule) => Rule.required(),

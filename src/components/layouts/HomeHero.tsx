@@ -9,13 +9,12 @@ import PhotoCard from 'components/PhotoCard';
 
 type Props = {
   founders: Founder[];
-  firstLine: string;
-  secondLine: string;
+  headline: string;
 };
 
 //TO-DO: generate Company Detail page links
 
-const HomeHero: React.FC<Props> = ({ founders, firstLine, secondLine }) => {
+const HomeHero: React.FC<Props> = ({ founders, headline }) => {
   const [activeFounderIndex, setActiveFounderIndex] = useState(-1);
 
   return (
@@ -34,9 +33,7 @@ const HomeHero: React.FC<Props> = ({ founders, firstLine, secondLine }) => {
         </Button>
       </span>
 
-      <span className="HomeHero__first-line hyphens color-mulberry">{firstLine}</span>
-
-      <span className="color-mulberry hyphens"> {secondLine}</span>
+      <span className="HomeHero__headline hyphens color-mulberry">{headline}</span>
       <span className="color-charcoal primary-sm px2_25 md:px3_75">
         {Language.t('Home.hero.ourFounders')}
       </span>

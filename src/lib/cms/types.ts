@@ -54,8 +54,7 @@ export type HomeHero = t.TypeOf<typeof HomeHero>;
 export const HomeHero = t.type({
   _type: t.string,
   founders: t.array(Founder),
-  firstLine: t.string,
-  secondLine: t.string,
+  headline: t.string,
 });
 
 export type ImageDimensions = t.TypeOf<typeof ImageDimensions>;
