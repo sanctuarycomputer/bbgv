@@ -193,25 +193,3 @@ const socialMediaLinks = (links: IButton[]) => {
     </div>
   );
 };
-
-const socialMediaLinks = (links: IButton[]) => {
-  return (
-    <div className="Footer__social-media-links">
-      <div className="color-charcoal secondary-bold-sm mb1_5 lg:mb3_75">
-        {Language.t('Footer.connect')}
-      </div>
-      <div className="Footer__sublinks flex flex-col">
-        {links.map((link: IButton) => (
-          <Button
-            className="color-charcoal transition-shorter hover-lighten-charcoal secondary-bold-sm items-center bg-color-transparent text-decoration-none inline"
-            ariaLabel={Language.t('Global.generalButtonAriaLabel', {
-              link: link.label,
-            })}
-            to={link.link}
-            label={link.label}
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
