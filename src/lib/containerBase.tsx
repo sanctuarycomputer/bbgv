@@ -1,76 +1,116 @@
 import React, { Component } from 'react';
-
 import { RouteComponentProps } from 'react-router-dom';
 
-interface State<Model> {
-  view: React.ComponentType | null;
-  model: Model | { error: Error | null } | null;
-}
+type State<Model, View> /* Loading State (optional) */ =
+  | {
+      model: null;
+      view: null;
+      error: null;
+    }
+  | /* Success State */ {
+      model: Model;
+      view: View;
+      error: null;
+    }
+  | /* Error State */ {
+      model: null;
+      view: null;
+      error: Error;
+    };
 
-interface ContainerBase<Props extends RouteComponentProps, View, Model = {}> {
-  // Can't seem to enforce a dynamic import type
-  view: Promise<any>;
+export default interface ContainerBase<
+  Props extends RouteComponentProps,
+  Model,
+  View extends React.ComponentType<{ model: Model } & Props>
+> {
+  view: Promise<{ default: View }>;
+  errorView: React.ComponentType<{ error?: Error }>;
+  loadingView?: React.ComponentType;
   model(): Promise<Model>;
   redirect?(): void;
-  beforeModel?(): void;
-  activate?(arg: Model | { error: Error | null }): void;
-  afterModel?(arg: Model | { error: Error | null }): void;
+  beforeModel?(): Promise<void>;
+  activate?(arg: Model): void;
+  afterModel?(arg: Model): Promise<any>;
 }
 
-abstract class ContainerBase<Props extends RouteComponentProps, View, Model = {}> extends Component<
-  Props,
-  State<Model>
-> {
-  state: State<Model> = {
-    view: null,
+export default abstract class ContainerBase<
+  Props extends RouteComponentProps,
+  Model,
+  View extends React.ComponentType<{ model: Model } & Props>
+> extends Component<Props, State<Model, View>> {
+  state: State<Model, View> = {
     model: null,
+    view: null,
+    error: null,
   };
 
-  reloadModel = () => {
-    this.runHooks().then((model) => {
+  reloadModel = async () => {
+    try {
+      const model = await this.runHooks();
       if (this.activate) this.activate(model);
-      this.setState({ model });
-    });
+      this.setState({ model, error: null });
+    } catch (error) {
+      this.setState({
+        model: null,
+        error: error || new Error('unknown'),
+        view: null,
+      });
+    }
   };
 
-  runHooks = (): Promise<Model | { error: Error | null }> => {
-    return new Promise(async (resolve) => {
-      let model;
-      try {
-        if (this.beforeModel) await this.beforeModel();
-        const modelHook = this.model || (() => Promise.resolve({} as Model));
-        model = await modelHook();
-        if (!model) model = { error: null };
-      } catch (error) {
-        model = { error };
-      }
-      if (this.afterModel) await this.afterModel(model);
-      resolve(model);
-    });
+  runHooks = async (): Promise<Model> => {
+    if (this.beforeModel) await this.beforeModel();
+    const model = await this.model();
+    if (this.afterModel) await this.afterModel(model);
+    return model;
   };
 
   async componentDidMount() {
-    if (this.redirect) this.redirect();
-    const [{ default: View }, model] = await Promise.all([this.view, this.runHooks()]);
-
-    if (this.activate) this.activate(model);
-    this.setState({ view: View, model });
+    return this.onRouteChange();
   }
 
   async componentDidUpdate(nextProps: Props) {
     if (this.props.location.pathname !== nextProps.location.pathname) {
-      if (this.redirect) this.redirect();
-      const [{ default: View }, model] = await Promise.all([this.view, this.runHooks()]);
-      if (this.activate) this.activate(model);
-      this.setState({ view: View, model });
+      this.onRouteChange();
+    }
+  }
+
+  async onRouteChange() {
+    if (this.redirect) this.redirect();
+    try {
+      const [view, model] = await Promise.all([this.view, this.runHooks()]);
+      this.setState({
+        model,
+        view: view.default,
+        error: null,
+      });
+    } catch (error) {
+      this.setState({
+        model: null,
+        view: null,
+        error: error || new Error('unknown'),
+      });
     }
   }
 
   render() {
-    const { view: View, model } = this.state;
+    const { model, error, view } = this.state;
 
-    return View ? <View model={model} {...this.props} {...this.state} /> : null;
+    if (error) {
+      return React.createElement(this.errorView, { error });
+    }
+
+    if (model && view) {
+      return React.createElement(view, {
+        model: model,
+        ...this.props,
+      });
+    }
+
+    if (this.loadingView) {
+      return React.createElement(this.loadingView);
+    }
+
+    return null;
   }
 }
-
-export default ContainerBase;

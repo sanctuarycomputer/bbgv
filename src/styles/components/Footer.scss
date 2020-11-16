@@ -1,0 +1,37 @@
+.Footer {
+  @include media('md-up') {
+    height: $footer-height-desktop;
+  }
+
+  &__logo-section {
+    height: 8.75rem;
+  }
+
+  &__logo-container {
+    max-width: 7.4375rem;
+
+    @include media('lg-up') {
+      max-width: 11.1875rem;
+    }
+  }
+
+  &__newsletter {
+    bottom: 3.75rem;
+  }
+
+  &__section-one {
+    min-height: 26.875rem;
+  }
+
+  &__copyright-container {
+    min-height: 2.25rem;
+  }
+
+  &__copyright {
+    bottom: 3.75rem;
+  }
+
+  &__sublinks > a {
+    padding-bottom: 0.5rem;
+  }
+}

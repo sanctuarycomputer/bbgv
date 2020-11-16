@@ -50,6 +50,14 @@ export const Founder = t.partial({
   sector: t.string,
 });
 
+export type FooterMenu = t.TypeOf<typeof FooterMenu>;
+export const FooterMenu = t.type({
+  socialMediaLinks: t.array(Button),
+  aboutLinks: t.array(Button),
+  resourcesLinks: t.array(Button),
+  whyWeInvestLinks: t.array(Button),
+});
+
 export type HomeHero = t.TypeOf<typeof HomeHero>;
 export const HomeHero = t.type({
   _type: t.string,
@@ -79,8 +87,8 @@ export const SeoSettings = t.partial({
 });
 
 export type GlobalSettings = t.TypeOf<typeof GlobalSettings>;
-export const GlobalSettings = t.partial({
-  title: t.string,
+export const GlobalSettings = t.type({
+  footerMenu: FooterMenu,
 });
 
 export type HomePage = t.TypeOf<typeof HomePage>;

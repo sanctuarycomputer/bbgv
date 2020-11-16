@@ -1,27 +1,22 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { HomePage } from '../lib/cms/types';
-import { View } from 'types';
+import { Props as ContainerProps } from 'containers/home';
+
 import HomeHero from 'components/layouts/HomeHero';
 
-interface Props {
-  model: HomePage | null;
-}
+type Props = ContainerProps & {
+  model: HomePage;
+};
 
-class HomeView extends View<Props> {
-  render() {
-    const { model } = this.props;
+const HomeView: FC<Props> = (props) => {
+  const { model } = props;
+  const { hero } = model;
 
-    //TO-DO: Add Page Not Found
-    if (!model) {
-      return null;
-    }
-
-    return (
-      <div className="HomeView primary-xxl">
-        <HomeHero headline={model.hero.headline} founders={model.hero.founders} />
-      </div>
-    );
-  }
-}
+  return (
+    <div className="HomeView primary-xxl">
+      <HomeHero headline={hero.headline} founders={hero.founders} />
+    </div>
+  );
+};
 
 export default HomeView;
