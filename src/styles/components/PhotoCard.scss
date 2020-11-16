@@ -1,0 +1,25 @@
+.PhotoCard {
+  width: 13.24375rem;
+  height: 18.504375rem;
+
+  @include media('md-up') {
+    width: 17.25rem;
+    height: 24.101875rem;
+  }
+
+  &--active {
+    animation: $transition-animate-fade-in;
+  }
+
+  &__logo {
+    width: $home-hero-logo-width-mobile;
+
+    @include media('md-up') {
+      width: $home-hero-logo-width-desktop;
+    }
+  }
+
+  &__founder-name {
+    bottom: 0.75rem;
+  }
+}

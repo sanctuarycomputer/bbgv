@@ -46,15 +46,15 @@ export const Founder = t.partial({
   instagram: t.string,
   linkedIn: t.string,
   founderPortrait: Image,
-  company: Company,
+  company: t.string,
+  sector: t.string,
 });
 
 export type HomeHero = t.TypeOf<typeof HomeHero>;
 export const HomeHero = t.type({
   _type: t.string,
   founders: t.array(Founder),
-  firstLine: t.string,
-  secondLine: t.string,
+  headline: t.string,
 });
 
 export type ImageDimensions = t.TypeOf<typeof ImageDimensions>;

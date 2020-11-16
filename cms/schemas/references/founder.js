@@ -24,6 +24,12 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: 'sector',
+      title: 'Sector',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       title: 'First Name',
       name: 'firstName',
       type: 'string',

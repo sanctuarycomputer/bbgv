@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
+import cx from 'classnames';
 import { Founder } from 'lib/cms/types';
 import Language from 'constants/Language';
 import generateFounderFullName from 'utils/generateFounderFullName';
 import { Button, Img } from 'components/base';
 import { RouteMap } from 'constants/RouteMap';
+import PhotoCard from 'components/PhotoCard';
 
 type Props = {
   founders: Founder[];
-  firstLine: string;
-  secondLine: string;
+  headline: string;
 };
 
 //TO-DO: generate Company Detail page links
 
-const HomeHero: React.FC<Props> = ({ founders, firstLine, secondLine }) => {
+const HomeHero: React.FC<Props> = ({ founders, headline }) => {
+  const [activeFounderIndex, setActiveFounderIndex] = useState(-1);
+
   return (
     <div className="HomeHero primary-xxl site-max-width site-padding-x mxauto">
       <span className="HomeHero__logo-container">
@@ -30,33 +33,49 @@ const HomeHero: React.FC<Props> = ({ founders, firstLine, secondLine }) => {
         </Button>
       </span>
 
-      <span className="HomeHero__first-line hyphens color-mulberry">{firstLine}</span>
-
-      <span className="color-mulberry hyphens"> {secondLine}</span>
+      <span className="HomeHero__headline hyphens color-mulberry">{headline}</span>
       <span className="color-charcoal primary-sm px2_25 md:px3_75">
         {Language.t('Home.hero.ourFounders')}
       </span>
       <span className="color-charcoal primary-xxl">
         {founders.map((founder: Founder, index: number) => (
-          <Button
-            key={founder.firstName}
-            className="HomeHero__founder inline text-decoration-none hover-color-lilac transition"
-            ariaLabel={Language.t('Founder.viewDetailPageButtonAriaLabel', {
-              founderFullName: generateFounderFullName(founder),
-            })}
-            to="/"
-          >
-            {index !== founders.length - 1 ? (
-              <span>
-                <span>{founder.firstName}</span>
-                <span className="color-charcoal">, </span>
-              </span>
-            ) : (
-              <span>
-                <span>{founder.firstName} </span>
-              </span>
-            )}
-          </Button>
+          <span key={founder.firstName} className="HomeHero__founder relative">
+            <Button
+              className="HomeHero__founder inline text-decoration-none hover-color-lilac transition"
+              ariaLabel={Language.t('Founder.viewDetailPageButtonAriaLabel', {
+                founderFullName: generateFounderFullName(founder),
+              })}
+              to="/"
+              onMouseEnter={() => {
+                setActiveFounderIndex(index);
+              }}
+              onMouseLeave={() => {
+                setActiveFounderIndex(-1);
+              }}
+            >
+              {index !== founders.length - 1 ? (
+                <span>
+                  <span>{founder.firstName}</span>
+                  <span className="color-charcoal">, </span>
+                </span>
+              ) : (
+                <span>
+                  <span>{founder.firstName} </span>
+                </span>
+              )}
+            </Button>
+            <div
+              className={cx(
+                'HomeHero__photo-card absolute transition-shorter opacity-0 z-overlay',
+                {
+                  'PhotoCard--active opacity-1': index === activeFounderIndex,
+                  'opacity-0 events-none': index !== activeFounderIndex,
+                }
+              )}
+            >
+              <PhotoCard founder={founder} />
+            </div>
+          </span>
         ))}
       </span>
       <span>& </span>

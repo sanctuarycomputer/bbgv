@@ -14,4 +14,14 @@
       color: color('charcoal');
     }
   }
+
+  &__photo-card {
+    top: 3rem;
+    right: -6rem;
+
+    @include media('md-up') {
+      top: 7rem;
+      right: -5rem;
+    }
+  }
 }

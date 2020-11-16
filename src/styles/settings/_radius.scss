@@ -1,5 +1,6 @@
 $border-radius: (
   'none': 0rem,
+  'xs': 0.35rem,
 );
 
 @function radius($radius) {

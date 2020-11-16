@@ -18,11 +18,7 @@ class HomeView extends View<Props> {
 
     return (
       <div className="HomeView primary-xxl">
-        <HomeHero
-          firstLine={model.hero.firstLine}
-          secondLine={model.hero.secondLine}
-          founders={model.hero.founders}
-        />
+        <HomeHero headline={model.hero.headline} founders={model.hero.founders} />
       </div>
     );
   }
