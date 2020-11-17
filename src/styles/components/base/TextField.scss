@@ -1,0 +1,16 @@
+.TextField {
+  &--style-primary {
+    input,
+    textarea {
+      @extend .secondary-sm;
+      color: color('charcoal');
+      border: none;
+      background-color: transparent;
+      width: 100%;
+
+      &::placeholder {
+        color: color('charcoal');
+      }
+    }
+  }
+}

@@ -1,8 +1,4 @@
 .Footer {
-  @include media('md-up') {
-    height: $footer-height-desktop;
-  }
-
   &__logo-section {
     height: 8.75rem;
   }
@@ -15,12 +11,13 @@
     }
   }
 
-  &__newsletter {
-    bottom: 3.75rem;
-  }
-
   &__section-one {
-    min-height: 26.875rem;
+    height: 26.875rem;
+
+    @include media('lg-up') {
+      height: unset;
+      min-height: 26.875rem;
+    }
   }
 
   &__copyright-container {

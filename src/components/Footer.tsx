@@ -1,17 +1,16 @@
 import React from 'react';
 import getYear from 'date-fns/getYear';
-
 import cx from 'classnames';
 import Language from 'constants/Language';
-import { Img, Button } from 'components/base';
 import { GlobalSettings, Button as IButton } from 'lib/cms/types';
 import { RouteMap } from 'constants/RouteMap';
+
+import { Img, Button } from 'components/base';
+import EmailSignup from 'components/EmailSignup';
 
 type Props = {
   globalSettings: GlobalSettings;
 };
-
-//TO-DO: add newsletter signup in #20
 
 const CURRENT_YEAR = getYear(new Date());
 
@@ -35,66 +34,68 @@ const Footer: React.FC<Props> = ({ globalSettings }) => {
         </div>
       </Button>
 
-      <div className="Footer__section-one bg-color-lilac-darker flex lg:col-7 flex-col p1_5 lg:p3_75 relative">
-        <div className="flex flex-col lg:flex-row col-12">
-          <div className="col-12 lg:col-4 mb4 lg:mb0">
-            <Button
-              className="color-charcoal transition-shorter hover-lighten-charcoal secondary-bold-sm items-center bg-color-transparent text-decoration-none inline lg:mb3_75"
-              ariaLabel={Language.t('Global.companiesButtonAriaLabel')}
-              to={RouteMap.COMPANIES.path}
-              label={Language.t('Global.companies')}
-            />
-          </div>
-
-          <div className="col-12 lg:col-8 flex flex-row">
-            <div className="col-6 flex flex-col">
+      <div className="Footer__section-one bg-color-lilac-darker lg:col-7 flex flex-col pt1_5 px1_5 pb2_25 lg:p3_75">
+        <div className="Footer__section-one-inner-container flex flex-col relative h100">
+          <div className="flex flex-col lg:flex-row col-12">
+            <div className="col-12 lg:col-4 mb4 lg:mb0">
               <Button
-                className="color-charcoal transition-shorter hover-lighten-charcoal secondary-bold-sm items-center bg-color-transparent text-decoration-none mb1_5 lg:mb3_75"
-                ariaLabel={Language.t('Global.aboutUsButtonAriaLabel')}
-                to={RouteMap.ABOUT.path}
-                label={Language.t('Global.aboutUs')}
+                className="color-charcoal transition-shorter hover-lighten-charcoal secondary-bold-sm items-center bg-color-transparent text-decoration-none inline lg:mb3_75"
+                ariaLabel={Language.t('Global.companiesButtonAriaLabel')}
+                to={RouteMap.COMPANIES.path}
+                label={Language.t('Global.companies')}
               />
-              <div className="Footer__sublinks flex flex-col">
-                {footerMenu.aboutLinks.map((link: IButton) => (
-                  <Button
-                    key={link.link}
-                    className="color-charcoal transition-shorter hover-lighten-charcoal secondary-bold-sm items-center bg-color-transparent text-decoration-none"
-                    ariaLabel={Language.t('Global.generalButtonAriaLabel', {
-                      link: link.label,
-                    })}
-                    to={link.link}
-                    label={link.label}
-                  />
-                ))}
-              </div>
             </div>
 
-            <div className="col-6 flex flex-col">
-              <Button
-                className="color-charcoal transition-shorter hover-lighten-charcoal secondary-bold-sm items-center bg-color-transparent text-decoration-none mb1_5 lg:mb3_75"
-                ariaLabel={Language.t('Global.whyWeInvestButtonAriaLabel')}
-                to={RouteMap.WHY_WE_INVEST.path}
-                label={Language.t('Global.whyWeInvest')}
-              />
-              <div className="Footer__sublinks flex flex-col">
-                {footerMenu.whyWeInvestLinks.map((link: IButton) => (
-                  <Button
-                    key={link.link}
-                    className="color-charcoal transition-shorter hover-lighten-charcoal  secondary-bold-sm items-center bg-color-transparent text-decoration-none inline"
-                    ariaLabel={Language.t('Global.generalButtonAriaLabel', {
-                      link: link.label,
-                    })}
-                    to={link.link}
-                    label={link.label}
-                  />
-                ))}
+            <div className="col-12 lg:col-8 flex flex-row">
+              <div className="col-6 flex flex-col">
+                <Button
+                  className="color-charcoal transition-shorter hover-lighten-charcoal secondary-bold-sm items-center bg-color-transparent text-decoration-none mb1_5 lg:mb3_75"
+                  ariaLabel={Language.t('Global.aboutUsButtonAriaLabel')}
+                  to={RouteMap.ABOUT.path}
+                  label={Language.t('Global.aboutUs')}
+                />
+                <div className="Footer__sublinks flex flex-col">
+                  {footerMenu.aboutLinks.map((link: IButton) => (
+                    <Button
+                      key={link.link}
+                      className="color-charcoal transition-shorter hover-lighten-charcoal secondary-bold-sm items-center bg-color-transparent text-decoration-none"
+                      ariaLabel={Language.t('Global.generalButtonAriaLabel', {
+                        link: link.label,
+                      })}
+                      to={link.link}
+                      label={link.label}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              <div className="col-6 flex flex-col">
+                <Button
+                  className="color-charcoal transition-shorter hover-lighten-charcoal secondary-bold-sm items-center bg-color-transparent text-decoration-none mb1_5 lg:mb3_75"
+                  ariaLabel={Language.t('Global.whyWeInvestButtonAriaLabel')}
+                  to={RouteMap.WHY_WE_INVEST.path}
+                  label={Language.t('Global.whyWeInvest')}
+                />
+                <div className="Footer__sublinks flex flex-col">
+                  {footerMenu.whyWeInvestLinks.map((link: IButton) => (
+                    <Button
+                      key={link.link}
+                      className="color-charcoal transition-shorter hover-lighten-charcoal  secondary-bold-sm items-center bg-color-transparent text-decoration-none inline"
+                      ariaLabel={Language.t('Global.generalButtonAriaLabel', {
+                        link: link.label,
+                      })}
+                      to={link.link}
+                      label={link.label}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div className="Footer__newsletter absolute col-12 secondary-bold-sm">
-          {Language.t('Newsletter.copy')}
+          <div className="Footer__newsletter col-12 absolute b0 secondary-bold-sm">
+            <EmailSignup variant="footer" />
+          </div>
         </div>
       </div>
 

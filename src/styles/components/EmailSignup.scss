@@ -1,0 +1,9 @@
+.EmailSignup {
+  &__inner-container {
+    border-bottom: 2px solid color('charcoal');
+  }
+
+  &__error {
+    bottom: -1.5rem;
+  }
+}

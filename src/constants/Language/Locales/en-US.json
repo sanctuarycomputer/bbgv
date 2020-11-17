@@ -17,7 +17,23 @@
   "Footer": {
     "resources": "Resources",
     "resourcesButtonAriaLabel": "Navigate to Resources page",
-    "connect": "Connect"
+    "connect": "Connect",
+    "copyrightLabel": "© %{year}",
+    "allRightsReserved": "All Rights Reserved",
+    "bbgv": "BBG Ventures, LLC"
+  },
+  "EmailSignup": {
+    "name": "EMAIL",
+    "input": {
+      "placeholder": "Add your email to get our newsletter"
+    },
+    "subscribeButton": {
+      "label": "Send",
+      "ariaLabel": "Submit email address to subscribe to our newsletter"
+    },
+    "errors": {
+      "validEmailAddressRequired": "Enter valid email address"
+    }
   },
   "Home": {
     "hero": {
