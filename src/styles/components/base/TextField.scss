@@ -1,15 +1,33 @@
 .TextField {
-  &--style-primary {
+  &--style-footer,
+  &--style-module {
     input,
     textarea {
       @extend .secondary-sm;
-      color: color('charcoal');
       border: none;
       background-color: transparent;
       width: 100%;
+    }
+  }
+
+  &--style-footer {
+    input,
+    textarea {
+      color: color('charcoal');
 
       &::placeholder {
         color: color('charcoal');
+      }
+    }
+  }
+
+  &--style-module {
+    input,
+    textarea {
+      color: color('chalk');
+
+      &::placeholder {
+        color: color('chalk');
       }
     }
   }

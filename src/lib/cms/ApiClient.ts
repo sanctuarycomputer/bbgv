@@ -3,6 +3,7 @@ import Sanity from 'lib/cms/SanityClient';
 import SeoSettingsGroq from './groq/SeoSettings';
 import HomeHeroGroq from './groq/HomeHero';
 import GlobalSettingsGroq from './groq/GlobalSettings';
+import NewsletterGroq from './groq/Newsletter';
 
 const ApiClient: {
   fetchGlobalSettings(): Promise<Cms.GlobalSettings | any>;
@@ -17,6 +18,7 @@ const ApiClient: {
     const response = await Sanity.fetch(`*[_type == 'home' && _id == '_home'][0] {
       'hero': ${HomeHeroGroq},
       'seo': ${SeoSettingsGroq},
+      'newsletter': ${NewsletterGroq},
       _type
     }`);
 

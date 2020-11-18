@@ -38,9 +38,13 @@ const EmailSignup: React.FC<Props> = ({ variant }) => {
         method="post"
         className="col-12"
       >
-        <div className="EmailSignup__inner-container flex flex-row justify-between pb_5">
+        <div
+          className={cx(
+            `EmailSignup--style-${variant}__inner-container flex flex-row justify-between pb_5`
+          )}
+        >
           <TextField
-            variant="primary"
+            variant={variant}
             onChange={(value) => formik.setFieldValue('emailAddress', value as string)}
             showLabel={false}
             type="email"
@@ -53,7 +57,10 @@ const EmailSignup: React.FC<Props> = ({ variant }) => {
             <Button
               label={Language.t('EmailSignup.subscribeButton.label')}
               ariaLabel={Language.t('EmailSignup.subscribeButton.ariaLabel')}
-              className="bg-color-transparent color-charcoal transition-shorter hover-lighten-charcoal secondary-bold-sm"
+              className={cx('bg-color-transparent transition-shorter secondary-bold-sm', {
+                'color-charcoal hover-lighten-charcoal': variant === 'footer',
+                'color-chalk': variant === 'module',
+              })}
             />
           </span>
         </div>

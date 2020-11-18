@@ -25,6 +25,15 @@ export default {
         collapsed: false,
       },
     },
+    {
+      title: 'Newsletter',
+      name: 'newsletter',
+      type: 'newsletterModule',
+      options: {
+        collapsible: true,
+        collapsed: false,
+      },
+    },
   ],
   preview: {
     prepare() {

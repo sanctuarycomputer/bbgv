@@ -79,6 +79,13 @@ export const ImageCrop = t.type({
   right: t.union([t.number, t.undefined]),
 });
 
+export type NewsletterModule = t.TypeOf<typeof NewsletterModule>;
+export const NewsletterModule = t.type({
+  _type: t.string,
+  headline: t.array(Block),
+  title: t.string,
+});
+
 export type SeoSettings = t.TypeOf<typeof SeoSettings>;
 export const SeoSettings = t.partial({
   title: t.string,
@@ -93,6 +100,7 @@ export const GlobalSettings = t.type({
 
 export type HomePage = t.TypeOf<typeof HomePage>;
 export const HomePage = t.type({
-  hero: HomeHero,
   seo: SeoSettings,
+  hero: HomeHero,
+  newsletter: NewsletterModule,
 });

@@ -1,6 +1,14 @@
 .EmailSignup {
-  &__inner-container {
-    border-bottom: 2px solid color('charcoal');
+  &--style-footer {
+    &__inner-container {
+      border-bottom: 2px solid color('charcoal');
+    }
+  }
+
+  &--style-module {
+    &__inner-container {
+      border-bottom: 2px solid color('chalk');
+    }
   }
 
   &__error {

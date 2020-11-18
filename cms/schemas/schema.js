@@ -12,6 +12,7 @@ import HomePage from './pages/home';
 
 /** Layouts */
 import HomeHeroModule from './layouts/homeHeroModule';
+import NewsletterModule from './layouts/newsletterModule';
 
 /** References */
 import Founder from './references/founder';
@@ -34,6 +35,7 @@ export default createSchema({
 
     /** Layouts */
     HomeHeroModule,
+    NewsletterModule,
 
     /** References */
     Founder,

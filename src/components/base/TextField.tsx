@@ -22,7 +22,7 @@ interface Props {
   min?: number;
   max?: number;
   showLabel: boolean;
-  variant: 'primary';
+  variant: 'footer' | 'module';
   showIcon: boolean;
   elemRef?: RefObject<HTMLInputElement | HTMLTextAreaElement>;
   infoMessage?: string;
