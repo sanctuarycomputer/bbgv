@@ -19,7 +19,7 @@ const HomeView: FC<Props> = (props) => {
     <div className="HomeView primary-xxl page">
       <Meta seo={seo} />
       <HomeHero headline={hero.headline} founders={hero.founders} />
-      <FoundersImpactSlideshow variant="founder" slides={foundersImpactSlideshow.slides} />
+      <FoundersImpactSlideshow slides={foundersImpactSlideshow.slides} />
       <NewsletterModule headline={newsletter.headline} title={newsletter.title} />
     </div>
   );

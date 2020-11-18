@@ -24,15 +24,11 @@ export default {
             {
               title: 'Company',
               name: 'company',
-              type: 'array',
+              type: 'reference',
+              to: [{ type: 'company' }],
+              validation: (Rule) => Rule.required(),
               description:
                 "Connect this slide to a company. The founder(s)'s names will then appear in the right tile. The tiles will both link to the company's detail page.",
-              of: [
-                {
-                  type: 'reference',
-                  to: [{ type: 'company' }],
-                },
-              ],
             },
             {
               name: 'leftHeadline',

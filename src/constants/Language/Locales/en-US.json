@@ -26,7 +26,8 @@
     "bbgv": "BBG Ventures, LLC"
   },
   "FoundersImpactSlideshow": {
-    "viewNext": "View next"
+    "viewNext": "View next",
+    "paginationDot": "Advance carousel to slide %{slideNumber}"
   },
   "EmailSignup": {
     "name": "EMAIL",

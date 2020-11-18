@@ -1,14 +1,16 @@
 import React, { PureComponent, createRef } from 'react';
 import Slider from 'react-slick';
 import cx from 'classnames';
-import { Image, FoundersImpactSlide } from 'lib/cms/types';
+import { FoundersImpactSlide, Founder } from 'lib/cms/types';
 import Language from 'constants/Language';
-import { Button, Img } from 'components/base';
+import { Button } from 'components/base';
+import generateFounderFullName from 'utils/generateFounderFullName';
+
+//TO-DO: Add generate company slug util and replace links
 
 type Props = {
   slides: FoundersImpactSlide[];
   speed?: number;
-  variant: string;
 };
 
 type State = {
@@ -72,53 +74,54 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
     this.next();
   };
 
-  renderVariant = (slide: FoundersImpactSlide) => {
-    switch (this.props.variant) {
-      case 'founder':
-        return (
-          <div
-            key={slide.company.name}
-            className="SLIDE FoundersImpactSlideshow__slide__card flex flex-col md:flex-row col-12"
+  renderSlide = (slide: FoundersImpactSlide) => {
+    return (
+      <div
+        key={slide.company.name}
+        className="FoundersImpactSlideshow__slide__card flex flex-col md:flex-row col-12"
+      >
+        <div className="col-12 md:col-6 flex flex-col pr3 md:pr0">
+          <Button
+            ariaLabel={Language.t('Global.generalButtonAriaLabel', {
+              link: '/',
+            })}
+            className="FoundersImpactSlideshow__left-tile radius-xs bg-color-nutella w100 text-left flex flex-col"
+            wrap={true}
           >
-            <div className="col-12 md:col-6 flex flex-col pr3 md:pr0">
-              <Button
-                ariaLabel=""
-                className="FoundersImpactSlideshow__left-tile radius-xs bg-color-nutella w100 text-left flex flex-col"
-                wrap={true}
-              >
-                <div className="flex flex-col justify-between col-12 color-charcoal h100 p1_5 md:p3_75">
-                  <p className="primary-lg">{slide.leftHeadline}</p>
-                  <p className="primary-xs">Link to sector</p>
-                </div>
-              </Button>
+            <div className="FoundersImpactSlideshow__left-tile-content flex flex-col justify-between col-12 color-charcoal h100 p1_5 md:p3_75">
+              <p className="primary-lg">{slide.leftHeadline}</p>
+              <p className="primary-xs">Link to sector</p>
             </div>
+          </Button>
+        </div>
 
-            <div className="col-12 md:col-6 flex flex-col pl3 md:pl0 md:mt8">
-              <Button
-                ariaLabel=""
-                className="FoundersImpactSlideshow__right-tile bg-color-lilac-darker w100 text-left radius-xs flex flex-col mb6 md:mb0"
-                wrap={true}
-              >
-                <div className="flex flex-col justify-between col-12 color-charcoal h100 p1_5 md:p3_75">
-                  <p className="primary-xs">Link to sector</p>
-                  <p className="primary-lg">
-                    <span className="primary-xs vertical-align-middle uppercase pr3_75">
-                      founder name
-                    </span>
-                    {slide.rightHeadline}
-                  </p>
-                </div>
-              </Button>
+        <div className="col-12 md:col-6 flex flex-col pl3 md:pl0 md:mt8">
+          <Button
+            ariaLabel={Language.t('Global.generalButtonAriaLabel', {
+              link: '/',
+            })}
+            className="FoundersImpactSlideshow__right-tile bg-color-lilac-darker w100 text-left radius-xs flex flex-col mb6 md:mb0"
+            wrap={true}
+          >
+            <div className="FoundersImpactSlideshow__right-tile-content flex flex-col justify-between col-12 color-charcoal h100 p1_5 md:p3_75">
+              <p className="primary-xs">Link to sector</p>
+              <p className="primary-lg">
+                <span className="primary-xs vertical-align-middle uppercase pr3_75">
+                  {slide.company.founders?.map((founder: Founder, index: number) => (
+                    <span className="color-charcoal">{generateFounderFullName(founder)}</span>
+                  ))}
+                </span>
+                {slide.rightHeadline}
+              </p>
             </div>
-          </div>
-        );
-      default:
-        return null;
-    }
+          </Button>
+        </div>
+      </div>
+    );
   };
 
   render() {
-    const { slides, speed, variant } = this.props;
+    const { slides, speed } = this.props;
     const { currentSlide } = this.state;
 
     return (
@@ -183,7 +186,7 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
                       'FoundersImpactSlideshow__slide__card-container': '',
                     })}
                   >
-                    {this.renderVariant(slide)}
+                    {this.renderSlide(slide)}
                   </div>
                 </div>
               );

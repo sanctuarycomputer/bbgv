@@ -5,6 +5,6 @@ export default `{
   "slides": foundersImpactSlideshow.slides[]{
     "leftHeadline": leftHeadline,
     "rightHeadline": rightHeadline,
-    "company": company[]->${CompanyGroq},
+    "company": company->${CompanyGroq}
   },
 }`;
