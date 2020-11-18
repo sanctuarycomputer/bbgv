@@ -52,7 +52,7 @@ const HomeHero: React.FC<Props> = ({ currentBreakpoint, founders, headline }) =>
   }, [throttleHandleScroll]);
 
   return (
-    <div className="HomeHero primary-xxl site-max-width site-padding-x mxauto">
+    <div className="HomeHero primary-xxl site-inner-content-max-width site-padding-x mxauto">
       <span
         className={cx('HomeHero__logo-container inline-flex', {
           'HomeHero__logo-container--style-is-active opacity-1 events-all': !hideLogo,

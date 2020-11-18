@@ -18,7 +18,7 @@ const Footer: React.FC<Props> = ({ globalSettings }) => {
   const { footerMenu } = globalSettings;
 
   return (
-    <div className="Footer flex flex-col lg:flex-row">
+    <div className="Footer site-max-width flex flex-col lg:flex-row">
       <Button
         containerClassName="lg:none bg-color-lilac-darker px_75 md:px1_5 pt1_5 pb4"
         className="items-center bg-color-transparent text-decoration-none"

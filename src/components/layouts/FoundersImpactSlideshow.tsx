@@ -22,7 +22,7 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
 
   static defaultProps = {
     showPagination: true,
-    speed: 10000,
+    speed: 5000,
   };
 
   state = {
@@ -76,19 +76,30 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
     switch (this.props.variant) {
       case 'founder':
         return (
-          <div key={slide.company.name} className="SLIDE flex flex-row col-12">
-            <div className="col-6 flex flex-col">
-              <Button ariaLabel="" className="bg-color-transparent w100 text-left" wrap={true}>
-                <div className="flex flex-col justify-between col-12 bg-color-nutella color-charcoal FoundersImpactSlideshow__left-tile">
+          <div
+            key={slide.company.name}
+            className="SLIDE FoundersImpactSlideshow__slide__card flex flex-col md:flex-row col-12"
+          >
+            <div className="col-12 md:col-6 flex flex-col pr3 md:pr0">
+              <Button
+                ariaLabel=""
+                className="FoundersImpactSlideshow__left-tile radius-xs bg-color-nutella w100 text-left flex flex-col"
+                wrap={true}
+              >
+                <div className="flex flex-col justify-between col-12 color-charcoal h100 p1_5 md:p3_75">
                   <p className="primary-lg">{slide.leftHeadline}</p>
                   <p className="primary-xs">Link to sector</p>
                 </div>
               </Button>
             </div>
 
-            <div className="col-6 flex flex-col mt8">
-              <Button ariaLabel="" className="bg-color-transparent w100 text-left" wrap={true}>
-                <div className="flex flex-col col-12 justify-between bg-color-lilac-darker primary-lg color-charcoal FoundersImpactSlideshow__right-tile">
+            <div className="col-12 md:col-6 flex flex-col pl3 md:pl0 md:mt8">
+              <Button
+                ariaLabel=""
+                className="FoundersImpactSlideshow__right-tile bg-color-lilac-darker w100 text-left radius-xs flex flex-col mb6 md:mb0"
+                wrap={true}
+              >
+                <div className="flex flex-col justify-between col-12 color-charcoal h100 p1_5 md:p3_75">
                   <p className="primary-xs">Link to sector</p>
                   <p className="primary-lg">
                     <span className="primary-xs vertical-align-middle uppercase pr3_75">
@@ -111,21 +122,21 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
     const { currentSlide } = this.state;
 
     return (
-      <div className="FoundersImpactSlideshow debug site-max-width site-padding-x mxauto">
-        <div className="FoundersImpactSlideshow__pagination-container relative col-1 flex flex-col">
+      <div className="FoundersImpactSlideshow site-inner-content-max-width mxauto relative">
+        <div className="FoundersImpactSlideshow__pagination-container absolute z-3 pr_75 md:pr3_75">
           <div className="FoundersImpactSlideshow__pagination relative col-12 flex flex-col">
             <div className="FoundersImpactSlideshow__pagination__inner flex flex-row col-12">
-              {slides.map((slide, index) => {
+              {slides.map((slide: FoundersImpactSlide, index) => {
                 const uniqueKey = '';
 
                 return (
                   <button
-                    key={`FoundersImpactSlideshow-info-${uniqueKey}`}
+                    key={`FoundersImpactSlideshow-${uniqueKey}`}
                     aria-label={Language.t('FoundersImpactSlideshow.paginationDot', {
                       slideNumber: index + 1,
                     })}
                     className={cx(
-                      'FoundersImpactSlideshow__pagination__dot radius-button-sm pointer overflow-hidden',
+                      'FoundersImpactSlideshow__pagination__dot radius-button-sm pointer',
                       {
                         'FoundersImpactSlideshow__pagination__dot--active': index < currentSlide,
                         'FoundersImpactSlideshow__pagination__dot--current': index === currentSlide,
@@ -141,40 +152,44 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
                 );
               })}
             </div>
-            <div className="color-lilac-darkest secondary-bold-xs pt1">View next</div>
+            <div className="color-lilac-darkest secondary-bold-xs pt1">
+              {Language.t('FoundersImpactSlideshow.viewNext')}
+            </div>
           </div>
         </div>
 
-        <Slider
-          ref={this.sliderRef}
-          className="FoundersImpactSlideshow__slideshow col-12"
-          fade={true}
-          adaptiveHeight={true}
-          arrows={false}
-          dots={false}
-          centerMode={true}
-          centerPadding="0px"
-          speed={1000}
-        >
-          {slides.map((slide: FoundersImpactSlide, index: number) => {
-            const uniqueKey = '';
+        <div className="FoundersImpactSlideshow__slides-container flex flex-col">
+          <Slider
+            ref={this.sliderRef}
+            className="FoundersImpactSlideshow__slideshow col-12"
+            fade={true}
+            adaptiveHeight={true}
+            arrows={false}
+            dots={false}
+            centerMode={true}
+            centerPadding="0px"
+            speed={1000}
+          >
+            {slides.map((slide: FoundersImpactSlide, index: number) => {
+              const uniqueKey = '';
 
-            return (
-              <div
-                className="FoundersImpactSlideshow__slide w100 items-center flex-wrap"
-                key={`FoundersImpactSlideshow-blob-${uniqueKey}`}
-              >
+              return (
                 <div
-                  className={cx('col-12 flex justify-center', {
-                    'FoundersImpactSlideshow__slide__card-container': '',
-                  })}
+                  className="FoundersImpactSlideshow__slide w100 items-center flex-wrap"
+                  key={`FoundersImpactSlideshow-${uniqueKey}`}
                 >
-                  {this.renderVariant(slide)}
+                  <div
+                    className={cx('col-12 flex justify-center', {
+                      'FoundersImpactSlideshow__slide__card-container': '',
+                    })}
+                  >
+                    {this.renderVariant(slide)}
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </Slider>
+              );
+            })}
+          </Slider>
+        </div>
       </div>
     );
   }

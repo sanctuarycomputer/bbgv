@@ -1,10 +1,15 @@
 .FoundersImpactSlideshow {
+  /** Fixes overflow issues */
+  overflow: hidden;
+  min-width: 100%;
+  width: 0;
+
   &__left-tile,
   &__right-tile {
-    height: 17.5rem;
+    min-height: 17.5rem;
 
     @include media('md-up') {
-      height: 28.75rem;
+      min-height: 28.75rem;
     }
   }
 
@@ -48,47 +53,17 @@
         height: 100%;
       }
     }
-
-    &__card {
-      height: 100%;
-
-      &::before,
-      &::after {
-        // @extend .shadow-lg;
-        // @extend .radius-card-lg;
-        content: '';
-        background: color('white');
-        position: absolute;
-        left: 0;
-        width: 100%;
-        // transition: duration('long') $transition-easing;
-        display: none;
-
-        @include media('sm-up') {
-          display: block;
-        }
-      }
-
-      &::before {
-        height: 80%;
-        top: 10%;
-        z-index: -2;
-        transform: translate3d(0, 0, 0);
-      }
-
-      &::after {
-        height: 90%;
-        top: 5%;
-        transform: translate3d(0, 0, 0);
-        z-index: -1;
-      }
-    }
   }
 
-  &__pagination {
-    // top: 0;
-    // right: 0;
+  &__pagination-container {
+    bottom: 0;
+    right: 0;
 
+    @include media('md-up') {
+      top: 0;
+    }
+  }
+  &__pagination {
     &__dot {
       position: relative;
       height: 0.1875rem;
