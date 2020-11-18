@@ -14,6 +14,20 @@
   }
 }
 
+.page {
+  margin-top: calc(#{$nav-top-margin-mobile} + #{$nav-height-mobile});
+
+  @include media('xl-up') {
+    margin-top: $nav-height-desktop;
+  }
+}
+
+.disable-body-scroll {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
 .hyphens {
   hyphens: auto;
 }

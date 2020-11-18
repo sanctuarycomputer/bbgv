@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import cx from 'classnames';
+import throttle from 'lodash/throttle';
 import { Founder } from 'lib/cms/types';
 import Language from 'constants/Language';
 import generateFounderFullName from 'utils/generateFounderFullName';
-import { Button, Img } from 'components/base';
+import Classes from 'constants/Classes';
+
+import { Button } from 'components/base';
 import { RouteMap } from 'constants/RouteMap';
 import PhotoCard from 'components/PhotoCard';
+import { BBGVLogo } from 'components/icons';
+import hasPassedElement from 'utils/hasPassedElement';
 
 type Props = {
   founders: Founder[];
@@ -16,28 +21,55 @@ type Props = {
 
 const HomeHero: React.FC<Props> = ({ founders, headline }) => {
   const [activeFounderIndex, setActiveFounderIndex] = useState(-1);
+  const [hideLogo, setHideLogo] = useState(false);
+
+  const handleScroll = () => {
+    /* Determines if the current scroll position is before of after the logo in the Home Hero Module **/
+    const logo = document.querySelector(`.${Classes.homeHeroLogo}`);
+
+    if (logo) {
+      if (!hasPassedElement(logo) && hideLogo) {
+        setHideLogo(false);
+      }
+
+      if (hasPassedElement(logo) && !hideLogo) {
+        setHideLogo(true);
+      }
+    }
+  };
+
+  const throttleHandleScroll = throttle(handleScroll, 150);
+
+  useEffect(() => {
+    window.addEventListener('scroll', throttleHandleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', throttleHandleScroll);
+    };
+  }, [throttleHandleScroll]);
 
   return (
     <div className="HomeHero primary-xxl site-max-width site-padding-x mxauto">
-      <span className="HomeHero__logo-container">
+      <span
+        className={cx('HomeHero__logo-container inline-flex', {
+          'HomeHero__logo-container--style-is-active opacity-1 events-all': !hideLogo,
+          'opacity-0 events-none': hideLogo,
+        })}
+      >
         <Button
-          className="items-center bg-color-transparent text-decoration-none inline"
+          className="bg-color-transparent text-decoration-none"
           ariaLabel={Language.t('Global.navigateToHome')}
           to={RouteMap.HOME.path}
         >
-          <Img
-            className="HomeHero__logo pr1_5 md:pr2_25"
-            src="/assets/images/bbgv-full-logo.svg"
-            alt={Language.t('Global.logoAltLabel')}
-          />
+          <BBGVLogo className={cx(`${Classes.homeHeroLogo} mr1_5 md:mr2_25`)} color="charcoal" />
         </Button>
       </span>
 
       <span className="HomeHero__headline hyphens color-mulberry">{headline}</span>
-      <span className="color-charcoal primary-sm px2_25 md:px3_75">
+      <span className="color-charcoal primary-sm px2_25 md:px3_75 vertical-align-middle">
         {Language.t('Home.hero.ourFounders')}
       </span>
-      <span className="color-charcoal primary-xxl">
+      <span className="color-charcoal primary-xxl vertical-align-middle">
         {founders.map((founder: Founder, index: number) => (
           <span key={founder.firstName} className="HomeHero__founder relative">
             <Button

@@ -14,6 +14,9 @@
     "allRightsReserved": "All Rights Reserved",
     "bbgv": "BBG Ventures, LLC"
   },
+  "Nav": {
+    "menuButtonAriaLabel": "Open menu"
+  },
   "Footer": {
     "resources": "Resources",
     "resourcesButtonAriaLabel": "Navigate to Resources page",

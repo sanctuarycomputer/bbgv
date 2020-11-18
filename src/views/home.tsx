@@ -15,7 +15,7 @@ const HomeView: FC<Props> = (props) => {
   const { hero, seo, newsletter } = model;
 
   return (
-    <div className="HomeView primary-xxl">
+    <div className="HomeView primary-xxl page">
       <Meta seo={seo} />
       <HomeHero headline={hero.headline} founders={hero.founders} />
       <NewsletterModule headline={newsletter.headline} title={newsletter.title} />

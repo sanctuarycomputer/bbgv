@@ -20,7 +20,7 @@ const Footer: React.FC<Props> = ({ globalSettings }) => {
   return (
     <div className="Footer flex flex-col lg:flex-row">
       <Button
-        containerClassName="lg:none bg-color-lilac-darker px1_5 pt1_5 pb4"
+        containerClassName="lg:none bg-color-lilac-darker px_75 md:px1_5 pt1_5 pb4"
         className="items-center bg-color-transparent text-decoration-none"
         ariaLabel={Language.t('Global.navigateToHome')}
         to={RouteMap.HOME.path}
@@ -34,7 +34,7 @@ const Footer: React.FC<Props> = ({ globalSettings }) => {
         </div>
       </Button>
 
-      <div className="Footer__section-one bg-color-lilac-darker lg:col-7 flex flex-col pt1_5 px1_5 pb2_25 lg:p3_75">
+      <div className="Footer__section-one bg-color-lilac-darker lg:col-7 flex flex-col px_75 md:px1_5 pb2_25 lg:p3_75">
         <div className="Footer__section-one-inner-container flex flex-col relative h100">
           <div className="flex flex-col lg:flex-row col-12">
             <div className="col-12 lg:col-4 mb4 lg:mb0">
@@ -99,7 +99,7 @@ const Footer: React.FC<Props> = ({ globalSettings }) => {
         </div>
       </div>
 
-      <div className="Footer__section-two bg-color-lilac-lighter lg:col-3 px1_5 py3_75 flex flex-row lg:flex-col relative">
+      <div className="Footer__section-two bg-color-lilac-lighter lg:col-3 px_75 md:px1_5 py3_75 flex flex-row lg:flex-col relative">
         <div className="flex flex-col col-6 lg:col-12">
           <div className="color-charcoal secondary-bold-sm mb1_5 lg:mb3_75">
             {Language.t('Footer.resources')}
@@ -150,7 +150,7 @@ const Footer: React.FC<Props> = ({ globalSettings }) => {
       </div>
 
       {copyrightSection(
-        'bg-color-white lg:none flex flex-col secondary-xxs color-charcoal py3_75 px1_5'
+        'bg-color-white lg:none flex flex-col secondary-xxs color-charcoal py3_75 px_75 md:px1_5'
       )}
     </div>
   );

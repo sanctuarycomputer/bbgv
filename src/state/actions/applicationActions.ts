@@ -1,8 +1,13 @@
 import { createPromiseAction, action } from 'lib/action';
-import { ThunkResult } from 'types';
+import { ThunkResult, Theme } from 'types';
 
 import { GlobalSettings } from 'lib/cms/types';
 import ApiClient from 'lib/cms/ApiClient';
+
+export const setTheme = (theme: Theme) => ({
+  type: 'SET_THEME',
+  payload: theme,
+});
 
 const initializeApplicationActions = createPromiseAction(
   'INITIALIZE_APPLICATION_PENDING',
@@ -27,6 +32,7 @@ export const fetchGlobalSettings = (): ThunkResult<Promise<GlobalSettings>> => (
 };
 
 export default {
+  setTheme,
   initializeApplicationActions,
   fetchGlobalSettingsActions,
 };

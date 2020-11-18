@@ -3,8 +3,9 @@ $z: (
   '0': 0,
   '1': 1,
   '2': 2,
-  'nav': 600,
-  'overlay': 800,
+  'overlay': 600,
+  'overlay-menu': 800,
+  'nav': 900,
 );
 
 @function z($index) {

@@ -1,10 +1,13 @@
 import { createReducer } from 'typesafe-actions';
 import { GlobalSettings } from 'lib/cms/types';
+import { Theme } from 'types';
 
 const initialState: {
   settings: GlobalSettings | {};
+  theme: Theme;
 } = {
   settings: {},
+  theme: 'default',
 };
 
 export default createReducer(initialState, {
@@ -13,5 +16,9 @@ export default createReducer(initialState, {
     settings: {
       ...action.payload,
     },
+  }),
+  SET_THEME: (state, action) => ({
+    ...state,
+    theme: action.payload,
   }),
 });

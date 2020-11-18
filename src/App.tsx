@@ -4,15 +4,21 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import Routes from 'constants/routes';
 import 'styles/App.scss';
-import Footer from 'components/Footer';
 
 import { intializeApplication } from 'state/actions/applicationActions';
+import { setMenuOpen, setMenuClosed } from 'state/actions/uiActions';
+
+import Nav from 'components/Nav';
+import Footer from 'components/Footer';
 
 export default function App() {
   const dispatch = useDispatch();
   const initApp = useCallback(() => dispatch(intializeApplication()), [dispatch]);
-
   const globalSettings = useSelector((state) => state.global.settings);
+  const theme = useSelector((state) => state.global.theme);
+  const menuIsOpen = useSelector((state) => state.ui.menuIsOpen);
+  const openMenu = useCallback(() => dispatch(setMenuOpen()), [dispatch]);
+  const closeMenu = useCallback(() => dispatch(setMenuClosed()), [dispatch]);
 
   //TO-DO: show 404 page if application status is rejected.
 
@@ -21,13 +27,12 @@ export default function App() {
   }, [initApp]);
 
   return (
-    <main>
-      <div className="App">
-        <Router>
-          <Routes />
-          {'footerMenu' in globalSettings && <Footer globalSettings={globalSettings} />}
-        </Router>
-      </div>
+    <main className="App">
+      <Nav theme={theme} menuIsOpen={menuIsOpen} onOpenMenu={openMenu} onCloseMenu={closeMenu} />
+      <Router>
+        <Routes />
+        {'footerMenu' in globalSettings && <Footer globalSettings={globalSettings} />}
+      </Router>
     </main>
   );
 }

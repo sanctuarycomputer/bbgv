@@ -1,7 +1,7 @@
 $transition-duration-shortest: 0.15s;
 $transition-duration-shorter: 0.2s;
 $transition-duration-short: 0.3s;
-$transition-duration-medium: 0.4s;
+$transition-duration-medium: 0.5s;
 $transition-duration-long: 1s;
 $transition-cubic-bezier: cubic-bezier(0.15, 0.85, 0.45, 1);
 $transition: $transition-duration-short $transition-cubic-bezier;
@@ -31,6 +31,48 @@ $transition: $transition-duration-short $transition-cubic-bezier;
 
 .transition-long {
   transition: all $transition-duration-long $transition-cubic-bezier;
+}
+
+$transition-animate-appear-from-left: animate-appear-from-left $transition-duration-medium;
+
+@keyframes animate-appear-from-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+$transition-animate-appear-from-top: animate-appear-from-top $transition-duration-medium;
+
+@keyframes animate-appear-from-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+$transition-animate-disappear-to-top: animate-disappear-to-top $transition-duration-short;
+
+@keyframes animate-disappear-to-top {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
 }
 
 $transition-animate-fade-in: animate-fade-in $transition-duration-medium;

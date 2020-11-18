@@ -21,6 +21,8 @@ export enum Status {
   REJECTED = 'REJECTED',
 }
 
+export type Theme = 'default' | 'white';
+
 export type ThunkResult<R> = ThunkAction<R, GlobalState, undefined, Action>;
 
 export class View<Props extends ViewProps, State = {}> extends Component<Props, State> {}

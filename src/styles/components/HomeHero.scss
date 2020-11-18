@@ -7,6 +7,13 @@
     }
   }
 
+  &__logo-container {
+    &--style-is-active {
+      animation: $transition-animate-appear-from-left;
+      animation-fill-mode: forwards;
+    }
+  }
+
   &__founder {
     color: color('lilac');
 
