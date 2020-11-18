@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Block } from 'lib/cms/types';
 import EmailSignup from 'components/EmailSignup';
 import PortableText from 'components/PortableText';

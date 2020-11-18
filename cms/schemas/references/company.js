@@ -1,3 +1,5 @@
+import Slug from '../fields/slugField';
+
 export default {
   title: 'Company',
   name: 'company',
@@ -9,6 +11,7 @@ export default {
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
+    Slug,
     {
       title: 'Logo',
       name: 'logo',
@@ -28,8 +31,8 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'Founders',
       title: 'Founders',
+      name: 'founders',
       description:
         'Connect company to its founder(s). The founder(s) will appear on the Company detail page',
       type: 'array',
@@ -62,7 +65,7 @@ export default {
   ],
   preview: {
     select: {
-      companyName: 'companyName',
+      companyName: 'name',
       companyLogo: 'companyLogo',
     },
     prepare(selection) {

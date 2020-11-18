@@ -25,16 +25,6 @@ export const Block = t.type({
   ),
 });
 
-export type Company = t.TypeOf<typeof Company>;
-export const Company = t.partial({
-  _type: t.string,
-  description: t.array(Block),
-  tag: t.string,
-  sector: t.string,
-  logo: Image,
-  name: t.string,
-});
-
 export type Founder = t.TypeOf<typeof Founder>;
 export const Founder = t.partial({
   _type: t.string,
@@ -50,12 +40,38 @@ export const Founder = t.partial({
   sector: t.string,
 });
 
+export type Company = t.TypeOf<typeof Company>;
+export const Company = t.partial({
+  _type: t.string,
+  description: t.array(Block),
+  website: Button,
+  careersLink: Button,
+  founders: t.array(Founder),
+  tag: t.string,
+  sector: t.string,
+  logo: Image,
+  name: t.string,
+});
+
 export type FooterMenu = t.TypeOf<typeof FooterMenu>;
 export const FooterMenu = t.type({
   socialMediaLinks: t.array(Button),
   aboutLinks: t.array(Button),
   resourcesLinks: t.array(Button),
   whyWeInvestLinks: t.array(Button),
+});
+
+export type FoundersImpactSlide = t.TypeOf<typeof FoundersImpactSlide>;
+export const FoundersImpactSlide = t.type({
+  leftHeadline: t.array(Block),
+  rightHeadline: t.array(Block),
+  company: Company,
+});
+
+export type FoundersImpactSlideshow = t.TypeOf<typeof FoundersImpactSlideshow>;
+export const FoundersImpactSlideshow = t.type({
+  _type: t.string,
+  slides: t.array(FoundersImpactSlide),
 });
 
 export type HomeHero = t.TypeOf<typeof HomeHero>;
@@ -102,5 +118,6 @@ export type HomePage = t.TypeOf<typeof HomePage>;
 export const HomePage = t.type({
   seo: SeoSettings,
   hero: HomeHero,
+  foundersImpactSlideshow: FoundersImpactSlideshow,
   newsletter: NewsletterModule,
 });

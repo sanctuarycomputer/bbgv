@@ -1,0 +1,68 @@
+.ImageCarousel {
+  width: 100vw;
+
+  &__outer-container {
+    max-height: 60vh;
+  }
+
+  &__container {
+    height: 100%;
+    outline: none;
+    position: relative;
+    overflow-y: hidden;
+
+    &--multi-image {
+      .flickity-prev-next-button {
+        &.previous {
+          left: 0;
+        }
+
+        &.next {
+          right: 0;
+        }
+      }
+    }
+
+    .flickity-prev-next-button {
+      position: absolute;
+      width: 10%;
+      height: 100%;
+      top: 0;
+      opacity: 0;
+    }
+
+    .flickity-slider {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__img {
+    display: flex;
+    object-fit: contain;
+    max-height: 60vh;
+    width: 80vw;
+
+    @include media('sm-up') {
+      width: 60vw;
+    }
+
+    @include media('md-up') {
+      width: 40vw;
+    }
+  }
+
+  &__caption-container {
+    min-height: 5.0625rem;
+  }
+}
+
+.ArticleImageCarousel {
+  position: relative;
+  z-index: 500;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
