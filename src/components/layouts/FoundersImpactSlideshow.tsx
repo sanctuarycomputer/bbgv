@@ -1,7 +1,7 @@
 import React, { PureComponent, createRef } from 'react';
 import Slider from 'react-slick';
 import cx from 'classnames';
-import { FoundersImpactSlide, Founder } from 'lib/cms/types';
+import { FoundersImpactSlide, FoundersImpactSlideshowVariant, Founder } from 'lib/cms/types';
 import Language from 'constants/Language';
 import { Button } from 'components/base';
 import generateFounderFullName from 'utils/generateFounderFullName';
@@ -11,6 +11,7 @@ import generateFounderFullName from 'utils/generateFounderFullName';
 type Props = {
   slides: FoundersImpactSlide[];
   speed?: number;
+  variant: FoundersImpactSlideshowVariant;
 };
 
 type State = {
@@ -74,7 +75,7 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
     this.next();
   };
 
-  renderSlide = (slide: FoundersImpactSlide) => {
+  renderSlide = (variant: FoundersImpactSlideshowVariant, slide: FoundersImpactSlide) => {
     const foundersLength = slide.company.founders?.length;
 
     if (!foundersLength) {
@@ -91,10 +92,24 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
             ariaLabel={Language.t('Global.generalButtonAriaLabel', {
               link: '/',
             })}
-            className="FoundersImpactSlideshow__left-tile radius-xs bg-color-nutella w100 text-left flex flex-col"
             wrap={true}
+            className={cx(
+              'FoundersImpactSlideshow__left-tile radius-xs w100 text-left flex flex-col',
+              {
+                'bg-color-nutella': variant === 'nutella-lilac',
+                'bg-color-mulberry': variant === 'mulberry-lilac',
+              }
+            )}
           >
-            <div className="FoundersImpactSlideshow__left-tile-content flex flex-col justify-between col-12 color-charcoal h100 p1_5 md:p3_75">
+            <div
+              className={cx(
+                'FoundersImpactSlideshow__left-tile-content flex flex-col justify-between col-12 h100 p1_5 md:p3_75',
+                {
+                  'color-charcoal': variant === 'nutella-lilac',
+                  'color-chalk': variant === 'mulberry-lilac',
+                }
+              )}
+            >
               <p className="primary-lg">{slide.leftHeadline}</p>
               <p className="primary-xs">Tagline placeholder text</p>
             </div>
@@ -199,7 +214,7 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
                       'FoundersImpactSlideshow__slide__card-container': '',
                     })}
                   >
-                    {this.renderSlide(slide)}
+                    {this.renderSlide(this.props.variant, slide)}
                   </div>
                 </div>
               );

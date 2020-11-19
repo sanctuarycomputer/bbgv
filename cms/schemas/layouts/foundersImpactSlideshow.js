@@ -4,6 +4,19 @@ export default {
   type: 'object',
   fields: [
     {
+      name: 'variant',
+      title: 'Color Variant',
+      description: 'Choose the background color combinations.',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Mulberry and Lilac', value: 'mulberry-lilac' },
+          { title: 'Nutella and Lilac', value: 'nutella-lilac' },
+        ],
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
       title: 'Slides',
       name: 'slides',
       type: 'array',

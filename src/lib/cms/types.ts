@@ -68,10 +68,14 @@ export const FoundersImpactSlide = t.type({
   company: Company,
 });
 
+export type FoundersImpactSlideshowVariant = t.TypeOf<typeof FoundersImpactSlideshowVariant>;
+export const FoundersImpactSlideshowVariant = t.string;
+
 export type FoundersImpactSlideshow = t.TypeOf<typeof FoundersImpactSlideshow>;
 export const FoundersImpactSlideshow = t.type({
   _type: t.string,
   slides: t.array(FoundersImpactSlide),
+  variant: FoundersImpactSlideshowVariant,
 });
 
 export type HomeHero = t.TypeOf<typeof HomeHero>;
