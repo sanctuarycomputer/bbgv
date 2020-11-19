@@ -4,11 +4,6 @@
   min-width: 100%;
   width: 0;
 
-  &__right-tile,
-  &__left-tile {
-    background-clip: padding-box;
-  }
-
   &__right-tile-content,
   &__left-tile-content {
     min-height: 15.0625rem;

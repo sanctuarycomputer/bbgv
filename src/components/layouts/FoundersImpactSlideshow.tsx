@@ -209,11 +209,7 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
                   className="FoundersImpactSlideshow__slide w100 items-center flex-wrap"
                   key={`FoundersImpactSlideshow-${slide.rightHeadline}`}
                 >
-                  <div
-                    className={cx('col-12 flex justify-center', {
-                      'FoundersImpactSlideshow__slide__card-container': '',
-                    })}
-                  >
+                  <div className="FoundersImpactSlideshow__slide__card-container col-12 flex justify-center">
                     {this.renderSlide(this.props.variant, slide)}
                   </div>
                 </div>
