@@ -103,7 +103,7 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
           >
             <div
               className={cx(
-                'FoundersImpactSlideshow__left-tile-content flex flex-col justify-between col-12 h100 p1_5 md:p3_75',
+                'FoundersImpactSlideshow__left-tile-content flex flex-col col-12 p1_5 md:p3_75 justify-between',
                 {
                   'color-charcoal': variant === 'nutella-lilac',
                   'color-chalk': variant === 'mulberry-lilac',
@@ -124,7 +124,7 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
             className="FoundersImpactSlideshow__right-tile bg-color-lilac-darker w100 text-left radius-xs flex flex-col mb6 md:mb0"
             wrap={true}
           >
-            <div className="FoundersImpactSlideshow__right-tile-content flex flex-col justify-between col-12 color-charcoal h100 p1_5 md:p3_75">
+            <div className="FoundersImpactSlideshow__right-tile-content flex flex-col justify-between col-12 color-charcoal p1_5 md:p3_75">
               <p className="primary-xs">Tagline placeholder text</p>
               <p className="primary-lg">
                 <span className="primary-xs vertical-align-middle uppercase pr3_75">

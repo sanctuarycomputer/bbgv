@@ -4,12 +4,17 @@
   min-width: 100%;
   width: 0;
 
-  &__left-tile,
-  &__right-tile {
-    min-height: 17.5rem;
+  &__right-tile,
+  &__left-tile {
+    background-clip: padding-box;
+  }
+
+  &__right-tile-content,
+  &__left-tile-content {
+    min-height: 15.0625rem;
 
     @include media('md-up') {
-      min-height: 28.75rem;
+      min-height: 23.75rem;
     }
   }
 
