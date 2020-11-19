@@ -6,7 +6,7 @@ import Language from 'constants/Language';
 import { Button } from 'components/base';
 import generateFounderFullName from 'utils/generateFounderFullName';
 
-//TO-DO: Add generate company slug util and replace links
+//TO-DO: Add generate company slug util and replace links. Edit schema when decision has been made about taglines.
 
 type Props = {
   slides: FoundersImpactSlide[];
@@ -75,6 +75,12 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
   };
 
   renderSlide = (slide: FoundersImpactSlide) => {
+    const foundersLength = slide.company.founders?.length;
+
+    if (!foundersLength) {
+      return null;
+    }
+
     return (
       <div
         key={slide.company.name}
@@ -90,7 +96,7 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
           >
             <div className="FoundersImpactSlideshow__left-tile-content flex flex-col justify-between col-12 color-charcoal h100 p1_5 md:p3_75">
               <p className="primary-lg">{slide.leftHeadline}</p>
-              <p className="primary-xs">Link to sector</p>
+              <p className="primary-xs">Tagline placeholder text</p>
             </div>
           </Button>
         </div>
@@ -104,11 +110,22 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
             wrap={true}
           >
             <div className="FoundersImpactSlideshow__right-tile-content flex flex-col justify-between col-12 color-charcoal h100 p1_5 md:p3_75">
-              <p className="primary-xs">Link to sector</p>
+              <p className="primary-xs">Tagline placeholder text</p>
               <p className="primary-lg">
                 <span className="primary-xs vertical-align-middle uppercase pr3_75">
                   {slide.company.founders?.map((founder: Founder, index: number) => (
-                    <span className="color-charcoal">{generateFounderFullName(founder)}</span>
+                    <span key={`FoundersImpactSlideshow-${founder.firstName}`}>
+                      {index !== foundersLength - 1 ? (
+                        <span>
+                          <span>{generateFounderFullName(founder)}</span>
+                          <span className="color-charcoal">, </span>
+                        </span>
+                      ) : (
+                        <span>
+                          <span>{generateFounderFullName(founder)} </span>
+                        </span>
+                      )}
+                    </span>
                   ))}
                 </span>
                 {slide.rightHeadline}
@@ -130,11 +147,9 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
           <div className="FoundersImpactSlideshow__pagination relative col-12 flex flex-col">
             <div className="FoundersImpactSlideshow__pagination__inner flex flex-row col-12">
               {slides.map((slide: FoundersImpactSlide, index) => {
-                const uniqueKey = '';
-
                 return (
                   <button
-                    key={`FoundersImpactSlideshow-${uniqueKey}`}
+                    key={`FoundersImpactSlideshow-${slide.leftHeadline}`}
                     aria-label={Language.t('FoundersImpactSlideshow.paginationDot', {
                       slideNumber: index + 1,
                     })}
@@ -174,12 +189,10 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
             speed={1000}
           >
             {slides.map((slide: FoundersImpactSlide, index: number) => {
-              const uniqueKey = '';
-
               return (
                 <div
                   className="FoundersImpactSlideshow__slide w100 items-center flex-wrap"
-                  key={`FoundersImpactSlideshow-${uniqueKey}`}
+                  key={`FoundersImpactSlideshow-${slide.rightHeadline}`}
                 >
                   <div
                     className={cx('col-12 flex justify-center', {
