@@ -25,6 +25,7 @@ import ImageField from './fields/imageField';
 import PortableText from './fields/portableText';
 import ButtonField from './fields/buttonField';
 import SlugField from './fields/slugField';
+import ColorList from './fields/colorList';
 
 export default createSchema({
   name: 'default',
@@ -50,5 +51,6 @@ export default createSchema({
     PortableText,
     ButtonField,
     SlugField,
+    ColorList,
   ]),
 });
