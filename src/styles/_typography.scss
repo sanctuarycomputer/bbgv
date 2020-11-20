@@ -1,18 +1,18 @@
-$abcdiatype: 'ABCDiatype-Regular-Trial', sans-serif;
-$abcdiatype-bold: 'ABCDiatype-Bold-Trial', sans-serif;
-$benton: 'BentonSansComp-Bold', sans-serif;
+$abcdiatype: 'ABCDiatype-Regular', sans-serif;
+$abcdiatype-bold: 'ABCDiatype-Bold', sans-serif;
+$benton: 'Benton', sans-serif;
 
 /** Families */
 .font-primary {
-  font-family: $abcdiatype;
-}
-
-.font-primary-bold {
-  font-family: $abcdiatype-bold;
+  font-family: $benton;
 }
 
 .font-secondary {
-  font-family: $benton;
+  font-family: $abcdiatype;
+}
+
+.font-secondary-bold {
+  font-family: $abcdiatype-bold;
 }
 
 /** Styles */

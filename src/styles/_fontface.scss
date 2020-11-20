@@ -1,34 +1,37 @@
 /** 
-  ABCDiatype - Primary Sans
+  BentonSansComp - Primary
 */
 
 @font-face {
-  font-family: 'ABCDiatype-Regular-Trial';
-  src: url('/assets/fonts/abcdiatype-regular.otf') format('opentype'),
-    url('/assets/fonts/abcdiatype-regular.woff') format('woff'),
-    url('/assets/fonts/abcdiatype-regular.woff2') format('woff2');
-  font-weight: 400;
+  font-family: 'Benton';
+  src: url('/assets/fonts/benton.otf') format('opentype'),
+    url('/assets/fonts/benton.woff2') format('woff2'),
+    url('/assets/fonts/benton.woff') format('woff');
+  font-weight: 700;
   font-style: normal;
-}
-
-@font-face {
-  font-family: 'ABCDiatype-Bold-Trial';
-  src: url('/assets/fonts/abcdiatype-bold.otf') format('opentype'),
-    url('/assets/fonts/abcdiatype-bold.woff') format('woff'),
-    url('/assets/fonts/abcdiatype-bold.woff2') format('woff2');
-  font-weight: 600;
-  font-style: normal;
+  font-display: swap;
 }
 
 /** 
-  BentonSansComp - Secondary
+  ABCDiatype - Secondary
 */
 
 @font-face {
-  font-family: 'BentonSansComp-Bold';
-  src: url('/assets/fonts/benton-sans-bold.otf') format('opentype'),
-    url('/assets/fonts/benton-sans-bold.woff') format('woff'),
-    url('/assets/fonts/benton-sans-bold.woff2') format('woff2');
-  font-weight: 700;
+  font-family: 'ABCDiatype-Regular';
+  src: url('/assets/fonts/abcdiatype-regular.otf') format('opentype'),
+    url('/assets/fonts/abcdiatype-regular.woff2') format('woff2'),
+    url('/assets/fonts/abcdiatype-regular.woff') format('woff');
+  font-weight: 400;
   font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ABCDiatype-Bold';
+  src: url('/assets/fonts/abcdiatype-bold.otf') format('opentype'),
+    url('/assets/fonts/abcdiatype-bold.woff2') format('woff2'),
+    url('/assets/fonts/abcdiatype-bold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
