@@ -1,37 +1,45 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
+import withBreakpoints, { InjectedProps as WithBreakpointsProps } from 'lib/withBreakpoints';
 import { PressListItem } from 'lib/cms/types';
 import { Button } from 'components/base';
 import { LineIcon } from 'components/icons';
 
-type Props = {
+type PassedProps = {
   className?: string;
   items: PressListItem[];
 };
 
-const PressList: React.FC<Props> = ({ items, className }) => {
+type Props = PassedProps & WithBreakpointsProps;
+
+const PressList: React.FC<Props> = ({ items, className, currentBreakpoint }) => {
   return (
     <div className={cx(`PressList ${className} flex flex-row flex-wrap secondary-sm`)}>
       {items.map((item: PressListItem) => (
         <div key={item.heading} className="PressList__item">
-          {PressItem(item)}
+          {PressItem(item, currentBreakpoint)}
         </div>
       ))}
     </div>
   );
 };
 
-export default PressList;
+export default withBreakpoints<Props>(PressList);
 
-const PressItem = (item: PressListItem) => {
+const PressItem = (item: PressListItem, currentBreakpoint: string) => {
   const [hoverButton, setHoverButton] = useState(false);
+  const breakpointIsSmDown = ['EXTRA_SMALL', 'SMALL'].includes(currentBreakpoint);
 
   return (
     <div className="PressList__item-inner-container flex flex-row py1_5">
       <div className={cx(`PressList__source secondary-sm col-3 pr1 md:pr0`)}>{item.source}</div>
       <div className="PressList__heading-container primary-md col-8">
         <span className="mr1_5">{item.heading}</span>
-        <span className="PressList__button">
+        <span
+          className={cx('PressList__button', {
+            block: breakpointIsSmDown,
+          })}
+        >
           <Button
             wrap={true}
             className={cx(
