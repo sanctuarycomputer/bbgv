@@ -19,6 +19,7 @@ import FoundersImpactSlideshow from './layouts/foundersImpactSlideshow';
 import HeroTextModule from './layouts/heroTextModule';
 import TextModule from './layouts/textModule';
 import TextModuleWithParagraphs from './layouts/textModuleWithParagraphs';
+import PressListModule from './layouts/pressListModule';
 
 /** References */
 import Founder from './references/founder';
@@ -52,6 +53,7 @@ export default createSchema({
     HeroTextModule,
     TextModule,
     TextModuleWithParagraphs,
+    PressListModule,
 
     /** References */
     Founder,

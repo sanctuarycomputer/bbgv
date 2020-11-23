@@ -6,7 +6,7 @@ import { ContentPage as Meta } from 'components/Meta';
 import HeroTextModule from 'components/layouts/HeroTextModule';
 import TextModule from 'components/layouts/TextModule';
 import TextModuleWithParagraphs from 'components/layouts/TextModuleWithParagraphs';
-import { values } from 'lodash';
+import PressList from 'components/layouts/PressList';
 
 type Props = ContainerProps & {
   model: AboutPage;
@@ -14,7 +14,7 @@ type Props = ContainerProps & {
 
 const AboutView: FC<Props> = (props) => {
   const { model } = props;
-  const { hero, seo, teamHeading, pressHeading, valuesSection, contact } = model;
+  const { hero, seo, teamHeading, pressHeading, pressList, valuesSection, contact } = model;
 
   return (
     <div className="AboutView primary-xxl">
@@ -53,6 +53,7 @@ const AboutView: FC<Props> = (props) => {
           subheading={pressHeading.subheading}
           briefParagraph={pressHeading.briefParagraph}
         />
+        <PressList className="pb3_75 lg:pb10" items={pressList.items} />
       </div>
       <TextModule
         className="text-module-padding-x py3_75 lg:py10"
