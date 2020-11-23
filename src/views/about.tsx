@@ -53,7 +53,7 @@ const AboutView: FC<Props> = (props) => {
           subheading={pressHeading.subheading}
           briefParagraph={pressHeading.briefParagraph}
         />
-        <PressList className="pb3_75 lg:pb10" items={pressList.items} />
+        <PressList className="col-12 md:col-10 mxauto pb3_75 lg:pb10" items={pressList.items} />
       </div>
       <TextModule
         className="text-module-padding-x py3_75 lg:py10"

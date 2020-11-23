@@ -28,7 +28,7 @@ const PressItem = (item: PressListItem) => {
 
   return (
     <div className="PressList__item-inner-container flex flex-row py1_5">
-      <div className={cx(`PressList__source secondary-sm col-2 md:col-3`)}>{item.source}</div>
+      <div className={cx(`PressList__source secondary-sm col-3 pr1 md:pr0`)}>{item.source}</div>
       <div className="PressList__heading-container primary-md col-8">
         <span className="mr1_5">{item.heading}</span>
         <span className="PressList__button">
