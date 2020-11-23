@@ -25,6 +25,29 @@ export const Block = t.type({
   ),
 });
 
+export type PortableTextLink = t.TypeOf<typeof PortableTextLink>;
+export const PortableTextLink = t.type({
+  _key: t.string,
+  _type: t.string,
+  mark: t.partial({
+    _key: t.string,
+    _type: t.string,
+    href: t.string,
+    blank: t.boolean,
+  }),
+  markKey: t.string,
+  children: t.array(
+    t.partial({ _key: t.string, _type: t.string, marks: t.array(t.string), text: t.string })
+  ),
+});
+
+export type SeoSettings = t.TypeOf<typeof SeoSettings>;
+export const SeoSettings = t.partial({
+  title: t.string,
+  description: t.string,
+  image: Image,
+});
+
 export type Founder = t.TypeOf<typeof Founder>;
 export const Founder = t.partial({
   _type: t.string,
@@ -75,8 +98,22 @@ export type FoundersImpactSlideshow = t.TypeOf<typeof FoundersImpactSlideshow>;
 export const FoundersImpactSlideshow = t.type({
   _type: t.string,
   slides: t.array(FoundersImpactSlide),
-  variant: FoundersImpactSlideshowVariant,
+  variant: FoundersImpactSlideshowVariant
 });
+
+export type HeroTextModule = t.TypeOf<typeof HeroTextModule>;
+export const HeroTextModule = t.intersection([
+  t.type({
+    _type: t.string,
+    title: t.string,
+    heading: t.array(Block),
+    introLine: t.string,
+    introByline: t.array(Block),
+  }),
+  t.partial({
+    briefParagraph: t.array(Block),
+  }),
+]);
 
 export type HomeHero = t.TypeOf<typeof HomeHero>;
 export const HomeHero = t.type({
@@ -104,13 +141,7 @@ export const NewsletterModule = t.type({
   _type: t.string,
   headline: t.array(Block),
   title: t.string,
-});
-
-export type SeoSettings = t.TypeOf<typeof SeoSettings>;
-export const SeoSettings = t.partial({
-  title: t.string,
-  description: t.string,
-  image: Image,
+  bgColor: t.string,
 });
 
 export type GlobalSettings = t.TypeOf<typeof GlobalSettings>;
@@ -124,4 +155,10 @@ export const HomePage = t.type({
   hero: HomeHero,
   foundersImpactSlideshow: FoundersImpactSlideshow,
   newsletter: NewsletterModule,
+});
+
+export type AboutPage = t.TypeOf<typeof AboutPage>;
+export const AboutPage = t.type({
+  seo: SeoSettings,
+  hero: HeroTextModule,
 });

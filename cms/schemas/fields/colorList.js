@@ -1,6 +1,6 @@
 export default {
   title: 'Color List',
-  description: 'Pick a color',
+  description: 'Choose a color',
   name: 'colorList',
   type: 'colors', // required
   options: {

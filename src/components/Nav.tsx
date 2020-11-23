@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import cx from 'classnames';
 import withBreakpoints, { InjectedProps as WithBreakpointsProps } from 'lib/withBreakpoints';
@@ -11,7 +12,7 @@ import hasPassedElement from 'utils/hasPassedElement';
 import Classes from 'constants/Classes';
 
 import { Button } from 'components/base';
-import { MenuIcon, CloseIcon, BBGLogo, VenturesLogo } from 'components/icons';
+import { BBGVLogo, MenuIcon, CloseIcon, BBGLogo, VenturesLogo } from 'components/icons';
 
 type PassedProps = {
   theme: Theme;
@@ -24,15 +25,23 @@ type Props = PassedProps & WithBreakpointsProps;
 
 const Nav: React.FC<Props> = (props) => {
   const { onOpenMenu, onCloseMenu, theme, menuIsOpen, currentBreakpoint } = props;
-  const iconColor = theme === 'default' ? 'black' : 'chalk';
+  const iconColor = theme === 'default' ? 'charcoal' : 'chalk';
   const breakpointIsSmDown = ['EXTRA_SMALL', 'SMALL'].includes(currentBreakpoint);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [hoverLogo, setHoverLogo] = useState(false);
   const [showNavLogo, setShowNavLogo] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === RouteMap.HOME.path;
 
-  const handleNavLogo = () => {
+  const handleNavLogo = useCallback(() => {
     /* Determines if the current scroll position is before of after the logo in the Home Hero Module **/
     const logo = document.querySelector(`.${Classes.homeHeroLogo}`);
+    const scrollTop =
+      get(window, 'pageYOffset', 0) || get(document, 'documentElement.scrollTop', 0);
+
+    if (scrollTop === 0 && showNavLogo) {
+      setShowNavLogo(false);
+    }
 
     if (logo) {
       if (!hasPassedElement(logo) && showNavLogo) {
@@ -43,7 +52,7 @@ const Nav: React.FC<Props> = (props) => {
         setShowNavLogo(true);
       }
     }
-  };
+  }, [showNavLogo]);
 
   const handleMarginTop = () => {
     if (breakpointIsSmDown) {
@@ -53,6 +62,7 @@ const Nav: React.FC<Props> = (props) => {
     }
   };
 
+  /* Disables body scroll when menu overlay is open. **/
   const handleBodyScroll = useCallback(() => {
     menuIsOpen
       ? document.body.classList.add('disable-body-scroll')
@@ -81,6 +91,10 @@ const Nav: React.FC<Props> = (props) => {
     handleBodyScroll();
   }, [menuIsOpen, handleBodyScroll]);
 
+  useEffect(() => {
+    handleNavLogo();
+  }, [location, handleNavLogo]);
+
   return (
     <nav
       style={{
@@ -89,23 +103,39 @@ const Nav: React.FC<Props> = (props) => {
       className="Nav site-inner-content-max-width site-padding-x mxauto z-nav flex items-center justify-between fixed w100 t0 l0"
     >
       <Button
+        containerClassName={cx(
+          'Nav__logo-outer-container opacity-0 events-none transition-shortest',
+          {
+            'events-none opacity-0': !showNavLogo && isHome,
+            'events-all opacity-1': !isHome,
+            'events-all opacity-1 Nav__logo-container--style-scrolled overflow-x-hidden':
+              showNavLogo && isHome,
+          }
+        )}
+        className={cx('Nav__logo-container', {
+          'events-none opacity-0': !showNavLogo && isHome,
+          'events-all opacity-1 Nav__logo-container--style-scrolled overflow-x-hidden':
+            showNavLogo && isHome,
+        })}
         ariaLabel={Language.t('Global.navigateToHome')}
         to={RouteMap.HOME.path}
         wrap={false}
         onMouseEnter={() => setHoverLogo(true)}
         onMouseLeave={() => setHoverLogo(false)}
-        className={cx('Nav__logo-container opacity-0 transition-shortest', {
-          'events-none opacity-0': !showNavLogo,
-          'events-all opacity-1 Nav__logo-container--style-scrolled overflow-x-hidden': showNavLogo,
-        })}
       >
-        <BBGLogo className="Nav__logo-bbg" color={iconColor} />
-        <VenturesLogo
-          className={cx('Nav__logo-ventures', {
-            'move-right': hoverLogo,
-          })}
-          color={iconColor}
-        />
+        {isHome && showNavLogo ? (
+          <span>
+            <BBGLogo className="Nav__logo-bbg" color={iconColor} />
+            <VenturesLogo
+              className={cx('Nav__logo-ventures', {
+                'move-right': hoverLogo,
+              })}
+              color={iconColor}
+            />
+          </span>
+        ) : (
+          <BBGVLogo className="Nav__logo-bbgv" color={iconColor} />
+        )}
       </Button>
 
       {menuIsOpen ? (

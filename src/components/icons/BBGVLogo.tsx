@@ -11,8 +11,8 @@ const BBGVLogo: React.FC<Props> = ({ color, className = '' }) => {
   return (
     <svg
       className={className}
-      width="184"
-      height="22"
+      width="100%"
+      height="100%"
       viewBox="0 0 184 22"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

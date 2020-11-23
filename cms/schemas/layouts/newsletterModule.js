@@ -4,6 +4,12 @@ export default {
   type: 'object',
   fields: [
     {
+      name: 'bgColor',
+      title: 'Background Color',
+      type: 'colorList',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'title',
       title: 'Title',
       type: 'string',

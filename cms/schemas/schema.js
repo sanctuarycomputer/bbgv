@@ -9,11 +9,13 @@ import GlobalSettings from './GlobalSettings';
 
 /** Pages */
 import HomePage from './pages/home';
+import AboutUsPage from './pages/about';
 
 /** Layouts */
 import HomeHeroModule from './layouts/homeHeroModule';
 import NewsletterModule from './layouts/newsletterModule';
 import FoundersImpactSlideshow from './layouts/foundersImpactSlideshow';
+import HeroTextModule from './layouts/heroTextModule';
 
 /** References */
 import Founder from './references/founder';
@@ -35,11 +37,13 @@ export default createSchema({
 
     /** Pages */
     HomePage,
+    AboutUsPage,
 
     /** Layouts */
     HomeHeroModule,
     NewsletterModule,
     FoundersImpactSlideshow,
+    HeroTextModule,
 
     /** References */
     Founder,

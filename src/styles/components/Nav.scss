@@ -8,7 +8,14 @@
     height: $nav-height-desktop;
   }
 
-  &__logo-bbq,
+  &__logo-bbgv {
+    width: $home-hero-logo-width-mobile;
+
+    @include media('md-up') {
+      width: $home-hero-logo-width-desktop;
+    }
+  }
+
   &__logo-ventures {
     height: 0.875rem;
 

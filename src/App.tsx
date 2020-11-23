@@ -28,8 +28,8 @@ export default function App() {
 
   return (
     <main className="App">
-      <Nav theme={theme} menuIsOpen={menuIsOpen} onOpenMenu={openMenu} onCloseMenu={closeMenu} />
       <Router>
+        <Nav theme={theme} menuIsOpen={menuIsOpen} onOpenMenu={openMenu} onCloseMenu={closeMenu} />
         <Routes />
         {'footerMenu' in globalSettings && <Footer globalSettings={globalSettings} />}
       </Router>

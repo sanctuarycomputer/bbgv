@@ -16,14 +16,18 @@ const HomeView: FC<Props> = (props) => {
   const { hero, seo, newsletter, foundersImpactSlideshow } = model;
 
   return (
-    <div className="HomeView primary-xxl page">
+    <div className="HomeView primary-xxl page-style--margin-top">
       <Meta seo={seo} />
       <HomeHero headline={hero.headline} founders={hero.founders} />
       <FoundersImpactSlideshow
         variant={foundersImpactSlideshow.variant}
         slides={foundersImpactSlideshow.slides}
       />
-      <NewsletterModule headline={newsletter.headline} title={newsletter.title} />
+      <NewsletterModule
+        bgColor={newsletter.bgColor}
+        headline={newsletter.headline}
+        title={newsletter.title}
+      />
     </div>
   );
 };

@@ -1,3 +1,8 @@
+import React from 'react';
+import { PortableTextColors } from '../../constants';
+
+const COLOR_ICON_RADIUS = '12px';
+
 export default {
   name: 'portableText',
   type: 'array',
@@ -35,6 +40,23 @@ export default {
           { title: 'Strong', value: 'strong' },
           { title: 'Emphasis', value: 'em' },
           { title: 'Underline', value: 'underline' },
+          ...Object.entries(PortableTextColors).map(([color, hex]) => ({
+            title: `Color – ${color}`,
+            value: color,
+            blockEditor: {
+              icon: () => (
+                <div
+                  style={{
+                    backgroundColor: hex,
+                    borderRadius: '50%',
+                    width: COLOR_ICON_RADIUS,
+                    height: COLOR_ICON_RADIUS,
+                  }}
+                />
+              ),
+              render: (props) => <span style={{ color: hex }}>{props.children}</span>,
+            },
+          })),
         ],
       },
     },

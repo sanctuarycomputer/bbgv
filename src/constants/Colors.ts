@@ -26,3 +26,10 @@ export enum HexColors {
   'charcoal' = '#242424',
   'black' = '#000000',
 }
+
+export const PortableTextColors = {
+  CHALK: '#fafaf6',
+  LILAC: '#cdd4fd',
+  MULBERRY: '#682f4e',
+  CHARCOAL: '#242424',
+};

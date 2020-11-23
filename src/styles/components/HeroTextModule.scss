@@ -1,0 +1,32 @@
+.HeroTextModule {
+  &__heading p,
+  &__introByline p {
+    display: inline;
+  }
+
+  &--style-nutella,
+  &--style-lilac {
+    &__heading p a,
+    &__introByline p a {
+      @extend .transition-shorter;
+
+      color: color('charcoal');
+
+      &:hover {
+        color: color('chalk');
+      }
+    }
+  }
+
+  &--style-mulberry {
+    &__heading p a,
+    &__introByline p a {
+      @extend .transition-shorter;
+      color: color('chalk');
+
+      &:hover {
+        color: color('lilac');
+      }
+    }
+  }
+}

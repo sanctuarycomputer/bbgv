@@ -14,7 +14,7 @@
   }
 }
 
-.page {
+.page-style--margin-top {
   margin-top: calc(#{$nav-top-margin-mobile} + #{$nav-height-mobile});
 
   @include media('xl-up') {

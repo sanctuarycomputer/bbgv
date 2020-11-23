@@ -1,16 +1,21 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useLocation } from 'react-router-dom';
 
-import HomeContainer from 'containers/home';
 import { RouteMap } from 'constants/RouteMap';
 
 const Routes: React.FC = () => {
+  const location = useLocation();
+
   return (
-    <Switch>
+    <Switch location={location}>
       {Object.values(RouteMap).map((route) => (
-        <Route key={route.path} path={route.path} exact={route.exact} component={route.component} />
+        <Route
+          exact={'exact' in route ? route.exact : true}
+          key={route.path}
+          path={route.path}
+          component={route.component}
+        />
       ))}
-      <Route exact path="/" component={HomeContainer} />
     </Switch>
   );
 };

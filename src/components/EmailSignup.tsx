@@ -65,7 +65,12 @@ const EmailSignup: React.FC<Props> = ({ variant }) => {
           </span>
         </div>
         {formik.errors.emailAddress && (
-          <div className="EmailSignup__error secondary-xxs py_25 color-charcoal absolute">
+          <div
+            className={cx('EmailSignup__error secondary-xxs py_25 absolute', {
+              'color-charcoal': variant === 'footer',
+              'color-chalk': variant === 'module',
+            })}
+          >
             {formik.errors.emailAddress}
           </div>
         )}

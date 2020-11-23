@@ -1,4 +1,5 @@
 import HomeContainer from 'containers/home';
+import AboutContainer from 'containers/about';
 
 import { RouteObject } from 'types';
 
@@ -11,9 +12,9 @@ export const RouteMap: { [id: string]: RouteObject } = {
     component: HomeContainer,
   },
   ABOUT: {
-    path: '/about',
+    path: '/about-us',
     exact: true,
-    component: HomeContainer,
+    component: AboutContainer,
   },
   COMPANIES: {
     path: '/companies',

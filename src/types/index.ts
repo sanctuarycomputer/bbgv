@@ -21,7 +21,7 @@ export enum Status {
   REJECTED = 'REJECTED',
 }
 
-export type Theme = 'default' | 'white';
+export type Theme = 'default' | 'chalk';
 
 export type ThunkResult<R> = ThunkAction<R, GlobalState, undefined, Action>;
 
