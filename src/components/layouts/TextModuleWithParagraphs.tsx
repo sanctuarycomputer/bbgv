@@ -6,7 +6,7 @@ import { LineIcon } from 'components/icons';
 
 type Props = {
   className?: string;
-  variant: string;
+  variant: 'one-column' | 'two-columns';
   subheading?: string;
   heading: Block[];
   text?: Block[];
