@@ -86,7 +86,7 @@ const Nav: React.FC<Props> = (props) => {
       style={{
         marginTop: handleMarginTop(),
       }}
-      className="Nav site-max-width site-padding-x mxauto z-nav flex items-center justify-between fixed w100 t0 l0"
+      className="Nav site-inner-content-max-width site-padding-x mxauto z-nav flex items-center justify-between fixed w100 t0 l0"
     >
       <Button
         ariaLabel={Language.t('Global.navigateToHome')}

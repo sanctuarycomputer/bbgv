@@ -6,6 +6,11 @@ export default `{
     'caption': logo.caption,
     'alt': logo.alt
   },
-  'founders': founders[]->${FounderGroq},
-  ...
+  description,
+  name, 
+  sector,
+  tag,
+  careersLink,
+  website,
+  'founders': founders[]->${FounderGroq}
 }`;

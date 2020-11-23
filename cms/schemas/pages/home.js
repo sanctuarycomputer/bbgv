@@ -26,6 +26,15 @@ export default {
       },
     },
     {
+      title: "Founder's Impact Slideshow",
+      name: 'foundersImpactSlideshow',
+      type: 'foundersImpactSlideshow',
+      options: {
+        collapsible: true,
+        collapsed: false,
+      },
+    },
+    {
       title: 'Newsletter',
       name: 'newsletter',
       type: 'newsletterModule',

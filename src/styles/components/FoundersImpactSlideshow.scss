@@ -1,0 +1,119 @@
+.FoundersImpactSlideshow {
+  /** Fixes overflow issues */
+  overflow: hidden;
+  min-width: 100%;
+  width: 0;
+
+  &__right-tile-content,
+  &__left-tile-content {
+    min-height: 15.0625rem;
+
+    @include media('md-up') {
+      min-height: 23.75rem;
+    }
+  }
+
+  &__left-tile-content {
+    @include media('xxl-up') {
+      padding-left: 13.125rem;
+    }
+  }
+
+  &__right-tile-content {
+    @include media('xxl-up') {
+      padding-right: 13.125rem;
+    }
+  }
+
+  .slick-active {
+    .FoundersImpactSlideshow__slide__card-container {
+      transform: translate3d(0, 0, 0);
+    }
+
+    .FoundersImpactSlideshow__slide__card {
+      &::before {
+        transform: translate3d(-3rem, 0, 0);
+      }
+
+      &::after {
+        transform: translate3d(-1.5rem, 0, 0);
+      }
+    }
+  }
+
+  .slick-track {
+    display: flex !important;
+  }
+
+  .slick-slide {
+    height: inherit !important;
+
+    & > * {
+      height: 100%;
+    }
+  }
+
+  &__slide {
+    display: inline-flex !important;
+    height: 100%;
+
+    &__card-container {
+      @extend .transition;
+      transform: translate3d(-3rem, 0, 0);
+
+      @include media('sm-up') {
+        height: 100%;
+      }
+    }
+  }
+
+  &__pagination-container {
+    bottom: 0;
+    right: 0;
+
+    @include media('md-up') {
+      top: 0;
+    }
+  }
+  &__pagination {
+    &__dot {
+      position: relative;
+      height: 0.1875rem;
+      margin-right: 0.1875rem;
+      width: 1.5rem;
+      background: color('lilac-lighter');
+
+      @include media('sm-up') {
+        width: 1.6875rem;
+      }
+
+      &__progress {
+        width: 0;
+        height: 100%;
+        background: color('lilac-darkest');
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      &--active .FoundersImpactSlideshow__pagination__dot__progress {
+        width: 100%;
+      }
+
+      &--current .FoundersImpactSlideshow__pagination__dot__progress {
+        animation: carousel-after-expand forwards linear;
+      }
+    }
+  }
+
+  @keyframes carousel-after-expand {
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 100%;
+    }
+  }
+}

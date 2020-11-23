@@ -14,14 +14,6 @@
     }
   }
 
-  &__founder {
-    color: color('lilac');
-
-    @include media('md-up') {
-      color: color('charcoal');
-    }
-  }
-
   &__photo-card {
     top: 3rem;
     right: -6rem;

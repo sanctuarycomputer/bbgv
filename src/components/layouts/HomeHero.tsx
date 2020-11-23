@@ -5,23 +5,26 @@ import { Founder } from 'lib/cms/types';
 import Language from 'constants/Language';
 import generateFounderFullName from 'utils/generateFounderFullName';
 import Classes from 'constants/Classes';
-
+import withBreakpoints, { InjectedProps as WithBreakpointsProps } from 'lib/withBreakpoints';
 import { Button } from 'components/base';
 import { RouteMap } from 'constants/RouteMap';
 import PhotoCard from 'components/PhotoCard';
 import { BBGVLogo } from 'components/icons';
 import hasPassedElement from 'utils/hasPassedElement';
 
-type Props = {
+type PassedProps = {
   founders: Founder[];
   headline: string;
 };
 
+type Props = PassedProps & WithBreakpointsProps;
+
 //TO-DO: generate Company Detail page links
 
-const HomeHero: React.FC<Props> = ({ founders, headline }) => {
+const HomeHero: React.FC<Props> = ({ currentBreakpoint, founders, headline }) => {
   const [activeFounderIndex, setActiveFounderIndex] = useState(-1);
   const [hideLogo, setHideLogo] = useState(false);
+  const breakpointIsSmDown = ['EXTRA_SMALL', 'SMALL'].includes(currentBreakpoint);
 
   const handleScroll = () => {
     /* Determines if the current scroll position is before of after the logo in the Home Hero Module **/
@@ -49,7 +52,7 @@ const HomeHero: React.FC<Props> = ({ founders, headline }) => {
   }, [throttleHandleScroll]);
 
   return (
-    <div className="HomeHero primary-xxl site-max-width site-padding-x mxauto">
+    <div className="HomeHero primary-xxl site-inner-content-max-width site-padding-x mxauto">
       <span
         className={cx('HomeHero__logo-container inline-flex', {
           'HomeHero__logo-container--style-is-active opacity-1 events-all': !hideLogo,
@@ -69,57 +72,89 @@ const HomeHero: React.FC<Props> = ({ founders, headline }) => {
       <span className="color-charcoal primary-sm px2_25 md:px3_75 vertical-align-middle">
         {Language.t('Home.hero.ourFounders')}
       </span>
-      <span className="color-charcoal primary-xxl vertical-align-middle">
-        {founders.map((founder: Founder, index: number) => (
-          <span key={founder.firstName} className="HomeHero__founder relative">
-            <Button
-              className="HomeHero__founder inline text-decoration-none hover-color-lilac transition"
-              ariaLabel={Language.t('Founder.viewDetailPageButtonAriaLabel', {
-                founderFullName: generateFounderFullName(founder),
-              })}
-              to="/"
-              onMouseEnter={() => {
-                setActiveFounderIndex(index);
-              }}
-              onMouseLeave={() => {
-                setActiveFounderIndex(-1);
-              }}
-            >
-              {index !== founders.length - 1 ? (
-                <span>
-                  <span>{founder.firstName}</span>
-                  <span className="color-charcoal">, </span>
-                </span>
-              ) : (
-                <span>
-                  <span>{founder.firstName} </span>
-                </span>
-              )}
-            </Button>
-            <div
-              className={cx(
-                'HomeHero__photo-card absolute transition-shorter opacity-0 z-overlay',
-                {
-                  'PhotoCard--active opacity-1': index === activeFounderIndex,
-                  'opacity-0 events-none': index !== activeFounderIndex,
-                }
-              )}
-            >
-              <PhotoCard founder={founder} />
-            </div>
+
+      {breakpointIsSmDown ? (
+        <span>
+          <span className="primary-xxl">
+            {founders.map((founder: Founder, index: number) => (
+              <span key={founder.firstName} className="color-charcoal HomeHero__founder inline ">
+                {index !== founders.length - 1 ? (
+                  <span>
+                    <span>{founder.firstName}</span>
+                    <span className="color-charcoal">, </span>
+                  </span>
+                ) : (
+                  <span>
+                    <span>{founder.firstName} </span>
+                  </span>
+                )}
+              </span>
+            ))}
           </span>
-        ))}
-      </span>
-      <span>& </span>
-      <Button
-        className="HomeHero__founder inline text-decoration-none hover-color-lilac transition"
-        ariaLabel={Language.t('Home.hero.othersButtonAriaLabel')}
-        to="/"
-        label={Language.t('Home.hero.others')}
-      />
-      <span>.</span>
+          <span>& </span>
+          <Button
+            className="HomeHero__founder inline text-decoration-none hover-color-lilac transition color-lilac"
+            ariaLabel={Language.t('Home.hero.othersButtonAriaLabel')}
+            to="/"
+            label={Language.t('Home.hero.others')}
+          />
+          <span>.</span>
+        </span>
+      ) : (
+        <span>
+          <span className="color-charcoal primary-xxl">
+            {founders.map((founder: Founder, index: number) => (
+              <span key={founder.firstName} className="HomeHero__founder relative">
+                <Button
+                  className="HomeHero__founder inline text-decoration-none hover-color-lilac color-charcoal transition"
+                  ariaLabel={Language.t('Founder.viewDetailPageButtonAriaLabel', {
+                    founderFullName: generateFounderFullName(founder),
+                  })}
+                  to="/"
+                  onMouseEnter={() => {
+                    setActiveFounderIndex(index);
+                  }}
+                  onMouseLeave={() => {
+                    setActiveFounderIndex(-1);
+                  }}
+                >
+                  {index !== founders.length - 1 ? (
+                    <span>
+                      <span>{founder.firstName}</span>
+                      <span className="color-charcoal">, </span>
+                    </span>
+                  ) : (
+                    <span>
+                      <span>{founder.firstName} </span>
+                    </span>
+                  )}
+                </Button>
+                <div
+                  className={cx(
+                    'HomeHero__photo-card absolute transition-shorter opacity-0 z-overlay',
+                    {
+                      'PhotoCard--active opacity-1': index === activeFounderIndex,
+                      'opacity-0 events-none': index !== activeFounderIndex,
+                    }
+                  )}
+                >
+                  <PhotoCard founder={founder} />
+                </div>
+              </span>
+            ))}
+          </span>
+          <span>& </span>
+          <Button
+            className="HomeHero__founder inline text-decoration-none hover-color-lilac color-lilac transition"
+            ariaLabel={Language.t('Home.hero.othersButtonAriaLabel')}
+            to="/"
+            label={Language.t('Home.hero.others')}
+          />
+          <span>.</span>
+        </span>
+      )}
     </div>
   );
 };
 
-export default HomeHero;
+export default withBreakpoints<Props>(HomeHero);
