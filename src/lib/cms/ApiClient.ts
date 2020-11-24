@@ -6,6 +6,7 @@ import HeroTextModuleGroq from './groq/HeroTextModule';
 import GlobalSettingsGroq from './groq/GlobalSettings';
 import NewsletterGroq from './groq/Newsletter';
 import FoundersImpactSlideshowGroq from './groq/FoundersImpactSlideshow';
+import TextModuleGroq from './groq/TextModule';
 
 const ApiClient: {
   fetchGlobalSettings(): Promise<Cms.GlobalSettings | any>;
@@ -22,8 +23,13 @@ const ApiClient: {
       'hero': ${HomeHeroGroq},
       'seo': ${SeoSettingsGroq},
       'foundersImpactSlideshow': ${FoundersImpactSlideshowGroq},
+      'foundersImpactSectionHeading': ${TextModuleGroq},
+      'featuredFoundersCarouselSectionHeading': featuredFoundersCarouselSectionHeading${TextModuleGroq},
+      'whyWeInvest': whyWeInvest${TextModuleGroq},
+      'foundersImpactSectionHeading': foundersImpactSectionHeading${TextModuleGroq},
+      'contact': contact${TextModuleGroq},
       'newsletter': ${NewsletterGroq},
-      _type
+      _type,
     }`);
 
     return response;

@@ -5,8 +5,9 @@ import { FoundersImpactSlide, FoundersImpactSlideshowVariant, Founder } from 'li
 import Language from 'constants/Language';
 import { Button } from 'components/base';
 import generateFounderFullName from 'utils/generateFounderFullName';
+import { RouteMap } from 'constants/RouteMap';
 
-//TO-DO: Add generate company slug util and replace links. Edit schema when decision has been made about taglines.
+//TO-DO: Add generate company slug util and replace links. Left tile should link to companies page, right tile should link to company detail page.
 
 type Props = {
   slides: FoundersImpactSlide[];
@@ -89,9 +90,8 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
       >
         <div className="col-12 md:col-6 flex flex-col pr3 md:pr0">
           <Button
-            ariaLabel={Language.t('Global.generalButtonAriaLabel', {
-              link: '/',
-            })}
+            ariaLabel={Language.t('Global.companiesButtonAriaLabel')}
+            to={RouteMap.COMPANIES.path}
             wrap={true}
             className={cx(
               'FoundersImpactSlideshow__left-tile radius-xs w100 text-left flex flex-col',
@@ -111,7 +111,7 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
               )}
             >
               <p className="primary-lg">{slide.leftHeadline}</p>
-              <p className="primary-xs">Tagline placeholder text</p>
+              <p className="primary-xs">{slide.leftSubheading}</p>
             </div>
           </Button>
         </div>
@@ -119,13 +119,14 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
         <div className="col-12 md:col-6 flex flex-col pl3 md:pl0 md:mt8">
           <Button
             ariaLabel={Language.t('Global.generalButtonAriaLabel', {
-              link: '/',
+              link: 'TO-DO',
             })}
+            to="/"
             className="FoundersImpactSlideshow__right-tile bg-color-lilac-darker w100 text-left radius-xs flex flex-col mb6 md:mb0"
             wrap={true}
           >
             <div className="FoundersImpactSlideshow__right-tile-content flex flex-col justify-between col-12 color-charcoal p1_5 md:p3_75">
-              <p className="primary-xs">Tagline placeholder text</p>
+              <p className="primary-xs">{slide.rightSubheading}</p>
               <p className="primary-lg">
                 <span className="primary-xs vertical-align-middle uppercase pr3_75">
                   {slide.company.founders?.map((founder: Founder, index: number) => (

@@ -8,6 +8,16 @@ export default {
       title: 'SEO',
       options: { collapsible: true, collapsed: true },
     },
+    {
+      name: 'featuredFoundersCarouselSection',
+      title: 'Featured Founders Carousel Section',
+      options: { collapsible: true, collapsed: false },
+    },
+    {
+      name: 'foundersImpactSection',
+      title: 'Founders Impact Section',
+      options: { collapsible: true, collapsed: false },
+    },
   ],
   fields: [
     {
@@ -26,13 +36,36 @@ export default {
       },
     },
     {
+      title: 'Heading',
+      name: 'featuredFoundersCarouselSectionHeading',
+      type: 'textModule',
+      fieldset: 'featuredFoundersCarouselSection',
+    },
+    {
+      title: 'Why We Invest Section',
+      name: 'whyWeInvest',
+      type: 'textModule',
+    },
+    {
+      title: 'Heading',
+      name: 'foundersImpactSectionHeading',
+      type: 'textModule',
+      fieldset: 'foundersImpactSection',
+    },
+    {
       title: "Founder's Impact Slideshow",
       name: 'foundersImpactSlideshow',
       type: 'foundersImpactSlideshow',
+      fieldset: 'foundersImpactSection',
       options: {
         collapsible: true,
         collapsed: false,
       },
+    },
+    {
+      title: 'Contact Section',
+      name: 'contact',
+      type: 'textModule',
     },
     {
       title: 'Newsletter',

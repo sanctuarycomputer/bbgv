@@ -6,6 +6,8 @@ export default `{
   "slides": foundersImpactSlideshow.slides[]{
     "leftHeadline": leftHeadline,
     "rightHeadline": rightHeadline,
+    "leftSubheading": leftSubheading,
+    "rightSubheading": rightSubheading,
     "company": company->${CompanyGroq}
   },
 }`;

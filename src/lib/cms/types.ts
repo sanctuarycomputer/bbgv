@@ -88,6 +88,8 @@ export type FoundersImpactSlide = t.TypeOf<typeof FoundersImpactSlide>;
 export const FoundersImpactSlide = t.type({
   leftHeadline: t.array(Block),
   rightHeadline: t.array(Block),
+  leftSubheading: t.string,
+  rightSubheading: t.string,
   company: Company,
 });
 
@@ -112,6 +114,29 @@ export const HeroTextModule = t.intersection([
   }),
   t.partial({
     briefParagraph: t.array(Block),
+  })
+]);
+
+export type ParagraphWithButton = t.TypeOf<typeof ParagraphWithButton>;
+export const ParagraphWithButton = t.intersection([
+  t.type({
+    _type: t.string,
+    paragraph: t.array(Block),
+  }),
+  t.partial({
+    button: Button,
+  }),
+]);
+
+export type TextModule = t.TypeOf<typeof TextModule>;
+export const TextModule = t.intersection([
+  t.type({
+    _type: t.string,
+    heading: t.array(Block),
+  }),
+  t.partial({
+    subheading: t.string,
+    briefParagraph: ParagraphWithButton,
   }),
 ]);
 
@@ -154,6 +179,10 @@ export const HomePage = t.type({
   seo: SeoSettings,
   hero: HomeHero,
   foundersImpactSlideshow: FoundersImpactSlideshow,
+  featuredFoundersCarouselSectionHeading: TextModule,
+  whyWeInvest: TextModule,
+  foundersImpactSectionHeading: TextModule,
+  contact: TextModule,
   newsletter: NewsletterModule,
 });
 

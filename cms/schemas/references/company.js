@@ -66,7 +66,7 @@ export default {
   preview: {
     select: {
       companyName: 'name',
-      companyLogo: 'companyLogo',
+      companyLogo: 'logo',
     },
     prepare(selection) {
       const { companyName, companyLogo } = selection;

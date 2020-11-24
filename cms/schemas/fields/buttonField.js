@@ -15,6 +15,7 @@ export default {
       validation: (Rule) =>
         Rule.uri({
           allowRelative: true,
+          scheme: ['http', 'https', 'mailto', 'tel'],
         }),
     },
   ],

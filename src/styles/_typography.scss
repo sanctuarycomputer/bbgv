@@ -28,7 +28,7 @@ $benton: 'benton', sans-serif;
   font-size: 3.125rem;
   line-height: 3.125rem;
 
-  @include media('md-up') {
+  @include media('lg-up') {
     font-size: 6.25rem;
     line-height: 6.25rem;
   }
@@ -39,7 +39,7 @@ $benton: 'benton', sans-serif;
   font-size: 2.25rem;
   line-height: 2.3625rem;
 
-  @include media('md-up') {
+  @include media('lg-up') {
     font-size: 4.5rem;
     line-height: 4.75rem;
   }
@@ -50,7 +50,7 @@ $benton: 'benton', sans-serif;
   font-size: 2.25rem;
   line-height: 2.3625rem;
 
-  @include media('md-up') {
+  @include media('lg-up') {
     font-size: 3.375rem;
     line-height: 3.54375rem;
   }
@@ -61,7 +61,7 @@ $benton: 'benton', sans-serif;
   font-size: 1.5rem;
   line-height: 1.65rem;
 
-  @include media('md-up') {
+  @include media('lg-up') {
     font-size: 2.25rem;
     line-height: 2.3625rem;
   }
@@ -72,7 +72,7 @@ $benton: 'benton', sans-serif;
   font-size: 0.875rem;
   line-height: 0.91875rem;
 
-  @include media('md-up') {
+  @include media('lg-up') {
     font-size: 2.8125rem;
     line-height: 3.75rem;
   }
@@ -89,7 +89,7 @@ $benton: 'benton', sans-serif;
   font-size: 0.875rem;
   line-height: 1.0625rem;
 
-  @include media('md-up') {
+  @include media('lg-up') {
     font-size: 1.125rem;
     line-height: 1.375rem;
   }
@@ -101,7 +101,7 @@ $benton: 'benton', sans-serif;
   line-height: 0.8125rem;
   letter-spacing: 0.01rem;
 
-  @include media('md-up') {
+  @include media('lg-up') {
     font-size: 0.875rem;
     line-height: 1.0625rem;
     letter-spacing: 0;
@@ -120,7 +120,7 @@ $benton: 'benton', sans-serif;
   font-size: 0.875rem;
   line-height: 1.0625rem;
 
-  @include media('md-up') {
+  @include media('lg-up') {
     font-size: 1.125rem;
     line-height: 1.375rem;
   }
@@ -132,7 +132,7 @@ $benton: 'benton', sans-serif;
   line-height: 0.8125rem;
   letter-spacing: 0.01rem;
 
-  @include media('md-up') {
+  @include media('lg-up') {
     font-size: 0.875rem;
     line-height: 1.0625rem;
     letter-spacing: 0;

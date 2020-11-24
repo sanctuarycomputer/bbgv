@@ -16,6 +16,7 @@ import HomeHeroModule from './layouts/homeHeroModule';
 import NewsletterModule from './layouts/newsletterModule';
 import FoundersImpactSlideshow from './layouts/foundersImpactSlideshow';
 import HeroTextModule from './layouts/heroTextModule';
+import TextModule from './layouts/textModule';
 
 /** References */
 import Founder from './references/founder';
@@ -28,6 +29,7 @@ import PortableText from './fields/portableText';
 import ButtonField from './fields/buttonField';
 import SlugField from './fields/slugField';
 import ColorList from './fields/colorList';
+import ParagraphWithButton from './fields/paragraphWithButton';
 
 export default createSchema({
   name: 'default',
@@ -44,6 +46,7 @@ export default createSchema({
     NewsletterModule,
     FoundersImpactSlideshow,
     HeroTextModule,
+    TextModule,
 
     /** References */
     Founder,
@@ -56,5 +59,6 @@ export default createSchema({
     ButtonField,
     SlugField,
     ColorList,
+    ParagraphWithButton,
   ]),
 });
