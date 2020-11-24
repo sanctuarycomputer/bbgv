@@ -10,13 +10,15 @@ type PassedProps = {
   items: PressListItem[];
 };
 
+//TO-DO: remove state for button hover.
+
 type Props = PassedProps & WithBreakpointsProps;
 
 const PressList: React.FC<Props> = ({ items, className, currentBreakpoint }) => {
   return (
-    <div className={cx(`PressList ${className} flex flex-row flex-wrap secondary-sm`)}>
+    <div className={cx(`PressList ${className} col-12 flex flex-row flex-wrap secondary-sm`)}>
       {items.map((item: PressListItem) => (
-        <div key={item.heading} className="PressList__item">
+        <div key={item.heading} className="PressList__item col-12">
           {PressItem(item, currentBreakpoint)}
         </div>
       ))}
@@ -31,7 +33,7 @@ const PressItem = (item: PressListItem, currentBreakpoint: string) => {
   const breakpointIsSmDown = ['EXTRA_SMALL', 'SMALL'].includes(currentBreakpoint);
 
   return (
-    <div className="PressList__item-inner-container flex flex-row py1_5">
+    <div className="PressList__item-inner-container col-12 flex flex-row py1_5">
       <div className={cx(`PressList__source secondary-sm col-3 pr1 md:pr0`)}>{item.source}</div>
       <div className="PressList__heading-container primary-md col-8">
         <span className="mr1_5">{item.heading}</span>
