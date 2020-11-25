@@ -31,6 +31,30 @@ const HomeView: FC<Props> = (props) => {
       <Meta seo={seo} />
       <HomeHero headline={hero.headline} founders={hero.founders} />
       <TextModule
+        className="text-module-padding-x py3_75 lg:py10"
+        variant="default"
+        heading={featuredFoundersCarouselSectionHeading.heading}
+        subheading={featuredFoundersCarouselSectionHeading.subheading}
+        briefParagraph={featuredFoundersCarouselSectionHeading.briefParagraph}
+      />
+      <TextModule
+        className="py3_75"
+        variant="mulberry"
+        heading={whyWeInvest.heading}
+        subheading={whyWeInvest.subheading}
+        briefParagraph={whyWeInvest.briefParagraph}
+      />
+      <TextModule
+        className="text-module-padding-x py3_75 lg:py10"
+        variant="default"
+        heading={foundersImpactSectionHeading.heading}
+        subheading={foundersImpactSectionHeading.subheading}
+        briefParagraph={foundersImpactSectionHeading.briefParagraph}
+      />
+      <FoundersImpactSlideshow
+        variant={foundersImpactSlideshow.variant}
+        slides={foundersImpactSlideshow.slides} />
+      <TextModule
         className="py3_75 lg:py10"
         variant="default"
         heading={featuredFoundersCarouselSectionHeading.heading}
@@ -45,24 +69,20 @@ const HomeView: FC<Props> = (props) => {
         briefParagraph={whyWeInvest.briefParagraph}
       />
       <TextModule
-        className="py3_75 lg:py10"
+        className="text-module-padding-x py3_75 lg:py10"
         variant="default"
         heading={foundersImpactSectionHeading.heading}
         subheading={foundersImpactSectionHeading.subheading}
         briefParagraph={foundersImpactSectionHeading.briefParagraph}
       />
-      <FoundersImpactSlideshow
-        variant={foundersImpactSlideshow.variant}
-        slides={foundersImpactSlideshow.slides}
-      />
       <TextModule
-        className="py3_75 lg:py10"
+        className="pb3_75 lg:pb10"
         variant="default"
         heading={contact.heading}
         subheading={contact.subheading}
         briefParagraph={contact.briefParagraph}
       />
-            <NewsletterModule
+      <NewsletterModule
         bgColor={newsletter.bgColor}
         headline={newsletter.headline}
         title={newsletter.title}

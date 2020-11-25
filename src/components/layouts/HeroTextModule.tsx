@@ -28,7 +28,11 @@ const HeroTextModule: React.FC<Props> = ({
         `HeroTextModule HeroTextModule--style-${variant} bg-color-${variant} ssite-max-width site-padding-x mxauto px_75 md:px1_5 xl:px15 py6 md:py7_5 ${fontColor}`
       )}
     >
-      <span className={cx(`HeroTextModule__title primary-sm pr3_75 vertical-align-middle`)}>
+      <span
+        className={cx('HeroTextModule__title primary-sm pr3_75 vertical-align-middle', {
+          'color-lilac': variant === 'mulberry',
+        })}
+      >
         {title}
       </span>
       <span
@@ -38,7 +42,11 @@ const HeroTextModule: React.FC<Props> = ({
       >
         <PortableText blocks={heading} />
       </span>
-      <span className={cx(`HeroTextModule__introLine primary-sm px2_25 vertical-align-middle`)}>
+      <span
+        className={cx('HeroTextModule__introLine primary-sm px2_25 vertical-align-middle', {
+          'color-lilac': variant === 'mulberry',
+        })}
+      >
         {introLine}
       </span>
       <span

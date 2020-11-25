@@ -100,7 +100,7 @@ export type FoundersImpactSlideshow = t.TypeOf<typeof FoundersImpactSlideshow>;
 export const FoundersImpactSlideshow = t.type({
   _type: t.string,
   slides: t.array(FoundersImpactSlide),
-  variant: FoundersImpactSlideshowVariant
+  variant: FoundersImpactSlideshowVariant,
 });
 
 export type HeroTextModule = t.TypeOf<typeof HeroTextModule>;
@@ -114,7 +114,7 @@ export const HeroTextModule = t.intersection([
   }),
   t.partial({
     briefParagraph: t.array(Block),
-  })
+  }),
 ]);
 
 export type ParagraphWithButton = t.TypeOf<typeof ParagraphWithButton>;
@@ -128,6 +128,13 @@ export const ParagraphWithButton = t.intersection([
   }),
 ]);
 
+export type ParagraphWithHeading = t.TypeOf<typeof ParagraphWithHeading>;
+export const ParagraphWithHeading = t.type({
+  _type: t.string,
+  heading: t.string,
+  paragraph: t.array(Block),
+});
+
 export type TextModule = t.TypeOf<typeof TextModule>;
 export const TextModule = t.intersection([
   t.type({
@@ -137,6 +144,19 @@ export const TextModule = t.intersection([
   t.partial({
     subheading: t.string,
     briefParagraph: ParagraphWithButton,
+  }),
+]);
+
+export type TextModuleWithParagraphs = t.TypeOf<typeof TextModuleWithParagraphs>;
+export const TextModuleWithParagraphs = t.intersection([
+  t.type({
+    _type: t.string,
+    variant: t.string,
+    heading: t.array(Block),
+  }),
+  t.partial({
+    subheading: t.string,
+    text: t.array(Block),
   }),
 ]);
 
@@ -190,4 +210,18 @@ export type AboutPage = t.TypeOf<typeof AboutPage>;
 export const AboutPage = t.type({
   seo: SeoSettings,
   hero: HeroTextModule,
+  teamHeading: TextModule,
+  valuesSection: TextModuleWithParagraphs,
+  pressHeading: TextModule,
+  contact: TextModule,
+});
+
+export type WhyWeInvestPage = t.TypeOf<typeof WhyWeInvestPage>;
+export const WhyWeInvestPage = t.type({
+  seo: SeoSettings,
+  hero: HeroTextModule,
+  thesis: TextModuleWithParagraphs,
+  investmentHeading: TextModuleWithParagraphs,
+  investmentParagraphs: t.array(ParagraphWithHeading),
+  apply: TextModule,
 });

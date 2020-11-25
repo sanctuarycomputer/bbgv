@@ -10,6 +10,7 @@ import GlobalSettings from './GlobalSettings';
 /** Pages */
 import HomePage from './pages/home';
 import AboutUsPage from './pages/about';
+import WhyWeInvestPage from './pages/whyWeInvest';
 
 /** Layouts */
 import HomeHeroModule from './layouts/homeHeroModule';
@@ -17,6 +18,7 @@ import NewsletterModule from './layouts/newsletterModule';
 import FoundersImpactSlideshow from './layouts/foundersImpactSlideshow';
 import HeroTextModule from './layouts/heroTextModule';
 import TextModule from './layouts/textModule';
+import TextModuleWithParagraphs from './layouts/textModuleWithParagraphs';
 
 /** References */
 import Founder from './references/founder';
@@ -30,6 +32,7 @@ import ButtonField from './fields/buttonField';
 import SlugField from './fields/slugField';
 import ColorList from './fields/colorList';
 import ParagraphWithButton from './fields/paragraphWithButton';
+import ParagraphWithHeading from './fields/paragraphWithHeading';
 
 export default createSchema({
   name: 'default',
@@ -40,6 +43,7 @@ export default createSchema({
     /** Pages */
     HomePage,
     AboutUsPage,
+    WhyWeInvestPage,
 
     /** Layouts */
     HomeHeroModule,
@@ -47,6 +51,7 @@ export default createSchema({
     FoundersImpactSlideshow,
     HeroTextModule,
     TextModule,
+    TextModuleWithParagraphs,
 
     /** References */
     Founder,
@@ -60,5 +65,6 @@ export default createSchema({
     SlugField,
     ColorList,
     ParagraphWithButton,
+    ParagraphWithHeading,
   ]),
 });

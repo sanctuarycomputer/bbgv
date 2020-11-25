@@ -1,0 +1,41 @@
+.TextModuleWithParagraphs {
+  &--style-one-column,
+  &--style-two-columns {
+    &__paragraph p {
+      margin-bottom: 1.5rem;
+
+      a {
+        color: color('charcoal');
+
+        &:hover {
+          @extend .hover-lighten-charcoal;
+        }
+      }
+    }
+  }
+
+  &__inner-container {
+    padding-left: $site-padding-x-mobile;
+    padding-right: $site-padding-x-mobile;
+
+    @include media('lg') {
+      padding-left: 0;
+      padding-right: 0;
+      max-width: $site-inner-content-max-width;
+    }
+  }
+
+  &__subheading-line {
+    width: 4.9375rem;
+    height: 0.1875rem;
+
+    @include media('lg-up') {
+      width: 5.75rem;
+      height: 0.3125rem;
+    }
+  }
+
+  &__heading p {
+    display: inline;
+  }
+}

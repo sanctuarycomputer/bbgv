@@ -1,6 +1,6 @@
 export default {
-  title: 'About Us Page',
-  name: 'about',
+  title: 'Why We Invest Page',
+  name: 'whyWeInvest',
   type: 'document',
   fieldsets: [
     {
@@ -9,23 +9,23 @@ export default {
       options: { collapsible: true, collapsed: true },
     },
     {
-      name: 'teamSection',
-      title: 'Team',
+      name: 'statisticsSection',
+      title: 'Statistics',
       options: { collapsible: true, collapsed: false },
     },
     {
-      name: 'valuesSection',
-      title: 'Values',
+      name: 'thesisSection',
+      title: 'Thesis',
       options: { collapsible: true, collapsed: false },
     },
     {
-      name: 'pressSection',
-      title: 'Press',
+      name: 'investmentSection',
+      title: 'Investment Guidelines',
       options: { collapsible: true, collapsed: false },
     },
     {
-      name: 'contact',
-      title: 'Contact',
+      name: 'applySection',
+      title: 'Apply',
       options: { collapsible: true, collapsed: false },
     },
   ],
@@ -46,33 +46,39 @@ export default {
       },
     },
     {
-      title: 'Heading',
-      name: 'teamHeading',
-      type: 'textModule',
-      fieldset: 'teamSection',
-    },
-    {
       title: 'Copy',
-      name: 'valuesSection',
+      name: 'thesis',
       type: 'textModuleWithParagraphs',
-      fieldset: 'valuesSection',
+      fieldset: 'thesisSection',
     },
     {
       title: 'Intro Text',
-      name: 'pressHeading',
-      type: 'textModule',
-      fieldset: 'pressSection',
+      name: 'investmentHeading',
+      type: 'textModuleWithParagraphs',
+      fieldset: 'investmentSection',
+    },
+    {
+      title: 'Additional Paragraphs',
+      name: 'investmentParagraphs',
+      description: 'Add optional paragraphs that will appear in two columns below the intro text.',
+      type: 'array',
+      of: [
+        {
+          type: 'paragraphWithHeading',
+        },
+      ],
+      fieldset: 'investmentSection',
     },
     {
       title: 'Copy',
-      name: 'contactSection',
+      name: 'apply',
       type: 'textModule',
-      fieldset: 'contact',
+      fieldset: 'applySection',
     },
   ],
   preview: {
     prepare() {
-      return { title: 'About Us Page' };
+      return { title: 'Why We Invest Page' };
     },
   },
 };

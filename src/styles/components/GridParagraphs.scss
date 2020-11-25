@@ -1,0 +1,15 @@
+.GridParagraphs {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-row-gap: 2.75rem;
+
+  @include media('md-up') {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1.25rem;
+    grid-row-gap: 6rem;
+  }
+
+  &__paragraph p {
+    display: inline;
+  }
+}

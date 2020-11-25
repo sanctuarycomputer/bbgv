@@ -4,6 +4,9 @@ import { Props as ContainerProps } from 'containers/about';
 
 import { ContentPage as Meta } from 'components/Meta';
 import HeroTextModule from 'components/layouts/HeroTextModule';
+import TextModule from 'components/layouts/TextModule';
+import TextModuleWithParagraphs from 'components/layouts/TextModuleWithParagraphs';
+import { values } from 'lodash';
 
 type Props = ContainerProps & {
   model: AboutPage;
@@ -11,7 +14,7 @@ type Props = ContainerProps & {
 
 const AboutView: FC<Props> = (props) => {
   const { model } = props;
-  const { hero, seo } = model;
+  const { hero, seo, teamHeading, pressHeading, valuesSection, contact } = model;
 
   return (
     <div className="AboutView primary-xxl">
@@ -23,6 +26,40 @@ const AboutView: FC<Props> = (props) => {
         introLine={hero.introLine}
         introByline={hero.introByline}
         briefParagraph={hero.briefParagraph}
+      />
+      <div id="#team">
+        <TextModule
+          className="text-module-padding-x py3_75 lg:py10"
+          variant="default"
+          heading={teamHeading.heading}
+          subheading={teamHeading.subheading}
+          briefParagraph={teamHeading.briefParagraph}
+        />
+      </div>
+      <div id="#values" className="text-module-padding-x border-top-nutella border-bottom-nutella">
+        <TextModuleWithParagraphs
+          className="py3_75 lg:py10"
+          variant={valuesSection.variant}
+          heading={valuesSection.heading}
+          subheading={valuesSection.subheading}
+          text={valuesSection.text}
+        />
+      </div>
+      <div id="#press" className="text-module-padding-x border-bottom-nutella">
+        <TextModule
+          className="py3_75 lg:py10"
+          variant="default"
+          heading={pressHeading.heading}
+          subheading={pressHeading.subheading}
+          briefParagraph={pressHeading.briefParagraph}
+        />
+      </div>
+      <TextModule
+        className="text-module-padding-x py3_75 lg:py10"
+        variant="default"
+        heading={contact.heading}
+        subheading={contact.subheading}
+        briefParagraph={contact.briefParagraph}
       />
     </div>
   );

@@ -7,11 +7,13 @@ import GlobalSettingsGroq from './groq/GlobalSettings';
 import NewsletterGroq from './groq/Newsletter';
 import FoundersImpactSlideshowGroq from './groq/FoundersImpactSlideshow';
 import TextModuleGroq from './groq/TextModule';
+import TextModuleWithParagraphsGroq from './groq/TextModuleWithParagraphs';
 
 const ApiClient: {
   fetchGlobalSettings(): Promise<Cms.GlobalSettings | any>;
   fetchHome(): Promise<Cms.HomePage | any>;
   fetchAboutPage(): Promise<Cms.AboutPage | any>;
+  fetchWhyWeInvestPage(): Promise<Cms.WhyWeInvestPage | any>;
 } = {
   async fetchGlobalSettings() {
     const response = await Sanity.fetch(`*[_type == 'globalSettings'][0]${GlobalSettingsGroq}`);
@@ -39,6 +41,27 @@ const ApiClient: {
       _type,
       'seo': ${SeoSettingsGroq},
       'hero': ${HeroTextModuleGroq},
+      'teamHeading': teamHeading${TextModuleGroq},
+      'valuesSection': valuesSection${TextModuleWithParagraphsGroq},
+      'pressHeading': pressHeading${TextModuleGroq},
+      'contact': contactSection${TextModuleGroq},
+    }`);
+
+    return response;
+  },
+  async fetchWhyWeInvestPage() {
+    const response = await Sanity.fetch(`*[_type == 'whyWeInvest' && _id == '_whyWeInvest'][0] {
+      _type,
+      'seo': ${SeoSettingsGroq},
+      'hero': ${HeroTextModuleGroq},
+      'thesis': thesis${TextModuleWithParagraphsGroq},
+      'investmentHeading': investmentHeading${TextModuleWithParagraphsGroq},
+      'investmentParagraphs': investmentParagraphs[]{
+        _type,
+        heading,
+        paragraph
+      },
+      'apply': apply${TextModuleGroq},
     }`);
 
     return response;

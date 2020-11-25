@@ -14,6 +14,8 @@ type Props = {
 
 const CURRENT_YEAR = getYear(new Date());
 
+//TO-DO: Add jump links functionality
+
 const Footer: React.FC<Props> = ({ globalSettings }) => {
   const { footerMenu } = globalSettings;
 

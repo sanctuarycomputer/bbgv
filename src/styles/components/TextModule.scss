@@ -1,6 +1,3 @@
-$max-width-xxl-desktop: 64.375rem;
-$max-width-xl-desktop: 54.625rem;
-
 .TextModule {
   &--style-mulberry,
   &--style-default {
@@ -49,14 +46,10 @@ $max-width-xl-desktop: 54.625rem;
     padding-left: $site-padding-x-mobile;
     padding-right: $site-padding-x-mobile;
 
-    @include media('xl') {
+    @include media('lg') {
       padding-left: 0;
       padding-right: 0;
-      max-width: $max-width-xl-desktop;
-    }
-
-    @include media('xxl') {
-      max-width: $max-width-xxl-desktop;
+      max-width: $site-inner-content-max-width;
     }
   }
 
@@ -76,6 +69,16 @@ $max-width-xl-desktop: 54.625rem;
 
   &__button {
     @extend .transition-shorter;
+  }
+
+  &__button-placeholder-div {
+    &--style-full-width {
+      width: 1.1875rem;
+    }
+
+    &--style-no-width {
+      width: 0;
+    }
   }
 
   &__button-line-icon {

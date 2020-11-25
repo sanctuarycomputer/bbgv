@@ -1,3 +1,21 @@
+/** Borders */
+
+.border-top-nutella {
+  border-top: 3px solid color('nutella');
+}
+
+.border-bottom-nutella {
+  border-bottom: 3px solid color('nutella');
+}
+
+.border-top-mulberry {
+  border-top: 3px solid color('mulberry');
+}
+
+.border-bottom-mulberry {
+  border-bottom: 3px solid color('mulberry');
+}
+
 /** Global site sizing */
 
 .site-inner-content-max-width {
@@ -14,6 +32,16 @@
   }
 }
 
+.site-margin-x {
+  margin-left: $site-padding-x-mobile;
+  margin-right: $site-padding-x-mobile;
+
+  @include media('lg-up') {
+    margin-left: $site-padding-x-desktop;
+    margin-right: $site-padding-x-desktop;
+  }
+}
+
 .page-style--margin-top {
   margin-top: calc(#{$nav-top-margin-mobile} + #{$nav-height-mobile});
 
@@ -21,6 +49,13 @@
     margin-top: $nav-height-desktop;
   }
 }
+
+.text-module-padding-x {
+  @extend .site-margin-x;
+  @extend .site-inner-content-max-width;
+}
+
+/** Utils */
 
 .disable-body-scroll {
   margin: 0;
@@ -30,4 +65,11 @@
 
 .hyphens {
   hyphens: auto;
+}
+
+.two-columns {
+  @include media('md-up') {
+    column-count: 2;
+    column-gap: 1.25rem;
+  }
 }

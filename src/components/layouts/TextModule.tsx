@@ -34,7 +34,7 @@ const TextModule: React.FC<Props> = ({
     >
       <div
         className={cx(
-          `TextModule--style-${variant}--inner-container TextModule__inner-container mxauto col-12 lg:col-8 xxl:col-7 px_75 lg:px1_5`
+          `TextModule--style-${variant}--inner-container TextModule__inner-container mxauto col-12 lg:col-8 xxl:col-7`
         )}
       >
         {subheading ? (
@@ -50,7 +50,7 @@ const TextModule: React.FC<Props> = ({
 
         <span
           className={cx(
-            `TextModule__heading TextModule--style-${variant}__heading primary-xl vertical-align-middle`
+            `TextModule__heading TextModule--style-${variant}__heading primary-xl vertical-align-middle pl3_75`
           )}
         >
           <PortableText blocks={heading} />
@@ -80,6 +80,12 @@ const TextModule: React.FC<Props> = ({
                   color={iconColor}
                 />
                 {briefParagraph.button.label}
+                <span
+                  className={cx('TextModule__button-placeholder-div opacity-1 events-none', {
+                    'TextModule__button-placeholder-div--style-full-width': !hoverParagraphButton,
+                    'TextModule__button-placeholder-div--style-no-width': hoverParagraphButton,
+                  })}
+                ></span>
               </Button>
             )}
           </div>
