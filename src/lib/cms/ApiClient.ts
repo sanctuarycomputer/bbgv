@@ -47,7 +47,6 @@ const ApiClient: {
       'pressHeading': pressHeading${TextModuleGroq},
       'pressList': pressList${PressListModuleGroq},
       'contact': contactSection${TextModuleGroq},
-      ...
     }`);
 
     console.log(response);
