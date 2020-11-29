@@ -11,6 +11,7 @@ import GlobalSettings from './GlobalSettings';
 import HomePage from './pages/home';
 import AboutUsPage from './pages/about';
 import WhyWeInvestPage from './pages/whyWeInvest';
+import CompanyDetailPage from './pages/companyDetail';
 
 /** Layouts */
 import HomeHeroModule from './layouts/homeHeroModule';
@@ -19,6 +20,7 @@ import FoundersImpactSlideshow from './layouts/foundersImpactSlideshow';
 import HeroTextModule from './layouts/heroTextModule';
 import TextModule from './layouts/textModule';
 import TextModuleWithParagraphs from './layouts/textModuleWithParagraphs';
+import CompanyDetailLanding from './layouts/companyDetailLanding';
 
 /** References */
 import Founder from './references/founder';
@@ -44,6 +46,7 @@ export default createSchema({
     HomePage,
     AboutUsPage,
     WhyWeInvestPage,
+    CompanyDetailPage,
 
     /** Layouts */
     HomeHeroModule,
@@ -52,6 +55,7 @@ export default createSchema({
     HeroTextModule,
     TextModule,
     TextModuleWithParagraphs,
+    CompanyDetailLanding,
 
     /** References */
     Founder,

@@ -64,17 +64,23 @@ export const Founder = t.partial({
 });
 
 export type Company = t.TypeOf<typeof Company>;
-export const Company = t.partial({
-  _type: t.string,
-  description: t.array(Block),
-  website: Button,
-  careersLink: Button,
-  founders: t.array(Founder),
-  tag: t.string,
-  sector: t.string,
-  logo: Image,
-  name: t.string,
-});
+export const Company = t.intersection([
+  t.type({
+    _type: t.string,
+    website: Button,
+    logo: Image,
+    name: t.string,
+  }),
+  t.partial({
+    description: t.array(Block),
+    careers: Button,
+    instagram: Button,
+    linkedIn: Button,
+    founders: t.array(Founder),
+    tag: t.string,
+    sector: t.string,
+  }),
+]);
 
 export type FooterMenu = t.TypeOf<typeof FooterMenu>;
 export const FooterMenu = t.type({

@@ -4,6 +4,12 @@ export default {
   title: 'Company',
   name: 'company',
   type: 'document',
+  fieldsets: [
+    {
+      title: 'Company Links',
+      name: 'links',
+    },
+  ],
   fields: [
     {
       title: 'Company Name',
@@ -19,15 +25,42 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: 'Sector',
+      name: 'sector',
+      type: 'string',
+    },
+    {
+      title: 'Tag',
+      name: 'tag',
+      type: 'string',
+      description:
+        "This is an optional tag that can be the status of a company. It will be displayed in the Current Portfolio listing, on the top left of a founder's portrait.",
+    },
+    {
       title: 'Company Website Link',
       name: 'website',
       type: 'buttonField',
+      fieldset: 'links',
       validation: (Rule) => Rule.required(),
     },
     {
-      title: 'Careers Link',
-      name: 'careersLink',
+      title: 'Company Instagram Link',
+      name: 'instagram',
+      fieldset: 'links',
       type: 'buttonField',
+    },
+    {
+      title: 'Company LinkedIn Link',
+      name: 'linkedIn',
+      fieldset: 'links',
+      type: 'buttonField',
+    },
+    {
+      title: 'Careers Link',
+      name: 'careers',
+      fieldset: 'links',
+      type: 'buttonField',
+      description: 'This should link to the company job board.',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -49,18 +82,6 @@ export default {
       description:
         "This is a brief description that will show on the Companies page, when you hover over a Founder's portrait in the Current Portfolio listing.",
       type: 'portableText',
-    },
-    {
-      title: 'Sector',
-      name: 'sector',
-      type: 'string',
-    },
-    {
-      title: 'Tag',
-      name: 'tag',
-      type: 'string',
-      description:
-        "This is an optional tag that can be the status of a company. It will be displayed in the Current Portfolio listing, on the top left of a founder's portrait.",
     },
   ],
   preview: {
