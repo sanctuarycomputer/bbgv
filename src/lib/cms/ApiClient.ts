@@ -49,7 +49,6 @@ const ApiClient: {
       'contact': contactSection${TextModuleGroq},
     }`);
 
-    console.log(response);
     return response;
   },
   async fetchWhyWeInvestPage() {

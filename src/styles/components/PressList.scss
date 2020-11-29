@@ -1,10 +1,22 @@
 .PressList {
-  > div {
-    border-top: 2px solid color('nutella');
+  &--style-nutella {
+    > div {
+      border-top: 2px solid color('nutella');
+    }
+
+    > div:last-child {
+      border-bottom: 2px solid color('nutella');
+    }
   }
 
-  > div:last-child {
-    border-bottom: 2px solid color('nutella');
+  &--style-lilac {
+    > div {
+      border-top: 2px solid color('lilac');
+    }
+
+    > div:last-child {
+      border-bottom: 2px solid color('lilac');
+    }
   }
 
   &__button {

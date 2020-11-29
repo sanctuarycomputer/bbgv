@@ -4,6 +4,19 @@ export default {
   type: 'object',
   fields: [
     {
+      name: 'variant',
+      title: 'Color Variant',
+      description: 'Choose the border colors.',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Lilac', value: 'lilac' },
+          { title: 'Nutella', value: 'nutella' },
+        ],
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
       title: 'Items',
       name: 'items',
       type: 'array',

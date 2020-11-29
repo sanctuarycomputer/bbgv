@@ -145,6 +145,7 @@ export const PressListItem = t.type({
 export type PressList = t.TypeOf<typeof PressList>;
 export const PressList = t.type({
   _type: t.string,
+  variant: t.string,
   items: t.array(PressListItem),
 });
 
