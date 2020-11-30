@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
-import withBreakpoints, {
-  MediaQuery,
-  InjectedProps as WithBreakpointsProps,
-} from 'lib/withBreakpoints';
+
 import { InvestmentsListItem, Founder, Company } from 'lib/cms/types';
 import generateFounderFullName from 'utils/generateFounderFullName';
+import Language from 'constants/Language';
 
 import { Img, Button } from 'components/base';
 import { LineIcon } from 'components/icons';
 import PortableText from 'components/PortableText';
 
-type PassedProps = {
+type Props = {
   className?: string;
   heading: string;
   items: InvestmentsListItem[];
@@ -19,9 +17,7 @@ type PassedProps = {
 
 //TO-DO: remove state for button hover.
 
-type Props = PassedProps & WithBreakpointsProps;
-const InvestmentsList: React.FC<Props> = ({ heading, items, className, mediaQuery }) => {
-  console.log(heading);
+const InvestmentsList: React.FC<Props> = ({ heading, items, className }) => {
   return (
     <div className={cx(`InvestmentsList col-12 flex flex-row flex-wrap`, className)}>
       <div className="InvestmentsList__heading uppercase color-charcoal primary-sm pb_75 md:pb2_25">
@@ -30,37 +26,42 @@ const InvestmentsList: React.FC<Props> = ({ heading, items, className, mediaQuer
 
       {items.map((item: InvestmentsListItem) => (
         <div key="" className="InvestmentsList__item col-12">
-          {InvestmentListItem(item, mediaQuery)}
+          {InvestmentListItem(item)}
         </div>
       ))}
     </div>
   );
 };
 
-export default withBreakpoints<Props>(InvestmentsList);
+export default InvestmentsList;
 
-const InvestmentListItem = (item: InvestmentsListItem, mediaQuery: MediaQuery) => {
+const InvestmentListItem = (item: InvestmentsListItem) => {
   const [hoverButton, setHoverButton] = useState(false);
-  const breakpointIsMdUp = mediaQuery.isMediumUp;
 
   return (
-    <div className="InvestmentsList__item-inner-container col-12 flex flex-row py1_5">
-      <div className="secondary-sm col-3 pr1 md:pr0 flex flex-col">
-        <div className="InvestmentList__founders uppercase">
-          {item.company.founders?.map((founder: Founder) => (
-            <div>{generateFounderFullName(founder)} </div>
-          ))}
+    <div className="InvestmentsList__item-inner-container col-12 flex flex-col md:flex-row py1_5">
+      <div className="flex flex-row col-12 md:col-6">
+        <div className="secondary-sm col-7 flex flex-col">
+          <div className="InvestmentList__founders color-charcoal uppercase">
+            {item.company.founders?.map((founder: Founder) => (
+              <div>{generateFounderFullName(founder)} </div>
+            ))}
+          </div>
+          <div className="primary-sm color-lilac uppercase">{item.company.name}</div>
+          {item.company.tag && <div className="py1_25 md:pb0 md:pt1_5">{item.company.tag}</div>}
         </div>
-        <div className="primary-sm color-lilac uppercase">{item.company.name}</div>
-        {item.company.tag && <div className="md:pt1_5">{item.company.tag}</div>}
+
+        <div className="InvestmentsList__logo-container col-5 flex flex-col items-end md:items-start">
+          <Img
+            src={item.company.logo.src}
+            alt={item.company.logo.alt || Language.t('Global.fallbackAltLabel')}
+            className="InvestmentsList__logo w100 h100 fit-contain"
+          />
+        </div>
       </div>
 
-      <div className="InvestmentsList__logo-container col-3">
-        <Img src={item.company.logo} className="w100 h100" />
-      </div>
-
-      <div className="InvestmentsList__description primary-md col-6">
-        <span className="secondary-sm">
+      <div className="InvestmentsList__description-container color-charcoal primary-md col-12 md:col-6">
+        <span className="InvestmentsList__description secondary-sm">
           <PortableText blocks={item.description.paragraph} />{' '}
         </span>
 

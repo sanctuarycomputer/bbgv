@@ -30,4 +30,18 @@
       width: 0;
     }
   }
+
+  &__logo {
+    width: 4.9375rem;
+    height: 1.75rem;
+
+    @include media('md-up') {
+      width: 5.75rem;
+      height: 2.0625rem;
+    }
+  }
+
+  &__description p {
+    display: inline;
+  }
 }
