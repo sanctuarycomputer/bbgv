@@ -208,6 +208,19 @@ export const TextModuleWithParagraphs = t.intersection([
   }),
 ]);
 
+export type InvestmentsListItem = t.TypeOf<typeof InvestmentsListItem>;
+export const InvestmentsListItem = t.type({
+  company: Company,
+  description: ParagraphWithButton,
+});
+
+export type InvestmentsListModule = t.TypeOf<typeof InvestmentsListModule>;
+export const InvestmentsListModule = t.type({
+  _type: t.string,
+  heading: t.string,
+  items: t.array(InvestmentsListItem),
+});
+
 export type HomeHero = t.TypeOf<typeof HomeHero>;
 export const HomeHero = t.type({
   _type: t.string,
@@ -281,5 +294,6 @@ export type CompaniesPage = t.TypeOf<typeof CompaniesPage>;
 export const CompaniesPage = t.type({
   seo: SeoSettings,
   hero: HeroTextModule,
+  investmentsList: InvestmentsListModule,
   contact: TextModule,
 });

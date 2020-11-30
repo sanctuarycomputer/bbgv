@@ -5,6 +5,7 @@ import { Props as ContainerProps } from 'containers/companies';
 import { ContentPage as Meta } from 'components/Meta';
 import HeroTextModule from 'components/layouts/HeroTextModule';
 import TextModule from 'components/layouts/TextModule';
+import InvestmentsList from 'components/layouts/InvestmentsList';
 
 type Props = ContainerProps & {
   model: CompaniesPage;
@@ -12,7 +13,7 @@ type Props = ContainerProps & {
 
 const CompaniesView: FC<Props> = (props) => {
   const { model } = props;
-  const { hero, seo, contact } = model;
+  const { hero, seo, investmentsList, contact } = model;
 
   return (
     <div className="CompaniesView primary-xxl">
@@ -25,6 +26,7 @@ const CompaniesView: FC<Props> = (props) => {
         introByline={hero.introByline}
         briefParagraph={hero.briefParagraph}
       />
+      <InvestmentsList heading={investmentsList.heading} items={investmentsList.items} />
       <TextModule
         className="text-module-padding-x py3_75 lg:py10"
         variant="default"

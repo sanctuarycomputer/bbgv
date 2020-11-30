@@ -22,6 +22,7 @@ import TextModule from './layouts/textModule';
 import TextModuleWithParagraphs from './layouts/textModuleWithParagraphs';
 import PressListModule from './layouts/pressListModule';
 import StatisticsModule from './layouts/statisticsModule';
+import InvestmentsList from './layouts/investmentsList';
 
 /** References */
 import Founder from './references/founder';
@@ -59,6 +60,7 @@ export default createSchema({
     TextModuleWithParagraphs,
     PressListModule,
     StatisticsModule,
+    InvestmentsList,
 
     /** References */
     Founder,

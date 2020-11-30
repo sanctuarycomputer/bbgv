@@ -10,6 +10,7 @@ import TextModuleGroq from './groq/TextModule';
 import TextModuleWithParagraphsGroq from './groq/TextModuleWithParagraphs';
 import PressListModuleGroq from './groq/PressList';
 import TeamMemberGroq from './groq/TeamMember';
+import InvestmentsListModuleGroq from './groq/InvestmentsListModule';
 
 const ApiClient: {
   fetchGlobalSettings(): Promise<Cms.GlobalSettings | any>;
@@ -82,6 +83,7 @@ const ApiClient: {
       _type,
       'seo': ${SeoSettingsGroq},
       'hero': ${HeroTextModuleGroq},
+      'investmentsList': investmentsList${InvestmentsListModuleGroq},
       'contact': contactSection${TextModuleGroq},
     }`);
 
