@@ -58,6 +58,12 @@ const ApiClient: {
       _type,
       'seo': ${SeoSettingsGroq},
       'hero': ${HeroTextModuleGroq},
+      'statistics': statistics.facts[]{
+        _type, 
+        leftHeading, 
+        rightHeading, 
+        paragraphWithButton
+      },
       'thesis': thesis${TextModuleWithParagraphsGroq},
       'investmentHeading': investmentHeading${TextModuleWithParagraphsGroq},
       'investmentParagraphs': investmentParagraphs[]{

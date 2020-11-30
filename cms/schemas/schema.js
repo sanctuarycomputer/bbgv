@@ -20,6 +20,7 @@ import HeroTextModule from './layouts/heroTextModule';
 import TextModule from './layouts/textModule';
 import TextModuleWithParagraphs from './layouts/textModuleWithParagraphs';
 import PressListModule from './layouts/pressListModule';
+import StatisticsModule from './layouts/statisticsModule';
 
 /** References */
 import Founder from './references/founder';
@@ -55,6 +56,7 @@ export default createSchema({
     TextModule,
     TextModuleWithParagraphs,
     PressListModule,
+    StatisticsModule,
 
     /** References */
     Founder,

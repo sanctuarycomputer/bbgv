@@ -171,6 +171,18 @@ export const PressList = t.intersection([
   }),
 ]);
 
+export type Fact = t.TypeOf<typeof Fact>;
+export const Fact = t.intersection([
+  t.type({
+    _type: t.string,
+    paragraphWithButton: ParagraphWithButton,
+  }),
+  t.partial({
+    leftHeading: t.string,
+    rightHeading: t.string,
+  }),
+]);
+
 export type TextModule = t.TypeOf<typeof TextModule>;
 export const TextModule = t.intersection([
   t.type({
@@ -258,6 +270,7 @@ export type WhyWeInvestPage = t.TypeOf<typeof WhyWeInvestPage>;
 export const WhyWeInvestPage = t.type({
   seo: SeoSettings,
   hero: HeroTextModule,
+  statistics: t.array(Fact),
   thesis: TextModuleWithParagraphs,
   investmentHeading: TextModuleWithParagraphs,
   investmentParagraphs: t.array(ParagraphWithHeading),

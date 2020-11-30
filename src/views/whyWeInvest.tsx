@@ -7,6 +7,7 @@ import HeroTextModule from 'components/layouts/HeroTextModule';
 import TextModule from 'components/layouts/TextModule';
 import TextModuleWithParagraphs from 'components/layouts/TextModuleWithParagraphs';
 import GridParagraphs from 'components/layouts/GridParagraphs';
+import StatisticsModule from 'components/layouts/StatisticsModule';
 
 type Props = ContainerProps & {
   model: WhyWeInvestPage;
@@ -14,7 +15,7 @@ type Props = ContainerProps & {
 
 const WhyWeInvestView: FC<Props> = (props) => {
   const { model } = props;
-  const { hero, seo, thesis, investmentHeading, investmentParagraphs, apply } = model;
+  const { hero, seo, thesis, investmentHeading, investmentParagraphs, apply, statistics } = model;
 
   return (
     <div className="ThesisView primary-xxl">
@@ -27,6 +28,7 @@ const WhyWeInvestView: FC<Props> = (props) => {
         introByline={hero.introByline}
         briefParagraph={hero.briefParagraph}
       />
+      <StatisticsModule facts={statistics} />
       <div id="#thesis">
         <TextModuleWithParagraphs
           className="text-module-padding-x py3_75 lg:py10"

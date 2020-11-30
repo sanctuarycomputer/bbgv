@@ -1,0 +1,34 @@
+.StatisticsModule {
+  &__line-icon {
+    height: 0.3125rem;
+    border-bottom: 3px solid color('lilac');
+
+    @include media('md-up') {
+      border-bottom: 5px solid color('lilac');
+    }
+  }
+
+  &__paragraph p a {
+    color: color('chalk');
+  }
+
+  &__fact {
+    @include media('md-up') {
+      &:nth-of-type(3n + 1) {
+        margin-left: 0;
+      }
+
+      &:nth-of-type(3n + 2) {
+        margin-left: 30%;
+      }
+
+      &:nth-of-type(3n + 3) {
+        margin-left: 10%;
+      }
+
+      &:nth-of-type(3n + 4) {
+        margin-left: 50%;
+      }
+    }
+  }
+}
