@@ -17,6 +17,12 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: 'Heading',
+      name: 'heading',
+      type: 'string',
+      description: 'Add an optional heading that will appear above the Press List.',
+    },
+    {
       title: 'Items',
       name: 'items',
       type: 'array',

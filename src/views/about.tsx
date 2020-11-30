@@ -56,6 +56,7 @@ const AboutView: FC<Props> = (props) => {
         <PressList
           variant={pressList.variant}
           className="col-12 md:col-10 mxauto pb3_75 lg:pb10"
+          heading={pressList.heading}
           items={pressList.items}
         />
       </div>

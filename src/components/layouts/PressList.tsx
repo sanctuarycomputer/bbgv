@@ -11,13 +11,14 @@ import { LineIcon } from 'components/icons';
 type PassedProps = {
   className?: string;
   variant: string;
+  heading?: string;
   items: PressListItem[];
 };
 
 //TO-DO: remove state for button hover.
 
 type Props = PassedProps & WithBreakpointsProps;
-const PressList: React.FC<Props> = ({ items, className, variant, mediaQuery }) => {
+const PressList: React.FC<Props> = ({ heading, items, className, variant, mediaQuery }) => {
   return (
     <div
       className={cx(
@@ -25,6 +26,11 @@ const PressList: React.FC<Props> = ({ items, className, variant, mediaQuery }) =
         className
       )}
     >
+      {heading && (
+        <div className="PressList__heading color-charcoal primary-sm pb2_25 md:pb3_75">
+          {heading}
+        </div>
+      )}
       {items.map((item: PressListItem) => (
         <div key={item.heading} className="PressList__item col-12">
           {PressItem(item, mediaQuery)}
