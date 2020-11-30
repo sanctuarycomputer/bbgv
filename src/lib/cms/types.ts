@@ -135,6 +135,25 @@ export const ParagraphWithHeading = t.type({
   paragraph: t.array(Block),
 });
 
+export type PressListItem = t.TypeOf<typeof PressListItem>;
+export const PressListItem = t.type({
+  source: t.string,
+  heading: t.string,
+  link: Button,
+});
+
+export type PressList = t.TypeOf<typeof PressList>;
+export const PressList = t.intersection([
+  t.type({
+    _type: t.string,
+    variant: t.string,
+    items: t.array(PressListItem),
+  }),
+  t.partial({
+    heading: t.string,
+  }),
+]);
+
 export type TextModule = t.TypeOf<typeof TextModule>;
 export const TextModule = t.intersection([
   t.type({
@@ -213,6 +232,7 @@ export const AboutPage = t.type({
   teamHeading: TextModule,
   valuesSection: TextModuleWithParagraphs,
   pressHeading: TextModule,
+  pressList: PressList,
   contact: TextModule,
 });
 

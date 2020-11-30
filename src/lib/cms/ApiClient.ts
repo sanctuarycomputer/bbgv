@@ -8,6 +8,7 @@ import NewsletterGroq from './groq/Newsletter';
 import FoundersImpactSlideshowGroq from './groq/FoundersImpactSlideshow';
 import TextModuleGroq from './groq/TextModule';
 import TextModuleWithParagraphsGroq from './groq/TextModuleWithParagraphs';
+import PressListModuleGroq from './groq/PressList';
 
 const ApiClient: {
   fetchGlobalSettings(): Promise<Cms.GlobalSettings | any>;
@@ -44,6 +45,7 @@ const ApiClient: {
       'teamHeading': teamHeading${TextModuleGroq},
       'valuesSection': valuesSection${TextModuleWithParagraphsGroq},
       'pressHeading': pressHeading${TextModuleGroq},
+      'pressList': pressList${PressListModuleGroq},
       'contact': contactSection${TextModuleGroq},
     }`);
 

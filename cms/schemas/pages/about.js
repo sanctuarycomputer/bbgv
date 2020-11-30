@@ -64,6 +64,12 @@ export default {
       fieldset: 'pressSection',
     },
     {
+      title: 'Press List',
+      name: 'pressList',
+      type: 'pressListModule',
+      fieldset: 'pressSection',
+    },
+    {
       title: 'Copy',
       name: 'contactSection',
       type: 'textModule',

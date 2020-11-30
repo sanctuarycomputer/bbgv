@@ -21,10 +21,10 @@ type Props = PassedProps & WithBreakpointsProps;
 
 //TO-DO: generate Company Detail page links
 
-const HomeHero: React.FC<Props> = ({ currentBreakpoint, founders, headline }) => {
+const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
   const [activeFounderIndex, setActiveFounderIndex] = useState(-1);
   const [hideLogo, setHideLogo] = useState(false);
-  const breakpointIsSmDown = ['EXTRA_SMALL', 'SMALL'].includes(currentBreakpoint);
+  const breakpointIsMdUp = mediaQuery.isMediumUp;
 
   const handleScroll = () => {
     /* Determines if the current scroll position is before of after the logo in the Home Hero Module **/
@@ -73,7 +73,7 @@ const HomeHero: React.FC<Props> = ({ currentBreakpoint, founders, headline }) =>
         {Language.t('Home.hero.ourFounders')}
       </span>
 
-      {breakpointIsSmDown ? (
+      {!breakpointIsMdUp ? (
         <span>
           <span className="primary-xxl">
             {founders.map((founder: Founder, index: number) => (
