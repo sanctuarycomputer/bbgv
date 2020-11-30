@@ -15,6 +15,18 @@
     "bbgv": "BBG Ventures, LLC",
     "portableTextLink": {
       "ariaLabel": "Navigate to %{label}"
+    },
+    "twitterLink": {
+      "label": "Twitter",
+      "ariaLabel": "Visit %{person}'s Twitter profile"
+    },
+    "linkedInLink": {
+      "label": "LinkedIn",
+      "ariaLabel": "Visit %{person}'s LinkedIn profile"
+    },
+    "instagramLink": {
+      "label": "Instagram",
+      "ariaLabel": "Visit %{person}'s Instagram profile"
     }
   },
   "Nav": {

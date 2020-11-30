@@ -3,7 +3,7 @@ import cx from 'classnames';
 import throttle from 'lodash/throttle';
 import { Founder } from 'lib/cms/types';
 import Language from 'constants/Language';
-import generateFounderFullName from 'utils/generateFounderFullName';
+import generateFullName from 'utils/generateFullName';
 import Classes from 'constants/Classes';
 import withBreakpoints, { InjectedProps as WithBreakpointsProps } from 'lib/withBreakpoints';
 import { Button } from 'components/base';
@@ -108,7 +108,7 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
                 <Button
                   className="HomeHero__founder inline text-decoration-none hover-color-lilac color-charcoal transition"
                   ariaLabel={Language.t('Founder.viewDetailPageButtonAriaLabel', {
-                    founderFullName: generateFounderFullName(founder),
+                    FullName: generateFullName(founder),
                   })}
                   to="/"
                   onMouseEnter={() => {

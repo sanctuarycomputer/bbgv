@@ -4,7 +4,7 @@ import cx from 'classnames';
 import { FoundersImpactSlide, FoundersImpactSlideshowVariant, Founder } from 'lib/cms/types';
 import Language from 'constants/Language';
 import { Button } from 'components/base';
-import generateFounderFullName from 'utils/generateFounderFullName';
+import generateFullName from 'utils/generateFullName';
 import { RouteMap } from 'constants/RouteMap';
 
 //TO-DO: Add generate company slug util and replace links. Left tile should link to companies page, right tile should link to company detail page.
@@ -133,12 +133,12 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
                     <span key={`FoundersImpactSlideshow-${founder.firstName}`}>
                       {index !== foundersLength - 1 ? (
                         <span>
-                          <span>{generateFounderFullName(founder)}</span>
+                          <span>{generateFullName(founder)}</span>
                           <span className="color-charcoal">, </span>
                         </span>
                       ) : (
                         <span>
-                          <span>{generateFounderFullName(founder)} </span>
+                          <span>{generateFullName(founder)} </span>
                         </span>
                       )}
                     </span>

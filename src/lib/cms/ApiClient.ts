@@ -9,6 +9,7 @@ import FoundersImpactSlideshowGroq from './groq/FoundersImpactSlideshow';
 import TextModuleGroq from './groq/TextModule';
 import TextModuleWithParagraphsGroq from './groq/TextModuleWithParagraphs';
 import PressListModuleGroq from './groq/PressList';
+import TeamMemberGroq from './groq/TeamMember';
 
 const ApiClient: {
   fetchGlobalSettings(): Promise<Cms.GlobalSettings | any>;
@@ -43,6 +44,7 @@ const ApiClient: {
       'seo': ${SeoSettingsGroq},
       'hero': ${HeroTextModuleGroq},
       'teamHeading': teamHeading${TextModuleGroq},
+      'teamMembers': teamMembers[]->${TeamMemberGroq},
       'valuesSection': valuesSection${TextModuleWithParagraphsGroq},
       'pressHeading': pressHeading${TextModuleGroq},
       'pressList': pressList${PressListModuleGroq},

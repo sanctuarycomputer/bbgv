@@ -15,6 +15,7 @@ export default () =>
         .title('Settings')
         .child(S.editor().schemaType('globalSettings').documentId('_globalSettings')),
       S.divider(),
+      S.documentTypeListItem('teamMember'),
       S.documentTypeListItem('founder'),
       S.documentTypeListItem('company'),
     ]);

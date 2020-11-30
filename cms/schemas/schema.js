@@ -24,6 +24,7 @@ import PressListModule from './layouts/pressListModule';
 /** References */
 import Founder from './references/founder';
 import Company from './references/company';
+import TeamMember from './references/teamMember';
 
 /* Fields */
 import SeoSettings from './fields/seoSettings';
@@ -58,6 +59,7 @@ export default createSchema({
     /** References */
     Founder,
     Company,
+    TeamMember,
 
     /* Fields */
     SeoSettings,

@@ -48,6 +48,23 @@ export const SeoSettings = t.partial({
   image: Image,
 });
 
+export type TeamMember = t.TypeOf<typeof TeamMember>;
+export const TeamMember = t.intersection([
+  t.type({
+    _type: t.string,
+    firstName: t.string,
+    lastName: t.string,
+    jobTitle: t.string,
+    bio: t.array(Block),
+    image: Image,
+  }),
+  t.partial({
+    twitter: t.string,
+    instagram: t.string,
+    linkedIn: t.string,
+  }),
+]);
+
 export type Founder = t.TypeOf<typeof Founder>;
 export const Founder = t.partial({
   _type: t.string,
@@ -230,6 +247,7 @@ export const AboutPage = t.type({
   seo: SeoSettings,
   hero: HeroTextModule,
   teamHeading: TextModule,
+  teamMembers: t.array(TeamMember),
   valuesSection: TextModuleWithParagraphs,
   pressHeading: TextModule,
   pressList: PressList,

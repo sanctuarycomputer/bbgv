@@ -52,6 +52,20 @@ export default {
       fieldset: 'teamSection',
     },
     {
+      title: 'Team Members',
+      name: 'teamMembers',
+      type: 'array',
+      description:
+        'Add Team Members in the dropdown menu below. You must first create a Team Member before you can add them to this module.',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'teamMember' }],
+        },
+      ],
+      fieldset: 'teamSection',
+    },
+    {
       title: 'Copy',
       name: 'valuesSection',
       type: 'textModuleWithParagraphs',

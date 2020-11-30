@@ -46,7 +46,7 @@
     padding-left: $site-padding-x-mobile;
     padding-right: $site-padding-x-mobile;
 
-    @include media('lg') {
+    @include media('md-up') {
       padding-left: 0;
       padding-right: 0;
       max-width: $site-inner-content-max-width;
