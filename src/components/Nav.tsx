@@ -24,9 +24,9 @@ type PassedProps = {
 type Props = PassedProps & WithBreakpointsProps;
 
 const Nav: React.FC<Props> = (props) => {
-  const { onOpenMenu, onCloseMenu, theme, menuIsOpen, currentBreakpoint } = props;
+  const { onOpenMenu, onCloseMenu, theme, menuIsOpen, mediaQuery } = props;
   const iconColor = theme === 'default' ? 'charcoal' : 'chalk';
-  const breakpointIsSmDown = ['EXTRA_SMALL', 'SMALL'].includes(currentBreakpoint);
+  const breakpointIsMdUp = mediaQuery.isMediumUp;
   const [scrollPosition, setScrollPosition] = useState(0);
   const [hoverLogo, setHoverLogo] = useState(false);
   const [showNavLogo, setShowNavLogo] = useState(false);
@@ -55,7 +55,7 @@ const Nav: React.FC<Props> = (props) => {
   }, [showNavLogo]);
 
   const handleMarginTop = () => {
-    if (breakpointIsSmDown) {
+    if (!breakpointIsMdUp) {
       return scrollPosition > 0 ? '0' : '40px';
     } else {
       return '0';

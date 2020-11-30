@@ -3,9 +3,16 @@ import React, { Component, ComponentType } from 'react';
 import { Subtract } from 'utility-types';
 
 export type CurrentBreakpoint = string | null;
-
+export type MediaQuery = {
+  isExtraSmallUp: boolean;
+  isSmallUp: boolean;
+  isMediumUp: boolean;
+  isLargeUp: boolean;
+  isExtraLargeUp: boolean;
+};
 export interface InjectedProps {
   currentBreakpoint: string;
+  mediaQuery: MediaQuery;
 }
 
 export interface Breakpoint {
@@ -16,6 +23,7 @@ export interface Breakpoint {
 
 export interface State {
   currentBreakpoint: CurrentBreakpoint;
+  mediaQuery: MediaQuery;
 }
 
 export const Breakpoints: {
@@ -60,8 +68,10 @@ const withBreakpoints = <WrappedComponentProps extends InjectedProps>(
     constructor(props: WrappedComponentProps) {
       super(props);
 
+      const currentBreakpoint = this.getCurrentBreakpoint();
       this.state = {
-        currentBreakpoint: this.getCurrentBreakpoint(),
+        currentBreakpoint,
+        mediaQuery: this.getCurrentMediaQuery(currentBreakpoint),
       };
     }
 
@@ -77,7 +87,10 @@ const withBreakpoints = <WrappedComponentProps extends InjectedProps>(
       let currentBreakpoint: CurrentBreakpoint = this.getCurrentBreakpoint();
 
       if (currentBreakpoint !== this.state.currentBreakpoint) {
-        this.setState({ currentBreakpoint });
+        this.setState({
+          currentBreakpoint,
+          mediaQuery: this.getCurrentMediaQuery(currentBreakpoint),
+        });
       }
     };
 
@@ -93,11 +106,49 @@ const withBreakpoints = <WrappedComponentProps extends InjectedProps>(
       );
     };
 
+    getCurrentMediaQuery = (currentBreakpoint: CurrentBreakpoint) => {
+      if (currentBreakpoint) {
+        return {
+          isExtraSmallUp: [
+            Breakpoints.SMALL.label,
+            Breakpoints.MEDIUM.label,
+            Breakpoints.LARGE.label,
+            Breakpoints.EXTRA_LARGE.label,
+            Breakpoints.EXTRA_EXTRA_LARGE.label,
+          ].includes(currentBreakpoint),
+          isSmallUp: [
+            Breakpoints.MEDIUM.label,
+            Breakpoints.LARGE.label,
+            Breakpoints.EXTRA_LARGE.label,
+            Breakpoints.EXTRA_EXTRA_LARGE.label,
+          ].includes(currentBreakpoint),
+          isMediumUp: [
+            Breakpoints.LARGE.label,
+            Breakpoints.EXTRA_LARGE.label,
+            Breakpoints.EXTRA_EXTRA_LARGE.label,
+          ].includes(currentBreakpoint),
+          isLargeUp: [Breakpoints.EXTRA_LARGE.label, Breakpoints.EXTRA_EXTRA_LARGE.label].includes(
+            currentBreakpoint
+          ),
+          isExtraLargeUp: [Breakpoints.EXTRA_EXTRA_LARGE.label].includes(currentBreakpoint),
+        };
+      }
+
+      return {
+        isExtraSmallUp: false,
+        isSmallUp: false,
+        isMediumUp: false,
+        isLargeUp: false,
+        isExtraLargeUp: false,
+      };
+    };
+
     render() {
       return (
         <WrappedComponent
           {...(this.props as WrappedComponentProps)}
           currentBreakpoint={this.state.currentBreakpoint}
+          mediaQuery={this.state.mediaQuery}
         />
       );
     }

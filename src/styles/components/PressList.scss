@@ -1,20 +1,20 @@
 .PressList {
   &--style-nutella {
-    > div {
+    > .PressList__item {
       border-top: 2px solid color('nutella');
     }
 
-    > div:last-child {
+    > .PressList__item:last-child {
       border-bottom: 2px solid color('nutella');
     }
   }
 
   &--style-lilac {
-    > div {
+    > .PressList__item {
       border-top: 2px solid color('lilac');
     }
 
-    > div:last-child {
+    > .PressList__item:last-child {
       border-bottom: 2px solid color('lilac');
     }
   }

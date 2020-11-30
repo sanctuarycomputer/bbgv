@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
-import withBreakpoints, { InjectedProps as WithBreakpointsProps } from 'lib/withBreakpoints';
+import withBreakpoints, {
+  MediaQuery,
+  InjectedProps as WithBreakpointsProps,
+} from 'lib/withBreakpoints';
 import { PressListItem } from 'lib/cms/types';
 import { Button } from 'components/base';
 import { LineIcon } from 'components/icons';
@@ -14,7 +17,7 @@ type PassedProps = {
 //TO-DO: remove state for button hover.
 
 type Props = PassedProps & WithBreakpointsProps;
-const PressList: React.FC<Props> = ({ items, className, variant, currentBreakpoint }) => {
+const PressList: React.FC<Props> = ({ items, className, variant, mediaQuery }) => {
   return (
     <div
       className={cx(
@@ -24,7 +27,7 @@ const PressList: React.FC<Props> = ({ items, className, variant, currentBreakpoi
     >
       {items.map((item: PressListItem) => (
         <div key={item.heading} className="PressList__item col-12">
-          {PressItem(item, currentBreakpoint)}
+          {PressItem(item, mediaQuery)}
         </div>
       ))}
     </div>
@@ -33,9 +36,9 @@ const PressList: React.FC<Props> = ({ items, className, variant, currentBreakpoi
 
 export default withBreakpoints<Props>(PressList);
 
-const PressItem = (item: PressListItem, currentBreakpoint: string) => {
+const PressItem = (item: PressListItem, mediaQuery: MediaQuery) => {
   const [hoverButton, setHoverButton] = useState(false);
-  const breakpointIsSmDown = ['EXTRA_SMALL', 'SMALL'].includes(currentBreakpoint);
+  const breakpointIsMdUp = mediaQuery.isMediumUp;
 
   return (
     <div className="PressList__item-inner-container col-12 flex flex-row py1_5">
@@ -44,7 +47,7 @@ const PressItem = (item: PressListItem, currentBreakpoint: string) => {
         <span className="mr1_5">{item.heading}</span>
         <span
           className={cx('PressList__button', {
-            block: breakpointIsSmDown,
+            block: !breakpointIsMdUp,
           })}
         >
           <Button
