@@ -276,3 +276,10 @@ export const WhyWeInvestPage = t.type({
   investmentParagraphs: t.array(ParagraphWithHeading),
   apply: TextModule,
 });
+
+export type CompaniesPage = t.TypeOf<typeof CompaniesPage>;
+export const CompaniesPage = t.type({
+  seo: SeoSettings,
+  hero: HeroTextModule,
+  contact: TextModule,
+});

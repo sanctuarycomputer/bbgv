@@ -9,6 +9,9 @@ export default () =>
         .title('About Us Page')
         .child(S.editor().schemaType('about').documentId('_about')),
       S.listItem()
+        .title('Companies Page')
+        .child(S.editor().schemaType('companies').documentId('_companies')),
+      S.listItem()
         .title('Why We Invest Page')
         .child(S.editor().schemaType('whyWeInvest').documentId('_whyWeInvest')),
       S.listItem()

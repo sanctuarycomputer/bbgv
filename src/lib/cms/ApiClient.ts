@@ -16,6 +16,7 @@ const ApiClient: {
   fetchHome(): Promise<Cms.HomePage | any>;
   fetchAboutPage(): Promise<Cms.AboutPage | any>;
   fetchWhyWeInvestPage(): Promise<Cms.WhyWeInvestPage | any>;
+  fetchCompaniesPage(): Promise<Cms.CompaniesPage | any>;
 } = {
   async fetchGlobalSettings() {
     const response = await Sanity.fetch(`*[_type == 'globalSettings'][0]${GlobalSettingsGroq}`);
@@ -72,6 +73,16 @@ const ApiClient: {
         paragraph
       },
       'apply': apply${TextModuleGroq},
+    }`);
+
+    return response;
+  },
+  async fetchCompaniesPage() {
+    const response = await Sanity.fetch(`*[_type == 'companies' && _id == '_companies'][0] {
+      _type,
+      'seo': ${SeoSettingsGroq},
+      'hero': ${HeroTextModuleGroq},
+      'contact': contactSection${TextModuleGroq},
     }`);
 
     return response;

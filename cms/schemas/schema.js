@@ -11,6 +11,7 @@ import GlobalSettings from './GlobalSettings';
 import HomePage from './pages/home';
 import AboutUsPage from './pages/about';
 import WhyWeInvestPage from './pages/whyWeInvest';
+import CompaniesPage from './pages/companies';
 
 /** Layouts */
 import HomeHeroModule from './layouts/homeHeroModule';
@@ -47,6 +48,7 @@ export default createSchema({
     HomePage,
     AboutUsPage,
     WhyWeInvestPage,
+    CompaniesPage,
 
     /** Layouts */
     HomeHeroModule,
