@@ -9,26 +9,26 @@
 
   &__button {
     @extend .transition-shorter;
+
+    &:hover {
+      .InvestmentsList__button-line-icon {
+        width: 2.25rem;
+      }
+
+      .InvestmentsList__button-placeholder-div {
+        width: 0;
+      }
+    }
   }
 
   &__button-line-icon {
     @extend .transition-shorter;
     width: 1.0625rem;
     height: 0.125rem;
-
-    &--style-hover {
-      width: 2.25rem;
-    }
   }
 
   &__button-placeholder-div {
-    &--style-full-width {
-      width: 1.1875rem;
-    }
-
-    &--style-no-width {
-      width: 0;
-    }
+    width: 1.1875rem;
   }
 
   &__logo {
