@@ -1,23 +1,28 @@
 import React from 'react';
+import cx from 'classnames';
 
+import Language from 'constants/Language';
 import { Colors, HexColors } from 'constants/Colors';
 import { Button } from 'components/base';
 
 interface Props {
   color: Colors;
-  ariaLabel: string;
   link: string;
   label: string;
 }
 
-const LineIconWithButton: React.FC<Props> = ({ color, ariaLabel, link, label }) => {
+const LineIconWithButton: React.FC<Props> = ({ color, link, label }) => {
   return (
     <span className="LineIconWithButton__button ml_25 secondary-sm">
       <Button
         wrap={true}
-        className="inline-flex items-center text-decoration-none secondary-sm-bold vertical-align-middle color-charcoal"
+        className={cx(
+          `inline-flex items-center text-decoration-none secondary-sm-bold vertical-align-middle color-${color}`
+        )}
         to={link}
-        ariaLabel={ariaLabel}
+        ariaLabel={Language.t('Global.generalButtonAriaLabel', {
+          link: label,
+        })}
       >
         <svg
           className="LineIconWithButton__button-line-icon mr_25"

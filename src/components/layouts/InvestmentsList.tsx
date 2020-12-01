@@ -5,7 +5,7 @@ import { InvestmentsListItem, Founder } from 'lib/cms/types';
 import generateFullName from 'utils/generateFullName';
 import Language from 'constants/Language';
 
-import { Img, Button } from 'components/base';
+import { Img } from 'components/base';
 import { LineIconWithButton } from 'components/icons';
 import PortableText from 'components/PortableText';
 
@@ -62,7 +62,6 @@ const InvestmentListItem = (item: InvestmentsListItem) => {
 
         {item.description.button?.link && (
           <LineIconWithButton
-            ariaLabel={item.description.button?.label}
             link={item.description.button?.link}
             color="charcoal"
             label={item.description.button?.label}

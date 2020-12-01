@@ -2,8 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import { Fact as IFact } from 'lib/cms/types';
 import PortableText from 'components/PortableText';
-import { LineIcon } from 'components/icons';
-import { Button } from 'components/base';
+import { LineIconWithButton } from 'components/icons';
 
 type Props = {
   className?: string;
@@ -67,15 +66,11 @@ const Fact = (fact: IFact) => {
         <div className="StatisticsModule__paragraph vertical-align-middle secondary-sm col-12 md:col-6 pb1_5 md:pb0">
           <PortableText blocks={fact.paragraphWithButton.paragraph} />
           {fact.paragraphWithButton.button && (
-            <Button
-              wrap={true}
-              className="inline-flex items-center text-decoration-none secondary-sm-bold vertical-align-middle color-chalk"
-              to={fact.paragraphWithButton.button.link}
-              ariaLabel={fact.paragraphWithButton.button.label}
-            >
-              <LineIcon className="TextModule__button-line-icon mr_25" color="chalk" />
-              {fact.paragraphWithButton.button.label}
-            </Button>
+            <LineIconWithButton
+              link={fact.paragraphWithButton.button.link}
+              color="chalk"
+              label={fact.paragraphWithButton.button.label}
+            />
           )}
         </div>
       </div>

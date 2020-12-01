@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import cx from 'classnames';
 import { Block, ParagraphWithButton } from 'lib/cms/types';
 import PortableText from 'components/PortableText';
-import { LineIcon } from 'components/icons';
-import { Button } from 'components/base';
+import { LineIcon, LineIconWithButton } from 'components/icons';
 
 type Props = {
   className?: string;
@@ -22,9 +21,6 @@ const TextModule: React.FC<Props> = ({
 }) => {
   const fontColor = variant === 'mulberry' ? 'color-chalk' : 'color-charcoal';
   const iconColor = variant === 'mulberry' ? 'chalk' : 'charcoal';
-
-  //TO-DO: Remove state for button and use css to change width of button instead.
-  const [hoverParagraphButton, setHoverParagraphButton] = useState(false);
 
   return (
     <div
@@ -63,30 +59,11 @@ const TextModule: React.FC<Props> = ({
           >
             <PortableText blocks={briefParagraph.paragraph} />
             {briefParagraph.button && (
-              <Button
-                wrap={true}
-                className={cx(
-                  `TextModule__button TextModule--style-${variant}__button inline-flex items-center text-decoration-none secondary-sm-bold vertical-align-middle`
-                )}
-                to={briefParagraph.button.link}
-                onMouseEnter={() => setHoverParagraphButton(true)}
-                onMouseLeave={() => setHoverParagraphButton(false)}
-                ariaLabel={briefParagraph.button.label}
-              >
-                <LineIcon
-                  className={cx('TextModule__button-line-icon mr_25', {
-                    'TextModule__button-line-icon--style-hover': hoverParagraphButton,
-                  })}
-                  color={iconColor}
-                />
-                {briefParagraph.button.label}
-                <span
-                  className={cx('TextModule__button-placeholder-div opacity-1 events-none', {
-                    'TextModule__button-placeholder-div--style-full-width': !hoverParagraphButton,
-                    'TextModule__button-placeholder-div--style-no-width': hoverParagraphButton,
-                  })}
-                ></span>
-              </Button>
+              <LineIconWithButton
+                link={briefParagraph.button.link}
+                color={iconColor}
+                label={briefParagraph.button.label}
+              />
             )}
           </div>
         )}
