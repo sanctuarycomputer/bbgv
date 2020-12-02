@@ -10,7 +10,9 @@ export default `{
   name, 
   sector,
   tag,
-  careersLink,
+  careers,
+  instagram,
+  linkedIn,
   website,
   'founders': founders[]->${FounderGroq}
 }`;

@@ -1,0 +1,47 @@
+.InvestmentsList {
+  > .InvestmentsList__item {
+    border-top: 2px solid color('lilac');
+  }
+
+  > .InvestmentsList__item:last-child {
+    border-bottom: 2px solid color('lilac');
+  }
+
+  &__button {
+    @extend .transition-shorter;
+
+    &:hover {
+      .InvestmentsList__button-line-icon {
+        width: 2.25rem;
+      }
+
+      .InvestmentsList__button-placeholder-div {
+        width: 0;
+      }
+    }
+  }
+
+  &__button-line-icon {
+    @extend .transition-shorter;
+    width: 1.0625rem;
+    height: 0.125rem;
+  }
+
+  &__button-placeholder-div {
+    width: 1.1875rem;
+  }
+
+  &__logo {
+    width: 4.9375rem;
+    height: 1.75rem;
+
+    @include media('md-up') {
+      width: 5.75rem;
+      height: 2.0625rem;
+    }
+  }
+
+  &__description p {
+    display: inline;
+  }
+}

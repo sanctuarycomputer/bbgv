@@ -46,7 +46,7 @@
     padding-left: $site-padding-x-mobile;
     padding-right: $site-padding-x-mobile;
 
-    @include media('md-up') {
+    @include media('lg-up') {
       padding-left: 0;
       padding-right: 0;
       max-width: $site-inner-content-max-width;
@@ -65,29 +65,5 @@
 
   &__heading p {
     display: inline;
-  }
-
-  &__button {
-    @extend .transition-shorter;
-  }
-
-  &__button-placeholder-div {
-    &--style-full-width {
-      width: 1.1875rem;
-    }
-
-    &--style-no-width {
-      width: 0;
-    }
-  }
-
-  &__button-line-icon {
-    @extend .transition-shorter;
-    width: 1.0625rem;
-    height: 0.125rem;
-
-    &--style-hover {
-      width: 2.25rem;
-    }
   }
 }

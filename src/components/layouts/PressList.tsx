@@ -6,7 +6,7 @@ import withBreakpoints, {
 } from 'lib/withBreakpoints';
 import { PressListItem } from 'lib/cms/types';
 import { Button } from 'components/base';
-import { LineIcon } from 'components/icons';
+import { LineIconWithButton } from 'components/icons';
 
 type PassedProps = {
   className?: string;
@@ -14,8 +14,6 @@ type PassedProps = {
   heading?: string;
   items: PressListItem[];
 };
-
-//TO-DO: remove state for button hover.
 
 type Props = PassedProps & WithBreakpointsProps;
 const PressList: React.FC<Props> = ({ heading, items, className, variant, mediaQuery }) => {
@@ -43,7 +41,6 @@ const PressList: React.FC<Props> = ({ heading, items, className, variant, mediaQ
 export default withBreakpoints<Props>(PressList);
 
 const PressItem = (item: PressListItem, mediaQuery: MediaQuery) => {
-  const [hoverButton, setHoverButton] = useState(false);
   const breakpointIsMdUp = mediaQuery.isMediumUp;
 
   return (
@@ -56,28 +53,7 @@ const PressItem = (item: PressListItem, mediaQuery: MediaQuery) => {
             block: !breakpointIsMdUp,
           })}
         >
-          <Button
-            wrap={true}
-            className="inline-flex items-center text-decoration-none secondary-sm-bold vertical-align-middle color-charcoal"
-            to={item.link.link}
-            onMouseEnter={() => setHoverButton(true)}
-            onMouseLeave={() => setHoverButton(false)}
-            ariaLabel={item.link.label}
-          >
-            <LineIcon
-              className={cx('PressList__button-line-icon mr_25', {
-                'PressList__button-line-icon--style-hover': hoverButton,
-              })}
-              color="charcoal"
-            />
-            {item.link.label}
-            <span
-              className={cx('PressList__button-placeholder-div opacity-1 events-none', {
-                'PressList__button-placeholder-div--style-full-width': !hoverButton,
-                'PressList__button-placeholder-div--style-no-width': hoverButton,
-              })}
-            ></span>
-          </Button>
+          <LineIconWithButton link={item.link.link} color="charcoal" label={item.link.label} />
         </span>
       </div>
     </div>

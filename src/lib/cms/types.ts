@@ -81,17 +81,23 @@ export const Founder = t.partial({
 });
 
 export type Company = t.TypeOf<typeof Company>;
-export const Company = t.partial({
-  _type: t.string,
-  description: t.array(Block),
-  website: Button,
-  careersLink: Button,
-  founders: t.array(Founder),
-  tag: t.string,
-  sector: t.string,
-  logo: Image,
-  name: t.string,
-});
+export const Company = t.intersection([
+  t.type({
+    _type: t.string,
+    website: Button,
+    logo: Image,
+    name: t.string,
+  }),
+  t.partial({
+    description: t.array(Block),
+    careers: Button,
+    instagram: Button,
+    linkedIn: Button,
+    founders: t.array(Founder),
+    tag: t.string,
+    sector: t.string,
+  }),
+]);
 
 export type FooterMenu = t.TypeOf<typeof FooterMenu>;
 export const FooterMenu = t.type({
@@ -208,6 +214,19 @@ export const TextModuleWithParagraphs = t.intersection([
   }),
 ]);
 
+export type InvestmentsListItem = t.TypeOf<typeof InvestmentsListItem>;
+export const InvestmentsListItem = t.type({
+  company: Company,
+  description: ParagraphWithButton,
+});
+
+export type InvestmentsListModule = t.TypeOf<typeof InvestmentsListModule>;
+export const InvestmentsListModule = t.type({
+  _type: t.string,
+  heading: t.string,
+  items: t.array(InvestmentsListItem),
+});
+
 export type HomeHero = t.TypeOf<typeof HomeHero>;
 export const HomeHero = t.type({
   _type: t.string,
@@ -275,4 +294,12 @@ export const WhyWeInvestPage = t.type({
   investmentHeading: TextModuleWithParagraphs,
   investmentParagraphs: t.array(ParagraphWithHeading),
   apply: TextModule,
+});
+
+export type CompaniesPage = t.TypeOf<typeof CompaniesPage>;
+export const CompaniesPage = t.type({
+  seo: SeoSettings,
+  hero: HeroTextModule,
+  investmentsList: InvestmentsListModule,
+  contact: TextModule,
 });
