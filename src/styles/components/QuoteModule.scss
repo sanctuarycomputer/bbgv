@@ -1,0 +1,28 @@
+.QuoteModule {
+  padding: 2.875rem;
+
+  @include media('md-up') {
+    margin-top: 2.6875rem;
+    margin-bottom: 2.6875rem;
+  }
+
+  &__quote p {
+    font-family: $benton;
+    font-size: 2.25rem;
+    line-height: 2.3625rem;
+
+    @include media('lg-up') {
+      font-size: 3.375rem;
+      line-height: 3.54375rem;
+    }
+  }
+
+  &__line-icon {
+    height: 0.1875rem;
+    width: 4.1875rem;
+
+    @include media('md-up') {
+      width: 5.75rem;
+    }
+  }
+}

@@ -8,6 +8,15 @@ export const Image = t.type({
   caption: t.string,
 });
 
+export type FullWidthImageCaption = t.TypeOf<typeof FullWidthImageCaption>;
+export const FullWidthImageCaption = t.type({
+  id: t.string,
+  type: t.string,
+  src: t.string,
+  alt: t.string,
+  caption: t.string,
+});
+
 export type Button = t.TypeOf<typeof Button>;
 export const Button = t.type({
   label: t.string,
@@ -46,6 +55,25 @@ export const SeoSettings = t.partial({
   title: t.string,
   description: t.string,
   image: Image,
+});
+
+export type QuoteModule = t.TypeOf<typeof QuoteModule>;
+export const QuoteModule = t.intersection([
+  t.type({
+    type: t.string,
+    id: t.string,
+    quote: t.array(Block),
+  }),
+  t.partial({
+    source: t.string,
+  }),
+]);
+
+export type LineBreak = t.TypeOf<typeof LineBreak>;
+export const LineBreak = t.type({
+  type: t.string,
+  id: t.string,
+  variant: t.string,
 });
 
 export type TeamMember = t.TypeOf<typeof TeamMember>;
@@ -302,4 +330,18 @@ export const CompaniesPage = t.type({
   hero: HeroTextModule,
   investmentsList: InvestmentsListModule,
   contact: TextModule,
+});
+
+export type DefaultPageContent = t.TypeOf<typeof DefaultPageContent>;
+export const DefaultPageContent = t.type({
+  body: t.array(Block),
+});
+
+export type DefaultPage = t.TypeOf<typeof DefaultPage>;
+export const DefaultPage = t.type({
+  title: t.string,
+  slug: t.string,
+  content: DefaultPageContent,
+  intro: TextModule,
+  seo: SeoSettings,
 });

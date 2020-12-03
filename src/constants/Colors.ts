@@ -10,6 +10,7 @@ export type Colors =
   | 'mulberry'
   | 'nutella'
   | 'charcoal'
+  | 'black-lighter'
   | 'black';
 
 export enum HexColors {
@@ -24,6 +25,7 @@ export enum HexColors {
   'mulberry' = '#682f4e',
   'nutella' = '#a38985',
   'charcoal' = '#242424',
+  'black-lighter' = 'rgba(0, 0, 0, 0.5)',
   'black' = '#000000',
 }
 

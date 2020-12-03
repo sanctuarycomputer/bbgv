@@ -1,0 +1,9 @@
+.FullWidthImageCaption {
+  &__image {
+    max-height: 23.375rem;
+
+    > img {
+      max-height: 23.375rem;
+    }
+  }
+}

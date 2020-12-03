@@ -44,13 +44,13 @@ const TextModule: React.FC<Props> = ({
           />
         )}
 
-        <span
+        <h1
           className={cx(
             `TextModule__heading TextModule--style-${variant}__heading primary-xl vertical-align-middle pl3_75`
           )}
         >
           <PortableText blocks={heading} />
-        </span>
+        </h1>
         {briefParagraph && (
           <div
             className={cx(

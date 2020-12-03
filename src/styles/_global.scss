@@ -16,6 +16,14 @@
   border-bottom: 3px solid color('mulberry');
 }
 
+.border-top-lilac {
+  border-top: 3px solid color('lilac');
+}
+
+.border-bottom-lilac {
+  border-bottom: 3px solid color('nutella');
+}
+
 /** Global site sizing */
 
 .site-inner-content-max-width {
@@ -42,6 +50,14 @@
   }
 }
 
+.generic-page-margin-top {
+  margin-top: calc(#{$nav-top-margin-mobile} + #{$nav-height-mobile} + 3.75rem);
+
+  @include media('lg-up') {
+    margin-top: calc(#{$nav-height-desktop} + 6.25rem);
+  }
+}
+
 .page-style--margin-top {
   margin-top: calc(#{$nav-top-margin-mobile} + #{$nav-height-mobile});
 
@@ -50,12 +66,34 @@
   }
 }
 
+/** General Link Styling */
+
+.link--style-body-charcoal {
+  color: color('charcoal');
+  @extend .transition-shorter;
+  @extend .text-decoration-none;
+  @extend .hover-lighten-charcoal;
+  @extend .secondary-bold-sm;
+}
+
+/** Default Page */
+
+.default-page-inner-text {
+  margin-left: $site-padding-x-mobile;
+  margin-right: $site-padding-x-mobile;
+
+  @include media('md-up') {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
+/** Utils */
+
 .text-module-padding-x {
   @extend .site-margin-x;
   @extend .site-inner-content-max-width;
 }
-
-/** Utils */
 
 .disable-body-scroll {
   margin: 0;

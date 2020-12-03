@@ -12,6 +12,7 @@ import HomePage from './pages/home';
 import AboutUsPage from './pages/about';
 import WhyWeInvestPage from './pages/whyWeInvest';
 import CompaniesPage from './pages/companies';
+import DefaultPage from './pages/default';
 
 /** Layouts */
 import HomeHeroModule from './layouts/homeHeroModule';
@@ -50,6 +51,7 @@ export default createSchema({
     AboutUsPage,
     WhyWeInvestPage,
     CompaniesPage,
+    DefaultPage,
 
     /** Layouts */
     HomeHeroModule,

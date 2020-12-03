@@ -30,7 +30,7 @@ export default GridParagraphs;
 const Paragraph = (section: ParagraphWithHeading) => {
   return (
     <div className="GridParagraphs__section-inner-container">
-      <span className="GridParagraphs__heading pr7 primary-md vertical-align-middle left">
+      <span className="GridParagraphs__heading pr5 lg:pr7 primary-md vertical-align-middle left">
         {section.heading}
       </span>
 

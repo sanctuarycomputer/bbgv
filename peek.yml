@@ -2,3 +2,4 @@ version: 2
 main:
   type: static
   path: /build
+  spa: true

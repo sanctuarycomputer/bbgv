@@ -11,6 +11,7 @@ import TextModuleWithParagraphsGroq from './groq/TextModuleWithParagraphs';
 import PressListModuleGroq from './groq/PressList';
 import TeamMemberGroq from './groq/TeamMember';
 import InvestmentsListModuleGroq from './groq/InvestmentsListModule';
+import DefaultPageContentGroq from './groq/DefaultPageContent';
 
 const ApiClient: {
   fetchGlobalSettings(): Promise<Cms.GlobalSettings | any>;
@@ -18,6 +19,7 @@ const ApiClient: {
   fetchAboutPage(): Promise<Cms.AboutPage | any>;
   fetchWhyWeInvestPage(): Promise<Cms.WhyWeInvestPage | any>;
   fetchCompaniesPage(): Promise<Cms.CompaniesPage | any>;
+  fetchDefaultPage(slug: string): Promise<Cms.DefaultPage | any>;
 } = {
   async fetchGlobalSettings() {
     const response = await Sanity.fetch(`*[_type == 'globalSettings'][0]${GlobalSettingsGroq}`);
@@ -86,6 +88,16 @@ const ApiClient: {
       'investmentsList': investmentsList${InvestmentsListModuleGroq},
       'contact': contactSection${TextModuleGroq},
     }`);
+  },
+  async fetchDefaultPage(slug: string) {
+    const response = await Sanity.fetch(
+      `*[_type == 'default' && slug == '/${slug}'][0]{
+        _type,
+        'seo': ${SeoSettingsGroq},
+        'intro': intro${TextModuleGroq},
+        'content': { ${DefaultPageContentGroq('body')} },
+      }`
+    );
 
     return response;
   },

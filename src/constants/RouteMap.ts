@@ -2,6 +2,7 @@ import HomeContainer from 'containers/home';
 import AboutContainer from 'containers/about';
 import WhyWeInvestContainer from 'containers/whyWeInvest';
 import CompaniesContainer from 'containers/companies';
+import DefaultContainer from 'containers/default';
 
 import { RouteObject } from 'types';
 
@@ -27,5 +28,10 @@ export const RouteMap: { [id: string]: RouteObject } = {
     path: '/why-we-invest',
     exact: true,
     component: WhyWeInvestContainer,
+  },
+  DEFAULT: {
+    path: '/:id',
+    exact: true,
+    component: DefaultContainer,
   },
 };
