@@ -1,0 +1,105 @@
+.CompanyDetailPageContent {
+  &__body {
+    padding-bottom: 5rem;
+
+    @include media('md-up') {
+      padding-bottom: 12.5rem;
+    }
+
+    > .ParagraphWithHeadingAndButton,
+    > .VideoModule,
+    > h1,
+    > h2,
+    > h3,
+    > h4,
+    > h5,
+    > h6,
+    > ul,
+    > ol,
+    > p {
+      @extend .default-page-inner-text;
+    }
+
+    h2 {
+      @extend .primary-lg;
+      padding-bottom: 6rem;
+
+      &::before {
+        width: 5.75rem;
+        height: 0.1875rem;
+        vertical-align: middle;
+        margin-right: 0.75rem;
+        content: '';
+        background-image: url('../../components/icons/DefaultHeadingLineIcon.svg');
+        margin-right: 2.25rem;
+        display: inline-block;
+      }
+
+      @include media('md-up') {
+        padding-bottom: 5rem;
+
+        &::before {
+          width: 7.75rem;
+          margin-right: 2.25rem;
+        }
+      }
+    }
+
+    h3 {
+      @extend .primary-md;
+    }
+
+    h4,
+    h5,
+    h6 {
+      padding-bottom: 1.5rem;
+    }
+
+    h4 {
+      @extend .primary-sm;
+    }
+
+    p a {
+      @extend .link--style-body-charcoal;
+    }
+
+    p,
+    ul,
+    ol {
+      padding-bottom: 2.6875rem;
+    }
+
+    p,
+    ul li,
+    ol li {
+      @extend .secondary-sm;
+    }
+
+    ul,
+    ol {
+      list-style-position: inside;
+    }
+
+    ul {
+      list-style-type: none;
+
+      li {
+        background-image: url('../../components/icons/BulletPointIcon.svg');
+        background-repeat: no-repeat;
+        background-position: 1px;
+        padding-left: 3.375rem;
+      }
+    }
+
+    ol li a,
+    ul li a {
+      @extend .link--style-body-charcoal;
+    }
+
+    ol li::before {
+      content: '';
+      width: 2.375rem;
+      display: inline-block;
+    }
+  }
+}

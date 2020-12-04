@@ -1,5 +1,14 @@
 import { createPromiseAction, action } from 'lib/action';
-import { HomePage, AboutPage, WhyWeInvestPage, CompaniesPage, DefaultPage } from 'lib/cms/types';
+
+import {
+  HomePage,
+  AboutPage,
+  WhyWeInvestPage,
+  CompaniesPage,
+  DefaultPage,
+  CompanyDetailPage,
+} from 'lib/cms/types';
+
 import ApiClient from 'lib/cms/ApiClient';
 
 export const fetchHomeActions = createPromiseAction(
@@ -40,10 +49,19 @@ export const fetchDefaultPageActions = createPromiseAction(
 export const fetchDefaultPage = (slug: string) =>
   action(fetchDefaultPageActions, ApiClient.fetchDefaultPage(slug));
 
+  export const fetchCompanyDetailPageActions = createPromiseAction(
+  'FETCH_COMPANY_DETAIL_PAGE_PENDING',
+  'FETCH_COMPANY_DETAIL_PAGE_FULFILLED',
+  'FETCH_COMPANY_DETAIL_PAGE_REJECTED'
+)<CompanyDetailPage, Error>();
+export const fetchCompanyDetailPage = (slug: string) =>
+  action(fetchCompanyDetailPageActions, ApiClient.fetchCompanyDetailPage(slug));
+
 export default {
   fetchHomeActions,
   fetchAboutPageActions,
   fetchWhyWeInvestPageActions,
   fetchCompaniesPageActions,
   fetchDefaultPageActions,
+  fetchCompanyDetailPageActions,
 };

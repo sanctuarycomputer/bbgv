@@ -69,5 +69,11 @@
   },
   "Newsletter": {
     "copy": "Add your email to get our newsletter"
+  },
+  "Video": {
+    "playButton": {
+      "label": "Play",
+      "ariaLabel": "Play video"
+    }
   }
 }

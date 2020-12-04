@@ -1,0 +1,31 @@
+.FoundersGrid {
+  padding-left: $site-padding-x-mobile;
+  padding-right: $site-padding-x-mobile;
+
+  @include media('lg-up') {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__grid-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 5.25rem;
+
+    @include media('md-up') {
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 3.75rem;
+      grid-row-gap: 6rem;
+    }
+  }
+
+  &__paragraph p {
+    display: inline;
+  }
+
+  &__card-image {
+    float: left;
+    width: 12.6875rem;
+    height: 17.10625rem;
+  }
+}

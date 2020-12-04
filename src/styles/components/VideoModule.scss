@@ -1,0 +1,21 @@
+.VideoModule {
+  &__button {
+    @extend .transition-shorter;
+
+    &:hover {
+      .VideoModule__button-line-icon {
+        width: 2.25rem;
+      }
+
+      .VideoModule__button-placeholder-div {
+        width: 0;
+      }
+    }
+  }
+
+  &__button-line-icon {
+    @extend .transition-shorter;
+    width: 1.0625rem;
+    height: 0.125rem;
+  }
+}

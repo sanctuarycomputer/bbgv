@@ -1,5 +1,5 @@
 import { createReducer } from 'typesafe-actions';
-import { HomePage, AboutPage, WhyWeInvestPage, CompaniesPage, DefaultPage } from 'lib/cms/types';
+import { HomePage, AboutPage, WhyWeInvestPage, CompaniesPage, DefaultPage, CompanyDetailPage } from 'lib/cms/types';
 
 const initialState: {
   home: HomePage | {};
@@ -7,12 +7,14 @@ const initialState: {
   whyWeInvest: WhyWeInvestPage | {};
   companies: CompaniesPage | {};
   defaultPage: DefaultPage | {};
+  companyDetailPage: CompanyDetailPage | {};
 } = {
   home: {},
   about: {},
   whyWeInvest: {},
   companies: {},
   defaultPage: {},
+  companyDetailPage: {},
 };
 
 export default createReducer(initialState, {
@@ -35,5 +37,9 @@ export default createReducer(initialState, {
   FETCH_DEFAULT_PAGE_FULFILLED: (state, action) => ({
     ...state,
     defaultPage: action.payload,
+  }),
+  FETCH_COMPANY_DETAIL_PAGE_FULFILLED: (state, action) => ({
+    ...state,
+    companyDetailPage: action.payload,
   }),
 });

@@ -15,6 +15,7 @@ export default () =>
         .title('Why We Invest Page')
         .child(S.editor().schemaType('whyWeInvest').documentId('_whyWeInvest')),
       S.documentTypeListItem('default'),
+      S.documentTypeListItem('companyDetail'),
       S.listItem()
         .title('Settings')
         .child(S.editor().schemaType('globalSettings').documentId('_globalSettings')),

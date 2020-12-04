@@ -12,6 +12,8 @@ import PressListModuleGroq from './groq/PressList';
 import TeamMemberGroq from './groq/TeamMember';
 import InvestmentsListModuleGroq from './groq/InvestmentsListModule';
 import DefaultPageContentGroq from './groq/DefaultPageContent';
+import CompanyDetailPageContentGroq from './groq/CompanyDetailPageContent';
+import FounderGroq from './groq/Founder';
 
 const ApiClient: {
   fetchGlobalSettings(): Promise<Cms.GlobalSettings | any>;
@@ -20,6 +22,7 @@ const ApiClient: {
   fetchWhyWeInvestPage(): Promise<Cms.WhyWeInvestPage | any>;
   fetchCompaniesPage(): Promise<Cms.CompaniesPage | any>;
   fetchDefaultPage(slug: string): Promise<Cms.DefaultPage | any>;
+  fetchCompanyDetailPage(slug: string): Promise<Cms.CompanyDetailPage | any>;
 } = {
   async fetchGlobalSettings() {
     const response = await Sanity.fetch(`*[_type == 'globalSettings'][0]${GlobalSettingsGroq}`);
@@ -96,6 +99,19 @@ const ApiClient: {
         'seo': ${SeoSettingsGroq},
         'intro': intro${TextModuleGroq},
         'content': { ${DefaultPageContentGroq('body')} },
+      }`
+    );
+
+    return response;
+  },
+  async fetchCompanyDetailPage(slug: string) {
+    const response = await Sanity.fetch(
+      `*[_type == 'companyDetail' && slug == '/${slug}'][0]{
+        _type,
+        'seo': ${SeoSettingsGroq},
+        'content': { ${CompanyDetailPageContentGroq('body')} },
+        'founders': founders[]->${FounderGroq},
+        'pressList': pressList${PressListModuleGroq},
       }`
     );
 

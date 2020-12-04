@@ -13,6 +13,7 @@ import AboutUsPage from './pages/about';
 import WhyWeInvestPage from './pages/whyWeInvest';
 import CompaniesPage from './pages/companies';
 import DefaultPage from './pages/default';
+import CompanyDetailPage from './pages/companyDetail';
 
 /** Layouts */
 import HomeHeroModule from './layouts/homeHeroModule';
@@ -39,6 +40,7 @@ import SlugField from './fields/slugField';
 import ColorList from './fields/colorList';
 import ParagraphWithButton from './fields/paragraphWithButton';
 import ParagraphWithHeading from './fields/paragraphWithHeading';
+import VideoField from './fields/videoField';
 
 export default createSchema({
   name: 'default',
@@ -52,6 +54,7 @@ export default createSchema({
     WhyWeInvestPage,
     CompaniesPage,
     DefaultPage,
+    CompanyDetailPage,
 
     /** Layouts */
     HomeHeroModule,
@@ -78,5 +81,6 @@ export default createSchema({
     ColorList,
     ParagraphWithButton,
     ParagraphWithHeading,
+    VideoField,
   ]),
 });

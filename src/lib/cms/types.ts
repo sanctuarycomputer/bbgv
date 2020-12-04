@@ -69,6 +69,21 @@ export const QuoteModule = t.intersection([
   }),
 ]);
 
+export type VideoModule = t.TypeOf<typeof VideoModule>;
+export const VideoModule = t.intersection([
+  t.type({
+    _type: t.string,
+    vimeoId: t.string,
+    coverImage: Image,
+    founders: t.string,
+    jobTitle: t.string,
+    companyName: t.string,
+  }),
+  t.partial({
+    caption: t.string,
+  }),
+]);
+
 export type LineBreak = t.TypeOf<typeof LineBreak>;
 export const LineBreak = t.type({
   type: t.string,
@@ -93,20 +108,38 @@ export const TeamMember = t.intersection([
   }),
 ]);
 
+export type Video = t.TypeOf<typeof Video>;
+export const Video = t.intersection([
+  t.type({
+    _type: t.string,
+    jobTitle: t.string,
+    companyName: t.string,
+    founders: t.string,
+    vimeoId: t.string,
+  }),
+  t.partial({
+    caption: t.string,
+  }),
+]);
+
 export type Founder = t.TypeOf<typeof Founder>;
-export const Founder = t.partial({
-  _type: t.string,
-  firstName: t.string,
-  lastName: t.string,
-  jobTitle: t.string,
-  bio: t.array(Block),
-  twitter: t.string,
-  instagram: t.string,
-  linkedIn: t.string,
-  founderPortrait: Image,
-  company: t.string,
-  sector: t.string,
-});
+export const Founder = t.intersection([
+  t.type({
+    _type: t.string,
+    firstName: t.string,
+    lastName: t.string,
+    jobTitle: t.string,
+    bio: t.array(Block),
+    founderPortrait: Image,
+  }),
+  t.partial({
+    twitter: t.string,
+    instagram: t.string,
+    linkedIn: t.string,
+    company: t.string,
+    sector: t.string,
+  }),
+]);
 
 export type Company = t.TypeOf<typeof Company>;
 export const Company = t.intersection([
@@ -344,4 +377,19 @@ export const DefaultPage = t.type({
   content: DefaultPageContent,
   intro: TextModule,
   seo: SeoSettings,
+});
+
+export type CompanyDetailPageContent = t.TypeOf<typeof CompanyDetailPageContent>;
+export const CompanyDetailPageContent = t.type({
+  body: t.array(Block),
+});
+
+export type CompanyDetailPage = t.TypeOf<typeof CompanyDetailPage>;
+export const CompanyDetailPage = t.type({
+  title: t.string,
+  slug: t.string,
+  content: CompanyDetailPageContent,
+  seo: SeoSettings,
+  founders: t.array(Founder),
+  pressList: PressList,
 });

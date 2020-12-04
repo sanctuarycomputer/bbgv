@@ -1837,6 +1837,11 @@
   dependencies:
     source-map "^0.6.1"
 
+"@types/vimeo__player@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@types/vimeo__player/-/vimeo__player-2.10.0.tgz#dee8934c59d0a01a4252e6fb143c8807d3235502"
+  integrity sha512-uhKJDgEfQiEhKHw9bP7+wZSvXTyN4iw4Yb+7Omo76jCJZp1NZkWfZYaaobXrkiuFT6k2ld2eqaXKSpvqfmDUPQ==
+
 "@types/webpack-sources@*":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@types/webpack-sources/-/webpack-sources-2.0.0.tgz#08216ab9be2be2e1499beaebc4d469cec81e82a7"
@@ -1976,6 +1981,14 @@
   dependencies:
     "@typescript-eslint/types" "4.5.0"
     eslint-visitor-keys "^2.0.0"
+
+"@vimeo/player@^2.14.1":
+  version "2.14.1"
+  resolved "https://registry.yarnpkg.com/@vimeo/player/-/player-2.14.1.tgz#f35fd141fbd096555d1090e53625364cb0874fff"
+  integrity sha512-PXIATVxUfblTbRoSXzNcplJFjsho6e32ltfEm4po/RFZcAOYefOO4mjxDMGUTAzo937DZvjd5n1u7+EfGHuLPw==
+  dependencies:
+    native-promise-only "0.8.1"
+    weakmap-polyfill "2.0.1"
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
@@ -7992,6 +8005,11 @@ nanomatch@^1.2.9:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
+native-promise-only@0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/native-promise-only/-/native-promise-only-0.8.1.tgz#20a318c30cb45f71fe7adfbf7b21c99c1472ef11"
+  integrity sha1-IKMYwwy0X3H+et+/eyHJnBRy7xE=
+
 native-url@^0.2.6:
   version "0.2.6"
   resolved "https://registry.yarnpkg.com/native-url/-/native-url-0.2.6.tgz#ca1258f5ace169c716ff44eccbddb674e10399ae"
@@ -12111,6 +12129,11 @@ wbuf@^1.1.0, wbuf@^1.7.3:
   integrity sha512-O84QOnr0icsbFGLS0O3bI5FswxzRr8/gHwWkDlQFskhSPryQXvrTMxjxGP4+iWYoauLoBvfDpkrOauZ+0iZpDA==
   dependencies:
     minimalistic-assert "^1.0.0"
+
+weakmap-polyfill@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/weakmap-polyfill/-/weakmap-polyfill-2.0.1.tgz#ff0278c7f75bb0c492fc3343257f3e87114d709a"
+  integrity sha512-Jy177Lvb1LCrPQDWJsXyyqf4eOhcdvQHFGoCqSv921kVF5i42MVbr4e2WEwetuTLBn1NX0IhPzTmMu0N3cURqQ==
 
 webidl-conversions@^5.0.0:
   version "5.0.0"

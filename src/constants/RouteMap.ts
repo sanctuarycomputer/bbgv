@@ -3,16 +3,20 @@ import AboutContainer from 'containers/about';
 import WhyWeInvestContainer from 'containers/whyWeInvest';
 import CompaniesContainer from 'containers/companies';
 import DefaultContainer from 'containers/default';
+import CompanyDetailContainer from 'containers/companyDetail';
 
 import { RouteObject } from 'types';
-
-// TO-DO: Update containers when they have been created.
 
 export const RouteMap: { [id: string]: RouteObject } = {
   HOME: {
     path: '/',
     exact: true,
     component: HomeContainer,
+  },
+  COMPANY_DETAIL: {
+    path: '/companies/:id',
+    exact: true,
+    component: CompanyDetailContainer,
   },
   ABOUT: {
     path: '/about-us',
