@@ -8,14 +8,18 @@ export const Image = t.type({
   caption: t.string,
 });
 
-export type FullWidthImageCaption = t.TypeOf<typeof FullWidthImageCaption>;
-export const FullWidthImageCaption = t.type({
-  id: t.string,
-  type: t.string,
-  src: t.string,
-  alt: t.string,
-  caption: t.string,
-});
+export type ImageCaption = t.TypeOf<typeof ImageCaption>;
+export const ImageCaption = t.intersection([
+  t.type({
+    id: t.string,
+    type: t.string,
+    src: t.string,
+    alt: t.string,
+  }),
+  t.partial({
+    caption: t.string,
+  }),
+]);
 
 export type Button = t.TypeOf<typeof Button>;
 export const Button = t.type({
@@ -213,11 +217,16 @@ export const ParagraphWithButton = t.intersection([
 ]);
 
 export type ParagraphWithHeading = t.TypeOf<typeof ParagraphWithHeading>;
-export const ParagraphWithHeading = t.type({
-  _type: t.string,
-  heading: t.string,
-  paragraph: t.array(Block),
-});
+export const ParagraphWithHeading = t.intersection([
+  t.type({
+    _type: t.string,
+    paragraph: t.array(Block),
+    heading: t.string,
+  }),
+  t.partial({
+    button: Button,
+  }),
+]);
 
 export type PressListItem = t.TypeOf<typeof PressListItem>;
 export const PressListItem = t.type({

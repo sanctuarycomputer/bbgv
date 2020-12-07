@@ -1,0 +1,30 @@
+.ImageCaption {
+  &--style-full-width {
+    &__image {
+      height: 23.375rem;
+
+      > img {
+        height: 23.375rem;
+      }
+    }
+  }
+
+  &--style-half-width {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+
+    @include media('md-up') {
+      margin-left: 25%;
+      margin-right: 8.333%;
+    }
+
+    &__image {
+      height: 17.5625rem;
+      width: 50vw;
+
+      @include media('md-up') {
+        width: 16.66vw;
+      }
+    }
+  }
+}

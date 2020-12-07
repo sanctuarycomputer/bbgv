@@ -49,7 +49,7 @@ export const fetchDefaultPageActions = createPromiseAction(
 export const fetchDefaultPage = (slug: string) =>
   action(fetchDefaultPageActions, ApiClient.fetchDefaultPage(slug));
 
-  export const fetchCompanyDetailPageActions = createPromiseAction(
+export const fetchCompanyDetailPageActions = createPromiseAction(
   'FETCH_COMPANY_DETAIL_PAGE_PENDING',
   'FETCH_COMPANY_DETAIL_PAGE_FULFILLED',
   'FETCH_COMPANY_DETAIL_PAGE_REJECTED'

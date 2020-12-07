@@ -7,7 +7,9 @@ export default (fieldName: string) => `
     _type,
     "src": asset->url,
     "alt": asset.alt,
+    paragraphWithHeadingAndButton,
     "fullWidthImageCaption": fullWidthImageCaption${ImageGroq},
+    "halfWidthImageCaption": halfWidthImageCaption${ImageGroq},
     "quoteModule": quoteModule${QuoteModuleGroq},
     ...
   }

@@ -91,6 +91,8 @@ const ApiClient: {
       'investmentsList': investmentsList${InvestmentsListModuleGroq},
       'contact': contactSection${TextModuleGroq},
     }`);
+
+    return response;
   },
   async fetchDefaultPage(slug: string) {
     const response = await Sanity.fetch(

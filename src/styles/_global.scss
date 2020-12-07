@@ -21,7 +21,7 @@
 }
 
 .border-bottom-lilac {
-  border-bottom: 3px solid color('nutella');
+  border-bottom: 3px solid color('lilac');
 }
 
 /** Global site sizing */
@@ -85,6 +85,33 @@
   @include media('md-up') {
     width: 50%;
     margin: 0 auto;
+  }
+
+  ul,
+  ol {
+    list-style-position: inside;
+  }
+
+  ul {
+    list-style-type: none;
+
+    li {
+      background-image: url('../components/icons/BulletPointIcon.svg');
+      background-repeat: no-repeat;
+      background-position: 1px;
+      padding-left: 3.375rem;
+    }
+  }
+
+  ol li a,
+  ul li a {
+    @extend .link--style-body-charcoal;
+  }
+
+  ol li::before {
+    content: '';
+    width: 2.375rem;
+    display: inline-block;
   }
 }
 

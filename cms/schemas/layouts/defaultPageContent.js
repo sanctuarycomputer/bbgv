@@ -12,8 +12,18 @@ export default (options) => ({
       },
     },
     {
+      title: 'Paragraph With Inset Heading and Button',
+      name: 'paragraphWithHeadingAndButton',
+      type: 'paragraphWithHeading',
+    },
+    {
       title: 'Full Width Image and Caption',
       name: 'fullWidthImageCaption',
+      type: 'imageField',
+    },
+    {
+      title: 'Half Width Image and Caption',
+      name: 'halfWidthImageCaption',
       type: 'imageField',
     },
     {

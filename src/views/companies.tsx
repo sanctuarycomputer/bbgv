@@ -26,7 +26,7 @@ const CompaniesView: FC<Props> = (props) => {
         introByline={hero.introByline}
         briefParagraph={hero.briefParagraph}
       />
-      <div className="text-module-padding-x border-bottom-lilac pt3_75 lg:pt10">
+      <div className="text-module-padding-x pt3_75 lg:pt10">
         <InvestmentsList heading={investmentsList.heading} items={investmentsList.items} />
       </div>
       <TextModule

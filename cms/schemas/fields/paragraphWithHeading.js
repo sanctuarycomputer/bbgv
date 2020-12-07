@@ -15,5 +15,11 @@ export default {
       type: 'portableText',
       validation: (Rule) => Rule.required(),
     },
+    {
+      name: 'button',
+      title: 'Call To Action Button',
+      description: 'This link will be shown at the end of the paragraph text.',
+      type: 'buttonField',
+    },
   ],
 };
