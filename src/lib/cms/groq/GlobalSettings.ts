@@ -1,10 +1,8 @@
 export default `{
   "id": _id,
+  "socialMediaLinks": socialMediaLinks,
   "footerMenu": {
-    "socialMediaLinks": socialMediaLinks,
-    "resourcesLinks": resourcesLinks,
-    "whyWeInvestLinks": whyWeInvestLinks,
-    "aboutLinks": aboutLinks,
+    "secondSectionLinks": footerMenuSecondSectionLinks,
+    "secondSectionHeading": footerMenuSecondSectionHeading
   },
-...
 }`;

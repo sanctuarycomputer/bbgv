@@ -166,10 +166,8 @@ export const Company = t.intersection([
 
 export type FooterMenu = t.TypeOf<typeof FooterMenu>;
 export const FooterMenu = t.type({
-  socialMediaLinks: t.array(Button),
-  aboutLinks: t.array(Button),
-  resourcesLinks: t.array(Button),
-  whyWeInvestLinks: t.array(Button),
+  secondSectionHeading: t.string,
+  secondSectionLinks: t.array(Button),
 });
 
 export type FoundersImpactSlide = t.TypeOf<typeof FoundersImpactSlide>;
@@ -328,6 +326,7 @@ export const NewsletterModule = t.type({
 
 export type GlobalSettings = t.TypeOf<typeof GlobalSettings>;
 export const GlobalSettings = t.type({
+  socialMediaLinks: t.array(Button),
   footerMenu: FooterMenu,
 });
 

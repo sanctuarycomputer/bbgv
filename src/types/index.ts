@@ -14,6 +14,11 @@ export type GlobalState = ReturnType<ReturnType<typeof rootReducer>>;
 
 export type Action = AnyAction;
 
+export interface MenuLink {
+  label: string;
+  link: string;
+}
+
 export enum Status {
   IDLE = 'IDLE',
   PENDING = 'PENDING',

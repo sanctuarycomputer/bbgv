@@ -2,8 +2,10 @@ import React from 'react';
 import getYear from 'date-fns/getYear';
 import cx from 'classnames';
 import Language from 'constants/Language';
+import { MenuLink } from 'types';
 import { GlobalSettings, Button as IButton } from 'lib/cms/types';
 import { RouteMap } from 'constants/RouteMap';
+import { AboutUsLinks, WhyWeInvestLinks } from 'constants/FooterMenuLinks';
 
 import { Img, Button } from 'components/base';
 import EmailSignup from 'components/EmailSignup';
@@ -17,7 +19,7 @@ const CURRENT_YEAR = getYear(new Date());
 //TO-DO: Add jump links functionality
 
 const Footer: React.FC<Props> = ({ globalSettings }) => {
-  const { footerMenu } = globalSettings;
+  const { footerMenu, socialMediaLinks } = globalSettings;
 
   return (
     <div className="Footer site-max-width flex flex-col lg:flex-row">
@@ -57,7 +59,7 @@ const Footer: React.FC<Props> = ({ globalSettings }) => {
                   label={Language.t('Global.aboutUs')}
                 />
                 <div className="Footer__sublinks flex flex-col">
-                  {footerMenu.aboutLinks.map((link: IButton) => (
+                  {AboutUsLinks.map((link: MenuLink) => (
                     <Button
                       key={link.link}
                       className="color-charcoal transition-shorter hover-lighten-charcoal secondary-bold-sm items-center bg-color-transparent text-decoration-none"
@@ -79,7 +81,7 @@ const Footer: React.FC<Props> = ({ globalSettings }) => {
                   label={Language.t('Global.whyWeInvest')}
                 />
                 <div className="Footer__sublinks flex flex-col">
-                  {footerMenu.whyWeInvestLinks.map((link: IButton) => (
+                  {WhyWeInvestLinks.map((link: MenuLink) => (
                     <Button
                       key={link.link}
                       className="color-charcoal transition-shorter hover-lighten-charcoal  secondary-bold-sm items-center bg-color-transparent text-decoration-none inline"
@@ -104,11 +106,11 @@ const Footer: React.FC<Props> = ({ globalSettings }) => {
       <div className="Footer__section-two bg-color-lilac-lighter lg:col-3 px_75 md:px1_5 py3_75 flex flex-row lg:flex-col relative">
         <div className="flex flex-col col-6 lg:col-12">
           <div className="color-charcoal secondary-bold-sm mb1_5 lg:mb3_75">
-            {Language.t('Footer.resources')}
+            {footerMenu.secondSectionHeading}
           </div>
 
           <div className="Footer__sublinks flex flex-col">
-            {footerMenu.resourcesLinks.map((link: IButton) => (
+            {footerMenu.secondSectionLinks.map((link: IButton) => (
               <Button
                 key={link.link}
                 className="color-charcoal transition-shorter hover-lighten-charcoal secondary-bold-sm items-center bg-color-transparent text-decoration-none inline"
@@ -125,13 +127,13 @@ const Footer: React.FC<Props> = ({ globalSettings }) => {
         </div>
 
         <div className="lg:none flex flex-col col-6">
-          {socialMediaLinks(footerMenu.socialMediaLinks)}
+          {socialMediaLinksSection(socialMediaLinks)}
         </div>
       </div>
 
       <div className="Footer__section-three bg-color-lilac-lightest lg:col-2 relative none lg:flex">
         <div className="flex flex-col px1_5 py3_75">
-          {socialMediaLinks(footerMenu.socialMediaLinks)}
+          {socialMediaLinksSection(socialMediaLinks)}
         </div>
 
         <div className="Footer__logo-section col-12 none lg:flex absolute b0 bg-color-white flex items-center px1_5 py3_75">
@@ -174,7 +176,7 @@ const copyrightSection = (classes: string) => {
   );
 };
 
-const socialMediaLinks = (links: IButton[]) => {
+const socialMediaLinksSection = (links: IButton[]) => {
   return (
     <div className="Footer__social-media-links">
       <div className="color-charcoal secondary-bold-sm mb1_5 lg:mb3_75">

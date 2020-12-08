@@ -38,7 +38,17 @@
     "connect": "Connect",
     "copyrightLabel": "© %{year}",
     "allRightsReserved": "All Rights Reserved",
-    "bbgv": "BBG Ventures, LLC"
+    "bbgv": "BBG Ventures, LLC",
+    "companies": "Companies",
+    "aboutUs": "About Us",
+    "team": "Team",
+    "values": "Values",
+    "newsAndPress": "News and Press",
+    "whyWeInvest": "Why We Invest",
+    "thesis": "Thesis",
+    "opportunity": "Opportunity",
+    "investmentGuidelines": "Investment Guidelines",
+    "apply": "Apply"
   },
   "FoundersImpactSlideshow": {
     "viewNext": "View next",
