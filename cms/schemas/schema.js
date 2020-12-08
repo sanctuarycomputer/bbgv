@@ -41,6 +41,7 @@ import ColorList from './fields/colorList';
 import ParagraphWithButton from './fields/paragraphWithButton';
 import ParagraphWithHeading from './fields/paragraphWithHeading';
 import VideoField from './fields/videoField';
+import Link from './fields/link';
 
 export default createSchema({
   name: 'default',
@@ -82,5 +83,6 @@ export default createSchema({
     ParagraphWithButton,
     ParagraphWithHeading,
     VideoField,
+    Link,
   ]),
 });

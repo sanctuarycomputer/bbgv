@@ -1,3 +1,4 @@
+import { MenuIcon } from 'components/icons';
 import * as t from 'io-ts';
 
 export type Image = t.TypeOf<typeof Image>;
@@ -324,10 +325,17 @@ export const NewsletterModule = t.type({
   bgColor: t.string,
 });
 
+export type Menu = t.TypeOf<typeof Menu>;
+export const Menu = t.type({
+  heading: t.array(Block),
+  links: t.array(Button),
+});
+
 export type GlobalSettings = t.TypeOf<typeof GlobalSettings>;
 export const GlobalSettings = t.type({
   socialMediaLinks: t.array(Button),
   footerMenu: FooterMenu,
+  menu: Menu,
 });
 
 export type HomePage = t.TypeOf<typeof HomePage>;

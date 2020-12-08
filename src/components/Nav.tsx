@@ -39,23 +39,30 @@ const Nav: React.FC<Props> = (props) => {
     const scrollTop =
       get(window, 'pageYOffset', 0) || get(document, 'documentElement.scrollTop', 0);
 
-    if (scrollTop === 0 && showNavLogo) {
-      setShowNavLogo(false);
+    /* When the menu overlay is open, the nav logo should always show. **/
+    if (menuIsOpen && !showNavLogo) {
+      setShowNavLogo(true);
     }
 
-    if (logo) {
-      if (!hasPassedElement(logo) && showNavLogo) {
+    if (!menuIsOpen) {
+      if (scrollTop === 0 && showNavLogo) {
         setShowNavLogo(false);
       }
 
-      if (hasPassedElement(logo) && !showNavLogo) {
-        setShowNavLogo(true);
+      if (logo) {
+        if (!hasPassedElement(logo) && showNavLogo) {
+          setShowNavLogo(false);
+        }
+
+        if (hasPassedElement(logo) && !showNavLogo) {
+          setShowNavLogo(true);
+        }
       }
     }
-  }, [showNavLogo]);
+  }, [showNavLogo, menuIsOpen]);
 
   const handleMarginTop = () => {
-    if (!breakpointIsMdUp) {
+    if (!breakpointIsMdUp && !menuIsOpen) {
       return scrollPosition > 0 ? '0' : '40px';
     } else {
       return '0';
@@ -156,10 +163,6 @@ const Nav: React.FC<Props> = (props) => {
         >
           <MenuIcon className="w100 h100" color={iconColor} />
         </Button>
-      )}
-
-      {menuIsOpen && (
-        <div className="Nav__menu-overlay fixed t0 r0 vw100 vh100 bg-color-lilac-darker"></div>
       )}
     </nav>
   );

@@ -3,7 +3,6 @@ import cx from 'classnames';
 import { ParagraphWithHeading } from 'lib/cms/types';
 import PortableText from 'components/PortableText';
 import LineIconWithButton from './icons/LineIconWithButton';
-import { Button } from 'components/base';
 
 type Props = {
   className?: string;

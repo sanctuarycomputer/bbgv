@@ -10,6 +10,7 @@ import { setMenuOpen, setMenuClosed } from 'state/actions/uiActions';
 
 import Nav from 'components/Nav';
 import Footer from 'components/Footer';
+import MenuOverlay from 'components/MenuOverlay';
 
 export default function App() {
   const dispatch = useDispatch();
@@ -19,7 +20,6 @@ export default function App() {
   const menuIsOpen = useSelector((state) => state.ui.menuIsOpen);
   const openMenu = useCallback(() => dispatch(setMenuOpen()), [dispatch]);
   const closeMenu = useCallback(() => dispatch(setMenuClosed()), [dispatch]);
-
   //TO-DO: show 404 page if application status is rejected.
 
   useEffect(() => {
@@ -30,6 +30,10 @@ export default function App() {
     <main className="App">
       <Router>
         <Nav theme={theme} menuIsOpen={menuIsOpen} onOpenMenu={openMenu} onCloseMenu={closeMenu} />
+        {'menu' in globalSettings && (
+          <MenuOverlay globalSettings={globalSettings} isOpen={menuIsOpen} />
+        )}
+
         <Routes />
         {'footerMenu' in globalSettings && <Footer globalSettings={globalSettings} />}
       </Router>
