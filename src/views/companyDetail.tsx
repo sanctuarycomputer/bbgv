@@ -6,6 +6,7 @@ import { ContentPage as Meta } from 'components/Meta';
 import CompanyDetailPageContent from 'components/layouts/CompanyDetailPageContent';
 import FoundersGrid from 'components/layouts/FoundersGrid';
 import PressList from 'components/layouts/PressList';
+import CompanyDetailLanding from 'components/layouts/CompanyDetailLanding';
 
 type Props = ContainerProps & {
   model: CompanyDetailPage;
@@ -13,11 +14,17 @@ type Props = ContainerProps & {
 
 const CompanyDetailView: FC<Props> = (props) => {
   const { model } = props;
-  const { seo, content, founders, pressList } = model;
+  const { seo, content, founders, pressList, companyDetailLanding } = model;
 
   return (
-    <div className="CompanyDetailView generic-page-margin-top primary-xxl">
+    <div className="CompanyDetailView">
       <Meta seo={seo} />
+      <CompanyDetailLanding
+        company={companyDetailLanding.company}
+        headline={companyDetailLanding.headline}
+        founderPortrait={companyDetailLanding.founderPortrait}
+        productImage={companyDetailLanding.productImage}
+      />
       <article>
         <CompanyDetailPageContent content={content} />
       </article>

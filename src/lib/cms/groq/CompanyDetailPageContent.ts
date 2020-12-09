@@ -7,6 +7,7 @@ export default (fieldName: string) => `
     "src": asset->url,
     "alt": asset.alt,
     coverImage${ImageGroq},
+    paragraphWithHeadingAndButton,
     ...
   }
 `;

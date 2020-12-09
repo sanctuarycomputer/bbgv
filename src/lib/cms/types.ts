@@ -152,16 +152,17 @@ export const Company = t.intersection([
     _type: t.string,
     website: Button,
     logo: Image,
+    fund: t.string,
     name: t.string,
+    sector: t.string,
+    founders: t.array(Founder),
   }),
   t.partial({
     description: t.array(Block),
     careers: Button,
     instagram: Button,
     linkedIn: Button,
-    founders: t.array(Founder),
     tag: t.string,
-    sector: t.string,
   }),
 ]);
 
@@ -331,6 +332,18 @@ export const Menu = t.type({
   links: t.array(Button),
 });
 
+export type CompanyDetailLanding = t.TypeOf<typeof CompanyDetailLanding>;
+export const CompanyDetailLanding = t.intersection([
+  t.type({
+    headline: t.array(Block),
+    company: Company,
+  }),
+  t.partial({
+    founderPortrait: Image,
+    productImage: Image,
+  }),
+]);
+
 export type GlobalSettings = t.TypeOf<typeof GlobalSettings>;
 export const GlobalSettings = t.type({
   socialMediaLinks: t.array(Button),
@@ -404,6 +417,7 @@ export type CompanyDetailPage = t.TypeOf<typeof CompanyDetailPage>;
 export const CompanyDetailPage = t.type({
   title: t.string,
   slug: t.string,
+  companyDetailLanding: CompanyDetailLanding,
   content: CompanyDetailPageContent,
   seo: SeoSettings,
   founders: t.array(Founder),

@@ -110,7 +110,6 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
                   ariaLabel={Language.t('Founder.viewDetailPageButtonAriaLabel', {
                     FullName: generateFullName(founder),
                   })}
-                  to="/"
                   onMouseEnter={() => {
                     setActiveFounderIndex(index);
                   }}

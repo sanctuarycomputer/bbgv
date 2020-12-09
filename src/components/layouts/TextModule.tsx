@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import { Block, ParagraphWithButton } from 'lib/cms/types';
 import PortableText from 'components/PortableText';

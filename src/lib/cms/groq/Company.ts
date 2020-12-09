@@ -1,18 +1,16 @@
 import FounderGroq from './Founder';
+import ImageGroq from './Image';
 
 export default `{
-  'logo': {
-    'src': logo.asset->url,
-    'caption': logo.caption,
-    'alt': logo.alt
-  },
+  'logo': logo${ImageGroq},
   description,
   name, 
   sector,
+  fund,
   tag,
   careers,
   instagram,
   linkedIn,
   website,
-  'founders': founders[]->${FounderGroq}
+  'founders': founders[]->${FounderGroq},
 }`;

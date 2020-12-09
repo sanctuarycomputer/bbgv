@@ -14,6 +14,7 @@ import InvestmentsListModuleGroq from './groq/InvestmentsListModule';
 import DefaultPageContentGroq from './groq/DefaultPageContent';
 import CompanyDetailPageContentGroq from './groq/CompanyDetailPageContent';
 import FounderGroq from './groq/Founder';
+import CompanyDetailLandingGroq from './groq/CompanyDetailLanding';
 
 const ApiClient: {
   fetchGlobalSettings(): Promise<Cms.GlobalSettings | any>;
@@ -111,6 +112,7 @@ const ApiClient: {
       `*[_type == 'companyDetail' && slug == '/${slug}'][0]{
         _type,
         'seo': ${SeoSettingsGroq},
+        'companyDetailLanding': companyDetailLanding${CompanyDetailLandingGroq},
         'content': { ${CompanyDetailPageContentGroq('body')} },
         'founders': founders[]->${FounderGroq},
         'pressList': pressList${PressListModuleGroq},

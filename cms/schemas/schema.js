@@ -25,6 +25,7 @@ import TextModuleWithParagraphs from './layouts/textModuleWithParagraphs';
 import PressListModule from './layouts/pressListModule';
 import StatisticsModule from './layouts/statisticsModule';
 import InvestmentsList from './layouts/investmentsList';
+import CompanyDetailLanding from './layouts/companyDetailLanding';
 
 /** References */
 import Founder from './references/founder';
@@ -67,6 +68,7 @@ export default createSchema({
     PressListModule,
     StatisticsModule,
     InvestmentsList,
+    CompanyDetailLanding,
 
     /** References */
     Founder,

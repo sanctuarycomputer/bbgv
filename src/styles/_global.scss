@@ -50,6 +50,14 @@
   }
 }
 
+.site-padding-x-left {
+  padding-left: $site-padding-x-mobile;
+
+  @include media('lg-up') {
+    padding-left: $site-padding-x-desktop;
+  }
+}
+
 .generic-page-margin-top {
   margin-top: calc(#{$nav-top-margin-mobile} + #{$nav-height-mobile} + 3.75rem);
 

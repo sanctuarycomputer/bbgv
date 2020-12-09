@@ -6,8 +6,8 @@ export default `{
     "links": menuOverlayLinks,
   },
   "footerMenu": {
-    "secondSectionLinks": footerMenuSecondSectionLinks,
-    "secondSectionHeading": footerMenuSecondSectionHeading
+    "secondSectionLinks": customFooterMenuLinks,
+    "secondSectionHeading": customFooterMenuHeading
   },
   ...
 }`;

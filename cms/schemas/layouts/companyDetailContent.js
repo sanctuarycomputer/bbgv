@@ -12,6 +12,11 @@ export default (options) => ({
       },
     },
     {
+      title: 'Paragraph With Inset Heading and Button',
+      name: 'paragraphWithHeadingAndButton',
+      type: 'paragraphWithHeading',
+    },
+    {
       title: 'Video',
       name: 'video',
       type: 'videoField',

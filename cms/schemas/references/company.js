@@ -28,6 +28,13 @@ export default {
       title: 'Sector',
       name: 'sector',
       type: 'string',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: 'Fund',
+      name: 'fund',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Tag',
@@ -61,7 +68,6 @@ export default {
       fieldset: 'links',
       type: 'buttonField',
       description: 'This should link to the company job board.',
-      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Founders',
@@ -69,6 +75,7 @@ export default {
       description:
         'Connect company to its founder(s). The founder(s) will appear on the Company detail page',
       type: 'array',
+      validation: (Rule) => Rule.required().min(1),
       of: [
         {
           type: 'reference',

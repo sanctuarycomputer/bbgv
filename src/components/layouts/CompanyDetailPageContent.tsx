@@ -2,7 +2,7 @@ import React from 'react';
 import BlockContent from '@sanity/block-content-to-react';
 import { CompanyDetailPageContent as ICompanyDetailPageContent } from 'lib/cms/types';
 
-import { Video } from 'constants/PortableTextSerializer';
+import { Video, ParagraphWithHeadingAndButton } from 'constants/PortableTextSerializer';
 
 interface Props {
   content: ICompanyDetailPageContent;
@@ -16,6 +16,7 @@ const CompanyDetailPageContent: React.FC<Props> = ({ content }) => {
       serializers={{
         types: {
           video: Video,
+          paragraphWithHeadingAndButton: ParagraphWithHeadingAndButton,
         },
       }}
     />

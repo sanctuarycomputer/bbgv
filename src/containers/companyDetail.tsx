@@ -15,7 +15,7 @@ class CompanyDetail extends ContainerBase<
   typeof import('views/companyDetail').default
 > {
   beforeModel = () => {
-    this.props.actions.setTheme('default');
+    this.props.actions.setTheme('chalk');
 
     return Promise.resolve();
   };

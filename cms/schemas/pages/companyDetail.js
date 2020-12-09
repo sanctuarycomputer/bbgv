@@ -47,6 +47,12 @@ export default {
       validation: (Rule) => Rule.required(),
     },
 
+    {
+      title: 'Company Detail Landing',
+      name: 'companyDetailLanding',
+      type: 'companyDetailLanding',
+    },
+
     /** Content */
     CompanyDetailPageContent({ name: 'body', title: 'Body', fieldset: 'content' }),
 

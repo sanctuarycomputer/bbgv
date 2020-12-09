@@ -1,0 +1,19 @@
+.CompanyDetailLanding {
+  &__left-column {
+    padding-top: 9.25rem;
+  }
+
+  &__product-image {
+    height: 80%;
+  }
+
+  &__heading p {
+    display: inline;
+  }
+
+  &__links {
+    @include media('md-up') {
+      min-height: 9.0625rem;
+    }
+  }
+}
