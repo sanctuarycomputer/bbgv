@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import { Image, Block } from 'lib/cms/types';
 import Language from 'constants/Language';
 
@@ -11,7 +12,7 @@ type Props = {
   twitter?: string;
   instagram?: string;
   linkedIn?: string;
-  bio: Block[];
+  bio?: Block[];
   image: Image;
 };
 
@@ -38,7 +39,14 @@ const PersonCard: React.FC<Props> = ({
           <p className="color-lilac">{jobTitle}</p>
         </div>
 
-        <div className="PersonCard__social-links flex flex-col lg:flex-row secondary-bold-xs pb_75 md:pb1_25">
+        <div
+          className={cx(
+            'PersonCard__social-links flex flex-col secondary-bold-xs pb_75 md:pb1_25',
+            {
+              'lg:flex-row ': !!bio,
+            }
+          )}
+        >
           {linkedIn && (
             <Button
               containerClassName="mr1_25"
@@ -76,9 +84,11 @@ const PersonCard: React.FC<Props> = ({
           )}
         </div>
 
-        <span className="secondary-sm">
-          <PortableText blocks={bio} />
-        </span>
+        {bio && (
+          <span className="secondary-sm">
+            <PortableText blocks={bio} />
+          </span>
+        )}
       </span>
     </div>
   );

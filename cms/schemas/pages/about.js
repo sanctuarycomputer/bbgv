@@ -52,15 +52,34 @@ export default {
       fieldset: 'teamSection',
     },
     {
-      title: 'Team Members',
+      title: 'Sections of Team Members',
       name: 'teamMembers',
       type: 'array',
       description:
-        'Add Team Members in the dropdown menu below. You must first create a Team Member before you can add them to this module.',
+        'Add sections of Team Members. Each section can have an optional heading, such as "Founders", or "Advisory Board".',
       of: [
         {
-          type: 'reference',
-          to: [{ type: 'teamMember' }],
+          type: 'object',
+          fields: [
+            {
+              name: 'heading',
+              title: 'Heading',
+              type: 'string',
+            },
+            {
+              name: 'teamMembers',
+              title: 'Team Members',
+              type: 'array',
+              description:
+                'Add Team Members in the dropdown menu below. You must first create a Team Member before you can add them to this module.',
+              of: [
+                {
+                  type: 'reference',
+                  to: [{ type: 'teamMember' }],
+                },
+              ],
+            },
+          ],
         },
       ],
       fieldset: 'teamSection',

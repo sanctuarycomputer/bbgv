@@ -1,4 +1,3 @@
-import { MenuIcon } from 'components/icons';
 import * as t from 'io-ts';
 
 export type Image = t.TypeOf<typeof Image>;
@@ -103,10 +102,10 @@ export const TeamMember = t.intersection([
     firstName: t.string,
     lastName: t.string,
     jobTitle: t.string,
-    bio: t.array(Block),
     image: Image,
   }),
   t.partial({
+    bio: t.array(Block),
     twitter: t.string,
     instagram: t.string,
     linkedIn: t.string,
@@ -163,6 +162,16 @@ export const Company = t.intersection([
     instagram: Button,
     linkedIn: Button,
     tag: t.string,
+  }),
+]);
+
+export type TeamMemberGrid = t.TypeOf<typeof TeamMemberGrid>;
+export const TeamMemberGrid = t.intersection([
+  t.type({
+    teamMembers: t.array(TeamMember),
+  }),
+  t.partial({
+    heading: t.string,
   }),
 ]);
 
@@ -368,7 +377,7 @@ export const AboutPage = t.type({
   seo: SeoSettings,
   hero: HeroTextModule,
   teamHeading: TextModule,
-  teamMembers: t.array(TeamMember),
+  teamMemberGrids: t.array(TeamMemberGrid),
   valuesSection: TextModuleWithParagraphs,
   pressHeading: TextModule,
   pressList: PressList,

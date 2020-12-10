@@ -7,7 +7,7 @@ import HeroTextModule from 'components/layouts/HeroTextModule';
 import TextModule from 'components/layouts/TextModule';
 import TextModuleWithParagraphs from 'components/layouts/TextModuleWithParagraphs';
 import PressList from 'components/layouts/PressList';
-import TeamMembersGrid from 'components/layouts/TeamMembersGrid';
+import TeamMemberGrid from 'components/layouts/TeamMemberGrid';
 
 type Props = ContainerProps & {
   model: AboutPage;
@@ -15,7 +15,16 @@ type Props = ContainerProps & {
 
 const AboutView: FC<Props> = (props) => {
   const { model } = props;
-  const { hero, seo, teamHeading, pressHeading, pressList, valuesSection, contact, teamMembers } = model;
+  const {
+    hero,
+    seo,
+    teamHeading,
+    pressHeading,
+    pressList,
+    valuesSection,
+    contact,
+    teamMemberGrids,
+  } = model;
 
   return (
     <div className="AboutView primary-xxl">
@@ -36,7 +45,7 @@ const AboutView: FC<Props> = (props) => {
           subheading={teamHeading.subheading}
           briefParagraph={teamHeading.briefParagraph}
         />
-        <TeamMembersGrid className="pb3_75 lg:pb10" teamMembers={teamMembers} />
+        <TeamMemberGrid className="pb3_75 lg:pb10" teamMemberGrids={teamMemberGrids} />
       </div>
       <div id="#values" className="text-module-padding-x border-top-nutella border-bottom-nutella">
         <TextModuleWithParagraphs
