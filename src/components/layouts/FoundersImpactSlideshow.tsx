@@ -166,7 +166,7 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
                 return (
                   <button
                     key={`FoundersImpactSlideshow-${slide.leftHeadline}`}
-                    aria-label={Language.t('FoundersImpactSlideshow.paginationDot', {
+                    aria-label={Language.t('Slideshow.paginationDot', {
                       slideNumber: index + 1,
                     })}
                     className={cx(
@@ -187,11 +187,11 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
               })}
             </div>
             <Button
-              ariaLabel={Language.t('FoundersImpactSlideshow.viewNext')}
+              ariaLabel={Language.t('Slideshow.viewNext')}
               className="text-left bg-color-transparent text-decoration-none color-lilac-darkest secondary-bold-xs pt1"
               onClick={() => this.next()}
             >
-              {Language.t('FoundersImpactSlideshow.viewNext')}
+              {Language.t('Slideshow.viewNext')}
             </Button>
           </div>
         </div>

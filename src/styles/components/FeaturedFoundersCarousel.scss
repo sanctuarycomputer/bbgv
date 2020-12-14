@@ -1,0 +1,81 @@
+.FeaturedFoundersCarousel {
+  // /** Fixes overflow issues */
+  overflow: hidden;
+  min-width: 100%;
+  width: 0;
+
+  &__image {
+    height: 9.984375rem;
+
+    @include media('sm-up') {
+      height: 25.25rem;
+    }
+
+    @include media('xxl-up') {
+      height: 34.119375rem;
+    }
+  }
+
+  .slick-track {
+    display: flex !important;
+  }
+
+  .slick-slide {
+    height: inherit !important;
+
+    & > * {
+      height: 100%;
+    }
+  }
+
+  &__slide {
+    display: inline-flex !important;
+    height: 100%;
+  }
+
+  &__pagination-container {
+    bottom: 0;
+    left: 0;
+
+    @include media('md-up') {
+      bottom: 0;
+      left: 3.75rem;
+    }
+  }
+
+  &__pagination {
+    &__dot {
+      position: relative;
+      height: 0.1875rem;
+      margin-right: 0.1875rem;
+      width: 1.5rem;
+      background: lighten(color('charcoal'), 50%);
+
+      @include media('sm-up') {
+        width: 1.6875rem;
+      }
+
+      &__progress {
+        width: 0;
+        height: 100%;
+        background: color('charcoal');
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      &--active .FeaturedFoundersCarousel__pagination__dot__progress {
+        width: 100%;
+      }
+
+      &--current .FeaturedFoundersCarousel__pagination__dot__progress {
+        animation: carousel-after-expand forwards linear;
+      }
+    }
+  }
+
+  &__bio p {
+    display: inline;
+  }
+}

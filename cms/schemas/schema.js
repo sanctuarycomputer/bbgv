@@ -26,6 +26,7 @@ import PressListModule from './layouts/pressListModule';
 import StatisticsModule from './layouts/statisticsModule';
 import InvestmentsList from './layouts/investmentsList';
 import CompanyDetailLanding from './layouts/companyDetailLanding';
+import FeaturedFoundersCarousel from './layouts/featuredFoundersCarousel';
 
 /** References */
 import Founder from './references/founder';
@@ -69,6 +70,7 @@ export default createSchema({
     StatisticsModule,
     InvestmentsList,
     CompanyDetailLanding,
+    FeaturedFoundersCarousel,
 
     /** References */
     Founder,

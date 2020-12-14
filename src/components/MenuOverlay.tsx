@@ -13,6 +13,7 @@ import EmailSignup from 'components/EmailSignup';
 type PassedProps = {
   globalSettings: GlobalSettings;
   isOpen: boolean;
+  closeMenu: () => void;
 };
 
 type Props = PassedProps & WithBreakpointsProps;
@@ -21,7 +22,7 @@ const CURRENT_YEAR = getYear(new Date());
 
 //TO-DO: Add jump links functionality
 
-const MenuOverlay: React.FC<Props> = ({ globalSettings, isOpen, mediaQuery }) => {
+const MenuOverlay: React.FC<Props> = ({ closeMenu, globalSettings, isOpen, mediaQuery }) => {
   const { socialMediaLinks, menu } = globalSettings;
   const breakpointIsLgUp = mediaQuery.isMediumUp;
 
@@ -115,6 +116,7 @@ const MenuOverlay: React.FC<Props> = ({ globalSettings, isOpen, mediaQuery }) =>
             <Button
               key={`MenuOverlay-${link.link}`}
               wrap={true}
+              openInNewTab={true}
               className={cx(
                 'MenuOverlay__menu-link-button--style-small inline-flex items-center text-decoration-none primary-md vertical-align-middle color-charcoal'
               )}

@@ -135,13 +135,13 @@ export const Founder = t.intersection([
     jobTitle: t.string,
     bio: t.array(Block),
     founderPortrait: Image,
+    company: t.string,
+    sector: t.string,
   }),
   t.partial({
     twitter: t.string,
     instagram: t.string,
     linkedIn: t.string,
-    company: t.string,
-    sector: t.string,
   }),
 ]);
 
@@ -327,6 +327,24 @@ export const ImageCrop = t.type({
   right: t.union([t.number, t.undefined]),
 });
 
+export type FeaturedFoundersCarouselSlide = t.TypeOf<typeof FeaturedFoundersCarouselSlide>;
+export const FeaturedFoundersCarouselSlide = t.intersection([
+  t.type({
+    images: t.array(Image),
+    founder: Founder,
+    company: Company,
+  }),
+  t.partial({
+    vimeoId: t.string,
+  }),
+]);
+
+export type FeaturedFoundersCarousel = t.TypeOf<typeof FeaturedFoundersCarousel>;
+export const FeaturedFoundersCarousel = t.type({
+  _type: t.string,
+  slides: t.array(FeaturedFoundersCarouselSlide),
+});
+
 export type NewsletterModule = t.TypeOf<typeof NewsletterModule>;
 export const NewsletterModule = t.type({
   _type: t.string,
@@ -366,6 +384,7 @@ export const HomePage = t.type({
   hero: HomeHero,
   foundersImpactSlideshow: FoundersImpactSlideshow,
   featuredFoundersCarouselSectionHeading: TextModule,
+  featuredFoundersCarousel: FeaturedFoundersCarousel,
   whyWeInvest: TextModule,
   foundersImpactSectionHeading: TextModule,
   contact: TextModule,

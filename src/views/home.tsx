@@ -5,6 +5,8 @@ import { Props as ContainerProps } from 'containers/home';
 import HomeHero from 'components/layouts/HomeHero';
 import { ContentPage as Meta } from 'components/Meta';
 import NewsletterModule from 'components/layouts/NewsletterModule';
+import FeaturedFoundersCarousel from 'components/layouts/FeaturedFoundersCarousel';
+
 import FoundersImpactSlideshow from 'components/layouts/FoundersImpactSlideshow';
 import TextModule from 'components/layouts/TextModule';
 
@@ -21,6 +23,7 @@ const HomeView: FC<Props> = (props) => {
     foundersImpactSlideshow,
     foundersImpactSectionHeading,
     featuredFoundersCarouselSectionHeading,
+    featuredFoundersCarousel,
     whyWeInvest,
     contact,
     newsletter,
@@ -37,6 +40,7 @@ const HomeView: FC<Props> = (props) => {
         subheading={featuredFoundersCarouselSectionHeading.subheading}
         briefParagraph={featuredFoundersCarouselSectionHeading.briefParagraph}
       />
+      <FeaturedFoundersCarousel slides={featuredFoundersCarousel.slides} />
       <TextModule
         className="py3_75"
         variant="mulberry"
@@ -45,7 +49,7 @@ const HomeView: FC<Props> = (props) => {
         briefParagraph={whyWeInvest.briefParagraph}
       />
       <TextModule
-        className="text-module-padding-x py3_75 lg:py10"
+        className="py3_75 lg:py10"
         variant="default"
         heading={foundersImpactSectionHeading.heading}
         subheading={foundersImpactSectionHeading.subheading}
@@ -53,7 +57,8 @@ const HomeView: FC<Props> = (props) => {
       />
       <FoundersImpactSlideshow
         variant={foundersImpactSlideshow.variant}
-        slides={foundersImpactSlideshow.slides} />
+        slides={foundersImpactSlideshow.slides}
+      />
       <TextModule
         className="py3_75 lg:py10"
         variant="default"

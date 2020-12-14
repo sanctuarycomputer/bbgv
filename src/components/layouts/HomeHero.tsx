@@ -24,7 +24,7 @@ type Props = PassedProps & WithBreakpointsProps;
 const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
   const [activeFounderIndex, setActiveFounderIndex] = useState(-1);
   const [hideLogo, setHideLogo] = useState(false);
-  const breakpointIsMdUp = mediaQuery.isMediumUp;
+  const breakpointIsLgUp = mediaQuery.isLargeUp;
 
   const handleScroll = () => {
     /* Determines if the current scroll position is before of after the logo in the Home Hero Module **/
@@ -73,7 +73,7 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
         {Language.t('Home.hero.ourFounders')}
       </span>
 
-      {!breakpointIsMdUp ? (
+      {!breakpointIsLgUp ? (
         <span>
           <span className="primary-xxl">
             {founders.map((founder: Founder, index: number) => (
@@ -106,7 +106,7 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
             {founders.map((founder: Founder, index: number) => (
               <span key={founder.firstName} className="HomeHero__founder relative">
                 <Button
-                  className="HomeHero__founder inline text-decoration-none hover-color-lilac color-charcoal transition"
+                  className="HomeHero__founder primary-xxl bg-color-transparent inline text-decoration-none hover-color-lilac color-charcoal transition"
                   ariaLabel={Language.t('Founder.viewDetailPageButtonAriaLabel', {
                     FullName: generateFullName(founder),
                   })}

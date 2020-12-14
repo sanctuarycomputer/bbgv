@@ -45,6 +45,7 @@ export default {
       title: 'Bio',
       name: 'bio',
       type: 'portableText',
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Job Title',

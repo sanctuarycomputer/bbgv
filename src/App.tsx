@@ -31,7 +31,7 @@ export default function App() {
       <Router>
         <Nav theme={theme} menuIsOpen={menuIsOpen} onOpenMenu={openMenu} onCloseMenu={closeMenu} />
         {'menu' in globalSettings && (
-          <MenuOverlay globalSettings={globalSettings} isOpen={menuIsOpen} />
+          <MenuOverlay globalSettings={globalSettings} closeMenu={closeMenu} isOpen={menuIsOpen} />
         )}
 
         <Routes />

@@ -15,6 +15,7 @@ import DefaultPageContentGroq from './groq/DefaultPageContent';
 import CompanyDetailPageContentGroq from './groq/CompanyDetailPageContent';
 import FounderGroq from './groq/Founder';
 import CompanyDetailLandingGroq from './groq/CompanyDetailLanding';
+import FeaturedFoundersCarouselGroq from './groq/FeaturedFoundersCarousel';
 
 const ApiClient: {
   fetchGlobalSettings(): Promise<Cms.GlobalSettings | any>;
@@ -37,6 +38,7 @@ const ApiClient: {
       'foundersImpactSlideshow': ${FoundersImpactSlideshowGroq},
       'foundersImpactSectionHeading': ${TextModuleGroq},
       'featuredFoundersCarouselSectionHeading': featuredFoundersCarouselSectionHeading${TextModuleGroq},
+      'featuredFoundersCarousel': featuredFoundersCarousel${FeaturedFoundersCarouselGroq},
       'whyWeInvest': whyWeInvest${TextModuleGroq},
       'foundersImpactSectionHeading': foundersImpactSectionHeading${TextModuleGroq},
       'contact': contact${TextModuleGroq},

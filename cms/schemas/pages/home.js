@@ -36,9 +36,15 @@ export default {
       },
     },
     {
-      title: 'Heading',
+      title: 'Intro Text',
       name: 'featuredFoundersCarouselSectionHeading',
       type: 'textModule',
+      fieldset: 'featuredFoundersCarouselSection',
+    },
+    {
+      title: 'Carousel',
+      name: 'featuredFoundersCarousel',
+      type: 'featuredFoundersCarousel',
       fieldset: 'featuredFoundersCarouselSection',
     },
     {

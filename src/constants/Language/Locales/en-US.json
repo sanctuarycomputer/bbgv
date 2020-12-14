@@ -50,9 +50,11 @@
     "investmentGuidelines": "Investment Guidelines",
     "apply": "Apply"
   },
-  "FoundersImpactSlideshow": {
+  "Slideshow": {
     "viewNext": "View next",
-    "paginationDot": "Advance carousel to slide %{slideNumber}"
+    "paginationDot": "Advance carousel to slide %{slideNumber}",
+    "readMoreButtonLabel": "Read more about %{founder}",
+    "readMoreButtonAriaLabel": "Read more about %{founder}"
   },
   "EmailSignup": {
     "name": "EMAIL",
