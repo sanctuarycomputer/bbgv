@@ -327,6 +327,16 @@ export const ImageCrop = t.type({
   right: t.union([t.number, t.undefined]),
 });
 
+export type Sector = t.TypeOf<typeof Sector>;
+export const Sector = t.intersection([
+  t.type({
+    name: t.string,
+  }),
+  t.partial({
+    companies: t.array(Company),
+  }),
+]);
+
 export type FeaturedFoundersCarouselSlide = t.TypeOf<typeof FeaturedFoundersCarouselSlide>;
 export const FeaturedFoundersCarouselSlide = t.intersection([
   t.type({
@@ -343,6 +353,11 @@ export type FeaturedFoundersCarousel = t.TypeOf<typeof FeaturedFoundersCarousel>
 export const FeaturedFoundersCarousel = t.type({
   _type: t.string,
   slides: t.array(FeaturedFoundersCarouselSlide),
+});
+
+export type PortfolioListingModule = t.TypeOf<typeof PortfolioListingModule>;
+export const PortfolioListingModule = t.type({
+  sectors: t.array(Sector),
 });
 
 export type NewsletterModule = t.TypeOf<typeof NewsletterModule>;
@@ -418,6 +433,7 @@ export type CompaniesPage = t.TypeOf<typeof CompaniesPage>;
 export const CompaniesPage = t.type({
   seo: SeoSettings,
   hero: HeroTextModule,
+  portfolioListing: PortfolioListingModule,
   investmentsList: InvestmentsListModule,
   contact: TextModule,
 });

@@ -27,11 +27,13 @@ import StatisticsModule from './layouts/statisticsModule';
 import InvestmentsList from './layouts/investmentsList';
 import CompanyDetailLanding from './layouts/companyDetailLanding';
 import FeaturedFoundersCarousel from './layouts/featuredFoundersCarousel';
+import PortfolioListing from './layouts/portfolioListing';
 
 /** References */
 import Founder from './references/founder';
 import Company from './references/company';
 import TeamMember from './references/teamMember';
+import Sector from './references/sector';
 
 /* Fields */
 import SeoSettings from './fields/seoSettings';
@@ -71,11 +73,13 @@ export default createSchema({
     InvestmentsList,
     CompanyDetailLanding,
     FeaturedFoundersCarousel,
+    PortfolioListing,
 
     /** References */
     Founder,
     Company,
     TeamMember,
+    Sector,
 
     /* Fields */
     SeoSettings,

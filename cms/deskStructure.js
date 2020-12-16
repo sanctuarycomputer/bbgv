@@ -23,4 +23,5 @@ export default () =>
       S.documentTypeListItem('teamMember'),
       S.documentTypeListItem('founder'),
       S.documentTypeListItem('company'),
+      S.documentTypeListItem('sector'),
     ]);

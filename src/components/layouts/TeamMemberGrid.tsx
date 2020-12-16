@@ -12,7 +12,7 @@ type Props = {
 
 const TeamMemberGrid: React.FC<Props> = ({ teamMemberGrids, className }) => {
   return (
-    <div className={cx('TeamMemberGrid col-12 lg:col-10 mxauto site-content-max-width', className)}>
+    <div className={cx('TeamMemberGrid col-12 lg:col-10 mxauto', className)}>
       {teamMemberGrids.map((teamMemberGrid: ITeamMemberGrid, index: number) => (
         <div
           key={`TeamMemberGrid--${teamMemberGrid.heading || index}`}

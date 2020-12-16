@@ -22,7 +22,7 @@ const InvestmentsList: React.FC<Props> = ({ heading, items, className }) => {
         {heading}
       </div>
       {items.map((item: InvestmentsListItem) => (
-        <div key={item.company.name} className="InvestmentsList__item col-12">
+        <div key={`InvestmentsList-${item.company.name}`} className="InvestmentsList__item col-12">
           {InvestmentListItem(item)}
         </div>
       ))}
@@ -39,11 +39,17 @@ const InvestmentListItem = (item: InvestmentsListItem) => {
         <div className="secondary-sm col-7 flex flex-col">
           <div className="InvestmentList__founders color-charcoal uppercase">
             {item.company.founders?.map((founder: Founder) => (
-              <div>{generateFullName(founder)} </div>
+              <div key={`InvestmentsList-founders-${generateFullName(founder)}`}>
+                {generateFullName(founder)}{' '}
+              </div>
             ))}
           </div>
           <div className="primary-sm color-lilac uppercase">{item.company.name}</div>
-          {item.company.tag && <div className="py1_25 md:pb0 md:pt1_5">{item.company.tag}</div>}
+          {item.company.tag && (
+            <div className="self-start secondary-xs bg-color-lilac color-charcoal my1_25 md:mb0 md:mt1_5 py_5 px1 flex flex-col items-center radius-xs">
+              {item.company.tag}
+            </div>
+          )}
         </div>
 
         <div className="InvestmentsList__logo-container col-5 flex flex-col items-end md:items-start">

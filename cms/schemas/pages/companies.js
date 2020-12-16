@@ -36,6 +36,11 @@ export default {
       },
     },
     {
+      name: 'portfolioListing',
+      title: 'Portfolio Listing',
+      type: 'portfolioListingModule',
+    },
+    {
       title: 'Investments List',
       name: 'investmentsList',
       fieldset: 'investmentsSection',
