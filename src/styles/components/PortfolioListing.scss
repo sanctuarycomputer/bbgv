@@ -1,32 +1,38 @@
 .PortfolioListing {
   padding-top: 8.625rem;
 
-  &__company-container {
-    &:hover,
-    &:focus {
-      .PortfolioListing__card--style-header {
-        background-color: rgba(205, 212, 253, 0.55);
-      }
+  @include media('lg-up') {
+    padding-left: $site-padding-x-desktop;
+    padding-right: $site-padding-x-desktop;
+  }
 
-      .PortfolioListing__founders-container {
-        &::before {
-          content: '';
-          display: block;
-          height: 100%;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          z-index: 1;
-          opacity: 1;
-          background-color: rgba(205, 212, 253, 0.5);
-          background-blend-mode: overlay;
-          border-radius: 0.35rem;
-        }
-      }
-    }
+  &__company-container {
     @include media('md-up') {
       height: 16.875rem;
+
+      &:hover,
+      &:focus {
+        .PortfolioListing__card--style-header {
+          background-color: rgba(205, 212, 253, 0.55);
+        }
+
+        .PortfolioListing__founders-container {
+          &::before {
+            content: '';
+            display: block;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+            opacity: 1;
+            background-color: rgba(205, 212, 253, 0.5);
+            background-blend-mode: overlay;
+            border-radius: 0.35rem;
+          }
+        }
+      }
     }
   }
 

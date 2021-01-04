@@ -14,9 +14,7 @@ type Props = {
 
 const PortfolioListing: React.FC<Props> = ({ sectors, className }) => {
   return (
-    <div
-      className={cx('PortfolioListing site-max-width site-padding-x md:pt3_75 mxauto', className)}
-    >
+    <div className={cx('PortfolioListing site-max-width md:pt3_75 mxauto', className)}>
       {sectors.map((sector: Sector) => (
         <div
           key={`PortfolioListing--${sector.name}`}

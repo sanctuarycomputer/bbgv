@@ -11,6 +11,7 @@ import { RouteMap } from 'constants/RouteMap';
 import PhotoCard from 'components/PhotoCard';
 import { BBGVLogo } from 'components/icons';
 import hasPassedElement from 'utils/hasPassedElement';
+import generateCompanyDetailUrl from 'utils/generateCompanyDetailUrl';
 
 type PassedProps = {
   founders: Founder[];
@@ -72,12 +73,11 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
       <span className="color-charcoal primary-sm px2_25 md:px3_75 vertical-align-middle">
         {Language.t('Home.hero.ourFounders')}
       </span>
-
       {!breakpointIsLgUp ? (
         <span>
           <span className="primary-xxl">
             {founders.map((founder: Founder, index: number) => (
-              <span key={founder.firstName} className="color-charcoal HomeHero__founder inline ">
+              <span key={founder.firstName} className="color-charcoal HomeHero__founder inline">
                 {index !== founders.length - 1 ? (
                   <span>
                     <span>{founder.firstName}</span>
@@ -91,12 +91,11 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
               </span>
             ))}
           </span>
-          <span>& </span>
           <Button
             className="HomeHero__founder inline text-decoration-none hover-color-lilac transition color-lilac"
             ariaLabel={Language.t('Home.hero.othersButtonAriaLabel')}
-            to="/"
-            label={Language.t('Home.hero.others')}
+            to={RouteMap.COMPANIES.path}
+            label={` & ${Language.t('Home.hero.others')}`}
           />
           <span>.</span>
         </span>
@@ -107,6 +106,7 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
               <span key={founder.firstName} className="HomeHero__founder relative">
                 <Button
                   className="HomeHero__founder primary-xxl bg-color-transparent inline text-decoration-none hover-color-lilac color-charcoal transition"
+                  to={generateCompanyDetailUrl(founder.company)}
                   ariaLabel={Language.t('Founder.viewDetailPageButtonAriaLabel', {
                     FullName: generateFullName(founder),
                   })}
@@ -120,11 +120,11 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
                   {index !== founders.length - 1 ? (
                     <span>
                       <span>{founder.firstName}</span>
-                      <span className="color-charcoal">, </span>
+                      <span className="color-charcoal mr1">,</span>
                     </span>
                   ) : (
                     <span>
-                      <span>{founder.firstName} </span>
+                      <span>{founder.firstName}</span>
                     </span>
                   )}
                 </Button>
@@ -142,12 +142,11 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
               </span>
             ))}
           </span>
-          <span>& </span>
           <Button
-            className="HomeHero__founder inline text-decoration-none hover-color-lilac color-lilac transition"
+            className="HomeHero__founder inline text-decoration-none hover-color-lilac color-charcoal transition"
             ariaLabel={Language.t('Home.hero.othersButtonAriaLabel')}
-            to="/"
-            label={Language.t('Home.hero.others')}
+            to={RouteMap.COMPANIES.path}
+            label={` & ${Language.t('Home.hero.others')}`}
           />
           <span>.</span>
         </span>

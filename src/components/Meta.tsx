@@ -6,7 +6,7 @@ import { SeoSettings } from 'lib/cms/types';
 const DEFAULT_TITLE = 'BBG Ventures';
 const DEFAULT_DESCRIPTION =
   'BBG Ventures is an early stage fund focused on consumer tech startups with a female founder. We back the new wave of entrepreneurs who are reimagining daily life, creating market-defining products and services that make our work, play and home lives simpler, better — and more satisfying.';
-const DEFAULT_IMAGE = '';
+const DEFAULT_IMAGE = '/assets/images/bbgv-share-card.png';
 
 interface Props {
   title?: string;
