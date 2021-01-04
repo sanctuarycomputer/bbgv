@@ -11,6 +11,7 @@ import { RouteMap } from 'constants/RouteMap';
 import PhotoCard from 'components/PhotoCard';
 import { BBGVLogo } from 'components/icons';
 import hasPassedElement from 'utils/hasPassedElement';
+import generateCompanyDetailUrl from 'utils/generateCompanyDetailUrl';
 
 type PassedProps = {
   founders: Founder[];
@@ -105,6 +106,7 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
               <span key={founder.firstName} className="HomeHero__founder relative">
                 <Button
                   className="HomeHero__founder primary-xxl bg-color-transparent inline text-decoration-none hover-color-lilac color-charcoal transition"
+                  to={generateCompanyDetailUrl(founder.company)}
                   ariaLabel={Language.t('Founder.viewDetailPageButtonAriaLabel', {
                     FullName: generateFullName(founder),
                   })}
