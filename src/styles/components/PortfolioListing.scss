@@ -49,18 +49,23 @@
     }
   }
 
-  .FounderCard {
-    width: 50%;
-
-    @include media('md-up') {
-      height: 16.875rem;
-    }
-  }
-
   &__founder-card-image {
     @include media('md-up') {
       width: 12rem;
       height: 16.875rem;
     }
+  }
+
+  &__founders-container--style-single {
+    width: 50%;
+  }
+}
+
+.FounderCard {
+  // width: 50%;
+  height: auto;
+
+  @include media('md-up') {
+    height: 16.875rem;
   }
 }

@@ -22,7 +22,7 @@ const CURRENT_YEAR = getYear(new Date());
 
 //TO-DO: Add jump links functionality
 
-const MenuOverlay: React.FC<Props> = ({ closeMenu, globalSettings, isOpen, mediaQuery }) => {
+const MenuOverlay: React.FC<Props> = ({ globalSettings, isOpen, mediaQuery }) => {
   const { socialMediaLinks, menu } = globalSettings;
   const breakpointIsLgUp = mediaQuery.isMediumUp;
 
