@@ -113,6 +113,6 @@ jobs:
       # Deploy & Activate
       - name: Deploy to Spirit Fish
         env:
-          SPIRIT_FISH_RENDERER_ID: ${{ secrets.SPIRIT_FISH_STAGING_RENDERER_ID }}
+          SPIRIT_FISH_RENDERER_ID: ${{ secrets.SPIRIT_FISH_PRODUCTION_RENDERER_ID }}
           SPIRIT_FISH_CLI_TOKEN: ${{ secrets.SPIRIT_FISH_CLI_TOKEN }}
         run: npx spirit-fish deploy $SPIRIT_FISH_RENDERER_ID ./build --activate --token $SPIRIT_FISH_CLI_TOKEN
