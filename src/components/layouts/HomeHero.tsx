@@ -90,12 +90,11 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
               </span>
             ))}
           </span>
-          <span> & </span>
           <Button
             className="HomeHero__founder inline text-decoration-none hover-color-lilac transition color-lilac"
             ariaLabel={Language.t('Home.hero.othersButtonAriaLabel')}
             to={RouteMap.COMPANIES.path}
-            label={Language.t('Home.hero.others')}
+            label={` & ${Language.t('Home.hero.others')}`}
           />
           <span>.</span>
         </span>
@@ -141,12 +140,11 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
               </span>
             ))}
           </span>
-          <span> & </span>
           <Button
-            className="HomeHero__founder inline text-decoration-none hover-color-lilac color-lilac transition"
+            className="HomeHero__founder inline text-decoration-none hover-color-lilac color-charcoal transition"
             ariaLabel={Language.t('Home.hero.othersButtonAriaLabel')}
             to={RouteMap.COMPANIES.path}
-            label={Language.t('Home.hero.others')}
+            label={` & ${Language.t('Home.hero.others')}`}
           />
           <span>.</span>
         </span>
