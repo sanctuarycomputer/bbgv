@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch, useLocation } from 'react-router-dom';
 
 import { RouteMap } from 'constants/RouteMap';
+import PageNotFound from 'components/PageNotFound';
 
 const Routes: React.FC = () => {
   const location = useLocation();
@@ -16,6 +17,7 @@ const Routes: React.FC = () => {
           component={route.component}
         />
       ))}
+      <Route path="*" component={PageNotFound} />
     </Switch>
   );
 };

@@ -7,8 +7,10 @@ import Routes from 'constants/routes';
 import 'styles/App.scss';
 
 import { Status } from 'types';
+
 import { intializeApplication } from 'state/actions/applicationActions';
 import { setMenuOpen, setMenuClosed } from 'state/actions/uiActions';
+import FourHundred from 'views/errors/404';
 
 import { Button } from 'components/base';
 import Nav from 'components/Nav';
@@ -36,6 +38,7 @@ export default function App() {
   if (appStatus === Status.IDLE || appStatus === Status.PENDING) {
     return <Loader />;
   }
+  // if (appStatus === Status.REJECTED) return <FourHundred />;
 
   return (
     <main className="App">
