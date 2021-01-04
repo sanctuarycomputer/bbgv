@@ -72,12 +72,11 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
       <span className="color-charcoal primary-sm px2_25 md:px3_75 vertical-align-middle">
         {Language.t('Home.hero.ourFounders')}
       </span>
-
       {!breakpointIsLgUp ? (
         <span>
           <span className="primary-xxl">
             {founders.map((founder: Founder, index: number) => (
-              <span key={founder.firstName} className="color-charcoal HomeHero__founder inline ">
+              <span key={founder.firstName} className="color-charcoal HomeHero__founder inline">
                 {index !== founders.length - 1 ? (
                   <span>
                     <span>{founder.firstName}</span>
@@ -91,11 +90,11 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
               </span>
             ))}
           </span>
-          <span>& </span>
+          <span> & </span>
           <Button
             className="HomeHero__founder inline text-decoration-none hover-color-lilac transition color-lilac"
             ariaLabel={Language.t('Home.hero.othersButtonAriaLabel')}
-            to="/"
+            to={RouteMap.COMPANIES.path}
             label={Language.t('Home.hero.others')}
           />
           <span>.</span>
@@ -120,11 +119,11 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
                   {index !== founders.length - 1 ? (
                     <span>
                       <span>{founder.firstName}</span>
-                      <span className="color-charcoal">, </span>
+                      <span className="color-charcoal mr1">,</span>
                     </span>
                   ) : (
                     <span>
-                      <span>{founder.firstName} </span>
+                      <span>{founder.firstName}</span>
                     </span>
                   )}
                 </Button>
@@ -142,11 +141,11 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
               </span>
             ))}
           </span>
-          <span>& </span>
+          <span> & </span>
           <Button
             className="HomeHero__founder inline text-decoration-none hover-color-lilac color-lilac transition"
             ariaLabel={Language.t('Home.hero.othersButtonAriaLabel')}
-            to="/"
+            to={RouteMap.COMPANIES.path}
             label={Language.t('Home.hero.others')}
           />
           <span>.</span>
