@@ -21,8 +21,9 @@ type Props = PassedProps & WithBreakpointsProps;
 const CURRENT_YEAR = getYear(new Date());
 
 //TO-DO: Add jump links functionality
+//TO-DO: Close menu when a link is clicked
 
-const MenuOverlay: React.FC<Props> = ({ globalSettings, isOpen, mediaQuery }) => {
+const MenuOverlay: React.FC<Props> = ({ closeMenu, globalSettings, isOpen, mediaQuery }) => {
   const { socialMediaLinks, menu } = globalSettings;
   const breakpointIsLgUp = mediaQuery.isMediumUp;
 
