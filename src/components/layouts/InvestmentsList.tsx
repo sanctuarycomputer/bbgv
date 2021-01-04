@@ -39,7 +39,10 @@ const InvestmentListItem = (item: InvestmentsListItem) => {
         <div className="secondary-sm col-7 flex flex-col">
           <div className="InvestmentList__founders color-charcoal uppercase">
             {item.company.founders?.map((founder: Founder) => (
-              <div key={`InvestmentsList-founders-${generateFullName(founder)}`}>
+              <div
+                key={`InvestmentsList-founders-${generateFullName(founder)}`}
+                className="primary-sm"
+              >
                 {generateFullName(founder)}{' '}
               </div>
             ))}
