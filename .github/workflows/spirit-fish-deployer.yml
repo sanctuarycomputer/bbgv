@@ -36,7 +36,7 @@ jobs:
           SPIRIT_FISH_CLI_TOKEN: ${{ secrets.SPIRT_FISH_CLI_TOKEN }}
         run: npx spirit-fish deploy $SPIRIT_FISH_RENDERER_ID ./build --activate --token $SPIRIT_FISH_CLI_TOKEN
 
-  deploy-staging:
+  deploy-production:
     name: Deploy Production
     runs-on: ubuntu-latest
     needs: test
