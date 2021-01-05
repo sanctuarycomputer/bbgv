@@ -54,7 +54,7 @@ const TextModule: React.FC<Props> = ({
         {briefParagraph && (
           <div
             className={cx(
-              `TextModule__paragraph TextModule--style-${variant}__paragraph secondary-sm col-12 md:col-8 pt1_5 lg:pt3`
+              `TextModule__paragraph TextModule--style-${variant}__paragraph secondary-sm col-12 md:col-8 pt1_5 lg:pt2_25`
             )}
           >
             <PortableText blocks={briefParagraph.paragraph} />
