@@ -21,7 +21,6 @@ type Props = PassedProps & WithBreakpointsProps;
 const CURRENT_YEAR = getYear(new Date());
 
 //TO-DO: Add jump links functionality
-//TO-DO: Close menu when a link is clicked
 
 const MenuOverlay: React.FC<Props> = ({ closeMenu, globalSettings, isOpen, mediaQuery }) => {
   const { socialMediaLinks, menu } = globalSettings;
@@ -83,6 +82,7 @@ const MenuOverlay: React.FC<Props> = ({ closeMenu, globalSettings, isOpen, media
         >
           {menu.links.map((link: IButton) => (
             <Button
+              onClick={closeMenu}
               key={`MenuOverlay-${link.link}`}
               wrap={true}
               className="MenuOverlay__menu-link-button--style-medium inline-flex items-center text-decoration-none primary-lg vertical-align-middle color-charcoal"
@@ -115,6 +115,7 @@ const MenuOverlay: React.FC<Props> = ({ closeMenu, globalSettings, isOpen, media
         >
           {socialMediaLinks.map((link: IButton) => (
             <Button
+              onClick={closeMenu}
               key={`MenuOverlay-${link.link}`}
               wrap={true}
               openInNewTab={true}
