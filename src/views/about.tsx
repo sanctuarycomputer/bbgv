@@ -39,7 +39,7 @@ const AboutView: FC<Props> = (props) => {
       />
       <div id="#team" className="flex flex-col">
         <TextModule
-          className="text-module-padding-x py3_75 lg:pb7_5 lg:pt7_5"
+          className="text-module-padding-x py3_75 lg:pb10 lg:pt7_5"
           variant="default"
           heading={teamHeading.heading}
           subheading={teamHeading.subheading}
