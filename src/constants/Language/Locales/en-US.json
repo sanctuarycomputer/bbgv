@@ -106,5 +106,11 @@
       "investmentGuidelines": "Investment Guidelines",
       "howToApply": "How to apply"
     }
+  },
+  "CookieConsent": {
+    "acceptButton": {
+      "label": "Accept",
+      "ariaLabel": "Accept"
+    }
   }
 }
