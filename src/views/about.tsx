@@ -37,7 +37,7 @@ const AboutView: FC<Props> = (props) => {
         introByline={hero.introByline}
         briefParagraph={hero.briefParagraph}
       />
-      <div id="#team" className="flex flex-col">
+      <div id={'team'} className="flex flex-col">
         <TextModule
           className="text-module-padding-x py3_75 lg:pb7_5 lg:pt7_5"
           variant="default"

@@ -21,6 +21,7 @@ const CompanyDetailView: FC<Props> = (props) => {
       <Meta seo={seo} />
       <CompanyDetailLanding
         company={companyDetailLanding.company}
+        foundersText={companyDetailLanding.foundersText}
         headline={companyDetailLanding.headline}
         founderPortrait={companyDetailLanding.founderPortrait}
         productImage={companyDetailLanding.productImage}

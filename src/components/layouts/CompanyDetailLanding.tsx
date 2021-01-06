@@ -1,8 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 import withBreakpoints, { InjectedProps as WithBreakpointsProps } from 'lib/withBreakpoints';
-import { Block, Company, Image, Founder } from 'lib/cms/types';
-import generateFullName from 'utils/generateFullName';
+import { Block, Company, Image } from 'lib/cms/types';
 import Language from 'constants/Language';
 import PortableText from 'components/PortableText';
 import { LineIconWithButton } from 'components/icons';
@@ -11,6 +10,7 @@ import { Button, Img } from 'components/base';
 type PassedProps = {
   className?: string;
   headline: Block[];
+  foundersText: string;
   founderPortrait?: Image;
   productImage?: Image;
   company: Company;
@@ -22,6 +22,7 @@ const CompanyDetailLanding: React.FC<Props> = ({
   headline,
   className,
   company,
+  foundersText,
   founderPortrait,
   productImage,
   mediaQuery,
@@ -43,20 +44,7 @@ const CompanyDetailLanding: React.FC<Props> = ({
         >
           <span>
             <span className="inline primary-sm color-lilac uppercase pr1_5 md:pr3_75">
-              {company.founders?.map((founder: Founder, index: number) => (
-                <span key={`CompanyDetailLanding-${founder.firstName}`}>
-                  {index !== company.founders.length - 1 ? (
-                    <span>
-                      <span>{generateFullName(founder)}</span>
-                      <span className="color-lilac">, </span>
-                    </span>
-                  ) : (
-                    <span>
-                      <span>{generateFullName(founder)} </span>
-                    </span>
-                  )}
-                </span>
-              ))}
+              {foundersText}
             </span>
             <h1
               className={cx(

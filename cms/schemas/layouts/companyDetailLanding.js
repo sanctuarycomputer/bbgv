@@ -28,6 +28,15 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: 'foundersText',
+      title: 'Founder(s) Text',
+      type: 'string',
+      fieldset: 'copy',
+      description:
+        'This text will appear next to the headline and should refer to the founders (e.g. "Liya and Moj")',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'founderPortrait',
       title: 'Founder Portrait',
       description:

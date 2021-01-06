@@ -378,6 +378,7 @@ export type CompanyDetailLanding = t.TypeOf<typeof CompanyDetailLanding>;
 export const CompanyDetailLanding = t.intersection([
   t.type({
     headline: t.array(Block),
+    foundersText: t.string,
     company: Company,
   }),
   t.partial({
