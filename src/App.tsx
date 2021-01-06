@@ -25,16 +25,6 @@ export default function App() {
   const openMenu = useCallback(() => dispatch(setMenuOpen()), [dispatch]);
   const closeMenu = useCallback(() => dispatch(setMenuClosed()), [dispatch]);
 
-  const cookieConsentContent = (globalSettings: GlobalSettings) => {
-    const text = globalSettings?.cookieConsent?.text;
-
-    if (!text) {
-      return null;
-    }
-
-    return <p className="inline">{text}</p>;
-  };
-
   //TO-DO: show 404 page if application status is rejected.
 
   useEffect(() => {
@@ -46,7 +36,7 @@ export default function App() {
       <Router>
         {globalSettings && 'cookieConsent' in globalSettings && (
           <CookieConsent
-            content={cookieConsentContent(globalSettings)}
+            content={globalSettings.cookieConsent.text}
             containerClassName="bg-color-lilac text-left"
             dismissButtonAriaLabel={Language.t('CookieConsent.acceptButton.ariaLabel')}
             dismissButtonClassName="bg-color-transparent text-left color-charcoal transition-shorter"
