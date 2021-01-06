@@ -119,7 +119,7 @@ const MenuOverlay: React.FC<Props> = ({ closeMenu, globalSettings, isOpen, media
               wrap={true}
               openInNewTab={true}
               className={cx(
-                'MenuOverlay__menu-link-button--style-small inline-flex items-center text-decoration-none primary-md vertical-align-middle color-charcoal'
+                'transition-shorter hover-lighten-charcoal inline-flex items-center text-decoration-none primary-md vertical-align-middle color-charcoal'
               )}
               to={link.link}
               ariaLabel={Language.t('Global.generalButtonAriaLabel', {
@@ -133,7 +133,7 @@ const MenuOverlay: React.FC<Props> = ({ closeMenu, globalSettings, isOpen, media
 
         <div
           className={cx(
-            'MenuOverlay__copyright bg-color-white none lg:flex flex flex-col secondary-xxs color-charcoal py3_75 px_75 lg:px1_5 absolute col-12 opacity-0',
+            'MenuOverlay__copyright bg-color-chalk none lg:flex flex flex-col secondary-xxs color-charcoal py3_75 px_75 lg:px1_5 absolute col-12 opacity-0',
             {
               'MenuOverlay__copyright--active': isOpen,
             }
@@ -151,7 +151,7 @@ const MenuOverlay: React.FC<Props> = ({ closeMenu, globalSettings, isOpen, media
 
       <div
         className={cx(
-          'MenuOverlay__newsletter bg-color-white pt5 pb1 px_75 flex lg:none secondary-bold-sm transition-medium',
+          'MenuOverlay__newsletter bg-color-chalk pt5 pb1 px_75 flex lg:none secondary-bold-sm transition-medium',
           {
             'MenuOverlay__newsletter--active': isOpen,
           }

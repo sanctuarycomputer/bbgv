@@ -17,7 +17,7 @@ const CompaniesView: FC<Props> = (props) => {
   const { hero, seo, portfolioListing, investmentsList, contact } = model;
 
   return (
-    <div className="CompaniesView primary-xxl">
+    <div className="CompaniesView">
       <Meta seo={seo} title={hero.title} />
       <HeroTextModule
         variant="lilac"
@@ -28,11 +28,11 @@ const CompaniesView: FC<Props> = (props) => {
         briefParagraph={hero.briefParagraph}
       />
       <PortfolioListing sectors={portfolioListing.sectors} />
-      <div className="text-module-padding-x pt3_75 lg:pt10">
+      <div className="text-module-padding-x pt3_75 lg:pt7_5">
         <InvestmentsList heading={investmentsList.heading} items={investmentsList.items} />
       </div>
       <TextModule
-        className="text-module-padding-x py3_75 lg:py10"
+        className="text-module-padding-x py3_75 lg:py7_5"
         variant="default"
         heading={contact.heading}
         subheading={contact.subheading}

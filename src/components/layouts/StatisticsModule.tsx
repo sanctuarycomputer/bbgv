@@ -20,7 +20,7 @@ const StatisticsModule: React.FC<Props> = ({ facts, className }) => {
       {facts.map((fact: IFact) => (
         <div
           key={fact.leftHeading || fact.rightHeading}
-          className="StatisticsModule__fact col-12 md:col-6 pb6 md:pb15"
+          className="StatisticsModule__fact col-12 md:col-8 pb6 md:pb15"
         >
           {Fact(fact)}
         </div>
@@ -43,7 +43,7 @@ const Fact = (fact: IFact) => {
               'StatisticsModule__heading primary-xxl color-lilac vertical-align-middle left hyphens',
               {
                 'col-12': hasFullWidthHeading,
-                'col-6': !hasFullWidthHeading,
+                'col-4': !hasFullWidthHeading,
               }
             )}
           >
@@ -52,18 +52,18 @@ const Fact = (fact: IFact) => {
         )}
 
         {fact.rightHeading && (
-          <span className="StatisticsModule__heading primary-lg color-chalk vertical-align-middle col-6">
+          <span className="StatisticsModule__heading primary-lg color-chalk vertical-align-middle col-8">
             {fact.rightHeading}
           </span>
         )}
       </div>
 
       <div className="flex flex-col flex-col-reverse md:flex-row">
-        <div className="flex flex-col justify-end col-4 md:col-6">
+        <div className="flex flex-col justify-end col-4">
           <div className="StatisticsModule__line-icon md:mr1_25"></div>
         </div>
 
-        <div className="StatisticsModule__paragraph vertical-align-middle secondary-sm col-12 md:col-6 pb1_5 md:pb0">
+        <div className="StatisticsModule__paragraph vertical-align-middle secondary-sm col-8 pb1_5 md:pb0">
           <PortableText blocks={fact.paragraphWithButton.paragraph} />
           {fact.paragraphWithButton.button && (
             <LineIconWithButton

@@ -34,7 +34,7 @@ const VideoModule: React.FC<Props> = ({ contents }) => {
 
           <Button
             onClick={() => setShowVideo(true)}
-            className="VideoModule__button z-4 secondary-sm text-decoration-none bg-color-transparent color-chalk absolute b0 r0 mb1_25 mr1_25 vertical-align-middle inline-flex items-center"
+            className="VideoModule__button z-4 secondary-bold-sm text-decoration-none bg-color-transparent color-chalk absolute b0 r0 mb1_25 mr1_25 vertical-align-middle inline-flex items-center"
             ariaLabel={Language.t('Video.playButton.ariaLabel')}
           >
             <LineIcon className="VideoModule__button-line-icon mr_25" color="chalk" />
@@ -44,7 +44,7 @@ const VideoModule: React.FC<Props> = ({ contents }) => {
           <div className="absolute t0 b0 z-4 flex flex-col justify-between p1_25">
             <span className="color-chalk secondary-sm">{contents.jobTitle}</span>
 
-            <div className="flex flex-col secondary-bold-sm uppercase">
+            <div className="flex flex-col primary-sm uppercase">
               <span className="color-chalk">{contents.founders}</span>
               <span className="color-charcoal">{contents.companyName}</span>
             </div>

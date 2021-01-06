@@ -32,7 +32,7 @@ const CompanyDetailView: FC<Props> = (props) => {
       <div className="text-module-padding-x">
         <PressList
           variant={pressList.variant}
-          className="col-12 md:col-10 mxauto pb3_75 lg:pb10"
+          className="col-12 md:col-10 mxauto pb3_75 lg:pb7_5"
           heading={pressList.heading}
           items={pressList.items}
         />

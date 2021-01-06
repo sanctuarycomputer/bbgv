@@ -18,7 +18,7 @@ const WhyWeInvestView: FC<Props> = (props) => {
   const { hero, seo, thesis, investmentHeading, investmentParagraphs, apply, statistics } = model;
 
   return (
-    <div className="ThesisView primary-xxl">
+    <div className="ThesisView">
       <Meta seo={seo} title={hero.title} />
       <HeroTextModule
         variant="mulberry"
@@ -31,7 +31,7 @@ const WhyWeInvestView: FC<Props> = (props) => {
       <StatisticsModule facts={statistics} />
       <div id="#thesis">
         <TextModuleWithParagraphs
-          className="text-module-padding-x py3_75 lg:py10"
+          className="text-module-padding-x py3_75 lg:py7_5"
           variant={thesis.variant}
           heading={thesis.heading}
           subheading={thesis.subheading}
@@ -43,16 +43,16 @@ const WhyWeInvestView: FC<Props> = (props) => {
         className="text-module-padding-x border-top-mulberry border-bottom-mulberry"
       >
         <TextModuleWithParagraphs
-          className="pt3_75 lg:pt10"
+          className="pt3_75 lg:pt7_5"
           variant={investmentHeading.variant}
           heading={investmentHeading.heading}
           subheading={investmentHeading.subheading}
           text={investmentHeading.text}
         />
-        <GridParagraphs className="pt4 pb3_75 lg:pb10" sections={investmentParagraphs} />
+        <GridParagraphs className="pt4 pb3_75 lg:pb7_5" sections={investmentParagraphs} />
       </div>
       <TextModule
-        className="text-module-padding-x py3_75 lg:py10"
+        className="text-module-padding-x py3_75 lg:py7_5"
         variant="default"
         heading={apply.heading}
         subheading={apply.subheading}

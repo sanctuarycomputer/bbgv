@@ -111,7 +111,7 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
               )}
             >
               <p className="primary-lg">{slide.leftHeadline}</p>
-              <p className="primary-xs">{slide.leftSubheading}</p>
+              <p className="secondary-sm">{slide.leftSubheading}</p>
             </div>
           </Button>
         </div>
@@ -126,7 +126,7 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
             wrap={true}
           >
             <div className="FoundersImpactSlideshow__right-tile-content flex flex-col justify-between col-12 color-charcoal p1_5 md:p3_75">
-              <p className="primary-xs">{slide.rightSubheading}</p>
+              <p className="secondary-sm">{slide.rightSubheading}</p>
               <p className="primary-lg">
                 <span className="primary-xs vertical-align-middle uppercase pr3_75">
                   {slide.company.founders?.map((founder: Founder, index: number) => (

@@ -27,7 +27,7 @@ const AboutView: FC<Props> = (props) => {
   } = model;
 
   return (
-    <div className="AboutView primary-xxl">
+    <div className="AboutView">
       <Meta seo={seo} title={hero.title} />
       <HeroTextModule
         variant="nutella"
@@ -39,17 +39,17 @@ const AboutView: FC<Props> = (props) => {
       />
       <div id="#team" className="flex flex-col">
         <TextModule
-          className="text-module-padding-x py3_75 lg:py10"
+          className="text-module-padding-x py3_75 lg:pb7_5 lg:pt7_5"
           variant="default"
           heading={teamHeading.heading}
           subheading={teamHeading.subheading}
           briefParagraph={teamHeading.briefParagraph}
         />
-        <TeamMemberGrid className="pb3_75 lg:pb10" teamMemberGrids={teamMemberGrids} />
+        <TeamMemberGrid className="pb3_75 lg:pb1_5" teamMemberGrids={teamMemberGrids} />
       </div>
       <div id="#values" className="text-module-padding-x border-top-nutella border-bottom-nutella">
         <TextModuleWithParagraphs
-          className="py3_75 lg:py10"
+          className="py3_75 lg:py7_5"
           variant={valuesSection.variant}
           heading={valuesSection.heading}
           subheading={valuesSection.subheading}
@@ -58,7 +58,7 @@ const AboutView: FC<Props> = (props) => {
       </div>
       <div id="#press" className="text-module-padding-x border-bottom-nutella">
         <TextModule
-          className="py3_75 lg:py10"
+          className="py3_75 lg:py7_5"
           variant="default"
           heading={pressHeading.heading}
           subheading={pressHeading.subheading}
@@ -66,13 +66,13 @@ const AboutView: FC<Props> = (props) => {
         />
         <PressList
           variant={pressList.variant}
-          className="col-12 md:col-10 mxauto pb3_75 lg:pb10"
+          className="col-12 md:col-10 mxauto pb3_75 lg:pb7_5"
           heading={pressList.heading}
           items={pressList.items}
         />
       </div>
       <TextModule
-        className="text-module-padding-x py3_75 lg:py10"
+        className="text-module-padding-x py3_75 lg:py7_5"
         variant="default"
         heading={contact.heading}
         subheading={contact.subheading}

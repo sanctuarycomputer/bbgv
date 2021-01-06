@@ -25,7 +25,7 @@ type Props = PassedProps & WithBreakpointsProps;
 const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
   const [activeFounderIndex, setActiveFounderIndex] = useState(-1);
   const [hideLogo, setHideLogo] = useState(false);
-  const breakpointIsLgUp = mediaQuery.isLargeUp;
+  const breakpointIsMdUp = mediaQuery.isMediumUp;
 
   const handleScroll = () => {
     /* Determines if the current scroll position is before of after the logo in the Home Hero Module **/
@@ -70,10 +70,10 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
       </span>
 
       <span className="HomeHero__headline hyphens color-mulberry">{headline}</span>
-      <span className="color-charcoal primary-sm px2_25 md:px3_75 vertical-align-middle">
+      <span className="color-charcoal primary-sm px2_25 md:px3_75 vertical-align-middle nowrap">
         {Language.t('Home.hero.ourFounders')}
       </span>
-      {!breakpointIsLgUp ? (
+      {!breakpointIsMdUp ? (
         <span>
           <span className="primary-xxl">
             {founders.map((founder: Founder, index: number) => (

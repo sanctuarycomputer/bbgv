@@ -1,6 +1,6 @@
-$abcdiatype: 'ABCDiatype-Regular', sans-serif;
-$abcdiatype-bold: 'ABCDiatype-Bold', sans-serif;
-$benton: 'Benton', sans-serif;
+$abcdiatype: 'ABCDiatype-Regular', 'Arial', sans-serif;
+$abcdiatype-bold: 'ABCDiatype-Bold', 'Arial', sans-serif;
+$benton: 'Benton', 'Oswald', sans-serif;
 
 /** Families */
 .font-primary {
@@ -41,7 +41,7 @@ $benton: 'Benton', sans-serif;
 
   @include media('lg-up') {
     font-size: 4.5rem;
-    line-height: 4.75rem;
+    line-height: 4.725rem;
   }
 }
 
@@ -71,6 +71,7 @@ $benton: 'Benton', sans-serif;
   font-family: $benton;
   font-size: 0.875rem;
   line-height: 0.91875rem;
+  letter-spacing: 0.0125rem;
 
   @include media('lg-up') {
     font-size: 1.125rem;
@@ -97,15 +98,9 @@ $benton: 'Benton', sans-serif;
 
 .secondary-xs {
   font-family: $abcdiatype;
-  font-size: 0.625rem;
-  line-height: 0.8125rem;
-  letter-spacing: 0.01rem;
-
-  @include media('lg-up') {
-    font-size: 0.875rem;
-    line-height: 1.0625rem;
-    letter-spacing: 0;
-  }
+  font-size: 0.875rem;
+  line-height: 1.0625rem;
+  letter-spacing: 0;
 }
 
 .secondary-xxs {
@@ -128,15 +123,9 @@ $benton: 'Benton', sans-serif;
 
 .secondary-bold-xs {
   font-family: $abcdiatype-bold;
-  font-size: 0.625rem;
-  line-height: 0.8125rem;
-  letter-spacing: 0.01rem;
-
-  @include media('lg-up') {
-    font-size: 0.875rem;
-    line-height: 1.0625rem;
-    letter-spacing: 0;
-  }
+  font-size: 0.875rem;
+  line-height: 1.0625rem;
+  letter-spacing: 0;
 }
 
 .secondary-bold-xxs {

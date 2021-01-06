@@ -1,13 +1,21 @@
 .HeroTextModule {
+  &__heading p {
+    @extend .hyphens;
+
+    @include media('sm-up') {
+      hyphens: none;
+    }
+  }
+
   &__heading p,
-  &__introByline p {
+  &__intro-byline p {
     display: inline;
   }
 
   &--style-nutella,
   &--style-lilac {
     &__heading p a,
-    &__introByline p a {
+    &__intro-byline p a {
       @extend .transition-shorter;
 
       color: color('charcoal');
@@ -20,7 +28,7 @@
 
   &--style-mulberry {
     &__heading p a,
-    &__introByline p a {
+    &__intro-byline p a {
       @extend .transition-shorter;
       color: color('chalk');
 

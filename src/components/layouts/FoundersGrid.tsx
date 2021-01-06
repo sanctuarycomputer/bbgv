@@ -12,8 +12,11 @@ type Props = {
 
 const FoundersGrid: React.FC<Props> = ({ founders, className }) => {
   return (
-    <div className={cx('FoundersGrid col-12 lg:col-10 mxauto', className)}>
-      <div className="FoundersGrid__grid-container">
+    <div className={cx('FoundersGrid text-module-padding-x', className)}>
+      <div className="pb2_25 md:pb2_25 col-12 md:col-10 mxauto color-charcoal primary-sm">
+        Founders
+      </div>
+      <div className="FoundersGrid__grid-container col-12 md:col-10 mxauto">
         {founders.map((founder: Founder) => (
           <div key={founder.firstName} className="FoundersGrid__card-container">
             <PersonCard

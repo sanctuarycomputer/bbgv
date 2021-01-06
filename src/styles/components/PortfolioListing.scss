@@ -1,6 +1,4 @@
 .PortfolioListing {
-  padding-top: 8.625rem;
-
   @include media('lg-up') {
     padding-left: $site-padding-x-desktop;
     padding-right: $site-padding-x-desktop;
@@ -47,6 +45,12 @@
         padding: 1.1875rem 0.625rem;
       }
     }
+  }
+
+  &__company-detail {
+    font-size: 1.125rem;
+    line-height: 1.18125rem;
+    letter-spacing: 0.0125rem;
   }
 
   &__founder-card-image {

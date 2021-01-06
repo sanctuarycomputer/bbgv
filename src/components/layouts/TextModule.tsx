@@ -34,7 +34,7 @@ const TextModule: React.FC<Props> = ({
         )}
       >
         {subheading ? (
-          <span className="TextModule__subheading primary-sm pr3_75 vertical-align-middle">
+          <span className="TextModule__subheading nowrap primary-sm pr3_75 vertical-align-middle">
             {subheading}
           </span>
         ) : (
@@ -46,7 +46,7 @@ const TextModule: React.FC<Props> = ({
 
         <h1
           className={cx(
-            `TextModule__heading TextModule--style-${variant}__heading primary-xl vertical-align-middle pl3_75`
+            `TextModule__heading TextModule--style-${variant}__heading primary-xl vertical-align-middle`
           )}
         >
           <PortableText blocks={heading} />
@@ -54,7 +54,7 @@ const TextModule: React.FC<Props> = ({
         {briefParagraph && (
           <div
             className={cx(
-              `TextModule__paragraph TextModule--style-${variant}__paragraph secondary-sm col-12 md:col-8 pt3_75 lg:pt5`
+              `TextModule__paragraph TextModule--style-${variant}__paragraph secondary-sm col-12 md:col-8 pt1_5 lg:pt2_25`
             )}
           >
             <PortableText blocks={briefParagraph.paragraph} />

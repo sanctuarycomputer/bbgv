@@ -36,18 +36,15 @@ const InvestmentListItem = (item: InvestmentsListItem) => {
   return (
     <div className="InvestmentsList__item-inner-container col-12 flex flex-col md:flex-row py1_5">
       <div className="flex flex-row col-12 md:col-6">
-        <div className="secondary-sm col-7 flex flex-col">
-          <div className="InvestmentList__founders color-charcoal uppercase">
+        <div className="InvestmentList__company-detail-container font-primary col-7 flex flex-col">
+          <div className="InvestmentList__founders color-lilac uppercase">
             {item.company.founders?.map((founder: Founder) => (
-              <div
-                key={`InvestmentsList-founders-${generateFullName(founder)}`}
-                className="primary-sm"
-              >
+              <div key={`InvestmentsList-founders-${generateFullName(founder)}`}>
                 {generateFullName(founder)}{' '}
               </div>
             ))}
           </div>
-          <div className="primary-sm color-lilac uppercase">{item.company.name}</div>
+          <div className="color-charcoal uppercase">{item.company.name}</div>
           {item.company.tag && (
             <div className="self-start secondary-xs bg-color-lilac color-charcoal my1_25 md:mb0 md:mt1_5 py_5 px1 flex flex-col items-center radius-xs">
               {item.company.tag}

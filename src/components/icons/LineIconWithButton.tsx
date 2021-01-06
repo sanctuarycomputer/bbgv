@@ -17,7 +17,7 @@ const LineIconWithButton: React.FC<Props> = ({ color, link, label }) => {
       <Button
         wrap={true}
         className={cx(
-          `inline-flex items-center text-decoration-none secondary-sm-bold vertical-align-middle color-${color}`
+          `inline-flex items-center text-decoration-none secondary-bold-sm  vertical-align-middle color-${color}`
         )}
         to={link}
         ariaLabel={Language.t('Global.generalButtonAriaLabel', {

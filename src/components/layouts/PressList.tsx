@@ -25,7 +25,7 @@ const PressList: React.FC<Props> = ({ heading, items, className, variant, mediaQ
       )}
     >
       {heading && (
-        <div className="PressList__heading color-charcoal primary-sm pb2_25 md:pb3_75">
+        <div className="PressList__heading color-charcoal primary-sm pb2_25 md:pb2_25">
           {heading}
         </div>
       )}

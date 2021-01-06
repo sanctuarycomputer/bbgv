@@ -7,6 +7,10 @@
       border: none;
       background-color: transparent;
       width: 100%;
+
+      &:focus {
+        outline: none;
+      }
     }
   }
 
@@ -17,6 +21,10 @@
 
       &::placeholder {
         color: color('charcoal');
+      }
+
+      &:focus {
+        outline: none;
       }
     }
   }

@@ -135,32 +135,5 @@
         }
       }
     }
-
-    &--style-small {
-      &::before {
-        content: '';
-        @extend .transition-shorter;
-        background-image: url('../../components/icons/DefaultHeadingLineIcon.svg');
-        display: inline-block;
-        width: 0;
-        opacity: 0;
-      }
-
-      &:hover {
-        &::before {
-          @extend .transition-shorter;
-          opacity: 1;
-          width: 1rem;
-          height: 0.25rem;
-          margin-right: 0.25rem;
-
-          @include media('lg-up') {
-            width: 1.5rem;
-            height: 0.35rem;
-            margin-right: 0.4rem;
-          }
-        }
-      }
-    }
   }
 }

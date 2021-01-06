@@ -60,7 +60,7 @@ const CompanyDetailLanding: React.FC<Props> = ({
             </span>
             <h1
               className={cx(
-                'CompanyDetailLanding__heading primary-xl vertical-align-middle color-chalk inline'
+                'CompanyDetailLanding__heading primary-xxl vertical-align-middle color-chalk inline'
               )}
             >
               <PortableText blocks={headline} />
@@ -120,7 +120,7 @@ const CompanyDetailLanding: React.FC<Props> = ({
             <div className="col-6 flex flex-col md:pl2">
               {company.instagram?.link && (
                 <Button
-                  className="text-decoration-none link--style-body-charcoal hover-lighten-charcoal color-charcoal"
+                  className="text-decoration-none link--style-body-charcoal hover-lighten-charcoal color-charcoal pb_25"
                   to={company.instagram.link}
                   label={company.instagram.label}
                   ariaLabel={company.instagram.label}

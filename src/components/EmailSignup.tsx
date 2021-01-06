@@ -10,8 +10,6 @@ type Props = {
   variant: 'footer' | 'module';
 };
 
-//TO-DO: Update variant styling depending on 'footer' or 'module'
-
 const EmailSignup: React.FC<Props> = ({ variant }) => {
   const formik = useFormik({
     initialValues: {

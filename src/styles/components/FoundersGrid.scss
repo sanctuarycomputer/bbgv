@@ -1,12 +1,4 @@
 .FoundersGrid {
-  padding-left: $site-padding-x-mobile;
-  padding-right: $site-padding-x-mobile;
-
-  @include media('lg-up') {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
   &__grid-container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);

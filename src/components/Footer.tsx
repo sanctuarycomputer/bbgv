@@ -103,7 +103,7 @@ const Footer: React.FC<Props> = ({ globalSettings }) => {
         </div>
       </div>
 
-      <div className="Footer__section-two bg-color-lilac-lighter lg:col-3 px_75 md:px1_5 py3_75 flex flex-row lg:flex-col relative">
+      <div className="Footer__section-two bg-color-lilac-lighter lg:col-3 px_75 md:px1_5 pt3_75 pb3 flex flex-row lg:flex-col relative">
         <div className="flex flex-col col-6 lg:col-12">
           <div className="color-charcoal secondary-bold-sm mb1_5 lg:mb3_75">
             {footerMenu.secondSectionHeading}
@@ -136,7 +136,7 @@ const Footer: React.FC<Props> = ({ globalSettings }) => {
           {socialMediaLinksSection(socialMediaLinks)}
         </div>
 
-        <div className="Footer__logo-section col-12 none lg:flex absolute b0 bg-color-white flex items-center px1_5 py3_75">
+        <div className="Footer__logo-section bg-color-chalk col-12 none lg:flex absolute b0 flex items-center px1_5 pt3_75 pb3">
           <Button
             className="items-center bg-color-transparent text-decoration-none"
             ariaLabel={Language.t('Global.navigateToHome')}
@@ -154,7 +154,7 @@ const Footer: React.FC<Props> = ({ globalSettings }) => {
       </div>
 
       {copyrightSection(
-        'bg-color-white lg:none flex flex-col secondary-xxs color-charcoal py3_75 px_75 md:px1_5'
+        'bg-color-chalk lg:none flex flex-col secondary-xxs color-charcoal py3_75 px_75 md:px1_5'
       )}
     </div>
   );
