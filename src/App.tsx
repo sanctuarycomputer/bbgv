@@ -39,6 +39,7 @@ export default function App() {
     return <Loader />;
   }
   // if (appStatus === Status.REJECTED) return <FourHundred />;
+  if (appStatus === Status.REJECTED) return <FourHundred />;
 
   return (
     <main className="App">

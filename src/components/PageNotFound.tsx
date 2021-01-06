@@ -31,7 +31,7 @@ class PageNotFound extends Component<Props> {
     return (
       <>
         <Meta />
-        <div>Pag no tound</div>
+        <div>Page not found</div>
       </>
     );
   }
