@@ -27,7 +27,8 @@
     "instagramLink": {
       "label": "Instagram",
       "ariaLabel": "Visit %{person}'s Instagram profile"
-    }
+    },
+    "founders": "Founders"
   },
   "Nav": {
     "menuButtonAriaLabel": "Open menu"
