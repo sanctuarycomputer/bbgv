@@ -12,7 +12,7 @@ type Props = {
   title: string;
   heading: Block[];
   introLine: string;
-  introBylineLinks: any;
+  introBylineLinks: MenuLink[];
   briefParagraph?: Block[];
 };
 
