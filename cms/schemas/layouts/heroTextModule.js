@@ -20,12 +20,8 @@ export default {
       name: 'introLine',
       title: 'Intro Line',
       type: 'string',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'introByline',
-      title: 'Intro ByLine',
-      type: 'portableText',
+      description:
+        'This text precedes the links to the sections on the page, such as "Us, Our Values, and News".',
       validation: (Rule) => Rule.required(),
     },
     {

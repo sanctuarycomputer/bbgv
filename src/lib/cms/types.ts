@@ -207,7 +207,6 @@ export const HeroTextModule = t.intersection([
     title: t.string,
     heading: t.array(Block),
     introLine: t.string,
-    introByline: t.array(Block),
   }),
   t.partial({
     briefParagraph: t.array(Block),
