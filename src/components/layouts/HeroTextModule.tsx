@@ -71,8 +71,8 @@ const HeroTextModule: React.FC<Props> = ({
                 to={link.link}
               >
                 <span
-                  className={cx('', {
-                    'pr_25 lg:pr_75': !(
+                  className={cx('hyphens--style-mobile', {
+                    'pr_5 lg:pr_75': !(
                       i !== introBylineLinks.length - 1 && introBylineLinks.length !== 2
                     ),
                   })}
@@ -81,13 +81,12 @@ const HeroTextModule: React.FC<Props> = ({
                 </span>
               </HashLink>
               {i !== introBylineLinks.length - 1 && introBylineLinks.length !== 2 && (
-                <span className="vertical-align-middle primary-xxl pr_25 lg:pr_75">
+                <span className="vertical-align-middle primary-xxl pr_5 lg:pr_75">
                   {Language.t('Global.comma')}
                 </span>
               )}
-
               {i !== introBylineLinks.length - 1 && i === introBylineLinks.length - 2 && (
-                <span className="vertical-align-middle primary-xxl pr_25 lg:pr_75">
+                <span className="vertical-align-middle primary-xxl pr_5 lg:pr_75">
                   {Language.t('Global.and')}
                 </span>
               )}

@@ -29,15 +29,20 @@ const CompanyDetailView: FC<Props> = (props) => {
       <article>
         <CompanyDetailPageContent content={content} />
       </article>
-      <FoundersGrid className="border-top-lilac py3_75 lg:py5" founders={founders} />
-      <div className="text-module-padding-x">
-        <PressList
-          variant={pressList.variant}
-          className="col-12 md:col-10 mxauto pb3_75 lg:pb7_5"
-          heading={pressList.heading}
-          items={pressList.items}
-        />
-      </div>
+      {!!founders.length && (
+        <FoundersGrid className="border-top-lilac py3_75 lg:py5" founders={founders} />
+      )}
+
+      {'pressList' in model && (
+        <div className="text-module-padding-x">
+          <PressList
+            variant={pressList.variant}
+            className="col-12 md:col-10 mxauto pb3_75 lg:pb7_5"
+            heading={pressList.heading}
+            items={pressList.items}
+          />
+        </div>
+      )}
     </div>
   );
 };
