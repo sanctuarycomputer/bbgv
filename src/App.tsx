@@ -53,7 +53,6 @@ export default function App() {
         {'menu' in globalSettings && (
           <MenuOverlay globalSettings={globalSettings} closeMenu={closeMenu} isOpen={menuIsOpen} />
         )}
-
         <Routes />
         {'footerMenu' in globalSettings && <Footer globalSettings={globalSettings} />}
       </Router>
