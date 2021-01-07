@@ -6,6 +6,7 @@ import Routes from 'constants/routes';
 
 import 'styles/App.scss';
 
+import { Status } from 'types';
 import { intializeApplication } from 'state/actions/applicationActions';
 import { setMenuOpen, setMenuClosed } from 'state/actions/uiActions';
 
@@ -14,10 +15,12 @@ import Nav from 'components/Nav';
 import Footer from 'components/Footer';
 import MenuOverlay from 'components/MenuOverlay';
 import CookieConsent from 'components/CookieConsent';
+import Loader from 'components/Loader';
 
 export default function App() {
   const dispatch = useDispatch();
   const initApp = useCallback(() => dispatch(intializeApplication()), [dispatch]);
+  const appStatus = useSelector((state) => state.status.initializeApplication);
   const globalSettings = useSelector((state) => state.global.settings);
   const theme = useSelector((state) => state.global.theme);
   const menuIsOpen = useSelector((state) => state.ui.menuIsOpen);
@@ -29,6 +32,10 @@ export default function App() {
   useEffect(() => {
     initApp();
   }, [initApp]);
+
+  if (appStatus === Status.IDLE || appStatus === Status.PENDING) {
+    return <Loader />;
+  }
 
   return (
     <main className="App">
