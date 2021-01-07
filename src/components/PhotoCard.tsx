@@ -20,7 +20,7 @@ const PhotoCard: React.FC<Props> = ({ founder }) => {
         {sector && <span className="absolute pt_75 z-2 t0 color-white secondary-xs">{sector}</span>}
 
         <div className="PhotoCard__founder-name absolute z-2">
-          <div className="flex flex-col secondary-bold-xs uppercase t0 l0">
+          <div className="flex flex-col primary-sm uppercase t0 l0">
             <span className="color-white">
               {firstName} {lastName}
             </span>

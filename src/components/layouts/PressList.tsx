@@ -47,7 +47,7 @@ const PressItem = (item: PressListItem, mediaQuery: MediaQuery) => {
     <div className="PressList__item-inner-container col-12 flex flex-row py1_5">
       <div className="PressList__source secondary-sm col-3 pr1 md:pr0">{item.source}</div>
       <div className="PressList__heading-container primary-md col-8">
-        <span className="mr1_5">{item.heading}</span>
+        <span className="mr1_5 color-charcoal">{item.heading}</span>
         <span
           className={cx('PressList__button', {
             block: !breakpointIsMdUp,

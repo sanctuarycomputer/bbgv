@@ -52,7 +52,7 @@ const Fact = (fact: IFact) => {
         )}
 
         {fact.rightHeading && (
-          <span className="StatisticsModule__heading primary-lg color-chalk vertical-align-middle col-8">
+          <span className="StatisticsModule__heading primary-lg color-chalk vertical-align-middle col-8 fact-max-width">
             {fact.rightHeading}
           </span>
         )}
@@ -63,7 +63,7 @@ const Fact = (fact: IFact) => {
           <div className="StatisticsModule__line-icon md:mr1_25"></div>
         </div>
 
-        <div className="StatisticsModule__paragraph vertical-align-middle secondary-sm col-8 pb1_5 md:pb0">
+        <div className="StatisticsModule__paragraph vertical-align-middle secondary-sm col-8 pb1_5 md:pb0 fact-max-width">
           <PortableText blocks={fact.paragraphWithButton.paragraph} />
           {fact.paragraphWithButton.button && (
             <LineIconWithButton

@@ -53,7 +53,7 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
   }, [throttleHandleScroll]);
 
   return (
-    <div className="HomeHero primary-xxl site-inner-content-max-width site-padding-x mxauto">
+    <div className="HomeHero primary-xxl site-inner-content-max-width site-padding-x mxauto pb2_25 md:pb0">
       <span
         className={cx('HomeHero__logo-container inline-flex', {
           'HomeHero__logo-container--style-is-active opacity-1 events-all': !hideLogo,

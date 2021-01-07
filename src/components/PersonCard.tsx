@@ -61,7 +61,7 @@ const PersonCard: React.FC<Props> = ({
 
           {twitter && (
             <Button
-              containerClassName="mt_125 mr1_25"
+              containerClassName="mt_125 lg:mt0 mr1_25"
               className="text-decoration-none bg-color-transparent color-charcoal hover-lighten-charcoal transition-shorter"
               ariaLabel={Language.t('Global.twitterLink.ariaLabel', {
                 person: fullName,
@@ -73,7 +73,7 @@ const PersonCard: React.FC<Props> = ({
 
           {instagram && (
             <Button
-              containerClassName="mt_125 r1_25"
+              containerClassName="mt_125 lg:mt0 r1_25"
               className="text-decoration-none bg-color-transparent color-charcoal hover-lighten-charcoal transition-shorter"
               ariaLabel={Language.t('Global.instagramLink.ariaLabel', {
                 person: fullName,
