@@ -386,17 +386,12 @@ export const CompanyDetailLanding = t.intersection([
   }),
 ]);
 
-export type CookieConsent = t.TypeOf<typeof CookieConsent>;
-export const CookieConsent = t.type({
-  text: t.array(Block),
-});
-
 export type GlobalSettings = t.TypeOf<typeof GlobalSettings>;
 export const GlobalSettings = t.type({
   socialMediaLinks: t.array(Button),
   footerMenu: FooterMenu,
   menu: Menu,
-  cookieConsent: CookieConsent,
+  cookieConsentText: t.string,
 });
 
 export type HomePage = t.TypeOf<typeof HomePage>;

@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import cx from 'classnames';
+import CookieConsentConstants from 'constants/CookieConsent';
 import LineIconWithButton from './icons/LineIconWithButton';
 
+const matchCookieConsent = document?.cookie.match(
+  RegExp('(?:^|;\\s*)' + CookieConsentConstants.cookieConsentName + '=([^;]*)')
+);
+
 interface Props {
-  content: React.ReactNode;
+  content: string;
   containerClassName?: string;
   dismissButtonAriaLabel: string;
   dismissButtonClassName?: string;
@@ -18,22 +23,17 @@ const CookieConsent: React.FC<Props> = ({
   content,
   containerClassName,
   dismissButtonAriaLabel,
-  dismissButtonClassName,
-  dismissButtonLabel,
 }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleCookieConsent = () => {
-    const cookieName = 'consentedToCookiesAt';
-    const match = document?.cookie.match(RegExp('(?:^|;\\s*)' + cookieName + '=([^;]*)'));
-
     //If the cookie has already been set, hide the cookie consent pop up.
     //If it hasn't been set, show the pop up.
-    match && match[1] ? setIsVisible(false) : setIsVisible(true);
+    matchCookieConsent && matchCookieConsent[1] ? setIsVisible(false) : setIsVisible(true);
   };
 
   const setCookieAndDismissPopUp = () => {
-    setCookie('consentedToCookiesAt', Date.now());
+    setCookie(CookieConsentConstants.cookieConsentName, Date.now());
     setIsVisible(false);
   };
 

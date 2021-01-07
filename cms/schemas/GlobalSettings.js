@@ -72,18 +72,10 @@ export default {
     {
       name: 'cookieConsentText',
       title: 'Cookie Consent Text',
-      type: 'object',
+      type: 'string',
       fieldset: 'cookieConsent',
       validation: (Rule) => Rule.required(),
       description: 'This is the text displayed on the cookie consent pop up.',
-      fields: [
-        {
-          name: 'text',
-          title: 'Text',
-          type: 'string',
-          validation: (Rule) => Rule.required(),
-        },
-      ],
     },
   ],
   preview: {

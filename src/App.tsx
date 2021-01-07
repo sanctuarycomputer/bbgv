@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Language from 'constants/Language';
 import Routes from 'constants/routes';
-import { GlobalSettings } from 'lib/cms/types';
 
 import 'styles/App.scss';
 
@@ -34,9 +33,9 @@ export default function App() {
   return (
     <main className="App">
       <Router>
-        {globalSettings && 'cookieConsent' in globalSettings && (
+        {globalSettings && 'cookieConsentText' in globalSettings && (
           <CookieConsent
-            content={globalSettings.cookieConsent.text}
+            content={globalSettings.cookieConsentText}
             containerClassName="bg-color-lilac text-left"
             dismissButtonAriaLabel={Language.t('CookieConsent.acceptButton.ariaLabel')}
             dismissButtonClassName="bg-color-transparent text-left color-charcoal transition-shorter"
