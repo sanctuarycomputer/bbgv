@@ -39,7 +39,8 @@ export default {
               title: 'Brief description with optional button',
               name: 'description',
               type: 'paragraphWithButton',
-              description: 'Add a link to the Company Detail page if one has been created.',
+              description:
+                'IMPORTANT: Add an optional link to the Company Detail page if one has been created. The link must be in the format "/companies/company-name". For example, to link to Carbon 38 Company Detail page, the link would be "/companies/carbon-38". The "company-name" MUST match the "Slug" field you entered in the Company Detail page.',
               validation: (Rule) => Rule.required(),
             },
           ],
