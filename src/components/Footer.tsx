@@ -1,4 +1,6 @@
 import React from 'react';
+import { HashLink } from 'react-router-hash-link';
+
 import getYear from 'date-fns/getYear';
 import cx from 'classnames';
 import Language from 'constants/Language';
@@ -15,8 +17,6 @@ type Props = {
 };
 
 const CURRENT_YEAR = getYear(new Date());
-
-//TO-DO: Add jump links functionality
 
 const Footer: React.FC<Props> = ({ globalSettings }) => {
   const { footerMenu, socialMediaLinks } = globalSettings;
@@ -60,15 +60,14 @@ const Footer: React.FC<Props> = ({ globalSettings }) => {
                 />
                 <div className="Footer__sublinks flex flex-col">
                   {AboutUsLinks.map((link: MenuLink) => (
-                    <Button
+                    <HashLink
                       key={link.link}
                       className="color-charcoal transition-shorter hover-lighten-charcoal secondary-bold-sm items-center bg-color-transparent text-decoration-none"
-                      ariaLabel={Language.t('Global.generalButtonAriaLabel', {
-                        link: link.label,
-                      })}
+                      smooth
                       to={link.link}
-                      label={link.label}
-                    />
+                    >
+                      {link.label}
+                    </HashLink>
                   ))}
                 </div>
               </div>
@@ -82,15 +81,14 @@ const Footer: React.FC<Props> = ({ globalSettings }) => {
                 />
                 <div className="Footer__sublinks flex flex-col">
                   {WhyWeInvestLinks.map((link: MenuLink) => (
-                    <Button
+                    <HashLink
                       key={link.link}
                       className="color-charcoal transition-shorter hover-lighten-charcoal  secondary-bold-sm items-center bg-color-transparent text-decoration-none inline"
-                      ariaLabel={Language.t('Global.generalButtonAriaLabel', {
-                        link: link.label,
-                      })}
+                      smooth
                       to={link.link}
-                      label={link.label}
-                    />
+                    >
+                      {link.label}
+                    </HashLink>
                   ))}
                 </div>
               </div>

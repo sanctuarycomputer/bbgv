@@ -15,7 +15,7 @@ const DefaultView: FC<Props> = (props) => {
   const { intro, seo, content } = model;
 
   return (
-    <div className="DefaultView generic-page-margin-top">
+    <div className="DefaultView page-style--margin-top">
       <Meta seo={seo} />
       <TextModule
         className="text-module-padding-x py3_75 lg:py7_5"

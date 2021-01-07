@@ -26,7 +26,7 @@ export const WhyWeInvestLinks: MenuLink[] = [
     label: Language.t('Footer.thesis'),
   },
   {
-    link: '/why-we-invest#investmentGuidelines',
+    link: '/why-we-invest#investment-guidelines',
     label: Language.t('Footer.investmentGuidelines'),
   },
   {

@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { CompaniesPage } from '../lib/cms/types';
 import { Props as ContainerProps } from 'containers/companies';
+import { CompaniesLinks } from 'constants/HomeHeroIntroLinks';
 
 import { ContentPage as Meta } from 'components/Meta';
 import HeroTextModule from 'components/layouts/HeroTextModule';
@@ -24,11 +25,13 @@ const CompaniesView: FC<Props> = (props) => {
         title={hero.title}
         heading={hero.heading}
         introLine={hero.introLine}
-        introByline={hero.introByline}
+        introBylineLinks={CompaniesLinks}
         briefParagraph={hero.briefParagraph}
       />
-      <PortfolioListing sectors={portfolioListing.sectors} />
-      <div className="text-module-padding-x pt3_75 lg:pt7_5">
+      <div id="current-investments">
+        <PortfolioListing sectors={portfolioListing.sectors} />
+      </div>
+      <div id="previous-funds" className="text-module-padding-x pt3_75 lg:pt7_5">
         <InvestmentsList heading={investmentsList.heading} items={investmentsList.items} />
       </div>
       <TextModule

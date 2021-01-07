@@ -20,9 +20,6 @@ type Props = PassedProps & WithBreakpointsProps;
 
 const CURRENT_YEAR = getYear(new Date());
 
-//TO-DO: Add jump links functionality
-//TO-DO: Close menu when a link is clicked
-
 const MenuOverlay: React.FC<Props> = ({ closeMenu, globalSettings, isOpen, mediaQuery }) => {
   const { socialMediaLinks, menu } = globalSettings;
   const breakpointIsLgUp = mediaQuery.isMediumUp;
@@ -70,7 +67,7 @@ const MenuOverlay: React.FC<Props> = ({ closeMenu, globalSettings, isOpen, media
 
       <div
         className={cx(
-          'MenuOverlay__section-two bg-color-lilac-lighter py3 px_75 lg:px3_75 lg:pt15 lg:col-4 flex flex-col transition-medium',
+          'MenuOverlay__section-two bg-color-lilac-lighter py3 px_75 md:pr_75 lg:pr3 lg:pt15 lg:col-4 flex flex-col transition-medium',
           {
             'MenuOverlay__section-two--active': isOpen,
           }
@@ -83,9 +80,10 @@ const MenuOverlay: React.FC<Props> = ({ closeMenu, globalSettings, isOpen, media
         >
           {menu.links.map((link: IButton) => (
             <Button
+              onClick={closeMenu}
               key={`MenuOverlay-${link.link}`}
               wrap={true}
-              className="MenuOverlay__menu-link-button--style-medium inline-flex items-center text-decoration-none primary-lg vertical-align-middle color-charcoal"
+              className="MenuOverlay__menu-link-button--style-medium inline-flex items-center text-decoration-none primary-lg vertical-align-middle color-charcoal mb_25"
               to={link.link}
               ariaLabel={Language.t('Global.generalButtonAriaLabel', {
                 link: link.label,
@@ -107,7 +105,7 @@ const MenuOverlay: React.FC<Props> = ({ closeMenu, globalSettings, isOpen, media
       >
         <div
           className={cx(
-            'MenuOverlay__section-three-inner-container flex flex-col lg:px3_75 opacity-0',
+            'MenuOverlay__section-three-inner-container flex flex-col lg:pr3_75 opacity-0',
             {
               'MenuOverlay__section-three-inner-container--active': isOpen,
             }
@@ -115,11 +113,12 @@ const MenuOverlay: React.FC<Props> = ({ closeMenu, globalSettings, isOpen, media
         >
           {socialMediaLinks.map((link: IButton) => (
             <Button
+              onClick={closeMenu}
               key={`MenuOverlay-${link.link}`}
               wrap={true}
               openInNewTab={true}
               className={cx(
-                'transition-shorter hover-lighten-charcoal inline-flex items-center text-decoration-none primary-md vertical-align-middle color-charcoal'
+                'transition-shorter hover-lighten-charcoal inline-flex items-center text-decoration-none primary-md vertical-align-middle color-charcoal mb_25'
               )}
               to={link.link}
               ariaLabel={Language.t('Global.generalButtonAriaLabel', {
@@ -133,7 +132,7 @@ const MenuOverlay: React.FC<Props> = ({ closeMenu, globalSettings, isOpen, media
 
         <div
           className={cx(
-            'MenuOverlay__copyright bg-color-chalk none lg:flex flex flex-col secondary-xxs color-charcoal py3_75 px_75 lg:px1_5 absolute col-12 opacity-0',
+            'MenuOverlay__copyright bg-color-chalk none lg:flex flex flex-col secondary-xxs color-charcoal py3_75 px_75 absolute col-12 opacity-0',
             {
               'MenuOverlay__copyright--active': isOpen,
             }
@@ -151,7 +150,7 @@ const MenuOverlay: React.FC<Props> = ({ closeMenu, globalSettings, isOpen, media
 
       <div
         className={cx(
-          'MenuOverlay__newsletter bg-color-chalk pt5 pb1 px_75 flex lg:none secondary-bold-sm transition-medium',
+          'MenuOverlay__newsletter bg-color-chalk pt5 pb1_75 px_75 flex lg:none secondary-bold-sm transition-medium',
           {
             'MenuOverlay__newsletter--active': isOpen,
           }

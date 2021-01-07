@@ -1,5 +1,7 @@
 {
   "Global": {
+    "comma": ",",
+    "and": "and",
     "navigateToHome": "Navigate to home page of BBG Ventures",
     "logoAltLabel": "BBG Ventures Logo",
     "fallbackAltLabel": "Image from BBG Ventures site",
@@ -27,7 +29,8 @@
     "instagramLink": {
       "label": "Instagram",
       "ariaLabel": "Visit %{person}'s Instagram profile"
-    }
+    },
+    "founders": "Founders"
   },
   "Nav": {
     "menuButtonAriaLabel": "Open menu"
@@ -86,6 +89,22 @@
     "playButton": {
       "label": "Play",
       "ariaLabel": "Play video"
+    }
+  },
+  "HomeHeroIntroLinks": {
+    "aboutUs": {
+      "us": "Us",
+      "ourValues": "Our Values",
+      "news": "News"
+    },
+    "companies": {
+      "currentInvestments": "Current Investments",
+      "previousFunds": "Previous Funds"
+    },
+    "whyWeInvest": {
+      "ourThesis": "Our Thesis",
+      "investmentGuidelines": "Investment Guidelines",
+      "howToApply": "How to apply"
     }
   }
 }

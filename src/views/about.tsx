@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { AboutPage } from '../lib/cms/types';
 import { Props as ContainerProps } from 'containers/about';
+import { AboutUsLinks } from 'constants/HomeHeroIntroLinks';
 
 import { ContentPage as Meta } from 'components/Meta';
 import HeroTextModule from 'components/layouts/HeroTextModule';
@@ -34,10 +35,10 @@ const AboutView: FC<Props> = (props) => {
         title={hero.title}
         heading={hero.heading}
         introLine={hero.introLine}
-        introByline={hero.introByline}
+        introBylineLinks={AboutUsLinks}
         briefParagraph={hero.briefParagraph}
       />
-      <div id="#team" className="flex flex-col">
+      <div id="team" className="flex flex-col">
         <TextModule
           className="text-module-padding-x py3_75 lg:pb7_5 lg:pt7_5"
           variant="default"
@@ -47,7 +48,7 @@ const AboutView: FC<Props> = (props) => {
         />
         <TeamMemberGrid className="pb3_75 lg:pb1_5" teamMemberGrids={teamMemberGrids} />
       </div>
-      <div id="#values" className="text-module-padding-x border-top-nutella border-bottom-nutella">
+      <div id="values" className="text-module-padding-x border-top-nutella border-bottom-nutella">
         <TextModuleWithParagraphs
           className="py3_75 lg:py7_5"
           variant={valuesSection.variant}
@@ -56,7 +57,7 @@ const AboutView: FC<Props> = (props) => {
           text={valuesSection.text}
         />
       </div>
-      <div id="#press" className="text-module-padding-x border-bottom-nutella">
+      <div id="press" className="text-module-padding-x border-bottom-nutella">
         <TextModule
           className="py3_75 lg:py7_5"
           variant="default"

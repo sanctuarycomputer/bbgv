@@ -62,14 +62,7 @@ html {
   }
 }
 
-.generic-page-margin-top {
-  margin-top: calc(#{$nav-top-margin-mobile} + #{$nav-height-mobile} + 3.75rem);
-
-  @include media('lg-up') {
-    margin-top: calc(#{$nav-height-desktop} + 6.25rem);
-  }
-}
-
+// Default Pages and Home Page
 .page-style--margin-top {
   margin-top: calc(#{$nav-top-margin-mobile} + #{$nav-height-mobile});
 
@@ -142,6 +135,14 @@ html {
 
 .hyphens {
   hyphens: auto;
+
+  &--style-mobile {
+    hyphens: auto;
+
+    @include media('md-up') {
+      hyphens: none;
+    }
+  }
 }
 
 .two-columns {

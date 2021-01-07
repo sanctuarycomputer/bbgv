@@ -65,7 +65,6 @@ const InvestmentListItem = (item: InvestmentsListItem) => {
         <span className="InvestmentsList__description secondary-sm">
           <PortableText blocks={item.description.paragraph} />
         </span>
-
         {item.description.button?.link && (
           <LineIconWithButton
             link={item.description.button?.link}

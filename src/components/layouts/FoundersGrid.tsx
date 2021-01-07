@@ -1,6 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 import { Founder } from 'lib/cms/types';
+import Language from 'constants/Language';
 
 import PersonCard from 'components/PersonCard';
 import generateFullName from 'utils/generateFullName';
@@ -14,7 +15,7 @@ const FoundersGrid: React.FC<Props> = ({ founders, className }) => {
   return (
     <div className={cx('FoundersGrid text-module-padding-x', className)}>
       <div className="pb2_25 md:pb2_25 col-12 md:col-10 mxauto color-charcoal primary-sm">
-        Founders
+        {Language.t('Global.founders')}
       </div>
       <div className="FoundersGrid__grid-container col-12 md:col-10 mxauto">
         {founders.map((founder: Founder) => (

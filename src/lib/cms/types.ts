@@ -207,7 +207,6 @@ export const HeroTextModule = t.intersection([
     title: t.string,
     heading: t.array(Block),
     introLine: t.string,
-    introByline: t.array(Block),
   }),
   t.partial({
     briefParagraph: t.array(Block),
@@ -378,6 +377,7 @@ export type CompanyDetailLanding = t.TypeOf<typeof CompanyDetailLanding>;
 export const CompanyDetailLanding = t.intersection([
   t.type({
     headline: t.array(Block),
+    foundersText: t.string,
     company: Company,
   }),
   t.partial({

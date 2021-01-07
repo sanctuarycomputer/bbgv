@@ -1,6 +1,10 @@
 import React from 'react';
 import cx from 'classnames';
+import { HashLink } from 'react-router-hash-link';
+import Language from 'constants/Language';
+
 import { Block } from 'lib/cms/types';
+import { MenuLink } from 'types';
 import PortableText from 'components/PortableText';
 
 type Props = {
@@ -8,7 +12,7 @@ type Props = {
   title: string;
   heading: Block[];
   introLine: string;
-  introByline: Block[];
+  introBylineLinks: MenuLink[];
   briefParagraph?: Block[];
 };
 
@@ -17,7 +21,7 @@ const HeroTextModule: React.FC<Props> = ({
   title,
   heading,
   introLine,
-  introByline,
+  introBylineLinks,
   briefParagraph,
 }) => {
   const fontColor = variant === 'nutella' || variant === 'lilac' ? 'color-charcoal' : 'color-chalk';
@@ -49,12 +53,46 @@ const HeroTextModule: React.FC<Props> = ({
       >
         {introLine}
       </span>
-      <span
-        className={cx(
-          `HeroTextModule__intro-byline HeroTextModule--style-${variant}__intro-byline primary-xxl vertical-align-middle`
-        )}
-      >
-        <PortableText blocks={introByline} />
+      <span>
+        {introBylineLinks.map((link: MenuLink, i: number) => {
+          return (
+            <>
+              <HashLink
+                key={link.link}
+                className={cx(
+                  `HeroTextModule__intro-byline HeroTextModule--style-${variant}__intro-byline primary-xxl vertical-align-middle transition-shorter bg-color-transparent text-decoration-none`,
+                  {
+                    'color-white hover-color-lilac': variant === 'mulberry',
+                    'color-charcoal hover-color-chalk':
+                      variant === 'nutella' || variant === 'lilac',
+                  }
+                )}
+                smooth
+                to={link.link}
+              >
+                <span
+                  className={cx('hyphens--style-mobile', {
+                    'pr_5 lg:pr_75': !(
+                      i !== introBylineLinks.length - 1 && introBylineLinks.length !== 2
+                    ),
+                  })}
+                >
+                  {link.label}
+                </span>
+              </HashLink>
+              {i !== introBylineLinks.length - 1 && introBylineLinks.length !== 2 && (
+                <span className="vertical-align-middle primary-xxl pr_5 lg:pr_75">
+                  {Language.t('Global.comma')}
+                </span>
+              )}
+              {i !== introBylineLinks.length - 1 && i === introBylineLinks.length - 2 && (
+                <span className="vertical-align-middle primary-xxl pr_5 lg:pr_75">
+                  {Language.t('Global.and')}
+                </span>
+              )}
+            </>
+          );
+        })}
       </span>
       {briefParagraph && (
         <div

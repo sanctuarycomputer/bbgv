@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { WhyWeInvestPage } from '../lib/cms/types';
 import { Props as ContainerProps } from 'containers/whyWeInvest';
+import { WhyWeInvestLinks } from 'constants/HomeHeroIntroLinks';
 
 import { ContentPage as Meta } from 'components/Meta';
 import HeroTextModule from 'components/layouts/HeroTextModule';
@@ -25,11 +26,13 @@ const WhyWeInvestView: FC<Props> = (props) => {
         title={hero.title}
         heading={hero.heading}
         introLine={hero.introLine}
-        introByline={hero.introByline}
+        introBylineLinks={WhyWeInvestLinks}
         briefParagraph={hero.briefParagraph}
       />
-      <StatisticsModule facts={statistics} />
-      <div id="#thesis">
+      <div id="opportunity">
+        <StatisticsModule facts={statistics} />
+      </div>
+      <div id="thesis">
         <TextModuleWithParagraphs
           className="text-module-padding-x py3_75 lg:py7_5"
           variant={thesis.variant}
@@ -39,7 +42,7 @@ const WhyWeInvestView: FC<Props> = (props) => {
         />
       </div>
       <div
-        id="#investment-guidelines"
+        id="investment-guidelines"
         className="text-module-padding-x border-top-mulberry border-bottom-mulberry"
       >
         <TextModuleWithParagraphs
@@ -51,13 +54,15 @@ const WhyWeInvestView: FC<Props> = (props) => {
         />
         <GridParagraphs className="pt4 pb3_75 lg:pb7_5" sections={investmentParagraphs} />
       </div>
-      <TextModule
-        className="text-module-padding-x py3_75 lg:py7_5"
-        variant="default"
-        heading={apply.heading}
-        subheading={apply.subheading}
-        briefParagraph={apply.briefParagraph}
-      />
+      <div id="apply">
+        <TextModule
+          className="text-module-padding-x py3_75 lg:py7_5"
+          variant="default"
+          heading={apply.heading}
+          subheading={apply.subheading}
+          briefParagraph={apply.briefParagraph}
+        />
+      </div>
     </div>
   );
 };

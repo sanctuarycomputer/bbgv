@@ -21,6 +21,7 @@
     }
 
     @include media('lg-up') {
+      padding-left: 5%;
       transform: translate3d(-30rem, 0, 0);
 
       &--active {
@@ -96,15 +97,29 @@
     &--active {
       animation: animate-fade-in 0.5s forwards 0.35s;
     }
+
+    @include media('lg-up') {
+      padding-left: 10%;
+    }
+
+    @include media('xl-up') {
+      padding-left: 13%;
+    }
   }
 
   &__copyright {
     bottom: 0;
 
     @include media('lg-up') {
+      padding-left: 10%;
+
       &--active {
         animation: animate-fade-in 0.5s forwards 0.35s;
       }
+    }
+
+    @include media('xl-up') {
+      padding-left: 13%;
     }
   }
 
@@ -124,7 +139,7 @@
           @extend .transition-shorter;
           opacity: 1;
           width: 1.5rem;
-          height: 0.35rem;
+          height: 0.313rem;
           margin-right: 0.4rem;
 
           @include media('lg-up') {

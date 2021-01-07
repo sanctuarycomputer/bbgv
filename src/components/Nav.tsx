@@ -25,7 +25,7 @@ type Props = PassedProps & WithBreakpointsProps;
 
 const Nav: React.FC<Props> = (props) => {
   const { onOpenMenu, onCloseMenu, theme, menuIsOpen, mediaQuery } = props;
-  const iconColor = theme === 'default' ? 'charcoal' : 'chalk';
+  const iconColor = theme === 'default' || menuIsOpen ? 'charcoal' : 'chalk';
   const breakpointIsMdUp = mediaQuery.isMediumUp;
   const [scrollPosition, setScrollPosition] = useState(0);
   const [hoverLogo, setHoverLogo] = useState(false);
@@ -61,14 +61,6 @@ const Nav: React.FC<Props> = (props) => {
     }
   }, [showNavLogo, menuIsOpen]);
 
-  const handleMarginTop = () => {
-    if (!breakpointIsMdUp && !menuIsOpen) {
-      return scrollPosition > 0 ? '0' : '40px';
-    } else {
-      return '0';
-    }
-  };
-
   /* Disables body scroll when menu overlay is open. **/
   const handleBodyScroll = useCallback(() => {
     menuIsOpen
@@ -103,12 +95,7 @@ const Nav: React.FC<Props> = (props) => {
   }, [location, handleNavLogo]);
 
   return (
-    <nav
-      style={{
-        marginTop: handleMarginTop(),
-      }}
-      className="Nav site-inner-content-max-width site-padding-x mxauto z-nav flex items-center justify-between fixed w100 t0 l0"
-    >
+    <nav className="Nav site-inner-content-max-width site-padding-x mxauto z-nav flex items-center justify-between fixed w100 t0 l0">
       <Button
         containerClassName={cx(
           'Nav__logo-outer-container opacity-0 events-none transition-shortest',
