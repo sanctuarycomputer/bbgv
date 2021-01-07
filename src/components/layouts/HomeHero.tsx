@@ -92,7 +92,7 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
             ))}
           </span>
           <Button
-            className="HomeHero__founder inline text-decoration-none hover-color-lilac transition color-lilac"
+            className="HomeHero__founder inline text-decoration-none hover-color-lilac-darkest transition color-lilac"
             ariaLabel={Language.t('Home.hero.othersButtonAriaLabel')}
             to={RouteMap.COMPANIES.path}
             label={` & ${Language.t('Home.hero.others')}`}
@@ -105,7 +105,7 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
             {founders.map((founder: Founder, index: number) => (
               <span key={founder.firstName} className="HomeHero__founder relative">
                 <Button
-                  className="HomeHero__founder primary-xxl bg-color-transparent inline text-decoration-none hover-color-lilac color-charcoal transition"
+                  className="HomeHero__founder primary-xxl bg-color-transparent inline text-decoration-none hover-color-lilac-darkest color-charcoal transition"
                   to={generateCompanyDetailUrl(founder.company)}
                   ariaLabel={Language.t('Founder.viewDetailPageButtonAriaLabel', {
                     FullName: generateFullName(founder),
@@ -143,7 +143,7 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
             ))}
           </span>
           <Button
-            className="HomeHero__founder inline text-decoration-none hover-color-lilac color-charcoal transition"
+            className="HomeHero__founder inline text-decoration-none hover-color-lilac-darkest color-charcoal transition"
             ariaLabel={Language.t('Home.hero.othersButtonAriaLabel')}
             to={RouteMap.COMPANIES.path}
             label={` & ${Language.t('Home.hero.others')}`}

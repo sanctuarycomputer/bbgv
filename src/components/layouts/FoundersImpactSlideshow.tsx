@@ -188,7 +188,7 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
             </div>
             <Button
               ariaLabel={Language.t('Slideshow.viewNext')}
-              className="text-left bg-color-transparent text-decoration-none color-lilac-darkest secondary-bold-xs pt1"
+              className="text-left bg-color-transparent text-decoration-none color-lilac-very-dark secondary-bold-xs pt1"
               onClick={() => this.next()}
             >
               {Language.t('Slideshow.viewNext')}

@@ -97,7 +97,7 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
         <div className="flex flex-col md:flex-row justify-between">
           <div className="flex flex-col col-12  md:col-4 pb1_25 md:pb0">
             <p className="primary-md uppercase">{generateFullName(slide.founder)}</p>
-            <p className="primary-md uppercase color-lilac">{slide.founder.company}</p>
+            <p className="primary-md uppercase color-lilac-darkest">{slide.founder.company}</p>
           </div>
           <div className="FeaturedFoundersCarousel__bio secondary-sm col-9 md:col-6">
             <PortableText blocks={slide.founder.bio} />
@@ -151,7 +151,7 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
               </div>
               <Button
                 ariaLabel={Language.t('Slideshow.viewNext')}
-                className="text-left bg-color-transparent text-decoration-none color-black-lighter secondary-bold-xs pt_75 z-3"
+                className="text-left bg-color-transparent text-decoration-none color-lilac-very-dark secondary-bold-xs pt_75 z-3"
                 onClick={this.next}
                 label={Language.t('Slideshow.viewNext')}
               />
