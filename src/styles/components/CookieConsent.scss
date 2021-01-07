@@ -1,0 +1,14 @@
+.CookieConsent {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+  padding: 1.5rem 2rem;
+  bottom: 0.75rem;
+
+  @include media('md-up') {
+    margin: 0;
+    padding: 1.25rem 1.5rem;
+    bottom: 0.75rem;
+    right: 0.75rem;
+    width: $cookie-consent-width;
+  }
+}

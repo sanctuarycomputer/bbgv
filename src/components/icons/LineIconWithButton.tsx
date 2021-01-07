@@ -7,19 +7,26 @@ import { Button } from 'components/base';
 
 interface Props {
   color: Colors;
-  link: string;
+  link?: string;
+  onClick?: () => void;
   label: string;
+  variant?: 'cookie-consent';
 }
 
-const LineIconWithButton: React.FC<Props> = ({ color, link, label }) => {
+const LineIconWithButton: React.FC<Props> = ({ color, link, label, onClick, variant }) => {
   return (
     <span className="LineIconWithButton__button ml_25 secondary-sm">
       <Button
         wrap={true}
         className={cx(
-          `inline-flex items-center text-decoration-none secondary-bold-sm  vertical-align-middle color-${color}`
+          `inline-flex items-center text-decoration-none vertical-align-middle color-${color} bg-color-transparent`,
+          {
+            'secondary-bold-xs': variant === 'cookie-consent',
+            'secondary-bold-sm': variant !== 'cookie-consent',
+          }
         )}
         to={link}
+        onClick={onClick}
         ariaLabel={Language.t('Global.generalButtonAriaLabel', {
           link: label,
         })}

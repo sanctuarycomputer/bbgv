@@ -13,6 +13,10 @@ export default {
       name: 'menu',
       title: 'Menu',
     },
+    {
+      name: 'cookieConsent',
+      title: 'Cookie Consent Pop Up',
+    },
   ],
   fields: [
     {
@@ -64,6 +68,14 @@ export default {
           type: 'buttonField',
         },
       ],
+    },
+    {
+      name: 'cookieConsentText',
+      title: 'Cookie Consent Text',
+      type: 'string',
+      fieldset: 'cookieConsent',
+      validation: (Rule) => Rule.required(),
+      description: 'This is the text displayed on the cookie consent pop up.',
     },
   ],
   preview: {

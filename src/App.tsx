@@ -1,16 +1,19 @@
 import React, { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-
+import Language from 'constants/Language';
 import Routes from 'constants/routes';
+
 import 'styles/App.scss';
 
 import { intializeApplication } from 'state/actions/applicationActions';
 import { setMenuOpen, setMenuClosed } from 'state/actions/uiActions';
 
+import { Button } from 'components/base';
 import Nav from 'components/Nav';
 import Footer from 'components/Footer';
 import MenuOverlay from 'components/MenuOverlay';
+import CookieConsent from 'components/CookieConsent';
 
 export default function App() {
   const dispatch = useDispatch();
@@ -20,6 +23,7 @@ export default function App() {
   const menuIsOpen = useSelector((state) => state.ui.menuIsOpen);
   const openMenu = useCallback(() => dispatch(setMenuOpen()), [dispatch]);
   const closeMenu = useCallback(() => dispatch(setMenuClosed()), [dispatch]);
+
   //TO-DO: show 404 page if application status is rejected.
 
   useEffect(() => {
@@ -29,6 +33,15 @@ export default function App() {
   return (
     <main className="App">
       <Router>
+        {globalSettings && 'cookieConsentText' in globalSettings && (
+          <CookieConsent
+            content={globalSettings.cookieConsentText}
+            containerClassName="bg-color-lilac text-left"
+            dismissButtonAriaLabel={Language.t('CookieConsent.acceptButton.ariaLabel')}
+            dismissButtonClassName="bg-color-transparent text-left color-charcoal transition-shorter"
+            dismissButtonLabel={Language.t('CookieConsent.acceptButton.label')}
+          />
+        )}
         <Nav theme={theme} menuIsOpen={menuIsOpen} onOpenMenu={openMenu} onCloseMenu={closeMenu} />
         {'menu' in globalSettings && (
           <MenuOverlay globalSettings={globalSettings} closeMenu={closeMenu} isOpen={menuIsOpen} />

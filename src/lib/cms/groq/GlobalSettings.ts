@@ -9,5 +9,6 @@ export default `{
     "secondSectionLinks": customFooterMenuLinks,
     "secondSectionHeading": customFooterMenuHeading
   },
+  cookieConsentText,
   ...
 }`;

@@ -391,6 +391,7 @@ export const GlobalSettings = t.type({
   socialMediaLinks: t.array(Button),
   footerMenu: FooterMenu,
   menu: Menu,
+  cookieConsentText: t.string,
 });
 
 export type HomePage = t.TypeOf<typeof HomePage>;
