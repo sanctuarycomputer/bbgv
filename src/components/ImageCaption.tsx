@@ -35,7 +35,7 @@ const ImageCaption: React.FC<Props> = ({ image, className, variant }) => {
           className={cx(
             `ImageCaption--style-${variant}__caption secondary-xs color-black-lighter`,
             {
-              'py_75 col-12': variant === 'half-width',
+              'pt_75 pb1_5 col-12': variant === 'half-width',
               'pt1_25 md:pt1_5 col-10 md:col-7': variant === 'full-width',
             }
           )}

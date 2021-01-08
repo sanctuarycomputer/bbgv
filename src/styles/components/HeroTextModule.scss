@@ -1,4 +1,12 @@
 .HeroTextModule {
+  &__title {
+    width: 8rem;
+
+    @include media('md-up') {
+      width: 12rem;
+    }
+  }
+
   &__heading p {
     @extend .hyphens;
 

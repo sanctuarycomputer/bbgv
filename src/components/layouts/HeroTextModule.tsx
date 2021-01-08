@@ -33,9 +33,12 @@ const HeroTextModule: React.FC<Props> = ({
       )}
     >
       <span
-        className={cx('HeroTextModule__title nowrap primary-sm pr3_75 vertical-align-middle', {
-          'color-lilac': variant === 'mulberry',
-        })}
+        className={cx(
+          'HeroTextModule__title nowrap primary-sm pr3_75 vertical-align-middle inline-flex',
+          {
+            'color-lilac': variant === 'mulberry',
+          }
+        )}
       >
         {title}
       </span>

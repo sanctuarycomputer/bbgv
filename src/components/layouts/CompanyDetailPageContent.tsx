@@ -11,7 +11,7 @@ interface Props {
 const CompanyDetailPageContent: React.FC<Props> = ({ content }) => {
   return (
     <BlockContent
-      className="CompanyDetailPageContent__body mxauto"
+      className="CompanyDetailPageContent__body mxauto pt4 md:pt0"
       blocks={content.body}
       serializers={{
         types: {

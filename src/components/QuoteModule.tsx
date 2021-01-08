@@ -11,7 +11,7 @@ type Props = {
 
 const QuoteModule: React.FC<Props> = ({ className, contents }) => {
   return (
-    <div className={cx('QuoteModule col-12 my5 md:py5 bg-color-mulberry', className)}>
+    <div className={cx('QuoteModule col-12 my2_25 md:py5 bg-color-mulberry', className)}>
       <div className="QuoteModule__inner-container col-12 md:col-6 mxauto">
         <span className="QuoteModule__quote color-chalk">
           <PortableText blocks={contents.quote} />

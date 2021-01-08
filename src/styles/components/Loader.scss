@@ -1,0 +1,19 @@
+.Loader {
+  &__svg {
+    animation: pulse 1.5s infinite;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.75);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.75);
+  }
+}

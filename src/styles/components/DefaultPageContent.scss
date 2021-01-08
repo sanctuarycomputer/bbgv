@@ -1,6 +1,6 @@
 .DefaultPageContent {
   &__body {
-    padding-bottom: 5rem;
+    padding-bottom: 3rem;
 
     @include media('md-up') {
       padding-bottom: 12.5rem;

@@ -15,6 +15,7 @@
     "copyrightLabel": "© %{year}",
     "allRightsReserved": "All Rights Reserved",
     "bbgv": "BBG Ventures, LLC",
+    "loaderAltLabel": "Loader",
     "portableTextLink": {
       "ariaLabel": "Navigate to %{label}"
     },

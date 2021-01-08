@@ -7,8 +7,10 @@ export type Colors =
   | 'lilac'
   | 'lilac-darker'
   | 'lilac-darkest'
+  | 'lilac-very-dark'
   | 'mulberry'
   | 'nutella'
+  | 'nutella-darker'
   | 'charcoal'
   | 'black-lighter'
   | 'black';
@@ -22,8 +24,10 @@ export enum HexColors {
   'lilac' = '#cdd4fd',
   'lilac-darker' = '#bec8ff',
   'lilac-darkest' = '#8696f0',
+  'lilac-very-dark' = '#5166DB',
   'mulberry' = '#682f4e',
   'nutella' = '#a38985',
+  'nutella-darker' = '#866B65',
   'charcoal' = '#242424',
   'black-lighter' = 'rgba(0, 0, 0, 0.5)',
   'black' = '#000000',
@@ -32,6 +36,7 @@ export enum HexColors {
 export const PortableTextColors = {
   CHALK: '#fafaf6',
   LILAC: '#cdd4fd',
+  LILAC_DARKEST: '#8696f0',
   MULBERRY: '#682f4e',
   NUTELLA: '#a38985',
   CHARCOAL: '#242424',

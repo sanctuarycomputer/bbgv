@@ -43,12 +43,7 @@
   }
 
   &__inner-container {
-    padding-left: $site-padding-x-mobile;
-    padding-right: $site-padding-x-mobile;
-
     @include media('lg-up') {
-      padding-left: 0;
-      padding-right: 0;
       max-width: $site-inner-content-max-width;
     }
   }
