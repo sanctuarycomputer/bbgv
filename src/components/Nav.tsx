@@ -95,7 +95,7 @@ const Nav: React.FC<Props> = (props) => {
   }, [location, handleNavLogo]);
 
   return (
-    <nav className="Nav site-inner-content-max-width site-padding-x mxauto z-nav flex items-center justify-between fixed w100 t0 l0">
+    <nav className="Nav site-padding-x mxauto z-nav flex items-center justify-between fixed w100 t0 l0">
       <Button
         containerClassName={cx(
           'Nav__logo-outer-container opacity-0 events-none transition-shortest',
