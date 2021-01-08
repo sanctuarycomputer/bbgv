@@ -1,4 +1,6 @@
 import React, { FC } from 'react';
+import isEmpty from 'lodash/isEmpty';
+
 import { CompanyDetailPage } from '../lib/cms/types';
 import { Props as ContainerProps } from 'containers/companyDetail';
 
@@ -7,6 +9,7 @@ import CompanyDetailPageContent from 'components/layouts/CompanyDetailPageConten
 import FoundersGrid from 'components/layouts/FoundersGrid';
 import PressList from 'components/layouts/PressList';
 import CompanyDetailLanding from 'components/layouts/CompanyDetailLanding';
+import PageNotFound from 'components/PageNotFound';
 
 type Props = ContainerProps & {
   model: CompanyDetailPage;
@@ -15,6 +18,10 @@ type Props = ContainerProps & {
 const CompanyDetailView: FC<Props> = (props) => {
   const { model } = props;
   const { seo, content, founders, pressList, companyDetailLanding } = model;
+
+  if (isEmpty(companyDetailLanding)) {
+    return <PageNotFound />;
+  }
 
   return (
     <div className="CompanyDetailView">
