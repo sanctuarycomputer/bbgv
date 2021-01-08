@@ -33,21 +33,7 @@ const CompanyDetailView: FC<Props> = (props) => {
         <FoundersGrid className="border-top-lilac py3_75 lg:py5" founders={founders} />
       )}
 
-      {/* {'pressList' in model && (
-      {companyDetailLanding && (
-        <CompanyDetailLanding
-          company={companyDetailLanding.company}
-          headline={companyDetailLanding.headline}
-          founderPortrait={companyDetailLanding.founderPortrait}
-          productImage={companyDetailLanding.productImage}
-        />
-      )} */}
-      <article>
-        <CompanyDetailPageContent content={content} />
-      </article>
-      {founders && <FoundersGrid className="border-top-lilac py3_75 lg:py5" founders={founders} />}
-
-      {pressList && (
+      {'pressList' in model && (
         <div className="text-module-padding-x">
           <PressList
             variant={pressList.variant}
