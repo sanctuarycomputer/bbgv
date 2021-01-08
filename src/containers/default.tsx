@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
 import { DefaultPage as IDefaultPage } from '../lib/cms/types';
 import ContainerBase from 'lib/containerBase';
-import FourHundred from 'views/errors/404';
 
 import * as Pages from 'state/actions/pagesActions';
 import * as Application from 'state/actions/applicationActions';
@@ -18,7 +17,6 @@ class Default extends ContainerBase<Props, IDefaultPage, typeof import('views/de
   };
   model = () => this.props.actions.fetchDefaultPage(this.props.match.params.id);
   view = import('views/default');
-  errorView = FourHundred;
 }
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({

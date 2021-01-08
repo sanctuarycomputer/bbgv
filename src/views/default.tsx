@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { DefaultPage } from '../lib/cms/types';
 import { Props as ContainerProps } from 'containers/default';
+import isEmpty from 'lodash/isEmpty';
 
 import { ContentPage as Meta } from 'components/Meta';
 import TextModule from 'components/layouts/TextModule';
@@ -14,6 +15,10 @@ type Props = ContainerProps & {
 const DefaultView: FC<Props> = (props) => {
   const { model } = props;
   const { intro, seo, content } = model;
+
+  if (isEmpty(content)) {
+    return <PageNotFound />;
+  }
 
   return (
     <div className="DefaultView page-style--margin-top">

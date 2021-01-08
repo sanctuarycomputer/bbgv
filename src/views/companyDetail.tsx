@@ -33,7 +33,7 @@ const CompanyDetailView: FC<Props> = (props) => {
         <FoundersGrid className="border-top-lilac py3_75 lg:py5" founders={founders} />
       )}
 
-      {'pressList' in model && (
+      {/* {'pressList' in model && (
       {companyDetailLanding && (
         <CompanyDetailLanding
           company={companyDetailLanding.company}
@@ -41,7 +41,7 @@ const CompanyDetailView: FC<Props> = (props) => {
           founderPortrait={companyDetailLanding.founderPortrait}
           productImage={companyDetailLanding.productImage}
         />
-      )}
+      )} */}
       <article>
         <CompanyDetailPageContent content={content} />
       </article>
