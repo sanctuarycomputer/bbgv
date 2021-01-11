@@ -46,7 +46,11 @@ class PageNotFound extends Component<Props> {
 
               <p className="secondary-sm color-white md:col-8 pt1_5 md:pt2_25">
                 {Language.t('PageNotFound.solutions')}
-                <LineIconWithButton color="white" link="/" label="Return to the home page" />
+                <LineIconWithButton
+                  color="white"
+                  link="/"
+                  label={Language.t('PageNotFound.homePageButtonLabel')}
+                />
               </p>
             </div>
           </div>
