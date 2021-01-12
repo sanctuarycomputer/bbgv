@@ -46,25 +46,15 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
   next = () => {
     const { slides } = this.props;
     const { currentSlide } = this.state;
-    const index = currentSlide + 1 >= slides.length ? 0 : currentSlide + 1;
 
-    this.goTo(index);
+    this.sliderRef.current?.slickNext();
   };
 
-  previous = () => {
-    const { slides } = this.props;
-    const { currentSlide } = this.state;
-    const index = currentSlide <= 0 ? slides.length - 1 : currentSlide - 1;
+  goTo = (slideIndex: number, shouldCancelNextTimeout = false) => {
+    console.log('go to slideIndex', slideIndex);
 
-    this.goTo(index);
-  };
-
-  goTo = (currentSlide: number, shouldCancelNextTimeout = false) => {
-    if (this.state.currentSlide === currentSlide) return;
-
-    return this.setState({ currentSlide, shouldCancelNextTimeout }, () => {
-      this.sliderRef.current?.slickGoTo(currentSlide);
-    });
+    this.sliderRef.current?.slickGoTo(slideIndex);
+    this.setState({ shouldCancelNextTimeout });
   };
 
   attemptNextSlide = () => {
@@ -129,35 +119,38 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
         <div className="relative w100 h100 pb3 md:pb5">
           <div className="FeaturedFoundersCarousel__pagination-container absolute z-3 px_75 md:pr3_75">
             <div className="FeaturedFoundersCarousel__pagination relative col-12 flex flex-col">
-              <div className="FeaturedFoundersCarousel__pagination__inner flex flex-row col-12">
+              <div className="FeaturedFoundersCarousel__pagination__inner flex flex-row col-12 events-none">
                 {slides.map((slide: FeaturedFoundersCarouselSlide, index) => {
                   return (
-                    <Button
-                      key={`FeaturedFoundersCarousel-${slide.founder.firstName}`}
-                      ariaLabel={Language.t('Slideshow.paginationDot', {
-                        slideNumber: index + 1,
-                      })}
-                      className={cx(
-                        'FeaturedFoundersCarousel__pagination__dot radius-button-sm pointer',
-                        {
-                          'FeaturedFoundersCarousel__pagination__dot--active': index < currentSlide,
-                          'FeaturedFoundersCarousel__pagination__dot--current':
-                            index === currentSlide,
-                        }
-                      )}
-                      onClick={() => this.goTo(index, true)}
-                    >
-                      <div
-                        className="FeaturedFoundersCarousel__pagination__dot__progress"
-                        style={{ animationDuration: `${speed}ms` }}
-                      />
-                    </Button>
+                    <div>
+                      <Button
+                        key={`FeaturedFoundersCarousel-${slide.founder.firstName}`}
+                        ariaLabel={Language.t('Slideshow.paginationDot', {
+                          slideNumber: index,
+                        })}
+                        className={cx(
+                          'FeaturedFoundersCarousel__pagination__dot radius-button-sm pointer events-all',
+                          {
+                            'FeaturedFoundersCarousel__pagination__dot--active':
+                              index < currentSlide,
+                            'FeaturedFoundersCarousel__pagination__dot--current':
+                              index === currentSlide,
+                          }
+                        )}
+                        onClick={() => this.goTo(index, true)}
+                      >
+                        <div
+                          className="FeaturedFoundersCarousel__pagination__dot__progress"
+                          style={{ animationDuration: `${speed}ms` }}
+                        />
+                      </Button>
+                    </div>
                   );
                 })}
               </div>
               <Button
                 ariaLabel={Language.t('Slideshow.viewNext')}
-                className="text-left bg-color-transparent text-decoration-none color-lilac-very-dark secondary-bold-xs pt_75 z-3"
+                className="text-left bg-color-transparent text-decoration-none color-lilac-very-dark secondary-bold-xs mt_75 z-3"
                 onClick={this.next}
                 label={Language.t('Slideshow.viewNext')}
               />
@@ -170,11 +163,13 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
               className="FeaturedFoundersCarousel__slideshow"
               adaptiveHeight={true}
               arrows={false}
+              autoplay={false}
               dots={false}
               centerMode={true}
               centerPadding="0px"
               speed={4000}
               infinite={true}
+              afterChange={(current) => this.setState({ currentSlide: current })}
             >
               {slides.map((slide: FeaturedFoundersCarouselSlide, index: number) => {
                 return (
