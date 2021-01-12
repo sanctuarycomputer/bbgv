@@ -8,7 +8,6 @@ import * as Pages from 'state/actions/pagesActions';
 import * as Application from 'state/actions/applicationActions';
 
 export type Props = ReturnType<typeof mapDispatchToProps> & RouteComponentProps<{ id: string }>;
-
 class Default extends ContainerBase<Props, IDefaultPage, typeof import('views/default').default> {
   beforeModel = () => {
     this.props.actions.setTheme('default');

@@ -4,6 +4,7 @@ import Language from 'constants/Language';
 import validateEmail from 'utils/validateEmail';
 import { useFormik, FormikValues } from 'formik';
 
+import LineIconWithButton from './icons/LineIconWithButton';
 import { Button, TextField } from 'components/base';
 
 type Props = {
@@ -52,13 +53,9 @@ const EmailSignup: React.FC<Props> = ({ variant }) => {
             placeholder={Language.t('EmailSignup.input.placeholder')}
           />
           <span className="flex justify-end col-2">
-            <Button
+            <LineIconWithButton
               label={Language.t('EmailSignup.subscribeButton.label')}
-              ariaLabel={Language.t('EmailSignup.subscribeButton.ariaLabel')}
-              className={cx('bg-color-transparent transition-shorter secondary-bold-sm', {
-                'color-charcoal hover-lighten-charcoal': variant === 'footer',
-                'color-chalk': variant === 'module',
-              })}
+              color={variant === 'module' ? 'chalk' : 'charcoal'}
             />
           </span>
         </div>

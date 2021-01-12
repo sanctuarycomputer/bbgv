@@ -1,8 +1,8 @@
 .PhotoCard {
-  width: 13.24375rem;
-  height: 18.504375rem;
+  width: 13rem;
+  height: 18rem;
 
-  @include media('md-up') {
+  @include media('lg-up') {
     width: 17.25rem;
     height: 24.101875rem;
   }

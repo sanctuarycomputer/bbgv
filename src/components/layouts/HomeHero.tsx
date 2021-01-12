@@ -25,7 +25,8 @@ type Props = PassedProps & WithBreakpointsProps;
 const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
   const [activeFounderIndex, setActiveFounderIndex] = useState(-1);
   const [hideLogo, setHideLogo] = useState(false);
-  const breakpointIsMdUp = mediaQuery.isMediumUp;
+  const breakpointIsXsUp = mediaQuery.isExtraSmallUp;
+  const breakpointIsSmUp = mediaQuery.isSmallUp;
 
   const handleScroll = () => {
     /* Determines if the current scroll position is before of after the logo in the Home Hero Module **/
@@ -55,12 +56,13 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
   return (
     <div className="HomeHero primary-xxl site-inner-content-max-width site-padding-x mxauto pb2_25 md:pb0">
       <span
-        className={cx('HomeHero__logo-container inline-flex', {
+        className={cx('HomeHero__logo-container inline-flex vertical-align-middle', {
           'HomeHero__logo-container--style-is-active opacity-1 events-all': !hideLogo,
           'opacity-0 events-none': hideLogo,
         })}
       >
         <Button
+          containerClassName="flex justify-center"
           className="bg-color-transparent text-decoration-none"
           ariaLabel={Language.t('Global.navigateToHome')}
           to={RouteMap.HOME.path}
@@ -69,13 +71,16 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
         </Button>
       </span>
 
-      <span className="HomeHero__headline hyphens color-mulberry">{headline}</span>
-      <span className="color-charcoal primary-sm px2_25 md:px3_75 vertical-align-middle nowrap">
-        {Language.t('Home.hero.ourFounders')}
+      <span className="HomeHero__headline vertical-align-middle hyphens color-mulberry">
+        {headline}
       </span>
-      {!breakpointIsMdUp ? (
-        <span>
-          <span className="primary-xxl">
+
+      {!breakpointIsXsUp && (
+        <div>
+          <span className="color-charcoal primary-sm pr2_25 md:px3_75 vertical-align-middle inline">
+            {Language.t('Home.hero.ourFounders')}
+          </span>
+          <span className="primary-xxl inline">
             {founders.map((founder: Founder, index: number) => (
               <span key={founder.firstName} className="color-charcoal HomeHero__founder inline">
                 {index !== founders.length - 1 ? (
@@ -98,17 +103,23 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
             label={` & ${Language.t('Home.hero.others')}`}
           />
           <span>.</span>
-        </span>
-      ) : (
+        </div>
+      )}
+
+      {breakpointIsXsUp && (
         <span>
-          <span className="color-charcoal primary-xxl">
+          <div className="color-charcoal primary-sm px2_25 md:px3_75 inline-block vertical-align-middle nowrap">
+            {Language.t('Home.hero.ourFounders')}
+          </div>
+          <span className="HomeHero__founders-container color-charcoal primary-xxl inline">
             {founders.map((founder: Founder, index: number) => (
               <span key={founder.firstName} className="HomeHero__founder relative">
                 <Button
+                  wrap={true}
                   className="HomeHero__founder primary-xxl bg-color-transparent inline text-decoration-none hover-color-lilac-darkest color-charcoal transition"
                   to={generateCompanyDetailUrl(founder.company)}
                   ariaLabel={Language.t('Founder.viewDetailPageButtonAriaLabel', {
-                    FullName: generateFullName(founder),
+                    founderFullName: generateFullName(founder),
                   })}
                   onMouseEnter={() => {
                     setActiveFounderIndex(index);
@@ -120,7 +131,7 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
                   {index !== founders.length - 1 ? (
                     <span>
                       <span>{founder.firstName}</span>
-                      <span className="color-charcoal mr1">,</span>
+                      <span className="color-charcoal mr_25 md:mr_5 lg:mr1">,</span>
                     </span>
                   ) : (
                     <span>
@@ -147,6 +158,7 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
             ariaLabel={Language.t('Home.hero.othersButtonAriaLabel')}
             to={RouteMap.COMPANIES.path}
             label={` & ${Language.t('Home.hero.others')}`}
+            wrap={true}
           />
           <span>.</span>
         </span>

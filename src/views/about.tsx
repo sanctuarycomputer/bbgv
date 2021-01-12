@@ -40,7 +40,7 @@ const AboutView: FC<Props> = (props) => {
       />
       <div id="team" className="flex flex-col">
         <TextModule
-          className="text-module-padding-x py3_75 lg:pb7_5 lg:pt7_5"
+          className="py3_75 lg:pb7_5 lg:pt7_5"
           variant="default"
           heading={teamHeading.heading}
           subheading={teamHeading.subheading}
@@ -57,7 +57,7 @@ const AboutView: FC<Props> = (props) => {
           text={valuesSection.text}
         />
       </div>
-      <div id="press" className="text-module-padding-x border-bottom-nutella">
+      <div id="press" className="">
         <TextModule
           className="py3_75 lg:py7_5"
           variant="default"
@@ -73,7 +73,7 @@ const AboutView: FC<Props> = (props) => {
         />
       </div>
       <TextModule
-        className="text-module-padding-x py3_75 lg:py7_5"
+        className="border-top-nutella text-module-padding-x py3_75 lg:py7_5"
         variant="default"
         heading={contact.heading}
         subheading={contact.subheading}

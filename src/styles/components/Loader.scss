@@ -1,19 +1,19 @@
 .Loader {
-  &__svg {
-    animation: pulse 1.5s infinite;
+  &__bar {
+    width: 11rem;
+    height: 0.75rem;
+    opacity: 1;
+    background: linear-gradient(to right, color('chalk') 0%, color('mulberry') 50%);
+    background-size: 200% 200%;
+    animation: slide forwards 1.75s linear infinite;
   }
 }
 
-@keyframes pulse {
+@keyframes slide {
   0% {
-    transform: scale(0.75);
+    background-position: 200% 100%;
   }
-
-  70% {
-    transform: scale(1);
-  }
-
   100% {
-    transform: scale(0.75);
+    background-position: 0% 100%;
   }
 }

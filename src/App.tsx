@@ -9,9 +9,11 @@ import 'styles/App.scss';
 import { Status } from 'types';
 
 import { intializeApplication } from 'state/actions/applicationActions';
+import { setTheme } from 'state/actions/applicationActions';
 import { setMenuOpen, setMenuClosed } from 'state/actions/uiActions';
 
 import PageNotFound from 'components/PageNotFound';
+import ScrollToTop from 'components/ScrollToTop';
 import Nav from 'components/Nav';
 import Footer from 'components/Footer';
 import MenuOverlay from 'components/MenuOverlay';
@@ -41,6 +43,7 @@ export default function App() {
   return (
     <main className="App">
       <Router>
+        <ScrollToTop />
         {globalSettings && 'cookieConsentText' in globalSettings && (
           <CookieConsent
             content={globalSettings.cookieConsentText}
@@ -50,7 +53,13 @@ export default function App() {
             dismissButtonLabel={Language.t('CookieConsent.acceptButton.label')}
           />
         )}
-        <Nav theme={theme} menuIsOpen={menuIsOpen} onOpenMenu={openMenu} onCloseMenu={closeMenu} />
+        <Nav
+          setTheme={setTheme}
+          theme={theme}
+          menuIsOpen={menuIsOpen}
+          onOpenMenu={openMenu}
+          onCloseMenu={closeMenu}
+        />
         {'menu' in globalSettings && (
           <MenuOverlay globalSettings={globalSettings} closeMenu={closeMenu} isOpen={menuIsOpen} />
         )}

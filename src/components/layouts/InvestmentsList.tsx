@@ -46,7 +46,9 @@ const InvestmentListItem = (item: InvestmentsListItem) => {
               </div>
             ))}
           </div>
-          <div className="color-charcoal uppercase">{item.company.name}</div>
+          <div className="InvestmentsList__company color-charcoal uppercase">
+            {item.company.name}
+          </div>
           {item.company.tag && (
             <div className="self-start secondary-xs bg-color-lilac color-charcoal my1_25 md:mb0 md:mt1_5 py_5 px1 flex flex-col items-center radius-xs">
               {item.company.tag}

@@ -24,13 +24,13 @@ const PhotoCard: React.FC<Props> = ({ founder }) => {
             <span className="color-white">
               {firstName} {lastName}
             </span>
-            <span className="color-lilac">{company}</span>
+            <span className="color-lilac-darkest">{company}</span>
           </div>
         </div>
       </div>
 
       <Img
-        className="PhotoCard__img radius-xs w100 h100 absolute t0 r0"
+        className="PhotoCard__img radius-xs w100 h100 absolute t0 r0 fit-cover"
         src={founderPortrait.src}
         alt={founderPortrait.alt || Language.t('Global.fallbackAltLabel')}
       ></Img>

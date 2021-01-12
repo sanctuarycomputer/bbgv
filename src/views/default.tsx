@@ -11,7 +11,6 @@ import PageNotFound from 'components/PageNotFound';
 type Props = ContainerProps & {
   model: DefaultPage;
 };
-
 const DefaultView: FC<Props> = (props) => {
   const { model } = props;
   const { intro, seo, content } = model;
@@ -23,15 +22,13 @@ const DefaultView: FC<Props> = (props) => {
   return (
     <div className="DefaultView page-style--margin-top">
       <Meta seo={seo} />
-      {intro && (
-        <TextModule
-          className="text-module-padding-x py3_75 lg:py7_5"
-          variant="default"
-          heading={intro.heading}
-          subheading={intro.subheading}
-          briefParagraph={intro.briefParagraph}
-        />
-      )}
+      <TextModule
+        className="py3_75 lg:py7_5"
+        variant="default"
+        heading={intro.heading}
+        subheading={intro.subheading}
+        briefParagraph={intro.briefParagraph}
+      />
       <article>
         <DefaultPageContent content={content} />
       </article>

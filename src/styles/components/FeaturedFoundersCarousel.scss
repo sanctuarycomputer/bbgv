@@ -1,5 +1,5 @@
 .FeaturedFoundersCarousel {
-  // /** Fixes overflow issues */
+  /** Fixes overflow issues */
   overflow: hidden;
   min-width: 100%;
   width: 0;
@@ -34,7 +34,7 @@
   }
 
   &__pagination-container {
-    bottom: 0;
+    bottom: -1rem;
     left: 0;
 
     @include media('md-up') {
@@ -49,7 +49,7 @@
       height: 0.1875rem;
       margin-right: 0.1875rem;
       width: 1.5rem;
-      background: lighten(color('charcoal'), 50%);
+      background: color('lilac-lighter');
 
       @include media('sm-up') {
         width: 1.6875rem;
@@ -58,7 +58,7 @@
       &__progress {
         width: 0;
         height: 100%;
-        background: color('charcoal');
+        background: color('lilac-darkest');
         content: '';
         position: absolute;
         top: 0;

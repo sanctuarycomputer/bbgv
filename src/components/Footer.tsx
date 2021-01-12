@@ -101,7 +101,7 @@ const Footer: React.FC<Props> = ({ globalSettings }) => {
         </div>
       </div>
 
-      <div className="Footer__section-two bg-color-lilac-lighter lg:col-3 px_75 md:px1_5 pt3_75 pb3 flex flex-row lg:flex-col relative">
+      <div className="Footer__section-two bg-color-lilac-lighter lg:col-3 px_75 md:px1_5 py3 flex flex-row lg:flex-col relative">
         <div className="flex flex-col col-6 lg:col-12">
           <div className="color-charcoal secondary-bold-sm mb1_5 lg:mb3_75">
             {footerMenu.secondSectionHeading}
@@ -152,7 +152,7 @@ const Footer: React.FC<Props> = ({ globalSettings }) => {
       </div>
 
       {copyrightSection(
-        'bg-color-chalk lg:none flex flex-col secondary-xxs color-charcoal py3_75 px_75 md:px1_5'
+        'bg-color-chalk lg:none flex flex-col secondary-xxs color-charcoal py3 px_75 md:px1_5'
       )}
     </div>
   );

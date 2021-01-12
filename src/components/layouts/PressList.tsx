@@ -5,7 +5,6 @@ import withBreakpoints, {
   InjectedProps as WithBreakpointsProps,
 } from 'lib/withBreakpoints';
 import { PressListItem } from 'lib/cms/types';
-import { Button } from 'components/base';
 import { LineIconWithButton } from 'components/icons';
 
 type PassedProps = {
@@ -30,7 +29,7 @@ const PressList: React.FC<Props> = ({ heading, items, className, variant, mediaQ
         </div>
       )}
       {items.map((item: PressListItem) => (
-        <div key={item.heading} className="PressList__item col-12">
+        <div key={item.heading} className="PressList__item text-module-padding-x col-12">
           {PressItem(item, mediaQuery)}
         </div>
       ))}

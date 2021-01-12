@@ -35,6 +35,7 @@ const PortfolioListing: React.FC<Props> = ({ sectors, className, mediaQuery }) =
               containerClassName={cx({
                 w100: !breakpointIsSmUp && company.founders.length < 2,
               })}
+              wrap={true}
               className="PortfolioListing__company-container bg-color-transparent text-left flex flex-row flex-wrap transition"
             >
               <div className="PortfolioListing__card--style-header radius-xs flex flex-row pt3 pb1_5 px_75 md:py0 md:px0 items-start justify-between md:flex-col">

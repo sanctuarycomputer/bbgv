@@ -15,6 +15,14 @@
     }
   }
 
+  &__intro-line-container {
+    display: block;
+
+    @include media('sm-up') {
+      display: inline;
+    }
+  }
+
   &__heading p,
   &__intro-byline p {
     display: inline;

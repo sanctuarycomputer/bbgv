@@ -15,12 +15,11 @@
   }
 
   &__photo-card {
-    top: 3rem;
-    right: -6rem;
+    top: 5rem;
+    right: -5rem;
 
-    @include media('md-up') {
-      top: 7rem;
-      right: -5rem;
+    @include media('lg-up') {
+      right: -10rem;
     }
   }
 }

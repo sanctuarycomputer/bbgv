@@ -2,11 +2,11 @@
   height: $nav-height-mobile;
 
   @include media('md-up') {
-    height: $nav-height-tablet;
-    padding-top: 0.8125rem;
-  }
-  @include media('xl-up') {
     height: $nav-height-desktop;
+  }
+
+  &__menu-icon {
+    width: 2rem;
   }
 
   &__logo-bbgv {

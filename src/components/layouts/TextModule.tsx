@@ -25,7 +25,7 @@ const TextModule: React.FC<Props> = ({
   return (
     <div
       className={cx(
-        `TextModule TextModule--style-${variant} ${className} bg-color-${variant} ${fontColor}`
+        `TextModule TextModule--style-${variant} ${className} bg-color-${variant} ${fontColor} text-module-padding`
       )}
     >
       <div

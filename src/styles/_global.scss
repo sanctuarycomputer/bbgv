@@ -62,6 +62,16 @@ html {
   }
 }
 
+.text-module-padding {
+  padding-left: $site-padding-x-mobile;
+  padding-right: $site-padding-x-mobile;
+
+  @include media('lg-up') {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 // Default Pages and Home Page
 .page-style--margin-top {
   margin-top: calc(#{$nav-top-margin-mobile} + #{$nav-height-mobile});

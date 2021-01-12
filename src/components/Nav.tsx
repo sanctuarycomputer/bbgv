@@ -13,19 +13,33 @@ import Classes from 'constants/Classes';
 
 import { Button } from 'components/base';
 import { BBGVLogo, MenuIcon, CloseIcon, BBGLogo, VenturesLogo } from 'components/icons';
+import { setTheme } from 'state/actions/applicationActions';
+import companyDetail from 'containers/companyDetail';
 
 type PassedProps = {
   theme: Theme;
   menuIsOpen: boolean;
   onOpenMenu: () => void;
   onCloseMenu: () => void;
+  setTheme: (theme: Theme) => void;
 };
 
 type Props = PassedProps & WithBreakpointsProps;
 
 const Nav: React.FC<Props> = (props) => {
   const { onOpenMenu, onCloseMenu, theme, menuIsOpen, mediaQuery } = props;
-  const iconColor = theme === 'default' || menuIsOpen ? 'charcoal' : 'chalk';
+
+  /* Determines if the current scroll position is before of after the hero module. On pages where a hero module has a mulberry background, the nav logo should change to charcoal after passing the hero module. **/
+  const statisticsModule = document.getElementById(Classes.whyWeInvestStatisticsModule);
+  const companyDetailLandingModule = document.querySelector(`.${Classes.companyDetailLanding}`);
+  const hasPassedStatisticsModule = statisticsModule && hasPassedElement(statisticsModule);
+  const hasPassedCompanyDetailLanding =
+    companyDetailLandingModule && hasPassedElement(companyDetailLandingModule);
+  const iconColor =
+    theme === 'default' || menuIsOpen || hasPassedStatisticsModule || hasPassedCompanyDetailLanding
+      ? 'charcoal'
+      : 'chalk';
+
   const breakpointIsMdUp = mediaQuery.isMediumUp;
   const [scrollPosition, setScrollPosition] = useState(0);
   const [hoverLogo, setHoverLogo] = useState(false);
@@ -33,9 +47,18 @@ const Nav: React.FC<Props> = (props) => {
   const location = useLocation();
   const isHome = location.pathname === RouteMap.HOME.path;
 
+  const handleNavLogoClick = () => {
+    if (menuIsOpen) {
+      onCloseMenu();
+    }
+
+    return null;
+  };
+
   const handleNavLogo = useCallback(() => {
     /* Determines if the current scroll position is before of after the logo in the Home Hero Module **/
     const logo = document.querySelector(`.${Classes.homeHeroLogo}`);
+
     const scrollTop =
       get(window, 'pageYOffset', 0) || get(document, 'documentElement.scrollTop', 0);
 
@@ -95,7 +118,7 @@ const Nav: React.FC<Props> = (props) => {
   }, [location, handleNavLogo]);
 
   return (
-    <nav className="Nav site-padding-x mxauto z-nav flex items-center justify-between fixed w100 t0 l0">
+    <nav className="Nav mxauto site-padding-x z-nav flex items-center justify-between fixed w100 t0 l0">
       <Button
         containerClassName={cx(
           'Nav__logo-outer-container opacity-0 events-none transition-shortest',
@@ -116,26 +139,26 @@ const Nav: React.FC<Props> = (props) => {
         wrap={false}
         onMouseEnter={() => setHoverLogo(true)}
         onMouseLeave={() => setHoverLogo(false)}
+        onClick={handleNavLogoClick}
       >
         {isHome && showNavLogo ? (
           <span>
-            <BBGLogo className="Nav__logo-bbg" color={iconColor} />
+            <BBGLogo className="Nav__logo-bbg transition-shorter" color={iconColor} />
             <VenturesLogo
-              className={cx('Nav__logo-ventures', {
+              className={cx('Nav__logo-ventures transition-shorter', {
                 'move-right': hoverLogo,
               })}
               color={iconColor}
             />
           </span>
         ) : (
-          <BBGVLogo className="Nav__logo-bbgv" color={iconColor} />
+          <BBGVLogo className="Nav__logo-bbgv transition-shorter" color={iconColor} />
         )}
       </Button>
-
       {menuIsOpen ? (
         <Button
-          containerClassName="Nav__menu-icon w100 h100"
-          className="bg-color-transparent"
+          containerClassName="w100 h100"
+          className="Nav__menu-icon bg-color-transparent"
           ariaLabel={Language.t('Nav.menuButtonAriaLabel')}
           onClick={onCloseMenu}
         >
@@ -143,12 +166,12 @@ const Nav: React.FC<Props> = (props) => {
         </Button>
       ) : (
         <Button
-          containerClassName="Nav__menu-icon w100 h100"
-          className="bg-color-transparent"
+          containerClassName="w100 h100"
+          className="Nav__menu-icon bg-color-transparent"
           ariaLabel={Language.t('Nav.menuButtonAriaLabel')}
           onClick={onOpenMenu}
         >
-          <MenuIcon className="w100 h100" color={iconColor} />
+          <MenuIcon className="transition-shorter w100 h100" color={iconColor} />
         </Button>
       )}
     </nav>
