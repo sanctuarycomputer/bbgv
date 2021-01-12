@@ -27,7 +27,7 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
 
   static defaultProps = {
     showPagination: true,
-    speed: 5000,
+    speed: 1000,
   };
 
   state = {
@@ -35,24 +35,15 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
     shouldCancelNextTimeout: false,
   };
 
-  componentDidMount() {
-    this.interval = setInterval(this.attemptNextSlide, this.props.speed);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
+  previous = () => {
+    this.sliderRef.current?.slickPrev();
+  };
 
   next = () => {
-    const { slides } = this.props;
-    const { currentSlide } = this.state;
-
     this.sliderRef.current?.slickNext();
   };
 
   goTo = (slideIndex: number, shouldCancelNextTimeout = false) => {
-    console.log('go to slideIndex', slideIndex);
-
     this.sliderRef.current?.slickGoTo(slideIndex);
     this.setState({ shouldCancelNextTimeout });
   };
@@ -129,7 +120,7 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
                           slideNumber: index,
                         })}
                         className={cx(
-                          'FeaturedFoundersCarousel__pagination__dot radius-button-sm pointer events-all',
+                          'FeaturedFoundersCarousel__pagination__dot radius-button-sm pointer events-all transition',
                           {
                             'FeaturedFoundersCarousel__pagination__dot--active':
                               index < currentSlide,
@@ -138,12 +129,7 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
                           }
                         )}
                         onClick={() => this.goTo(index, true)}
-                      >
-                        <div
-                          className="FeaturedFoundersCarousel__pagination__dot__progress"
-                          style={{ animationDuration: `${speed}ms` }}
-                        />
-                      </Button>
+                      ></Button>
                     </div>
                   );
                 })}
@@ -151,7 +137,7 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
               <Button
                 ariaLabel={Language.t('Slideshow.viewNext')}
                 className="text-left bg-color-transparent text-decoration-none color-lilac-very-dark secondary-bold-xs mt_75 z-3"
-                onClick={this.next}
+                onClick={this.previous}
                 label={Language.t('Slideshow.viewNext')}
               />
             </div>
@@ -161,14 +147,10 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
             <Slider
               ref={this.sliderRef}
               className="FeaturedFoundersCarousel__slideshow"
-              adaptiveHeight={true}
               arrows={false}
               autoplay={false}
               dots={false}
-              centerMode={true}
-              centerPadding="0px"
-              speed={4000}
-              infinite={true}
+              speed={speed}
               afterChange={(current) => this.setState({ currentSlide: current })}
             >
               {slides.map((slide: FeaturedFoundersCarouselSlide, index: number) => {
