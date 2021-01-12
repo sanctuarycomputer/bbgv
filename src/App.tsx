@@ -7,10 +7,11 @@ import Routes from 'constants/routes';
 import 'styles/App.scss';
 
 import { Status } from 'types';
+
 import { intializeApplication } from 'state/actions/applicationActions';
 import { setMenuOpen, setMenuClosed } from 'state/actions/uiActions';
 
-import { Button } from 'components/base';
+import PageNotFound from 'components/PageNotFound';
 import Nav from 'components/Nav';
 import Footer from 'components/Footer';
 import MenuOverlay from 'components/MenuOverlay';
@@ -27,8 +28,6 @@ export default function App() {
   const openMenu = useCallback(() => dispatch(setMenuOpen()), [dispatch]);
   const closeMenu = useCallback(() => dispatch(setMenuClosed()), [dispatch]);
 
-  //TO-DO: show 404 page if application status is rejected.
-
   useEffect(() => {
     initApp();
   }, [initApp]);
@@ -36,6 +35,8 @@ export default function App() {
   if (appStatus === Status.IDLE || appStatus === Status.PENDING) {
     return <Loader />;
   }
+
+  if (appStatus === Status.REJECTED) return <PageNotFound />;
 
   return (
     <main className="App">
