@@ -19,8 +19,8 @@ const CarouselVideo: React.FC<Props> = ({ images, vimeoId }) => {
   }
 
   return (
-    <div className="VideoModule flex flex-col w100 h100 radius-xs">
-      <div className="VideoModule__video-container relative">
+    <div className="VideoModule flex flex-col h100">
+      <div className="VideoModule__video-container relative h100">
         <div
           className={cx('VideoModule__cover-image transition absolute t0 b0 w100 h100', {
             'opacity-1': !showVideo,
@@ -32,7 +32,7 @@ const CarouselVideo: React.FC<Props> = ({ images, vimeoId }) => {
               images.map((image: Image) => {
                 return (
                   <Img
-                    className="FeaturedFoundersCarousel__image col-4 radius-xs w100 h100 fit-cover debug"
+                    className="FeaturedFoundersCarousel__image col-4 radius-xs w100 h100 fit-cover"
                     src={image.src}
                     alt={image.alt || Language.t('Global.fallbackAltLabel')}
                   />
@@ -48,15 +48,15 @@ const CarouselVideo: React.FC<Props> = ({ images, vimeoId }) => {
             <LineIcon className="VideoModule__button-line-icon mr_25" color="chalk" />
             {Language.t('Video.playButton.label')}
           </Button>
+        </div>
 
-          <div
-            className={cx('VideoModule__video-outer-container radius-xs overflow-hidden', {
-              'events-none': !showVideo,
-              'events-all': showVideo,
-            })}
-          >
-            <Video vimeoId={vimeoId} />
-          </div>
+        <div
+          className={cx('VideoModule__video-outer-container radius-xs overflow-hidden h100', {
+            'events-none': !showVideo,
+            'events-all': showVideo,
+          })}
+        >
+          <Video vimeoId={vimeoId} />
         </div>
       </div>
     </div>
