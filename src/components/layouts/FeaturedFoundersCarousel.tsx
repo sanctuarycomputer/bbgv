@@ -66,7 +66,9 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
       >
         <div className="col-12 h100 mxauto flex flex-row mb1_25 md:mb1_5">
           {slide.vimeoId ? (
-            <CarouselVideo vimeoId={slide.vimeoId} images={slide.images} />
+            <div className="FeaturedFoundersCarousel__video-container col-12">
+              <CarouselVideo vimeoId={slide.vimeoId} images={slide.images} />
+            </div>
           ) : (
             slide.images &&
             slide.images.map((image: Image) => {

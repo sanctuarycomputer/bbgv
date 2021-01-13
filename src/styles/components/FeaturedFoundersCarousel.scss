@@ -4,7 +4,8 @@
   min-width: 100%;
   width: 0;
 
-  &__image {
+  &__image,
+  &__video-container {
     height: 9.984375rem;
 
     @include media('sm-up') {
