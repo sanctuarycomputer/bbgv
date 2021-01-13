@@ -8,6 +8,7 @@ import generateFullName from 'utils/generateFullName';
 import generateCompanyDetailUrl from 'utils/generateCompanyDetailUrl';
 import PortableText from 'components/PortableText';
 import { LineIconWithButton } from 'components/icons';
+import CarouselVideo from 'components/CarouselVideo';
 
 type Props = {
   slides: FeaturedFoundersCarouselSlide[];
@@ -20,7 +21,6 @@ type State = {
 };
 
 class FeaturedFoundersCarousel extends PureComponent<Props, State> {
-  private interval: number | undefined;
   private sliderRef = createRef<Slider>();
 
   static defaultProps = {
@@ -62,8 +62,11 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
         key={generateFullName(slide.founder)}
         className="FeaturedFoundersCarousel__slide__card flex flex-col"
       >
-        <div className="col-12 h100 mxauto flex flex-row pb1_25 md:pb1_5">
-          {slide.images &&
+        <div className="col-12 h100 mxauto flex flex-row mb1_25 md:mb1_5">
+          {slide.vimeoId ? (
+            <CarouselVideo vimeoId={slide.vimeoId} images={slide.images} />
+          ) : (
+            slide.images &&
             slide.images.map((image: Image) => {
               return (
                 <Img
@@ -72,7 +75,8 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
                   alt={image.alt || Language.t('Global.fallbackAltLabel')}
                 />
               );
-            })}
+            })
+          )}
         </div>
 
         <div className="flex flex-col md:flex-row justify-between">
@@ -102,7 +106,7 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
     return (
       <div className="FeaturedFoundersCarousel site-inner-content-max-width mxauto pb3 md:pb5">
         <div className="relative w100 h100 pb3 md:pb5">
-          <div className="FeaturedFoundersCarousel__pagination-container absolute z-3 px_75 md:pr3_75">
+          <div className="FeaturedFoundersCarousel__pagination-container absolute z-3 px_75 lg:pr3_75">
             <div className="FeaturedFoundersCarousel__pagination relative col-12 flex flex-col">
               <div className="FeaturedFoundersCarousel__pagination__inner flex flex-row col-12 events-none">
                 {slides.map((slide: FeaturedFoundersCarouselSlide, index) => {
