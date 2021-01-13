@@ -11,6 +11,8 @@ interface Props {
   vimeoId: string;
 }
 
+//TO-DO: Fix video crop
+
 const CarouselVideo: React.FC<Props> = ({ images, vimeoId }) => {
   const [showVideo, setShowVideo] = useState(false);
 
