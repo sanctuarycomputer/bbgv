@@ -61,7 +61,7 @@ const HeroTextModule: React.FC<Props> = ({
             {introLine}
           </div>
 
-          <span className="primary-xxl">
+          <span className="primary-xxl vertical-align-middle">
             {introBylineLinks.map((link: MenuLink, i: number) => {
               return (
                 <>

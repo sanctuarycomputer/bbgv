@@ -116,7 +116,7 @@
   },
   "PageNotFound": {
     "error404": "Error 404",
-    "heading": "We weren't able to find the page you were looking for.",
+    "heading": "We weren’t able to find the page you were looking for.",
     "description": "The page you are looking for might not exist, has been removed, had its name changed, or is temporarily unavailable.",
     "solutions": "Please try the following: Check your spelling, click the back button in your browser, or ",
     "homePageButtonLabel": "Return to the home page"

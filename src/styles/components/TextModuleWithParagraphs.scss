@@ -2,6 +2,37 @@
   &--style-one-column,
   &--style-two-columns {
     &__paragraph {
+      ul,
+      ol {
+        list-style-position: inside;
+      }
+
+      ul {
+        list-style-type: none;
+
+        li {
+          background-image: url('../../components/icons/BulletPointIcon.svg');
+          background-repeat: no-repeat;
+          background-position: 1px;
+          padding-left: 3.375rem;
+
+          strong {
+            @extend .secondary-bold-sm;
+          }
+        }
+      }
+
+      ol li a,
+      ul li a {
+        @extend .link--style-body-charcoal;
+      }
+
+      ol li::before {
+        content: '';
+        width: 2.375rem;
+        display: inline-block;
+      }
+
       div {
         ul,
         ol {
