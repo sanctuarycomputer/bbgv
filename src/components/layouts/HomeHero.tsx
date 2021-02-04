@@ -79,7 +79,10 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
           </span>
           <span className="primary-xxl inline">
             {founders.map((founder: Founder, index: number) => (
-              <span key={founder.firstName} className="color-charcoal HomeHero__founder inline">
+              <span
+                key={`HomeHero-${founder.firstName}-${index}}`}
+                className="color-charcoal HomeHero__founder inline"
+              >
                 {index !== founders.length - 1 ? (
                   <span>
                     <span>{founder.firstName}</span>
@@ -110,7 +113,10 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
           </div>
           <span className="HomeHero__founders-container color-charcoal primary-xxl inline">
             {founders.map((founder: Founder, index: number) => (
-              <span key={founder.firstName} className="HomeHero__founder relative">
+              <span
+                key={`HomeHero-${founder.firstName}-${index}}`}
+                className="HomeHero__founder relative"
+              >
                 <Button
                   wrap={true}
                   className="HomeHero__founder primary-xxl bg-color-transparent inline text-decoration-none hover-color-lilac-darkest color-charcoal transition"
