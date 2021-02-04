@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import cx from 'classnames';
 
-import { InvestmentsListItem, Founder } from 'lib/cms/types';
+import { InvestmentsListItem } from 'lib/cms/types';
 import Language from 'constants/Language';
 
 import { Img } from 'components/base';
@@ -14,7 +14,28 @@ type Props = {
   items: InvestmentsListItem[];
 };
 
+const investmentsListPaginationPerPage: number = 3;
+
 const InvestmentsList: React.FC<Props> = ({ heading, items, className }) => {
+  const [listOfItems, setListOfItems] = useState(items);
+  const [amountShown, setAmountShown] = useState(investmentsListPaginationPerPage);
+
+  const didClickShowMore = useCallback(() => {
+    const nextAmountShown = Math.min(
+      amountShown + investmentsListPaginationPerPage,
+      listOfItems.length
+    );
+    setAmountShown(nextAmountShown);
+  }, [amountShown, listOfItems]);
+
+  useEffect(() => {
+    setListOfItems(items);
+    setAmountShown(investmentsListPaginationPerPage);
+  }, [items]);
+
+  const displayedItems = listOfItems.slice(0, amountShown);
+  const hasMore = listOfItems.length > displayedItems.length;
+
   return (
     <div
       className={cx('InvestmentsList col-12 lg:col-10 mxauto flex flex-row flex-wrap', className)}
@@ -22,11 +43,22 @@ const InvestmentsList: React.FC<Props> = ({ heading, items, className }) => {
       <div className="InvestmentsList__heading uppercase color-charcoal primary-sm pb_75 md:pb2_25">
         {heading}
       </div>
-      {items.map((item: InvestmentsListItem) => (
-        <div key={`InvestmentsList-${item.companyName}`} className="InvestmentsList__item col-12">
-          {InvestmentListItem(item)}
+      <div className="InvestmentsList__items-container">
+        {displayedItems.map((item: InvestmentsListItem) => (
+          <div key={`InvestmentsList-${item.companyName}`} className="InvestmentsList__item col-12">
+            {InvestmentListItem(item)}
+          </div>
+        ))}
+      </div>
+      {hasMore && (
+        <div className="InvestmentsList__pagination pt2 col-12">
+          <LineIconWithButton
+            onClick={didClickShowMore}
+            color="charcoal"
+            label={Language.t('Global.loadMore')}
+          />
         </div>
-      ))}
+      )}
     </div>
   );
 };
