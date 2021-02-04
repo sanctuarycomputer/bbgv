@@ -2,7 +2,6 @@ import React from 'react';
 import cx from 'classnames';
 
 import { InvestmentsListItem, Founder } from 'lib/cms/types';
-import generateFullName from 'utils/generateFullName';
 import Language from 'constants/Language';
 
 import { Img } from 'components/base';
@@ -24,7 +23,7 @@ const InvestmentsList: React.FC<Props> = ({ heading, items, className }) => {
         {heading}
       </div>
       {items.map((item: InvestmentsListItem) => (
-        <div key={`InvestmentsList-${item.company.name}`} className="InvestmentsList__item col-12">
+        <div key={`InvestmentsList-${item.companyName}`} className="InvestmentsList__item col-12">
           {InvestmentListItem(item)}
         </div>
       ))}
@@ -38,28 +37,26 @@ const InvestmentListItem = (item: InvestmentsListItem) => {
   return (
     <div className="InvestmentsList__item-inner-container col-12 flex flex-col md:flex-row py1_5">
       <div className="flex flex-row col-12 md:col-6">
-        <div className="InvestmentsList__company-detail-container font-primary col-7 flex flex-col">
+        <div className="InvestmentsList__company-detail-container font-primary col-7 pr3 flex flex-col">
           <div className="InvestmentsList__founders color-lilac-very-dark uppercase">
-            {item.company.founders?.map((founder: Founder) => (
-              <div key={`InvestmentsList-founders-${generateFullName(founder)}`}>
-                {generateFullName(founder)}{' '}
-              </div>
+            {item.founders?.map((founder: string) => (
+              <div key={`InvestmentsList-founders-${founder}`}>{founder}</div>
             ))}
           </div>
           <div className="InvestmentsList__company color-charcoal uppercase">
-            {item.company.name}
+            {item.companyName}
           </div>
-          {item.company.tag && (
+          {item.companyTag && (
             <div className="self-start secondary-xs bg-color-lilac color-charcoal my1_25 md:mb0 md:mt1_5 py_5 px1 flex flex-col items-center radius-xs">
-              {item.company.tag}
+              {item.companyTag}
             </div>
           )}
         </div>
 
         <div className="InvestmentsList__logo-container col-5 flex flex-col items-end md:items-start">
           <Img
-            src={item.company.logo.src}
-            alt={item.company.logo.alt || Language.t('Global.fallbackAltLabel')}
+            src={item.companyLogo.src}
+            alt={item.companyLogo.alt || Language.t('Global.fallbackAltLabel')}
             className="InvestmentsList__logo w100 h100 fit-contain"
           />
         </div>
