@@ -60,7 +60,7 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
     return (
       <div
         key={generateFullName(slide.founder)}
-        className="FeaturedFoundersCarousel__slide__card flex flex-col"
+        className="FeaturedFoundersCarousel__slide__card relative flex flex-col"
       >
         <div className="col-12 h100 mxauto flex flex-row mb1_25 md:mb1_5">
           {slide.vimeoId ? (
@@ -69,9 +69,10 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
             </div>
           ) : (
             slide.images &&
-            slide.images.map((image: Image) => {
+            slide.images.map((image: Image, index: number) => {
               return (
                 <Img
+                  key={`FeaturedFoundersCarousel-${image.src}-${index}}`}
                   className="FeaturedFoundersCarousel__image col-4 radius-xs w100 h100 fit-cover"
                   src={image.src}
                   alt={image.alt || Language.t('Global.fallbackAltLabel')}
@@ -113,9 +114,8 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
               <div className="FeaturedFoundersCarousel__pagination__inner flex flex-row col-12 events-none">
                 {slides.map((slide: FeaturedFoundersCarouselSlide, index) => {
                   return (
-                    <div>
+                    <div key={`FeaturedFoundersCarousel-${slide.founder.firstName}`}>
                       <Button
-                        key={`FeaturedFoundersCarousel-${slide.founder.firstName}`}
                         ariaLabel={Language.t('Slideshow.paginationDot', {
                           slideNumber: index,
                         })}

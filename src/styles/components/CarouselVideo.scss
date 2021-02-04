@@ -1,0 +1,21 @@
+.CarouselVideo {
+  &__button {
+    @extend .transition-shorter;
+
+    &:hover {
+      .CarouselVideo__button-line-icon {
+        width: 2.25rem;
+      }
+
+      .CarouselVideo__button-placeholder-div {
+        width: 0;
+      }
+    }
+  }
+
+  &__button-line-icon {
+    @extend .transition-shorter;
+    width: 1.0625rem;
+    height: 0.125rem;
+  }
+}
