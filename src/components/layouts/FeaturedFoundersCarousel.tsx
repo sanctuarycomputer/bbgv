@@ -117,7 +117,7 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
         <div className="relative w100 h100 pb3 md:pb5">
           <div className="FeaturedFoundersCarousel__pagination-container absolute z-3 px_75 lg:pr3_75">
             <div className="FeaturedFoundersCarousel__pagination relative col-12 flex flex-col">
-              <div className="FeaturedFoundersCarousel__pagination__inner flex flex-row col-12 events-none">
+              {/* <div className="FeaturedFoundersCarousel__pagination__inner flex flex-row col-12 events-none">
                 {slides.map((slide: FeaturedFoundersCarouselSlide, index) => {
                   return (
                     <div key={`FeaturedFoundersCarousel-${slide.founder.firstName}`}>
@@ -139,12 +139,12 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
                     </div>
                   );
                 })}
-              </div>
+              </div> */}
               <Button
-                ariaLabel={Language.t('Slideshow.viewNext')}
+                ariaLabel={Language.t('Slideshow.viewNextFounder')}
                 className="text-left bg-color-transparent text-decoration-none color-lilac-very-dark secondary-bold-xs mt_75 z-3"
                 onClick={this.previous}
-                label={Language.t('Slideshow.viewNext')}
+                label={Language.t('Slideshow.viewNextFounder')}
               />
             </div>
           </div>
