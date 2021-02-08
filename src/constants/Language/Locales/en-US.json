@@ -57,6 +57,7 @@
   },
   "Slideshow": {
     "viewNext": "View next",
+    "viewNextFounder": "Next Founder",
     "paginationDot": "Advance carousel to slide %{slideNumber}",
     "readMoreButtonLabel": "Read more about %{founder}",
     "readMoreButtonAriaLabel": "Read more about %{founder}"
