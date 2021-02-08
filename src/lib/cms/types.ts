@@ -293,10 +293,17 @@ export const TextModuleWithParagraphs = t.intersection([
 ]);
 
 export type InvestmentsListItem = t.TypeOf<typeof InvestmentsListItem>;
-export const InvestmentsListItem = t.type({
-  company: Company,
-  description: ParagraphWithButton,
-});
+export const InvestmentsListItem = t.intersection([
+  t.type({
+    companyName: t.string,
+    companyLogo: Image,
+    founders: t.array(t.string),
+    description: ParagraphWithButton,
+  }),
+  t.partial({
+    companyTag: t.string,
+  }),
+]);
 
 export type InvestmentsListModule = t.TypeOf<typeof InvestmentsListModule>;
 export const InvestmentsListModule = t.type({

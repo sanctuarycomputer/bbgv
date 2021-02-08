@@ -1,10 +1,10 @@
 .InvestmentsList {
-  > .InvestmentsList__item {
-    border-top: 2px solid color('lilac');
-  }
-
-  > .InvestmentsList__item:last-child {
+  &__items-container {
     border-bottom: 2px solid color('lilac');
+
+    > .InvestmentsList__item {
+      border-top: 2px solid color('lilac');
+    }
   }
 
   &__button {

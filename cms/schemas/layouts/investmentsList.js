@@ -15,7 +15,7 @@ export default {
       name: 'items',
       type: 'array',
       description:
-        'Select companies to add to the Investments List. To change the order of appearance, drag a company and place it in the correct position.',
+        'To change the order of appearance, drag a company and place it in the correct position.',
       of: [
         {
           type: 'object',
@@ -27,13 +27,29 @@ export default {
               validation: (Rule) => Rule.required(),
             },
             {
-              title: 'Company',
-              name: 'company',
-              type: 'reference',
-              description:
-                'Select a Company from the dropdown menu below. Information from the Company, including their logo and founder(s), will appear in this module.',
-              to: [{ type: 'company' }],
+              title: 'Company Logo',
+              name: 'companyLogo',
+              type: 'imageField',
               validation: (Rule) => Rule.required(),
+            },
+            {
+              title: 'Founder(s)',
+              name: 'founders',
+              type: 'array',
+              description: 'Add the Founder(s) name(s).',
+              validation: (Rule) => Rule.required().min(1),
+              of: [
+                {
+                  type: 'string',
+                },
+              ],
+            },
+            {
+              title: 'Company Tag',
+              name: 'companyTag',
+              type: 'string',
+              description:
+                'This is an optional tag that can be the status of a company, such as "exited".',
             },
             {
               title: 'Brief description with optional button',

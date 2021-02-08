@@ -1,10 +1,13 @@
-import Company from './Company';
+import Image from './Image';
 
 export default `{
   _type,
   heading,
   items[]{
-    company->${Company},
+    founders,
+    companyName,
+    companyLogo${Image},
+    companyTag,
     description
   },
 }`;
