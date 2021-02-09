@@ -358,6 +358,7 @@ export const FeaturedFoundersCarouselSlide = t.intersection([
 export type FeaturedFoundersCarousel = t.TypeOf<typeof FeaturedFoundersCarousel>;
 export const FeaturedFoundersCarousel = t.type({
   _type: t.string,
+  heading: t.string,
   slides: t.array(FeaturedFoundersCarouselSlide),
 });
 

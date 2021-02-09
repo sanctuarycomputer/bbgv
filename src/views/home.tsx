@@ -40,7 +40,10 @@ const HomeView: FC<Props> = (props) => {
         subheading={featuredFoundersCarouselSectionHeading.subheading}
         briefParagraph={featuredFoundersCarouselSectionHeading.briefParagraph}
       />
-      <FeaturedFoundersCarousel slides={featuredFoundersCarousel.slides} />
+      <FeaturedFoundersCarousel
+        heading={featuredFoundersCarousel.heading}
+        slides={featuredFoundersCarousel.slides}
+      />
       <TextModule
         className="py3_75"
         variant="mulberry"

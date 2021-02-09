@@ -4,6 +4,7 @@ import CompanyGroq from './Company';
 
 export default `{
   _type,
+  heading,
   'slides': slides[]{
     'images': images[]${ImageGroq},
     'vimeoId': vimeoId,
