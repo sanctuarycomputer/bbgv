@@ -13,6 +13,12 @@ interface State {
   error: boolean;
 }
 
+declare global {
+  interface Window {
+    test: any;
+  }
+}
+
 class Video extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
@@ -40,25 +46,29 @@ class Video extends Component<Props, State> {
       controls: true,
       loop: false,
     });
-
+    if (window.test) {
+      window.test.push(player);
+    } else {
+      window.test = [player];
+    }
     this.setState({ player });
   };
 
   render() {
     const { className, vimeoId } = this.props;
     const { error } = this.state;
-
+    console.log(this.state.player);
     return (
       <div className={cx('Video', className)}>
-        {!error && vimeoId && (
-          <div className="Video__video-container relative flex items-center justify-center">
-            <div className="flex col-12">
-              <div className="Video__video-wrapper w100 h100 flex justify-center transition">
-                <div id={vimeoId} className="w100 h100" />
-              </div>
+        {/* {!error && vimeoId && ( */}
+        <div className="Video__video-container relative flex items-center justify-center">
+          <div className="flex col-12">
+            <div className="Video__video-wrapper w100 h100 flex justify-center transition">
+              <div id={vimeoId} className="w100 h100" />
             </div>
           </div>
-        )}
+        </div>
+        {/* )} */}
       </div>
     );
   }

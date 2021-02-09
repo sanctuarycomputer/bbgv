@@ -111,44 +111,18 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
       <div className="FeaturedFoundersCarousel site-inner-content-max-width mxauto pb3 md:pb5">
         <div className="relative w100 h100 pb3 md:pb5">
           <div className="HEADING color-charcoal primary-md pb1_25">{heading}</div>
-          <div className="FeaturedFoundersCarousel__pagination-container absolute z-3 px_75 lg:pr3_75">
-            <div className="FeaturedFoundersCarousel__pagination relative col-12 flex flex-col">
-              {/* <div className="FeaturedFoundersCarousel__pagination__inner flex flex-row col-12 events-none">
-                {slides.map((slide: FeaturedFoundersCarouselSlide, index) => {
-                  return (
-                    <div key={`FeaturedFoundersCarousel-${slide.founder.firstName}`}>
-                      <Button
-                        ariaLabel={Language.t('Slideshow.paginationDot', {
-                          slideNumber: index,
-                        })}
-                        className={cx(
-                          'FeaturedFoundersCarousel__pagination__dot radius-button-sm pointer events-all transition',
-                          {
-                            'FeaturedFoundersCarousel__pagination__dot--active':
-                              index < currentSlide,
-                            'FeaturedFoundersCarousel__pagination__dot--current':
-                              index === currentSlide,
-                          }
-                        )}
-                        onClick={() => this.goTo(index, true)}
-                      ></Button>
-                    </div>
-                  );
-                })}
-              </div> */}
-              {/* <Button
-                ariaLabel={Language.t('Slideshow.viewNextFounder')}
-                className="text-left bg-color-transparent text-decoration-none color-lilac-very-dark secondary-bold-xs mt_75 z-3"
-                onClick={this.previous}
-              >
-                <RightArrow color="chalk"/>
-              </Button> */}
+          <div className="FeaturedFoundersCarousel__pagination-container absolute z-2">
+            <Button
+              ariaLabel={Language.t('Slideshow.viewNextFounder')}
+              className="text-left bg-color-transparent text-decoration-none color-lilac-very-dark secondary-bold-xs"
+              onClick={this.previous}
+            >
               <RightArrow color="chalk" />
-            </div>
+            </Button>
           </div>
 
           <div className="FeaturedFoundersCarousel__slides-container flex flex-col mxauto col-12 md:col-10">
-            <Slider
+            {/* <Slider
               ref={this.sliderRef}
               className="FeaturedFoundersCarousel__slideshow"
               arrows={false}
@@ -156,20 +130,20 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
               dots={false}
               speed={speed}
               afterChange={(current) => this.setState({ currentSlide: current })}
-            >
-              {slides.map((slide: FeaturedFoundersCarouselSlide, index: number) => {
-                return (
-                  <div
-                    className="FeaturedFoundersCarousel__slide w100 flex px_75 md:ml4 md:px4"
-                    key={`FeaturedFoundersCarousel-${slide.founder.lastName}-${index}`}
-                  >
-                    <div className="FeaturedFoundersCarousel__slide__card-container col-12">
-                      {this.renderSlide(slide)}
-                    </div>
+            > */}
+            {slides.map((slide: FeaturedFoundersCarouselSlide, index: number) => {
+              return (
+                <div
+                  className="FeaturedFoundersCarousel__slide w100 flex px_75 md:ml4 md:px4"
+                  key={`FeaturedFoundersCarousel-${generateFullName(slide.founder)}`}
+                >
+                  <div className="FeaturedFoundersCarousel__slide__card-container col-12">
+                    {this.renderSlide(slide)}
                   </div>
-                );
-              })}
-            </Slider>
+                </div>
+              );
+            })}
+            {/* </Slider> */}
           </div>
         </div>
       </div>
