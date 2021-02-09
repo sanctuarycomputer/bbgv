@@ -9,10 +9,11 @@ import { Img, Button } from 'components/base';
 import generateFullName from 'utils/generateFullName';
 import generateCompanyDetailUrl from 'utils/generateCompanyDetailUrl';
 import PortableText from 'components/PortableText';
-import { LineIconWithButton } from 'components/icons';
+import { LineIconWithButton, RightArrow } from 'components/icons';
 import CarouselVideo from 'components/CarouselVideo';
 
 type Props = {
+  heading: string;
   slides: FeaturedFoundersCarouselSlide[];
   speed?: number;
 };
@@ -109,12 +110,13 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
   };
 
   render() {
-    const { slides, speed } = this.props;
+    const { slides, speed, heading } = this.props;
     const { currentSlide } = this.state;
 
     return (
       <div className="FeaturedFoundersCarousel site-inner-content-max-width mxauto pb3 md:pb5">
         <div className="relative w100 h100 pb3 md:pb5">
+          <div className="HEADING color-charcoal primary-md pb1_25">{heading}</div>
           <div className="FeaturedFoundersCarousel__pagination-container absolute z-3 px_75 lg:pr3_75">
             <div className="FeaturedFoundersCarousel__pagination relative col-12 flex flex-col">
               {/* <div className="FeaturedFoundersCarousel__pagination__inner flex flex-row col-12 events-none">
@@ -140,12 +142,14 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
                   );
                 })}
               </div> */}
-              <Button
+              {/* <Button
                 ariaLabel={Language.t('Slideshow.viewNextFounder')}
                 className="text-left bg-color-transparent text-decoration-none color-lilac-very-dark secondary-bold-xs mt_75 z-3"
                 onClick={this.previous}
-                label={Language.t('Slideshow.viewNextFounder')}
-              />
+              >
+                <RightArrow color="chalk"/>
+              </Button> */}
+              <RightArrow color="chalk" />
             </div>
           </div>
 
