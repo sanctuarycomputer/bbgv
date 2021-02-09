@@ -23,7 +23,7 @@ const CarouselVideo: React.FC<Props> = ({ images, vimeoId }) => {
   return (
     <div className="CarouselVideo flex flex-col h100">
       <div className="CarouselVideo__video-container relative h100">
-        <div
+        {/* <div
           className={cx('CarouselVideo__cover-image transition absolute t0 b0 w100 h100', {
             'opacity-1': !showVideo,
             'opacity-0 events-none': showVideo,
@@ -50,16 +50,16 @@ const CarouselVideo: React.FC<Props> = ({ images, vimeoId }) => {
             <LineIcon className="CarouselVideo__button-line-icon mr_25" color="chalk" />
             {Language.t('Video.playButton.label')}
           </Button>
-        </div>
+        </div> */}
 
-        <div
-          className={cx('CarouselVideo__video-outer-container radius-xs overflow-hidden h100', {
-            'events-none': !showVideo,
-            'events-all': showVideo,
+        {/* <div
+          className={cx('CarouselVideo__video-outer-container radius-xs overflow-hidden h100 debug', {
+            // 'events-none': !showVideo,
+            // 'events-all': showVideo,
           })}
-        >
-          <Video vimeoId={vimeoId} />
-        </div>
+        > */}
+        <Video vimeoId={vimeoId} />
+        {/* </div> */}
       </div>
     </div>
   );
