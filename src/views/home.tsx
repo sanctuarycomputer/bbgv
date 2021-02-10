@@ -35,7 +35,7 @@ const HomeView: FC<Props> = (props) => {
       <HomeHero headline={hero.headline} founders={hero.founders} />
       <TextModule
         className="text-module-padding-x py3_75 lg:py7_5"
-        variant="homepage-default-bg"
+        variant="default"
         heading={featuredFoundersCarouselSectionHeading.heading}
         subheading={featuredFoundersCarouselSectionHeading.subheading}
         briefParagraph={featuredFoundersCarouselSectionHeading.briefParagraph}
@@ -43,14 +43,14 @@ const HomeView: FC<Props> = (props) => {
       <FeaturedFoundersCarousel slides={featuredFoundersCarousel.slides} />
       <TextModule
         className="py3_75"
-        variant="homepage-mulberry-bg"
+        variant="mulberry"
         heading={whyWeInvest.heading}
         subheading={whyWeInvest.subheading}
         briefParagraph={whyWeInvest.briefParagraph}
       />
       <TextModule
         className="py3_75 lg:py7_5"
-        variant="homepage-default-bg"
+        variant="default"
         heading={foundersImpactSectionHeading.heading}
         subheading={foundersImpactSectionHeading.subheading}
         briefParagraph={foundersImpactSectionHeading.briefParagraph}
@@ -66,7 +66,7 @@ const HomeView: FC<Props> = (props) => {
       />
       <TextModule
         className="py3_75 lg:py7_5"
-        variant="homepage-default-bg"
+        variant="default"
         heading={contact.heading}
         subheading={contact.subheading}
         briefParagraph={contact.briefParagraph}

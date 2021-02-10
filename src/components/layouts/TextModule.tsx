@@ -6,7 +6,7 @@ import { LineIcon, LineIconWithButton } from 'components/icons';
 
 type Props = {
   className?: string;
-  variant: 'mulberry' | 'default' | 'homepage-default-bg' | 'homepage-mulberry-bg';
+  variant: 'mulberry' | 'default';
   subheading?: string;
   heading: Block[];
   briefParagraph?: ParagraphWithButton;
@@ -19,18 +19,13 @@ const TextModule: React.FC<Props> = ({
   briefParagraph,
   className,
 }) => {
-  const bgColor =
-    variant === 'mulberry' || variant === 'homepage-mulberry-bg'
-      ? 'bg-color-mulberry'
-      : 'bg-color-chalk';
-  const fontColor =
-    variant === 'mulberry' || variant === 'homepage-mulberry-bg' ? 'color-chalk' : 'color-charcoal';
+  const fontColor = variant === 'mulberry' ? 'color-chalk' : 'color-charcoal';
   const iconColor = variant === 'mulberry' ? 'chalk' : 'charcoal';
 
   return (
     <div
       className={cx(
-        `TextModule TextModule--style-${variant} ${className} ${bgColor} ${fontColor} text-module-padding`
+        `TextModule TextModule--style-${variant} ${className} bg-color-${variant} ${fontColor} text-module-padding`
       )}
     >
       <div
@@ -39,7 +34,7 @@ const TextModule: React.FC<Props> = ({
         )}
       >
         {subheading ? (
-          <span className="TextModule__subheading text-inline-subheader nowrap primary-sm pr3_75 vertical-align-middle">
+          <span className="TextModule__subheading nowrap primary-sm pr3_75 vertical-align-middle">
             {subheading}
           </span>
         ) : (
@@ -66,11 +61,7 @@ const TextModule: React.FC<Props> = ({
             {briefParagraph.button && (
               <LineIconWithButton
                 link={briefParagraph.button.link}
-                color={
-                  variant === 'homepage-default-bg' || variant === 'homepage-mulberry-bg'
-                    ? 'lilac-darkest'
-                    : iconColor
-                }
+                color={iconColor}
                 label={briefParagraph.button.label}
               />
             )}
