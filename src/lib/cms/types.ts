@@ -126,6 +126,11 @@ export const Video = t.intersection([
   }),
 ]);
 
+export type CompanyDetailPageReference = t.TypeOf<typeof CompanyDetailPageReference>;
+export const CompanyDetailPageReference = t.type({
+  slug: t.string,
+});
+
 export type Founder = t.TypeOf<typeof Founder>;
 export const Founder = t.intersection([
   t.type({
@@ -135,10 +140,29 @@ export const Founder = t.intersection([
     jobTitle: t.string,
     bio: t.array(Block),
     founderPortrait: Image,
-    company: t.string,
+    companyName: t.string,
     sector: t.string,
   }),
   t.partial({
+    companyReference: t.intersection([
+      t.type({
+        _type: t.string,
+        website: Button,
+        logo: Image,
+        fund: t.string,
+        name: t.string,
+        sector: t.string,
+        slug: t.string,
+      }),
+      t.partial({
+        description: t.array(Block),
+        careers: Button,
+        instagram: Button,
+        linkedIn: Button,
+        tag: t.string,
+        companyDetailPageReference: CompanyDetailPageReference,
+      }),
+    ]),
     twitter: t.string,
     instagram: t.string,
     linkedIn: t.string,
@@ -162,6 +186,7 @@ export const Company = t.intersection([
     instagram: Button,
     linkedIn: Button,
     tag: t.string,
+    companyDetailPageReference: CompanyDetailPageReference,
   }),
 ]);
 

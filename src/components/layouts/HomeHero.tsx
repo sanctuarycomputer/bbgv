@@ -20,13 +20,10 @@ type PassedProps = {
 
 type Props = PassedProps & WithBreakpointsProps;
 
-//TO-DO: generate Company Detail page links
-
 const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
   const [activeFounderIndex, setActiveFounderIndex] = useState(-1);
   const [hideLogo, setHideLogo] = useState(false);
   const breakpointIsXsUp = mediaQuery.isExtraSmallUp;
-  const breakpointIsSmUp = mediaQuery.isSmallUp;
 
   const handleScroll = () => {
     /* Determines if the current scroll position is before of after the logo in the Home Hero Module **/
@@ -117,7 +114,13 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
                 <Button
                   wrap={true}
                   className="HomeHero__founder primary-xxl bg-color-transparent inline text-decoration-none hover-color-lilac-darkest color-charcoal transition"
-                  to={generateCompanyDetailUrl(founder.company)}
+                  to={
+                    founder.companyReference?.companyDetailPageReference
+                      ? generateCompanyDetailUrl(
+                          founder.companyReference.companyDetailPageReference.slug
+                        )
+                      : RouteMap.COMPANIES.path
+                  }
                   ariaLabel={Language.t('Founder.viewDetailPageButtonAriaLabel', {
                     founderFullName: generateFullName(founder),
                   })}

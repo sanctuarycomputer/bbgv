@@ -8,7 +8,7 @@ type Props = {
 };
 
 const PhotoCard: React.FC<Props> = ({ founder }) => {
-  const { firstName, lastName, founderPortrait, company, sector } = founder;
+  const { firstName, lastName, founderPortrait, companyName, sector } = founder;
 
   if (!founderPortrait) {
     return null;
@@ -24,7 +24,7 @@ const PhotoCard: React.FC<Props> = ({ founder }) => {
             <span className="color-white">
               {firstName} {lastName}
             </span>
-            <span className="color-lilac-darkest">{company}</span>
+            <span className="color-lilac-darkest">{companyName}</span>
           </div>
         </div>
       </div>

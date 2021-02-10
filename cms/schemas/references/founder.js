@@ -17,8 +17,15 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'company',
-      title: 'Company',
+      title: 'Company Reference',
+      name: 'companyReference',
+      type: 'reference',
+      to: [{ type: 'company' }],
+      description: "Reference the Founder's Company here, if their Company page has been created.",
+    },
+    {
+      name: 'companyName',
+      title: 'Company Name',
       description: 'Add the Company name here.',
       type: 'string',
       validation: (Rule) => Rule.required(),

@@ -58,8 +58,9 @@
   "Slideshow": {
     "viewNext": "View next",
     "paginationDot": "Advance carousel to slide %{slideNumber}",
+    "readMoreAboutCompanyButtonAriaLabel": "Read more about %{company}",
     "readMoreButtonLabel": "Read more about %{founder}",
-    "readMoreButtonAriaLabel": "Read more about %{founder}"
+    "readMoreButtonAriaLabel": "Read more about %{founder} and their company."
   },
   "EmailSignup": {
     "name": "EMAIL",

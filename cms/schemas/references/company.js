@@ -1,5 +1,3 @@
-import Slug from '../fields/slugField';
-
 export default {
   title: 'Company',
   name: 'company',
@@ -17,7 +15,14 @@ export default {
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
-    Slug,
+    {
+      title: 'Company Detail Page Reference',
+      name: 'companyDetailPageReference',
+      type: 'reference',
+      to: [{ type: 'companyDetail' }],
+      description:
+        "Reference the Founder's Company Detail Page here, if their Company Detail Page has been created.",
+    },
     {
       title: 'Logo',
       name: 'logo',

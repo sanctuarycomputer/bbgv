@@ -3,11 +3,11 @@ import Slider from 'react-slick';
 import cx from 'classnames';
 import { FoundersImpactSlide, FoundersImpactSlideshowVariant, Founder } from 'lib/cms/types';
 import Language from 'constants/Language';
-import { Button } from 'components/base';
-import generateFullName from 'utils/generateFullName';
 import { RouteMap } from 'constants/RouteMap';
 
-//TO-DO: Add generate company slug util and replace links. Left tile should link to companies page, right tile should link to company detail page.
+import { Button } from 'components/base';
+import generateFullName from 'utils/generateFullName';
+import generateCompanyDetailUrl from 'utils/generateCompanyDetailUrl';
 
 type Props = {
   slides: FoundersImpactSlide[];
@@ -118,10 +118,14 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
 
         <div className="col-12 md:col-6 flex flex-col pl3 md:pl0 md:mt8">
           <Button
-            ariaLabel={Language.t('Global.generalButtonAriaLabel', {
-              link: 'TO-DO',
+            ariaLabel={Language.t('Slideshow.readMoreAboutCompanyButtonAriaLabel', {
+              company: slide.company.name,
             })}
-            to="/"
+            to={
+              slide.company.companyDetailPageReference
+                ? generateCompanyDetailUrl(slide.company.companyDetailPageReference.slug)
+                : RouteMap.COMPANIES.path
+            }
             className="FoundersImpactSlideshow__right-tile bg-color-lilac-darker w100 text-left radius-xs flex flex-col mb6 md:mb0"
             wrap={true}
           >

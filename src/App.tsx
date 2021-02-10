@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Language from 'constants/Language';
@@ -30,12 +30,22 @@ export default function App() {
   const openMenu = useCallback(() => dispatch(setMenuOpen()), [dispatch]);
   const closeMenu = useCallback(() => dispatch(setMenuClosed()), [dispatch]);
 
+  const [appLoadSoftenerActive, setAppLoadSoftenerActive] = useState(true);
+
   useEffect(() => {
     initApp();
   }, [initApp]);
 
-  if (appStatus === Status.IDLE || appStatus === Status.PENDING) {
-    return <Loader />;
+  useEffect(() => {
+    setTimeout(() => setAppLoadSoftenerActive(false), 1000);
+  }, []);
+
+  if (appStatus === Status.IDLE || appStatus === Status.PENDING || appLoadSoftenerActive) {
+    return (
+      <div className="App">
+        <Loader />
+      </div>
+    );
   }
 
   if (appStatus === Status.REJECTED) return <PageNotFound />;

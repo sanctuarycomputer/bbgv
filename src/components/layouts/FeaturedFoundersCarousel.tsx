@@ -3,6 +3,8 @@ import Slider from 'react-slick';
 import cx from 'classnames';
 import { FeaturedFoundersCarouselSlide, Image } from 'lib/cms/types';
 import Language from 'constants/Language';
+import { RouteMap } from 'constants/RouteMap';
+
 import { Img, Button } from 'components/base';
 import generateFullName from 'utils/generateFullName';
 import generateCompanyDetailUrl from 'utils/generateCompanyDetailUrl';
@@ -97,13 +99,17 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
         <div className="flex flex-col md:flex-row justify-between">
           <div className="flex flex-col col-12  md:col-4 pb1_25 md:pb0">
             <p className="primary-md uppercase">{generateFullName(slide.founder)}</p>
-            <p className="primary-md uppercase color-lilac-darkest">{slide.founder.company}</p>
+            <p className="primary-md uppercase color-lilac-darkest">{slide.founder.companyName}</p>
           </div>
           <div className="FeaturedFoundersCarousel__bio secondary-sm col-9 md:col-6">
             <PortableText blocks={slide.founder.bio} />
             <LineIconWithButton
               color="charcoal"
-              link={generateCompanyDetailUrl(slide.company.name)}
+              link={
+                slide.company?.companyDetailPageReference
+                  ? generateCompanyDetailUrl(slide.company.companyDetailPageReference.slug)
+                  : RouteMap.COMPANIES.path
+              }
               label={Language.t('Slideshow.readMoreButtonAriaLabel', {
                 founder: generateFullName(slide.founder),
               })}

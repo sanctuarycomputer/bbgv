@@ -3,6 +3,7 @@ import cx from 'classnames';
 import withBreakpoints, { InjectedProps as WithBreakpointsProps } from 'lib/withBreakpoints';
 import { Sector, Company, Founder } from 'lib/cms/types';
 import Language from 'constants/Language';
+import { RouteMap } from 'constants/RouteMap';
 
 import generateFullName from 'utils/generateFullName';
 import { Img, Button } from 'components/base';
@@ -19,7 +20,7 @@ const PortfolioListing: React.FC<Props> = ({ sectors, className, mediaQuery }) =
   const breakpointIsSmUp = mediaQuery.isSmallUp;
 
   return (
-    <div className={cx('PortfolioListing site-max-width pt3_75 mxauto', className)}>
+    <div className="PortfolioListing site-max-width pt3_75 mxauto">
       {sectors.map((sector: Sector) => (
         <div
           key={`PortfolioListing--${sector.name}`}
@@ -30,7 +31,11 @@ const PortfolioListing: React.FC<Props> = ({ sectors, className, mediaQuery }) =
               ariaLabel={Language.t('Global.generalButtonAriaLabel', {
                 link: company.name,
               })}
-              to={generateCompanyDetailUrl(company.name)}
+              to={
+                company.companyDetailPageReference
+                  ? generateCompanyDetailUrl(company.companyDetailPageReference.slug)
+                  : RouteMap.COMPANIES.path
+              }
               key={`PortfolioListing__company-container-${company.name}`}
               containerClassName={cx({
                 w100: !breakpointIsSmUp && company.founders.length < 2,

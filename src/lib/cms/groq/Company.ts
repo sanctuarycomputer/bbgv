@@ -13,4 +13,7 @@ export default `{
   linkedIn,
   website,
   'founders': founders[]->${FounderGroq},
+  'companyDetailPageReference': companyDetailPageReference->{
+    slug
+  },
 }`;
