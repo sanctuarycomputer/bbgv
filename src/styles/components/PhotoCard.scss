@@ -19,7 +19,22 @@
     }
   }
 
-  &__founder-name {
+  &__company {
+    font-size: 1.625rem;
+    line-height: 1.70625rem;
     bottom: 0.75rem;
+  }
+
+  &__img {
+    // &::after {
+    //   display: block;
+    //   border: 1px solid red;
+    //   position: relative;
+    //   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #fff 100%);
+    //   margin-top: -150px;
+    //   height: 150px;
+    //   width: 100%;
+    //   content: '';
+    // }
   }
 }

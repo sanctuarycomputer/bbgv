@@ -69,11 +69,6 @@ export default {
       },
     },
     {
-      title: 'Contact Section',
-      name: 'contact',
-      type: 'textModule',
-    },
-    {
       title: 'Newsletter',
       name: 'newsletter',
       type: 'newsletterModule',
@@ -81,6 +76,11 @@ export default {
         collapsible: true,
         collapsed: false,
       },
+    },
+    {
+      title: 'Contact Section',
+      name: 'contact',
+      type: 'textModule',
     },
   ],
   preview: {

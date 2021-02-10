@@ -1,6 +1,8 @@
 .TextModule {
   &--style-mulberry,
-  &--style-default {
+  &--style-default,
+  &--style-homepage-mulberry-bg,
+  &--style-homepage-default-bg {
     &__paragraph p {
       display: inline;
       margin-right: 0.25rem;
@@ -12,7 +14,8 @@
     }
   }
 
-  &--style-mulberry {
+  &--style-mulberry,
+  &--style-homepage-mulberry-bg {
     &__paragraph p a,
     &__paragraph a {
       color: color('chalk');
@@ -25,7 +28,8 @@
     }
   }
 
-  &--style-default {
+  &--style-default,
+  &--style-homepage-default-bg {
     &__paragraph p a,
     &__paragraph a {
       color: color('charcoal');
