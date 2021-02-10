@@ -10,7 +10,7 @@ interface Props {
 
 const RightArrow: React.FC<Props> = ({ color, className = '' }) => {
   return (
-    <div className={cx('RightArrow bg-color-lilac', className)}>
+    <div className={cx('RightArrow bg-color-lilac flex items-center justify-center', className)}>
       <svg
         width="31"
         height="19"

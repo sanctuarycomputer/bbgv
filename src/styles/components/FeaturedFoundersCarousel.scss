@@ -29,6 +29,17 @@
     }
   }
 
+  /** Fixes a React-Slick bug and ensures that only the current, active slide is clickable when the Slider has the fade transition. */
+  .slick-slide {
+    z-index: 998;
+    pointer-events: none;
+  }
+
+  .slick-active.slick-current {
+    z-index: 999;
+    pointer-events: unset !important;
+  }
+
   &__slide {
     display: inline-flex !important;
     height: 100%;
@@ -44,22 +55,16 @@
     }
   }
 
-  &__pagination {
-    &__dot {
-      position: relative;
-      height: 0.1875rem;
-      margin-right: 0.1875rem;
-      width: 1.5rem;
-      background: color('lilac-lighter');
-
-      @include media('sm-up') {
-        width: 1.6875rem;
-      }
-
-      &--current {
-        background: color('lilac-darkest');
-      }
+  .slick-active {
+    .FeaturedFoundersCarousel__video-container {
+      transform: translate3d(0, 0, 0);
+      @extend %transition;
     }
+  }
+
+  &__video-container {
+    transform: translate3d(3rem, 0, 0);
+    @extend %transition;
   }
 
   &__bio p {

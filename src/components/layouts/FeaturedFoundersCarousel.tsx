@@ -111,45 +111,48 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
 
   render() {
     const { slides, speed, heading } = this.props;
-    const { currentSlide } = this.state;
 
     return (
       <div className="FeaturedFoundersCarousel site-inner-content-max-width mxauto pb3 md:pb5">
         <div className="relative w100 h100 pb3 md:pb5">
-          <div className="HEADING color-charcoal primary-md pb1_25">{heading}</div>
-          <div className="FeaturedFoundersCarousel__pagination-container absolute z-2">
+          <div className="FeaturedFoundersCarousel__heading color-charcoal primary-md col-12 md:col-10 mxauto px_75 md:px0 pb1_25">
+            {heading}
+          </div>
+          <div className="FeaturedFoundersCarousel__pagination-container absolute z-3">
             <Button
               ariaLabel={Language.t('Slideshow.viewNextFounder')}
               className="text-left bg-color-transparent text-decoration-none color-lilac-very-dark secondary-bold-xs"
-              onClick={this.previous}
+              onClick={this.next}
             >
               <RightArrow color="chalk" />
             </Button>
           </div>
 
           <div className="FeaturedFoundersCarousel__slides-container flex flex-col mxauto col-12 md:col-10">
-            {/* <Slider
+            <Slider
               ref={this.sliderRef}
               className="FeaturedFoundersCarousel__slideshow"
               arrows={false}
               autoplay={false}
               dots={false}
               speed={speed}
-              afterChange={(current) => this.setState({ currentSlide: current })}
-            > */}
-            {slides.map((slide: FeaturedFoundersCarouselSlide, index: number) => {
-              return (
-                <div
-                  className="FeaturedFoundersCarousel__slide w100 flex px_75 md:ml4 md:px4"
-                  key={`FeaturedFoundersCarousel-${generateFullName(slide.founder)}`}
-                >
-                  <div className="FeaturedFoundersCarousel__slide__card-container col-12">
-                    {this.renderSlide(slide)}
+              fade={true}
+              centerMode={true}
+              centerPadding="0px"
+            >
+              {slides.map((slide: FeaturedFoundersCarouselSlide, index: number) => {
+                return (
+                  <div
+                    className="FeaturedFoundersCarousel__slide w100 flex px_75 md:px0"
+                    key={`FeaturedFoundersCarousel-${generateFullName(slide.founder)}`}
+                  >
+                    <div className="FeaturedFoundersCarousel__slide__card-container col-12">
+                      {this.renderSlide(slide)}
+                    </div>
                   </div>
-                </div>
-              );
-            })}
-            {/* </Slider> */}
+                );
+              })}
+            </Slider>
           </div>
         </div>
       </div>
