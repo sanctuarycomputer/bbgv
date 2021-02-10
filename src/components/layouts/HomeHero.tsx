@@ -157,7 +157,7 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
             ))}
           </span>
           <Button
-            className="HomeHero__founder inline text-decoration-none hover-color-lilac-very-dark transition color-lilac-darkest"
+            className="HomeHero__founder inline text-decoration-none hover-color-charcoal transition color-lilac-darkest"
             ariaLabel={Language.t('Home.hero.othersButtonAriaLabel')}
             to={RouteMap.COMPANIES.path}
             label={` & ${Language.t('Home.hero.others')}`}
