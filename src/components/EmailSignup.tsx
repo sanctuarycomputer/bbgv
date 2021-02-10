@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { FocusEvent } from 'react';
+
 import cx from 'classnames';
 import Language from 'constants/Language';
 import validateEmail from 'utils/validateEmail';
@@ -45,6 +46,9 @@ const EmailSignup: React.FC<Props> = ({ variant }) => {
           <TextField
             variant={variant}
             onChange={(value) => formik.setFieldValue('emailAddress', value as string)}
+            onFocus={(e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+              (e.target.placeholder = '')
+            }
             showLabel={false}
             type="email"
             className="col-10"

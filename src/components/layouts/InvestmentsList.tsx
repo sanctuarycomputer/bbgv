@@ -94,7 +94,14 @@ const InvestmentListItem = (item: InvestmentsListItem) => {
         </div>
       </div>
 
-      <div className="InvestmentsList__description-container color-charcoal secondary-sm col-12 md:col-6">
+      <div
+        className={cx(
+          'InvestmentsList__description-container color-charcoal secondary-sm col-12 md:col-6',
+          {
+            'pt2 md:pt0': !item.companyTag,
+          }
+        )}
+      >
         <span className="InvestmentsList__description secondary-sm">
           <PortableText blocks={item.description.paragraph} />
         </span>

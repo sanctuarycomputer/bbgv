@@ -1,4 +1,6 @@
 .MenuOverlay {
+  min-height: -webkit-fill-available;
+
   &__section-one {
     height: 2.9375rem;
 

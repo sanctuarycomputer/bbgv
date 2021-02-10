@@ -1,4 +1,4 @@
-import React, { Component, RefObject, KeyboardEvent } from 'react';
+import React, { Component, RefObject, FocusEvent, KeyboardEvent } from 'react';
 
 import cx from 'classnames';
 
@@ -9,7 +9,7 @@ interface Props {
   className: string;
   ariaLabel: string;
   onBlur: (e: string | number) => any;
-  onFocus: (e: string | number) => any;
+  onFocus: (e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => any;
   onChange: (e: string | number) => any;
   onKeyDown: (e: KeyboardEvent) => any;
   pattern?: string;
@@ -97,7 +97,7 @@ class TextField extends Component<Props> {
             id={_id}
             name={name}
             onBlur={(e) => onBlur(e.target.value)}
-            onFocus={(e) => onFocus(e.target.value)}
+            onFocus={(e) => onFocus(e as FocusEvent<HTMLInputElement | HTMLTextAreaElement>)}
             onChange={(e) => onChange(e.target.value)}
             onKeyDown={(e) => onKeyDown(e as KeyboardEvent)}
             placeholder={placeholder}
@@ -112,7 +112,7 @@ class TextField extends Component<Props> {
               id={_id}
               name={name}
               onBlur={(e) => onBlur(e.target.value)}
-              onFocus={(e) => onFocus(e.target.value)}
+              onFocus={(e) => onFocus(e as FocusEvent<HTMLInputElement | HTMLTextAreaElement>)}
               onChange={(e) => onChange(e.target.value)}
               onKeyDown={(e) => onKeyDown(e)}
               pattern={pattern}

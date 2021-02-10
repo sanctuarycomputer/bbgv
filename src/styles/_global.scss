@@ -1,5 +1,11 @@
 html {
   background-color: color('chalk');
+  height: -webkit-fill-available;
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
 
 /** Borders */

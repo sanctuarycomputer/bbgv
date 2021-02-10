@@ -141,7 +141,7 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
                 </Button>
                 <div
                   className={cx(
-                    'HomeHero__photo-card absolute transition-shorter opacity-0 z-overlay',
+                    'HomeHero__photo-card absolute transition-shorter events-none opacity-0 z-overlay',
                     {
                       'PhotoCard--active opacity-1': index === activeFounderIndex,
                       'opacity-0 events-none': index !== activeFounderIndex,

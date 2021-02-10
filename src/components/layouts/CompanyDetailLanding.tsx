@@ -36,13 +36,13 @@ const CompanyDetailLanding: React.FC<Props> = ({
       <div className="CompanyDetailLanding__inner-container col-12 flex flex-col md:flex-row vh100">
         <div
           className={cx(
-            'CompanyDetailLanding__left-column bg-color-mulberry site-padding-x-left pr2 pb1_75 md:pb2_75 flex flex-col col-12 md:col-6 h100 justify-between',
+            'CompanyDetailLanding__left-column bg-color-mulberry site-padding-x-left pr2 pb1_75 md:pb2_75 flex flex-col col-12 md:col-6 justify-between',
             {
               'radius-xs': breakpointIsSmUp,
             }
           )}
         >
-          <span>
+          <span className="pb7_5 md:pb0">
             <span className="inline primary-sm color-lilac uppercase pr1_5 md:pr3_75">
               {foundersText}
             </span>
@@ -65,7 +65,7 @@ const CompanyDetailLanding: React.FC<Props> = ({
           </div>
         </div>
 
-        <div className="CompanyDetailLanding__images-container h100 col-12 md:col-6 flex flex-col">
+        <div className="CompanyDetailLanding__images-container h100 col-12 md:col-6 flex flex-col relative">
           <div className="CompanyDetailLanding__images flex h100 col-12">
             {founderPortrait?.src && (
               <Img
@@ -92,7 +92,7 @@ const CompanyDetailLanding: React.FC<Props> = ({
             )}
           </div>
 
-          <div className="CompanyDetailLanding__links secondary-bold-sm color-charcoal flex flex-row md:col-8 pl_75 pt2_25 md:p3_75">
+          <div className="CompanyDetailLanding__links absolute b0 secondary-bold-sm color-charcoal flex flex-row col-12 md:col-8 pl_75 pt2_25 md:px3_75 md:pt3_75 md:pb2_75">
             <div className="col-6">
               {company.careers?.link && (
                 <Button
