@@ -17,6 +17,12 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: 'Carousel Heading',
+      name: 'heading',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       title: 'Slides',
       name: 'slides',
       type: 'array',
@@ -58,6 +64,13 @@ export default {
               description: 'This is the subheading in the left tile.',
               fieldset: 'leftTile',
               validation: (Rule) => Rule.required(),
+            },
+            {
+              name: 'leftImage',
+              title: 'Image',
+              type: 'imageField',
+              description: 'Add an image below the subheading in the left tile.',
+              fieldset: 'leftTile',
             },
             {
               name: 'rightHeadline',

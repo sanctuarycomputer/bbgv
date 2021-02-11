@@ -1,6 +1,5 @@
 import React, { PureComponent, createRef } from 'react';
 import Slider from 'react-slick';
-import cx from 'classnames';
 import { FeaturedFoundersCarouselSlide, Image } from 'lib/cms/types';
 import Language from 'constants/Language';
 import { RouteMap } from 'constants/RouteMap';
@@ -28,7 +27,7 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
 
   static defaultProps = {
     showPagination: true,
-    speed: 1000,
+    speed: 5000,
   };
 
   state = {
@@ -84,8 +83,16 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
             })
           )}
         </div>
-
-        <div className="flex flex-col md:flex-row justify-between">
+        <div className="FeaturedFoundersCarousel__text-container flex flex-col md:flex-row justify-between relative">
+          <div className="absolute z-7 absolute t0 r0 md:none">
+            <Button
+              ariaLabel={Language.t('Slideshow.viewNextFounder')}
+              className="text-left bg-color-transparent text-decoration-none color-lilac-very-dark secondary-bold-xs"
+              onClick={this.next}
+            >
+              <RightArrow color="chalk" />
+            </Button>
+          </div>
           <div className="flex flex-col col-12  md:col-4 pb1_25 md:pb0">
             <p className="primary-md uppercase">{generateFullName(slide.founder)}</p>
             <p className="primary-md uppercase color-lilac-darkest">{slide.founder.companyName}</p>
@@ -118,7 +125,7 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
           <div className="FeaturedFoundersCarousel__heading color-charcoal primary-md col-12 md:col-10 mxauto px_75 md:px0 pb1_25">
             {heading}
           </div>
-          <div className="FeaturedFoundersCarousel__pagination-container absolute z-3">
+          <div className="FeaturedFoundersCarousel__pagination-container absolute z-7 none md:block site-padding-x">
             <Button
               ariaLabel={Language.t('Slideshow.viewNextFounder')}
               className="text-left bg-color-transparent text-decoration-none color-lilac-very-dark secondary-bold-xs"

@@ -59,6 +59,7 @@ const HomeView: FC<Props> = (props) => {
         briefParagraph={foundersImpactSectionHeading.briefParagraph}
       />
       <FoundersImpactSlideshow
+        heading={foundersImpactSlideshow.heading}
         variant={foundersImpactSlideshow.variant}
         slides={foundersImpactSlideshow.slides}
       />

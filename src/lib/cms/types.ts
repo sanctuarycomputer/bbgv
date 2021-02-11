@@ -207,13 +207,17 @@ export const FooterMenu = t.type({
 });
 
 export type FoundersImpactSlide = t.TypeOf<typeof FoundersImpactSlide>;
-export const FoundersImpactSlide = t.type({
-  leftHeadline: t.array(Block),
-  rightHeadline: t.array(Block),
-  leftSubheading: t.string,
-  rightSubheading: t.string,
-  company: Company,
-});
+export const FoundersImpactSlide = t.intersection([
+  t.type({
+    leftHeadline: t.array(Block),
+    leftSubheading: t.array(Block),
+    rightHeadline: t.array(Block),
+    company: Company,
+  }),
+  t.partial({
+    leftImage: Image,
+  }),
+]);
 
 export type FoundersImpactSlideshowVariant = t.TypeOf<typeof FoundersImpactSlideshowVariant>;
 export const FoundersImpactSlideshowVariant = t.string;
@@ -221,6 +225,7 @@ export const FoundersImpactSlideshowVariant = t.string;
 export type FoundersImpactSlideshow = t.TypeOf<typeof FoundersImpactSlideshow>;
 export const FoundersImpactSlideshow = t.type({
   _type: t.string,
+  heading: t.string,
   slides: t.array(FoundersImpactSlide),
   variant: FoundersImpactSlideshowVariant,
 });

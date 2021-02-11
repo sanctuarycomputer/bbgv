@@ -6,22 +6,32 @@
 
   &__right-tile-content,
   &__left-tile-content {
-    min-height: 15.0625rem;
+    min-height: 24.25rem;
 
     @include media('md-up') {
-      min-height: 23.75rem;
+      min-height: 28.75rem;
     }
   }
 
-  &__left-tile-content {
-    @include media('xxl-up') {
-      padding-left: 13.125rem;
+  &__img-container {
+    height: 11.125rem;
+    width: 8.8125rem;
+  }
+
+  &__logo-container {
+    max-height: 1.75rem;
+    max-width: 4.875rem;
+
+    @include media('md-up') {
+      max-height: 2.0625rem;
+      max-width: 5.75rem;
     }
   }
 
-  &__right-tile-content {
-    @include media('xxl-up') {
-      padding-right: 13.125rem;
+  &__pagination-container {
+    @include media('md-up') {
+      top: 50%;
+      right: -5rem;
     }
   }
 
@@ -37,6 +47,22 @@
     }
   }
 
+  /** Fixes a React-Slick bug and ensures that only the current, active slide is clickable when the Slider has the fade transition. */
+  .slick-slide {
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  .slick-active.slick-current {
+    z-index: 6;
+    pointer-events: unset !important;
+  }
+
+  &__slide {
+    display: inline-flex !important;
+    height: 100%;
+  }
+
   &__slide {
     display: inline-flex !important;
     height: 100%;
@@ -48,53 +74,22 @@
     }
   }
 
-  &__pagination-container {
-    bottom: 0;
-    right: 0;
+  &__slide__card {
+    min-height: 24.25rem;
 
     @include media('md-up') {
-      top: 0;
-    }
-  }
-  &__pagination {
-    &__dot {
-      position: relative;
-      height: 0.1875rem;
-      margin-right: 0.1875rem;
-      width: 1.5rem;
-      background: color('lilac-lighter');
-
-      @include media('sm-up') {
-        width: 1.6875rem;
-      }
-
-      &__progress {
-        width: 0;
-        height: 100%;
-        background: color('lilac-darkest');
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-
-      &--active .FoundersImpactSlideshow__pagination__dot__progress {
-        width: 100%;
-      }
-
-      &--current .FoundersImpactSlideshow__pagination__dot__progress {
-        animation: carousel-after-expand forwards linear;
-      }
+      min-height: 36rem;
     }
   }
 
-  @keyframes carousel-after-expand {
-    0% {
-      width: 0;
-    }
+  &__heading {
+    font-size: 1.125rem;
+    letter-spacing: 0.02rem;
+    line-height: 1.18125rem;
 
-    100% {
-      width: 100%;
+    @include media('md-up') {
+      font-size: 1.5rem;
+      line-height: 1.575rem;
     }
   }
 }

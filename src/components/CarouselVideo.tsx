@@ -41,7 +41,6 @@ const CarouselVideo: React.FC<Props> = ({ images, vimeoId }) => {
                 );
               })}
           </div>
-
           <Button
             onClick={() => setShowVideo(true)}
             className="CarouselVideo__button z-4 secondary-bold-sm text-decoration-none bg-color-transparent color-chalk absolute b0 r0 mb1_25 mr1_25 vertical-align-middle inline-flex items-center"

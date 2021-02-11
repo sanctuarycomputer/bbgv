@@ -1,5 +1,26 @@
 .RightArrow {
-  height: 2.475rem;
-  width: 4.25rem;
-  border-radius: 2.09125rem;
+  width: 2.3125rem;
+  height: 1.375rem;
+  border-radius: 1.3225rem;
+  @extend %transition;
+
+  &:hover {
+    transform: translateX(0.25rem);
+  }
+
+  > svg {
+    height: 0.625rem;
+    width: 1.0625rem;
+  }
+
+  @include media('md-up') {
+    height: 2.475rem;
+    width: 4.25rem;
+    border-radius: 2.09125rem;
+
+    > svg {
+      height: 1.1875rem;
+      width: 1.9375rem;
+    }
+  }
 }
