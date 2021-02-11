@@ -59,17 +59,17 @@ const HomeView: FC<Props> = (props) => {
         variant={foundersImpactSlideshow.variant}
         slides={foundersImpactSlideshow.slides}
       />
+      <NewsletterModule
+        bgColor={newsletter.bgColor}
+        headline={newsletter.headline}
+        title={newsletter.title}
+      />
       <TextModule
         className="py3_75 lg:py7_5"
         variant="default"
         heading={contact.heading}
         subheading={contact.subheading}
         briefParagraph={contact.briefParagraph}
-      />
-      <NewsletterModule
-        bgColor={newsletter.bgColor}
-        headline={newsletter.headline}
-        title={newsletter.title}
       />
     </div>
   );

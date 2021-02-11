@@ -19,7 +19,34 @@
     }
   }
 
-  &__founder-name {
+  &__company {
+    font-size: 1.625rem;
+    line-height: 1.70625rem;
     bottom: 0.75rem;
+  }
+
+  &__img-container {
+    width: 13rem;
+    height: 18rem;
+
+    @include media('lg-up') {
+      width: 17.25rem;
+      height: 24.101875rem;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 30%;
+      background: linear-gradient(180deg, rgba(239, 233, 220, 0) 0%, rgb(0, 0, 0) 98%);
+      width: 13rem;
+
+      @include media('lg-up') {
+        width: 17.25rem;
+      }
+    }
   }
 }

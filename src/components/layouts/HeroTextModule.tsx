@@ -34,9 +34,12 @@ const HeroTextModule: React.FC<Props> = ({
     >
       <span className="HeroTextModule__inner-container">
         <span
-          className={cx('HeroTextModule__title nowrap primary-sm pr3_75 vertical-align-middle', {
-            'color-lilac': variant === 'mulberry',
-          })}
+          className={cx(
+            'HeroTextModule__title nowrap text-inline-subheader pr3_75 vertical-align-middle',
+            {
+              'color-lilac': variant === 'mulberry',
+            }
+          )}
         >
           {title}
         </span>
@@ -52,7 +55,7 @@ const HeroTextModule: React.FC<Props> = ({
         <div className="sm:inline">
           <div
             className={cx(
-              'HeroTextModule__intro-line primary-sm pr3_75 sm:px2_25 vertical-align-middle inline-block',
+              'HeroTextModule__intro-line text-inline-subheader pr3_75 sm:px2_25 vertical-align-middle inline-block',
               {
                 'color-lilac': variant === 'mulberry',
               }
@@ -70,8 +73,8 @@ const HeroTextModule: React.FC<Props> = ({
                     className={cx(
                       `HeroTextModule__intro-byline HeroTextModule--style-${variant}__intro-byline primary-xxl vertical-align-middle transition-shorter bg-color-transparent text-decoration-none`,
                       {
-                        'color-white hover-color-lilac': variant === 'mulberry',
-                        'color-charcoal hover-color-chalk':
+                        'color-lilac hover-color-chalk': variant === 'mulberry',
+                        'color-white hover-color-charcoal':
                           variant === 'nutella' || variant === 'lilac',
                       }
                     )}
