@@ -33,7 +33,21 @@
         display: inline-block;
       }
 
-      div {
+      div,
+      div p {
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          @extend .primary-md;
+          padding-bottom: 1.5rem;
+        }
+
+        strong {
+          @extend .font-secondary-bold;
+        }
+
         ul,
         ol {
           list-style-position: inside;
