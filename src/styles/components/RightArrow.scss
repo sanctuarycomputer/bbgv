@@ -13,15 +13,6 @@
   > svg {
     height: 0.625rem;
     width: 1.0625rem;
-    @extend %transition;
-
-    &:hover {
-      transform: translateX(0.25rem);
-
-      @include media('lg-up') {
-        transform: 0;
-      }
-    }
   }
 
   @include media('lg-up') {

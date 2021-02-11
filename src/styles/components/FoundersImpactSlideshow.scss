@@ -19,12 +19,20 @@
   }
 
   &__logo-container {
-    max-height: 1.75rem;
-    max-width: 4.875rem;
+    position: relative;
 
-    @include media('md-up') {
-      max-height: 2.0625rem;
-      max-width: 5.75rem;
+    > img {
+      max-height: 2rem;
+      width: 5rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+
+      @include media('md-up') {
+        max-height: 3rem;
+        width: 6rem;
+      }
     }
   }
 
@@ -46,6 +54,9 @@
 
   .slick-slide {
     height: inherit !important;
+    /** Fixes a React-Slick bug and ensures that only the current, active slide is clickable when the Slider has the fade transition. */
+    z-index: 5;
+    pointer-events: none;
 
     & > * {
       height: 100%;
@@ -53,19 +64,9 @@
   }
 
   /** Fixes a React-Slick bug and ensures that only the current, active slide is clickable when the Slider has the fade transition. */
-  .slick-slide {
-    z-index: 5;
-    pointer-events: none;
-  }
-
   .slick-active.slick-current {
     z-index: 6;
     pointer-events: unset !important;
-  }
-
-  &__slide {
-    display: inline-flex !important;
-    height: 100%;
   }
 
   &__slide {
@@ -77,13 +78,13 @@
         height: 100%;
       }
     }
-  }
 
-  &__slide__card {
-    min-height: 24.25rem;
+    &__card {
+      min-height: 24.25rem;
 
-    @include media('md-up') {
-      min-height: 36rem;
+      @include media('md-up') {
+        min-height: 36rem;
+      }
     }
   }
 

@@ -98,7 +98,7 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
             }
             wrap={true}
             className={cx(
-              '>>>>>>>LEFT TILE<<<<<<<<<< h100 FoundersImpactSlideshow__left-tile radius-xs w100 text-left flex flex-col',
+              'FoundersImpactSlideshow__left-tile radius-xs h100 w100 text-left flex flex-col',
               {
                 'bg-color-nutella': variant === 'nutella-lilac',
                 'bg-color-mulberry': variant === 'mulberry-lilac',
@@ -139,13 +139,13 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
                 ? generateCompanyDetailUrl(slide.company.companyDetailPageReference.slug)
                 : RouteMap.COMPANIES.path
             }
-            className=">>>>>>>RIGHT TILE<<<<<<<<<< h100 FoundersImpactSlideshow__right-tile bg-color-lilac-darker w100 text-left radius-xs flex flex-col mb6md:mb0"
+            className="FoundersImpactSlideshow__right-tile bg-color-lilac-darker h100 w100 text-left radius-xs flex flex-col mb6md:mb0"
             wrap={true}
           >
             <div className="FoundersImpactSlideshow__right-tile-content flex flex-col justify-between col-12 color-charcoal p1_5 md:p3_75">
               <div className="FoundersImpactSlideshow__logo-container">
                 <img
-                  className="FoundersImpactSlideshow__logo fit-contain w100"
+                  className="fit-contain"
                   src={slide.company.logo.src}
                   alt={slide.company.logo.alt}
                 />
