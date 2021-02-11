@@ -9,6 +9,6 @@ export default `{
     'vimeoId': vimeoId,
     'founder': founder->${FounderGroq},
     'company': company->${CompanyGroq},
-    ...
+    companyDescription
   },
 }`;
