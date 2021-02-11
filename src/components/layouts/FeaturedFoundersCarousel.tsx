@@ -102,7 +102,7 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
             <p className="primary-md uppercase color-lilac-darkest">{slide.founder.companyName}</p>
           </div>
           <div className="FeaturedFoundersCarousel__bio secondary-sm col-9 md:col-6">
-            <PortableText blocks={slide.founder.bio} />
+            <PortableText blocks={slide.companyDescription} />
             <LineIconWithButton
               color="charcoal"
               link={

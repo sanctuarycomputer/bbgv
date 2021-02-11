@@ -30,6 +30,13 @@ export default {
                 'Connect this slide to a company. The text about a founder will have a button that links to their Company Detail Page.',
             },
             {
+              name: 'companyDescription',
+              title: 'Company Description',
+              type: 'portableText',
+              description: 'Add a brief company description.',
+              validation: (Rule) => Rule.required(),
+            },
+            {
               name: 'images',
               title: 'Images',
               description: 'Add 3 images for each slide.',

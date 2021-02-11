@@ -371,6 +371,7 @@ export const Sector = t.intersection([
 export type FeaturedFoundersCarouselSlide = t.TypeOf<typeof FeaturedFoundersCarouselSlide>;
 export const FeaturedFoundersCarouselSlide = t.intersection([
   t.type({
+    companyDescription: t.array(Block),
     images: t.array(Image),
     founder: Founder,
     company: Company,
