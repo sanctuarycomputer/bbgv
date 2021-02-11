@@ -30,7 +30,7 @@ const PersonCard: React.FC<Props> = ({
       <Img
         src={image.src}
         alt={image.alt || Language.t('Global.fallbackAltLabel')}
-        className="PersonCard__image fit-cover radius-xs w100 h100 mr_75 mb1_25 md:mr1_25md:mb1_5 col-6"
+        className="PersonCard__image fit-cover radius-xs w100 h100 mr_75 mb1_25 md:mr1_2 col-6"
       />
 
       <span className="col-6">
