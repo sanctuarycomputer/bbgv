@@ -26,14 +26,14 @@ const PersonCard: React.FC<Props> = ({
   bio,
 }) => {
   return (
-    <div className="PersonCard">
+    <div className="PersonCard flex flex-row">
       <Img
         src={image.src}
         alt={image.alt || Language.t('Global.fallbackAltLabel')}
-        className="inline PersonCard__image fit-cover radius-xs w100 h100 mr_75 mb1_25 md:mr1_25 md:mb1_5"
+        className="PersonCard__image fit-cover radius-xs w100 h100 mr_75 mb1_25 md:mr1_25md:mb1_5 col-6"
       />
 
-      <span>
+      <span className="col-6">
         <div className="uppercase primary-sm flex flex-col pb1_5 md:pb3_75">
           <p className="color-charcoal">{fullName}</p>
           <p className="color-lilac-very-dark">{jobTitle}</p>
@@ -85,7 +85,7 @@ const PersonCard: React.FC<Props> = ({
         </div>
 
         {bio && (
-          <span className="secondary-sm">
+          <span className="secondary-xs">
             <PortableText blocks={bio} />
           </span>
         )}
