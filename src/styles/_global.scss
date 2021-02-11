@@ -68,7 +68,7 @@ body {
   }
 }
 
-.text-module-padding {
+.text-module-inner-padding {
   padding-left: $site-padding-x-mobile;
   padding-right: $site-padding-x-mobile;
 
@@ -138,7 +138,7 @@ body {
 
 /** Utils */
 
-.text-module-padding-x {
+.text-module-container-padding-x {
   @extend .site-margin-x;
   @extend .site-inner-content-max-width;
 }

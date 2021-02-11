@@ -16,11 +16,16 @@
 
   &__photo-card {
     top: 5rem;
-    right: -5rem;
+    right: 0rem;
 
     @include media('lg-up') {
       top: -5rem;
-      right: -10rem;
+      right: -5rem;
+    }
+
+    @include media('xl-up') {
+      top: -5rem;
+      right: -5rem;
     }
   }
 }

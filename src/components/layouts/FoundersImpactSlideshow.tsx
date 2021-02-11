@@ -163,12 +163,21 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
     const { slides, heading } = this.props;
 
     return (
-      <div className="FoundersImpactSlideshow site-inner-content-max-width mxauto">
+      <div className="FoundersImpactSlideshow relative site-inner-content-max-width mxauto pb6">
         <div className="FoundersImpactSlideshow__heading color-charcoal primary-md col-12 lg:col-8 mxauto px_75 lg:px0 pb1_25 lg:pb2_5">
           {heading}
         </div>
+        <div className="FoundersImpactSlideshow__pagination-container--style-mobile absolute z-7 absolute pr_75 md:none">
+          <Button
+            ariaLabel={Language.t('Slideshow.viewNextFounder')}
+            className="text-left bg-color-transparent text-decoration-none color-lilac-very-dark secondary-bold-xs"
+            onClick={this.next}
+          >
+            <RightArrow color="chalk" />
+          </Button>
+        </div>
 
-        <div className="FoundersImpactSlideshow__slides-container flex flex-col mxauto col-12 md:col-10 relative">
+        <div className="FoundersImpactSlideshow__slides-container flex flex-col mxauto col-12 px_75 md:px0 md:col-10 relative">
           <div className="FoundersImpactSlideshow__pagination-container absolute z-7 none md:block">
             <Button
               ariaLabel={Language.t('Slideshow.viewNextFounder')}

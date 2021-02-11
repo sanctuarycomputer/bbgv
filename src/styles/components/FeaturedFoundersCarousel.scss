@@ -1,10 +1,12 @@
 .FeaturedFoundersCarousel {
-  // max-width: 111.25rem;
+  max-width: $site-inner-content-max-width;
 
-  /** Fixes overflow issues */
-  overflow: hidden;
-  min-width: 100%;
-  width: 0;
+  &__container {
+    /** Fixes overflow issues */
+    overflow: hidden;
+    min-width: 100%;
+    width: 0;
+  }
 
   &__image,
   &__video-container {
@@ -62,8 +64,7 @@
   &__pagination-container {
     @include media('md-up') {
       top: 30%;
-      // right: -7rem;
-      right: 0;
+      right: -6rem;
       margin-left: 3.125rem;
     }
   }

@@ -5,15 +5,26 @@
   @extend %transition;
 
   &:hover {
-    transform: translateX(0.25rem);
+    @include media('lg-up') {
+      transform: translateX(0.25rem);
+    }
   }
 
   > svg {
     height: 0.625rem;
     width: 1.0625rem;
+    @extend %transition;
+
+    &:hover {
+      transform: translateX(0.25rem);
+
+      @include media('lg-up') {
+        transform: 0;
+      }
+    }
   }
 
-  @include media('md-up') {
+  @include media('lg-up') {
     height: 2.475rem;
     width: 4.25rem;
     border-radius: 2.09125rem;
