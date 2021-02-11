@@ -7,7 +7,7 @@ import Language from 'constants/Language';
 import { MenuLink } from 'types';
 import { GlobalSettings, Button as IButton } from 'lib/cms/types';
 import { RouteMap } from 'constants/RouteMap';
-import { AboutUsLinks, WhyWeInvestLinks } from 'constants/FooterMenuLinks';
+import { AboutUsLinks, WhereWeInvestLinks } from 'constants/FooterMenuLinks';
 
 import { Img, Button } from 'components/base';
 import EmailSignup from 'components/EmailSignup';
@@ -75,12 +75,12 @@ const Footer: React.FC<Props> = ({ globalSettings }) => {
               <div className="col-6 flex flex-col">
                 <Button
                   className="color-charcoal transition-shorter hover-lighten-charcoal secondary-bold-sm items-center bg-color-transparent text-decoration-none mb1_5 lg:mb3_75"
-                  ariaLabel={Language.t('Global.whyWeInvestButtonAriaLabel')}
+                  ariaLabel={Language.t('Global.whereWeInvestButtonAriaLabel')}
                   to={RouteMap.WHY_WE_INVEST.path}
-                  label={Language.t('Global.whyWeInvest')}
+                  label={Language.t('Global.whereWeInvest')}
                 />
                 <div className="Footer__sublinks flex flex-col">
-                  {WhyWeInvestLinks.map((link: MenuLink) => (
+                  {WhereWeInvestLinks.map((link: MenuLink) => (
                     <HashLink
                       key={link.link}
                       className="color-charcoal transition-shorter hover-lighten-charcoal  secondary-bold-sm items-center bg-color-transparent text-decoration-none inline"

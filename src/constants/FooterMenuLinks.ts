@@ -3,34 +3,34 @@ import { MenuLink } from 'types';
 
 export const AboutUsLinks: MenuLink[] = [
   {
-    link: '/about-us#team',
+    link: '/why-us#team',
     label: Language.t('Footer.team'),
   },
   {
-    link: '/about-us#values',
+    link: '/why-us#values',
     label: Language.t('Footer.values'),
   },
   {
-    link: '/about-us#press',
+    link: '/why-us#press',
     label: Language.t('Footer.newsAndPress'),
   },
 ];
 
-export const WhyWeInvestLinks: MenuLink[] = [
+export const WhereWeInvestLinks: MenuLink[] = [
   {
-    link: '/why-we-invest#opportunity',
+    link: '/where-we-invest#opportunity',
     label: Language.t('Footer.opportunity'),
   },
   {
-    link: '/why-we-invest#thesis',
+    link: '/where-we-invest#thesis',
     label: Language.t('Footer.thesis'),
   },
   {
-    link: '/why-we-invest#investment-guidelines',
+    link: '/where-we-invest#investment-guidelines',
     label: Language.t('Footer.investmentGuidelines'),
   },
   {
-    link: '/why-we-invest#apply',
+    link: '/where-we-invest#apply',
     label: Language.t('Footer.apply'),
   },
 ];

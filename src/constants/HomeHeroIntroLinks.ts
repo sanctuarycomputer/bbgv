@@ -3,15 +3,15 @@ import { MenuLink } from 'types';
 
 export const AboutUsLinks: MenuLink[] = [
   {
-    link: '/about-us#team',
+    link: '/why-us#team',
     label: Language.t('HomeHeroIntroLinks.aboutUs.us'),
   },
   {
-    link: '/about-us#values',
+    link: '/why-us#values',
     label: Language.t('HomeHeroIntroLinks.aboutUs.ourValues'),
   },
   {
-    link: '/about-us#press',
+    link: '/why-us#press',
     label: Language.t('HomeHeroIntroLinks.aboutUs.news'),
   },
 ];
@@ -29,15 +29,15 @@ export const CompaniesLinks: MenuLink[] = [
 
 export const WhyWeInvestLinks: MenuLink[] = [
   {
-    link: '/why-we-invest#thesis',
+    link: '/where-we-invest#thesis',
     label: Language.t('HomeHeroIntroLinks.whyWeInvest.ourThesis'),
   },
   {
-    link: '/why-we-invest#investment-guidelines',
+    link: '/where-we-invest#investment-guidelines',
     label: Language.t('HomeHeroIntroLinks.whyWeInvest.investmentGuidelines'),
   },
   {
-    link: '/why-we-invest#apply',
+    link: '/where-we-invest#apply',
     label: Language.t('HomeHeroIntroLinks.whyWeInvest.howToApply'),
   },
 ];

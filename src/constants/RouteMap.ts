@@ -19,7 +19,7 @@ export const RouteMap: { [id: string]: RouteObject } = {
     component: CompanyDetailContainer,
   },
   ABOUT: {
-    path: '/about-us',
+    path: '/why-us',
     exact: true,
     component: AboutContainer,
   },
@@ -29,7 +29,7 @@ export const RouteMap: { [id: string]: RouteObject } = {
     component: CompaniesContainer,
   },
   WHY_WE_INVEST: {
-    path: '/why-we-invest',
+    path: '/where-we-invest',
     exact: true,
     component: WhyWeInvestContainer,
   },
