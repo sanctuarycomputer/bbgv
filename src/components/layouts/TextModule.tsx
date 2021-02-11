@@ -34,7 +34,7 @@ const TextModule: React.FC<Props> = ({
         )}
       >
         {subheading ? (
-          <span className="TextModule__subheading nowrap primary-sm pr3_75 vertical-align-middle">
+          <span className="TextModule__subheading nowrap text-inline-subheader pr3_75 vertical-align-middle">
             {subheading}
           </span>
         ) : (
