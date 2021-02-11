@@ -46,7 +46,6 @@ const ApiClient: {
       'newsletter': ${NewsletterGroq},
       _type,
     }`);
-    console.log(response);
 
     return response;
   },
