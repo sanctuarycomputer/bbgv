@@ -22,7 +22,7 @@ const ParagraphWithHeadingAndButton: React.FC<Props> = ({ contents, className })
 
       {contents.button?.link && (
         <LineIconWithButton
-          color="charcoal"
+          color="lilac-darkest"
           link={contents.button.link}
           label={contents.button.label}
         />

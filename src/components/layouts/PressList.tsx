@@ -52,7 +52,7 @@ const PressItem = (item: PressListItem, mediaQuery: MediaQuery) => {
             block: !breakpointIsMdUp,
           })}
         >
-          <LineIconWithButton link={item.link.link} color="charcoal" label={item.link.label} />
+          <LineIconWithButton link={item.link.link} color="lilac-darkest" label={item.link.label} />
         </span>
       </div>
     </div>

@@ -100,7 +100,7 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
           <div className="FeaturedFoundersCarousel__bio secondary-sm col-9 md:col-6">
             <PortableText blocks={slide.companyDescription} />
             <LineIconWithButton
-              color="charcoal"
+              color="lilac-darkest"
               link={
                 slide.company?.companyDetailPageReference
                   ? generateCompanyDetailUrl(slide.company.companyDetailPageReference.slug)

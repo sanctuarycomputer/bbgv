@@ -68,7 +68,7 @@ const Fact = (fact: IFact) => {
           {fact.paragraphWithButton.button && (
             <LineIconWithButton
               link={fact.paragraphWithButton.button.link}
-              color="chalk"
+              color="lilac-darkest"
               label={fact.paragraphWithButton.button.label}
             />
           )}

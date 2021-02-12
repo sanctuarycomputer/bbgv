@@ -61,7 +61,7 @@ const TextModule: React.FC<Props> = ({
             {briefParagraph.button && (
               <LineIconWithButton
                 link={briefParagraph.button.link}
-                color={iconColor}
+                color="lilac-darkest"
                 label={briefParagraph.button.label}
               />
             )}
