@@ -6,6 +6,8 @@
     "@sanctucompu/basement": "^1.2.0",
     "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/client": "^2.0.9",
+    "@sentry/react": "^6.1.0",
+    "@sentry/tracing": "^6.1.0",
     "@spirit-fish/cli": "^0.0.8",
     "@types/classnames": "^2.2.11",
     "@types/lodash": "^4.14.165",

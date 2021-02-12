@@ -48,7 +48,7 @@ const CompanyDetailLanding: React.FC<Props> = ({
             </span>
             <h1
               className={cx(
-                'CompanyDetailLanding__heading primary-xxl vertical-align-middle color-chalk inline'
+                'CompanyDetailLanding__heading primary-xxl vertical-align-middle color-chalk inline hyphens'
               )}
             >
               <PortableText blocks={headline} />
