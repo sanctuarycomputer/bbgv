@@ -1,20 +1,20 @@
 .LineIconWithButton {
-  &__button {
-    @extend .transition-shorter;
+  @extend .transition;
 
-    &:hover {
-      .LineIconWithButton__button-line-icon {
-        width: 2.25rem;
-      }
+  &:hover {
+    .LineIconWithButton__button-line-icon {
+      @extend .transition;
 
-      .LineIconWithButton__button-placeholder-div {
-        width: 0;
-      }
+      transform: scaleX(1.4);
     }
   }
 
+  &__button:hover {
+    @extend .transition;
+    transform: translate3d(0.25rem, 0, 0);
+  }
+
   &__button-line-icon {
-    @extend .transition-shorter;
     width: 1.0625rem;
     height: 0.125rem;
   }

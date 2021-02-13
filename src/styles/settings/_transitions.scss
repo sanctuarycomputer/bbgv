@@ -30,7 +30,8 @@ $transition-easing: ease-in-out;
   transition: all $transition-duration-medium $transition-cubic-bezier;
 }
 
-.transition-long {
+.transition-long,
+%transition-long {
   transition: all $transition-duration-long $transition-cubic-bezier;
 }
 
