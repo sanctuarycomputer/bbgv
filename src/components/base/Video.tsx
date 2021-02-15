@@ -49,9 +49,9 @@ class Video extends Component<Props, State> {
     const { error } = this.state;
 
     return (
-      <div className={cx('Video', className)}>
+      <div className={cx('Video bg-color-black h100', className)}>
         {!error && vimeoId && (
-          <div className="Video__video-container relative flex items-center justify-center">
+          <div className="Video__video-container relative flex items-center justify-center h100">
             <div className="flex col-12">
               <div className="Video__video-wrapper w100 h100 flex justify-center transition">
                 <div id={vimeoId} className="w100 h100" />

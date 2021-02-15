@@ -34,7 +34,7 @@ const WhyWeInvestView: FC<Props> = (props) => {
       </div>
       <div id="thesis">
         <TextModuleWithParagraphs
-          className="text-module-padding-x py3_75 lg:py7_5"
+          className="text-module-container-padding-x py3_75 lg:py7_5"
           variant={thesis.variant}
           heading={thesis.heading}
           subheading={thesis.subheading}
@@ -43,7 +43,7 @@ const WhyWeInvestView: FC<Props> = (props) => {
       </div>
       <div
         id="investment-guidelines"
-        className="text-module-padding-x border-top-mulberry border-bottom-mulberry"
+        className="text-module-container-padding-x border-top-mulberry border-bottom-mulberry"
       >
         <TextModuleWithParagraphs
           className="pt3_75 lg:pt7_5"
@@ -56,7 +56,7 @@ const WhyWeInvestView: FC<Props> = (props) => {
       </div>
       <div id="apply">
         <TextModule
-          className="text-module-padding-x py3_75 lg:py7_5"
+          className="text-module-container-padding-x py3_75 lg:py7_5"
           variant="default"
           heading={apply.heading}
           subheading={apply.subheading}

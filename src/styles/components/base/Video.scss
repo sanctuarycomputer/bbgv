@@ -1,10 +1,8 @@
 .Video {
   &__video-wrapper {
     position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
     overflow: hidden;
-    max-width: 100%;
+    padding-top: 56.25%;
   }
 
   &__video-wrapper iframe,

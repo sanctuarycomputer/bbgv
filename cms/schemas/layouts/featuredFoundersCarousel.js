@@ -4,6 +4,12 @@ export default {
   type: 'object',
   fields: [
     {
+      title: 'Carousel Heading',
+      name: 'heading',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       title: 'Slides',
       name: 'slides',
       type: 'array',

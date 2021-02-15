@@ -48,7 +48,10 @@ const AboutView: FC<Props> = (props) => {
         />
         <TeamMemberGrid className="pb3_75 lg:pb1_5" teamMemberGrids={teamMemberGrids} />
       </div>
-      <div id="values" className="text-module-padding-x border-top-nutella border-bottom-nutella">
+      <div
+        id="values"
+        className="text-module-container-padding-x border-top-nutella border-bottom-nutella"
+      >
         <TextModuleWithParagraphs
           className="py3_75 lg:py7_5"
           variant={valuesSection.variant}
@@ -73,7 +76,7 @@ const AboutView: FC<Props> = (props) => {
         />
       </div>
       <TextModule
-        className="border-top-nutella text-module-padding-x py3_75 lg:py7_5"
+        className="border-top-nutella text-module-container-padding-x py3_75 lg:py7_5"
         variant="default"
         heading={contact.heading}
         subheading={contact.subheading}

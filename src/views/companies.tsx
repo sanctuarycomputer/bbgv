@@ -31,11 +31,11 @@ const CompaniesView: FC<Props> = (props) => {
       <div id="current-investments">
         <PortfolioListing sectors={portfolioListing.sectors} />
       </div>
-      <div id="previous-funds" className="text-module-padding-x pt3_75 lg:pt7_5">
+      <div id="previous-funds" className="text-module-container-padding-x pt3_75 lg:pt7_5">
         <InvestmentsList heading={investmentsList.heading} items={investmentsList.items} />
       </div>
       <TextModule
-        className="text-module-padding-x py3_75 lg:py7_5"
+        className="text-module-container-padding-x py3_75 lg:py7_5"
         variant="default"
         heading={contact.heading}
         subheading={contact.subheading}

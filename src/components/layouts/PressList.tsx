@@ -29,7 +29,7 @@ const PressList: React.FC<Props> = ({ heading, items, className, variant, mediaQ
         </div>
       )}
       {items.map((item: PressListItem) => (
-        <div key={item.heading} className="PressList__item text-module-padding-x col-12">
+        <div key={item.heading} className="PressList__item text-module-container-padding-x col-12">
           {PressItem(item, mediaQuery)}
         </div>
       ))}
@@ -52,7 +52,7 @@ const PressItem = (item: PressListItem, mediaQuery: MediaQuery) => {
             block: !breakpointIsMdUp,
           })}
         >
-          <LineIconWithButton link={item.link.link} color="charcoal" label={item.link.label} />
+          <LineIconWithButton link={item.link.link} color="lilac-darkest" label={item.link.label} />
         </span>
       </div>
     </div>

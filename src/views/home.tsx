@@ -34,13 +34,16 @@ const HomeView: FC<Props> = (props) => {
       <Meta seo={seo} />
       <HomeHero headline={hero.headline} founders={hero.founders} />
       <TextModule
-        className="text-module-padding-x py3_75 lg:py7_5"
+        className="text-module-container-padding-x py3_75 lg:py7_5"
         variant="default"
         heading={featuredFoundersCarouselSectionHeading.heading}
         subheading={featuredFoundersCarouselSectionHeading.subheading}
         briefParagraph={featuredFoundersCarouselSectionHeading.briefParagraph}
       />
-      <FeaturedFoundersCarousel slides={featuredFoundersCarousel.slides} />
+      <FeaturedFoundersCarousel
+        heading={featuredFoundersCarousel.heading}
+        slides={featuredFoundersCarousel.slides}
+      />
       <TextModule
         className="py3_75"
         variant="mulberry"
@@ -56,6 +59,7 @@ const HomeView: FC<Props> = (props) => {
         briefParagraph={foundersImpactSectionHeading.briefParagraph}
       />
       <FoundersImpactSlideshow
+        heading={foundersImpactSlideshow.heading}
         variant={foundersImpactSlideshow.variant}
         slides={foundersImpactSlideshow.slides}
       />
