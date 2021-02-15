@@ -51,31 +51,39 @@ export default function App() {
   if (appStatus === Status.REJECTED) return <PageNotFound />;
 
   return (
-    <main className="App">
+    <>
       <Router>
-        <ScrollToTop />
-        {globalSettings && 'cookieConsentText' in globalSettings && (
-          <CookieConsent
-            content={globalSettings.cookieConsentText}
-            containerClassName="bg-color-lilac text-left"
-            dismissButtonAriaLabel={Language.t('CookieConsent.acceptButton.ariaLabel')}
-            dismissButtonClassName="bg-color-transparent text-left color-charcoal transition-shorter"
-            dismissButtonLabel={Language.t('CookieConsent.acceptButton.label')}
+        <main className="App">
+          <ScrollToTop />
+          {globalSettings && 'cookieConsentText' in globalSettings && (
+            <CookieConsent
+              content={globalSettings.cookieConsentText}
+              containerClassName="bg-color-lilac text-left"
+              dismissButtonAriaLabel={Language.t('CookieConsent.acceptButton.ariaLabel')}
+              dismissButtonClassName="bg-color-transparent text-left color-charcoal transition-shorter"
+              dismissButtonLabel={Language.t('CookieConsent.acceptButton.label')}
+            />
+          )}
+          <Nav
+            setTheme={setTheme}
+            theme={theme}
+            menuIsOpen={menuIsOpen}
+            onOpenMenu={openMenu}
+            onCloseMenu={closeMenu}
           />
-        )}
-        <Nav
-          setTheme={setTheme}
-          theme={theme}
-          menuIsOpen={menuIsOpen}
-          onOpenMenu={openMenu}
-          onCloseMenu={closeMenu}
-        />
-        {'menu' in globalSettings && (
-          <MenuOverlay globalSettings={globalSettings} closeMenu={closeMenu} isOpen={menuIsOpen} />
-        )}
-        <Routes />
-        {'footerMenu' in globalSettings && <Footer globalSettings={globalSettings} />}
+          {'menu' in globalSettings && (
+            <MenuOverlay
+              globalSettings={globalSettings}
+              closeMenu={closeMenu}
+              isOpen={menuIsOpen}
+            />
+          )}
+          <Routes />
+        </main>
+        <footer>
+          {'footerMenu' in globalSettings && <Footer globalSettings={globalSettings} />}
+        </footer>
       </Router>
-    </main>
+    </>
   );
 }

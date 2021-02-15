@@ -2,3 +2,7 @@
 @import '~@sanctucompu/basement/src/index';
 @import 'settings', 'sizing', 'fontface', 'reset', 'typography', 'global';
 @import 'components';
+
+.App {
+  min-height: 100vh;
+}
