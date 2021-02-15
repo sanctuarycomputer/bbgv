@@ -40,6 +40,8 @@ class Video extends Component<Props, State> {
       controls: true,
       loop: false,
     });
+
+    this.setState({ player });
   };
 
   render() {

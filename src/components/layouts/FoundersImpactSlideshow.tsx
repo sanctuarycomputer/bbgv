@@ -139,7 +139,7 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
                 ? generateCompanyDetailUrl(slide.company.companyDetailPageReference.slug)
                 : RouteMap.COMPANIES.path
             }
-            className="FoundersImpactSlideshow__right-tile bg-color-lilac-darker h100 w100 text-left radius-xs flex flex-col mb6md:mb0"
+            className="FoundersImpactSlideshow__right-tile bg-color-lilac-darker h100 w100 text-left radius-xs flex flex-col"
             wrap={true}
           >
             <div className="FoundersImpactSlideshow__right-tile-content flex flex-col justify-between col-12 color-charcoal p1_5 md:p3_75">
