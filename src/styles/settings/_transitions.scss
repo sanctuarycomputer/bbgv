@@ -1,7 +1,7 @@
 $transition-duration-shortest: 0.15s;
 $transition-duration-shorter: 0.2s;
 $transition-duration-short: 0.3s;
-$transition-duration-medium: 0.5s;
+$transition-duration-medium: 0.75s;
 $transition-duration-long: 1s;
 $transition-cubic-bezier: cubic-bezier(0.15, 0.85, 0.45, 1);
 $transition: $transition-duration-short $transition-cubic-bezier;
@@ -26,7 +26,8 @@ $transition-easing: ease-in-out;
   transition: all $transition-duration-medium $transition-cubic-bezier;
 }
 
-.transition-medium {
+.transition-medium,
+%transition-medium {
   transition: all $transition-duration-medium $transition-cubic-bezier;
 }
 
