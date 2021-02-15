@@ -1,21 +1,21 @@
 .LineIconWithButton {
   &__button {
-    @extend .transition-shorter;
+    @extend .transition-medium;
+    transform: translate3d(0, 0, 0);
+  }
 
-    &:hover {
-      .LineIconWithButton__button-line-icon {
-        width: 2.25rem;
-      }
+  &__button:hover {
+    transform: translate3d(0.7rem, 0, 0);
 
-      .LineIconWithButton__button-placeholder-div {
-        width: 0;
-      }
+    .LineIconWithButton__button-line-icon {
+      transition: all 2s cubic-bezier(0.15, 0.85, 0.45, 1);
+      transform: scaleX(1.5);
     }
   }
 
   &__button-line-icon {
-    @extend .transition-shorter;
     width: 1.0625rem;
     height: 0.125rem;
+    transform: scaleX(1);
   }
 }
