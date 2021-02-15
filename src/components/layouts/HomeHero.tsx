@@ -138,13 +138,13 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
                   }}
                 >
                   {index !== founders.length - 1 ? (
-                    <span className="">
-                      <span className="">{founder.firstName}</span>
+                    <span>
+                      <span>{founder.firstName}</span>
                       <span className="color-charcoal mr_25 md:mr_5 lg:mr1">,</span>
                     </span>
                   ) : (
-                    <span className="">
-                      <span className="">{founder.firstName}</span>
+                    <span>
+                      <span>{founder.firstName}</span>
                     </span>
                   )}
                 </Button>
