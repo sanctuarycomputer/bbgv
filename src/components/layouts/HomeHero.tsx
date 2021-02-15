@@ -74,7 +74,7 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
 
       {!breakpointIsXsUp && (
         <div>
-          <span className="color-charcoal pr2_25 md:px3_75 vertical-align-middle inline text-inline-subheader">
+          <span className="HomeHero__inline-subheader color-charcoal pr2_25 md:px3_75 vertical-align-middle inline">
             {Language.t('Home.hero.ourFounders')}
           </span>
           <span className="primary-xxl inline">
@@ -107,15 +107,15 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
       )}
 
       {breakpointIsXsUp && (
-        <span>
-          <div className="color-charcoal px2_25 md:px3_75 inline-block vertical-align-middle nowrap text-inline-subheader">
+        <span className="">
+          <div className="HomeHero__inline-subheader color-charcoal px2_25 md:px3_75 inline-block vertical-align-middle nowrap">
             {Language.t('Home.hero.ourFounders')}
           </div>
-          <span className="HomeHero__founders-container color-charcoal primary-xxl inline">
+          <span className="=HomeHero__founders-container color-charcoal primary-xxl inline">
             {founders.map((founder: Founder, index: number) => (
               <span
                 key={`HomeHero-${founder.firstName}-${index}}`}
-                className="HomeHero__founder relative"
+                className="HomeHero__founder vertical-align-middle relative"
               >
                 <Button
                   wrap={true}
@@ -138,13 +138,13 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
                   }}
                 >
                   {index !== founders.length - 1 ? (
-                    <span>
-                      <span>{founder.firstName}</span>
+                    <span className="">
+                      <span className="">{founder.firstName}</span>
                       <span className="color-charcoal mr_25 md:mr_5 lg:mr1">,</span>
                     </span>
                   ) : (
-                    <span>
-                      <span>{founder.firstName}</span>
+                    <span className="">
+                      <span className="">{founder.firstName}</span>
                     </span>
                   )}
                 </Button>

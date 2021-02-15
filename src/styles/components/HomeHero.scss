@@ -1,4 +1,14 @@
 .HomeHero {
+  &__inline-subheader {
+    font-family: $benton;
+    font-size: 1rem;
+    letter-spacing: 0.02rem;
+
+    @include media('lg-up') {
+      font-size: 1.625rem;
+    }
+  }
+
   &__logo {
     width: $home-hero-logo-width-mobile;
 
