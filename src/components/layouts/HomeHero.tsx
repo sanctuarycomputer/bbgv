@@ -107,11 +107,11 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
       )}
 
       {breakpointIsXsUp && (
-        <span className="">
+        <span>
           <div className="HomeHero__inline-subheader color-charcoal px2_25 md:px3_75 inline-block vertical-align-middle nowrap">
             {Language.t('Home.hero.ourFounders')}
           </div>
-          <span className="=HomeHero__founders-container color-charcoal primary-xxl inline">
+          <span className="HomeHero__founders-container color-charcoal primary-xxl inline">
             {founders.map((founder: Founder, index: number) => (
               <span
                 key={`HomeHero-${founder.firstName}-${index}}`}
@@ -148,7 +148,7 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
                     </span>
                   )}
                 </Button>
-                <div
+                {/* <div
                   className={cx(
                     'HomeHero__photo-card absolute transition-shorter events-none opacity-0 z-overlay',
                     {
@@ -158,7 +158,7 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
                   )}
                 >
                   <PhotoCard founder={founder} />
-                </div>
+                </div> */}
               </span>
             ))}
           </span>
