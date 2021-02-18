@@ -107,14 +107,14 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
           >
             <div
               className={cx(
-                'FoundersImpactSlideshow__left-tile-content flex flex-col col-12 p1_5 md:p3_75',
+                'FoundersImpactSlideshow__left-tile-content flex flex-col col-12 p1_5 md:p2_25',
                 {
                   'color-charcoal': variant === 'nutella-lilac',
                   'color-chalk': variant === 'mulberry-lilac',
                 }
               )}
             >
-              <p className="secondary-sm md:pb1_75">{slide.leftSubheading}</p>
+              <p className="secondary-sm md:pb_75">{slide.leftSubheading}</p>
               <p className="primary-lg">{slide.leftHeadline}</p>
               {slide.leftImage && (
                 <div className="FoundersImpactSlideshow__img-container mt2_5">
@@ -142,7 +142,7 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
             className="FoundersImpactSlideshow__right-tile bg-color-lilac-darker h100 w100 text-left radius-xs flex flex-col"
             wrap={true}
           >
-            <div className="FoundersImpactSlideshow__right-tile-content flex flex-col justify-between col-12 color-charcoal p1_5 md:p3_75">
+            <div className="FoundersImpactSlideshow__right-tile-content flex flex-col justify-between col-12 color-charcoal p1_5 md:p2_25">
               <div className="FoundersImpactSlideshow__logo-container">
                 <img
                   className="fit-contain"
