@@ -25,48 +25,58 @@ const TextModule: React.FC<Props> = ({
   return (
     <div
       className={cx(
-        `TextModule TextModule--style-${variant} ${className} bg-color-${variant} ${fontColor} text-module-inner-padding`
+        `TextModule TextModule--style-${variant} bg-color-${variant} ${fontColor} text-module-inner-padding site-inner-content-max-widthh mxauto`,
+        className
       )}
     >
       <div
         className={cx(
-          `TextModule--style-${variant}--inner-container TextModule__inner-container mxauto col-12 lg:col-8 xxl:col-7`
+          `TextModule__outer-container TextModule--style-${variant}__outer-container mxauto site-inner-content-max-width`,
+          {
+            'site-inner-content-max-width': variant === 'mulberry',
+          }
         )}
       >
-        {subheading ? (
-          <span className="TextModule__subheading nowrap text-inline-subheader pr3_75 vertical-align-middle">
-            {subheading}
-          </span>
-        ) : (
-          <LineIcon
-            className="TextModule__subheading-line vertical-align-middle mr_75 lg:mr1_5"
-            color={iconColor}
-          />
-        )}
-
-        <h1
+        <div
           className={cx(
-            `TextModule__heading TextModule--style-${variant}__heading primary-xl vertical-align-middle`
+            `TextModule--style-${variant}--inner-container TextModule__inner-container mxauto col-12 lg:col-8 xxl:col-7`
           )}
         >
-          <PortableText blocks={heading} />
-        </h1>
-        {briefParagraph && (
-          <div
+          {subheading ? (
+            <span className="TextModule__subheading nowrap text-inline-subheader pr3_75 vertical-align-middle">
+              {subheading}
+            </span>
+          ) : (
+            <LineIcon
+              className="TextModule__subheading-line vertical-align-middle mr_75 lg:mr1_5"
+              color={iconColor}
+            />
+          )}
+
+          <h1
             className={cx(
-              `TextModule__paragraph TextModule--style-${variant}__paragraph secondary-sm col-12 md:col-8 pt1_5 lg:pt2_25`
+              `TextModule__heading TextModule--style-${variant}__heading primary-xl vertical-align-middle`
             )}
           >
-            <PortableText blocks={briefParagraph.paragraph} />
-            {briefParagraph.button && (
-              <LineIconWithButton
-                link={briefParagraph.button.link}
-                color="lilac-darkest"
-                label={briefParagraph.button.label}
-              />
-            )}
-          </div>
-        )}
+            <PortableText blocks={heading} />
+          </h1>
+          {briefParagraph && (
+            <div
+              className={cx(
+                `TextModule__paragraph TextModule--style-${variant}__paragraph secondary-sm col-12 md:col-8 pt1_5 lg:pt2_25`
+              )}
+            >
+              <PortableText blocks={briefParagraph.paragraph} />
+              {briefParagraph.button && (
+                <LineIconWithButton
+                  link={briefParagraph.button.link}
+                  color="lilac-darkest"
+                  label={briefParagraph.button.label}
+                />
+              )}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

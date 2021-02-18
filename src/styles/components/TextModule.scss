@@ -43,9 +43,7 @@
   }
 
   &__inner-container {
-    @include media('lg-up') {
-      max-width: $site-inner-content-max-width;
-    }
+    max-width: $site-inner-content-max-width;
   }
 
   &__subheading-line {

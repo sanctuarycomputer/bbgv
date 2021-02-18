@@ -68,6 +68,11 @@ body {
   }
 }
 
+// .text-module-container-padding-x {
+//   @extend .site-margin-x;
+//   @extend .site-inner-content-max-width;
+// }
+
 .text-module-inner-padding {
   padding-left: $site-padding-x-mobile;
   padding-right: $site-padding-x-mobile;
@@ -137,11 +142,6 @@ body {
 }
 
 /** Utils */
-
-.text-module-container-padding-x {
-  @extend .site-margin-x;
-  @extend .site-inner-content-max-width;
-}
 
 .disable-body-scroll {
   margin: 0;
