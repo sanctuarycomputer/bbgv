@@ -17,6 +17,7 @@ const LineIconWithButton: React.FC<Props> = ({ color, link, label, onClick, vari
   return (
     <span className="LineIconWithButton ml_25 secondary-sm">
       <Button
+        wrap={true}
         className={cx(
           `LineIconWithButton__button inline-flex items-center text-decoration-none vertical-align-middle color-${color} bg-color-transparent`,
           {

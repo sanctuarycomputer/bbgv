@@ -65,8 +65,8 @@ const CompanyDetailLanding: React.FC<Props> = ({
           </div>
         </div>
 
-        <div className="CompanyDetailLanding__images-container h100 col-12 md:col-6 flex flex-col relative">
-          <div className="CompanyDetailLanding__images flex h100 col-12">
+        <div className="CompanyDetailLanding__images-container h100 col-12 md:col-6 flex flex-col relative md:pb2_75">
+          <div className="CompanyDetailLanding__images flex h100 col-12 pb2_25 md:pb0">
             {founderPortrait?.src && (
               <Img
                 className={cx('fit-cover', {
@@ -92,7 +92,7 @@ const CompanyDetailLanding: React.FC<Props> = ({
             )}
           </div>
 
-          <div className="CompanyDetailLanding__links absolute b0 secondary-bold-sm color-charcoal flex flex-row col-12 md:col-8 pl_75 pt2_25 md:px3_75 md:pt3_75 md:pb2_75">
+          <div className="CompanyDetailLanding__links absolute secondary-bold-sm color-charcoal flex flex-row col-12 md:col-8 pl_75 md:pl3_75 md:pb2_75">
             <div className="col-6">
               {company.careers?.link && (
                 <Button
@@ -104,11 +104,12 @@ const CompanyDetailLanding: React.FC<Props> = ({
                   ariaLabel={company.careers.label}
                 />
               )}
+              {company.careers?.link && <div className=""></div>}
             </div>
             <div className="col-6 flex flex-col md:pl2">
               {company.instagram?.link && (
                 <Button
-                  className="text-decoration-none link--style-body-charcoal hover-lighten-charcoal color-charcoal pb_25"
+                  className="text-decoration-none link--style-body-charcoal hover-lighten-charcoal color-charcoal pb_25 md:pb_75"
                   to={company.instagram.link}
                   label={company.instagram.label}
                   ariaLabel={company.instagram.label}

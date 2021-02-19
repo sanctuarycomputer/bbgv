@@ -19,13 +19,14 @@ const TextModule: React.FC<Props> = ({
   briefParagraph,
   className,
 }) => {
-  const fontColor = variant === 'mulberry' ? 'color-chalk' : 'color-charcoal';
-  const iconColor = variant === 'mulberry' ? 'chalk' : 'charcoal';
+  const bgColor = variant === 'mulberry' ? 'bg-color-mulberry' : 'bg-color-chalk';
+  const fontColor = variant === 'mulberry' ? 'chalk' : 'charcoal';
+  const iconColor = variant === 'mulberry' ? 'lilac-darker' : 'lilac-very-dark';
 
   return (
     <div
       className={cx(
-        `TextModule TextModule--style-${variant} ${className} bg-color-${variant} ${fontColor} text-module-inner-padding`
+        `TextModule TextModule--style-${variant} ${className} ${bgColor} color-${fontColor} text-module-inner-padding`
       )}
     >
       <div
@@ -34,13 +35,13 @@ const TextModule: React.FC<Props> = ({
         )}
       >
         {subheading ? (
-          <span className="TextModule__subheading nowrap text-inline-subheader pr3_75 vertical-align-middle">
+          <span className="TextModule__subheading text-inline-subheader nowrap primary-sm pr3_75 vertical-align-middle">
             {subheading}
           </span>
         ) : (
           <LineIcon
             className="TextModule__subheading-line vertical-align-middle mr_75 lg:mr1_5"
-            color={iconColor}
+            color={fontColor}
           />
         )}
 
@@ -61,7 +62,7 @@ const TextModule: React.FC<Props> = ({
             {briefParagraph.button && (
               <LineIconWithButton
                 link={briefParagraph.button.link}
-                color="lilac-darkest"
+                color={iconColor}
                 label={briefParagraph.button.label}
               />
             )}

@@ -14,7 +14,6 @@ import Classes from 'constants/Classes';
 import { Button } from 'components/base';
 import { BBGVLogo, MenuIcon, CloseIcon, BBGLogo, VenturesLogo } from 'components/icons';
 import { setTheme } from 'state/actions/applicationActions';
-import companyDetail from 'containers/companyDetail';
 
 type PassedProps = {
   theme: Theme;
@@ -40,7 +39,6 @@ const Nav: React.FC<Props> = (props) => {
       ? 'charcoal'
       : 'chalk';
 
-  const breakpointIsMdUp = mediaQuery.isMediumUp;
   const [scrollPosition, setScrollPosition] = useState(0);
   const [hoverLogo, setHoverLogo] = useState(false);
   const [showNavLogo, setShowNavLogo] = useState(false);
@@ -50,6 +48,11 @@ const Nav: React.FC<Props> = (props) => {
   const handleNavLogoClick = () => {
     if (menuIsOpen) {
       onCloseMenu();
+    }
+
+    /* Ensures that if the user has clicked on the nav logo to navigate to the Home Page, the hover styling will be removed. **/
+    if (hoverLogo) {
+      setHoverLogo(false);
     }
 
     return null;
@@ -67,22 +70,30 @@ const Nav: React.FC<Props> = (props) => {
       setShowNavLogo(true);
     }
 
+    /* When the menu overlay is closed, the nav logo always shows on every page except for the Home Page. **/
     if (!menuIsOpen) {
-      if (scrollTop === 0 && showNavLogo) {
-        setShowNavLogo(false);
-      }
-
-      if (logo) {
-        if (!hasPassedElement(logo) && showNavLogo) {
+      /* On the Home Page, the nav logo should show only after passing the logo in the Home Hero Module. */
+      if (isHome) {
+        if (scrollTop === 0 && showNavLogo) {
           setShowNavLogo(false);
         }
 
-        if (hasPassedElement(logo) && !showNavLogo) {
-          setShowNavLogo(true);
+        if (logo) {
+          if (!hasPassedElement(logo) && showNavLogo) {
+            setShowNavLogo(false);
+          }
+
+          if (hasPassedElement(logo) && !showNavLogo) {
+            setShowNavLogo(true);
+          }
         }
       }
+
+      if (!isHome && !showNavLogo) {
+        setShowNavLogo(true);
+      }
     }
-  }, [showNavLogo, menuIsOpen]);
+  }, [isHome, showNavLogo, menuIsOpen]);
 
   /* Disables body scroll when menu overlay is open. **/
   const handleBodyScroll = useCallback(() => {
@@ -123,16 +134,13 @@ const Nav: React.FC<Props> = (props) => {
         containerClassName={cx(
           'Nav__logo-outer-container opacity-0 events-none transition-shortest',
           {
-            'events-none opacity-0': !showNavLogo && isHome,
-            'events-all opacity-1': !isHome,
-            'events-all opacity-1 Nav__logo-container--style-scrolled overflow-x-hidden':
-              showNavLogo && isHome,
+            'events-none opacity-0': !showNavLogo,
+            'events-all opacity-1 Nav__logo-container--style-scrolled overflow-x-hidden': showNavLogo,
           }
         )}
         className={cx('Nav__logo-container', {
-          'events-none opacity-0': !showNavLogo && isHome,
-          'events-all opacity-1 Nav__logo-container--style-scrolled overflow-x-hidden':
-            showNavLogo && isHome,
+          'events-none opacity-0': !showNavLogo,
+          'events-all opacity-1 Nav__logo-container--style-scrolled overflow-x-hidden': showNavLogo,
         })}
         ariaLabel={Language.t('Global.navigateToHome')}
         to={RouteMap.HOME.path}
@@ -141,8 +149,8 @@ const Nav: React.FC<Props> = (props) => {
         onMouseLeave={() => setHoverLogo(false)}
         onClick={handleNavLogoClick}
       >
-        {isHome && showNavLogo ? (
-          <span>
+        {showNavLogo ? (
+          <span className="vertical-align-middle transition-shorter">
             <BBGLogo className="Nav__logo-bbg transition-shorter" color={iconColor} />
             <VenturesLogo
               className={cx('Nav__logo-ventures transition-shorter', {

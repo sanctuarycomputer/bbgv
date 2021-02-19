@@ -11,17 +11,25 @@
     display: inline;
   }
 
-  &__links {
+  &__images-container {
+    max-height: 35vh;
+
     @include media('md-up') {
-      min-height: 9.0625rem;
+      max-height: unset;
     }
   }
 
   &__images {
-    max-height: 35vh;
-
     @include media('md-up') {
       max-height: 80vh;
+    }
+  }
+
+  &__links {
+    bottom: -2.75rem;
+
+    @include media('md-up') {
+      bottom: 0;
     }
   }
 }

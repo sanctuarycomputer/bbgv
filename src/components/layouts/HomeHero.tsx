@@ -74,10 +74,10 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
 
       {!breakpointIsXsUp && (
         <div>
-          <span className="color-charcoal pr2_25 md:px3_75 vertical-align-middle inline text-inline-subheader">
+          <span className="color-charcoal pr2_25 md:px3_75 vertical-align-middle inline-block text-inline-subheader">
             {Language.t('Home.hero.ourFounders')}
           </span>
-          <span className="primary-xxl inline">
+          <span className="primary-xxl inline vertical-align-middle">
             {founders.map((founder: Founder, index: number) => (
               <span
                 key={`HomeHero-${founder.firstName}-${index}}`}
@@ -97,7 +97,7 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
             ))}
           </span>
           <Button
-            className="HomeHero__founder inline text-decoration-none hover-color-lilac-very-dark transition color-lilac-darkest"
+            className="HomeHero__founder inline text-decoration-none hover-color-lilac-very-dark transition color-lilac-darkest vertical-align-middle"
             ariaLabel={Language.t('Home.hero.othersButtonAriaLabel')}
             to={RouteMap.COMPANIES.path}
             label={` & ${Language.t('Home.hero.others')}`}
@@ -107,15 +107,15 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
       )}
 
       {breakpointIsXsUp && (
-        <span>
-          <div className="color-charcoal px2_25 md:px3_75 inline-block vertical-align-middle nowrap text-inline-subheader">
+        <span className="break-word">
+          <div className="inline-block color-charcoal px2_25 md:px3_75 vertical-align-middle nowrap text-inline-subheader">
             {Language.t('Home.hero.ourFounders')}
           </div>
           <span className="HomeHero__founders-container color-charcoal primary-xxl inline">
             {founders.map((founder: Founder, index: number) => (
               <span
                 key={`HomeHero-${founder.firstName}-${index}}`}
-                className="HomeHero__founder relative"
+                className="HomeHero__founder relative vertical-align-middle"
               >
                 <Button
                   wrap={true}
@@ -163,7 +163,8 @@ const HomeHero: React.FC<Props> = ({ mediaQuery, founders, headline }) => {
             ))}
           </span>
           <Button
-            className="HomeHero__founder inline text-decoration-none hover-color-charcoal transition color-lilac-darkest"
+            wrap={true}
+            className="HomeHero__founder inline text-decoration-none hover-color-charcoal transition color-lilac-darkest primary-xxl vertical-align-middle"
             ariaLabel={Language.t('Home.hero.othersButtonAriaLabel')}
             to={RouteMap.COMPANIES.path}
             label={` & ${Language.t('Home.hero.others')}`}

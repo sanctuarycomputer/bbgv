@@ -121,7 +121,7 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
                   <img
                     className="w100 h100 fit-cover radius-xs"
                     src={slide.leftImage.src}
-                    alt={slide.leftImage.alt}
+                    alt={slide.leftImage.alt || Language.t('Global.fallbackAltLabel')}
                   />
                 </div>
               )}
@@ -147,7 +147,7 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
                 <img
                   className="fit-contain"
                   src={slide.company.logo.src}
-                  alt={slide.company.logo.alt}
+                  alt={slide.company.logo.alt || Language.t('Global.fallbackAltLabel')}
                 />
               </div>
 

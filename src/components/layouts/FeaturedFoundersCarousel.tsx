@@ -95,12 +95,14 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
           </div>
           <div className="flex flex-col col-12  lg:col-4 pb1_25 lg:pb0">
             <p className="primary-md uppercase">{generateFullName(slide.founder)}</p>
-            <p className="primary-md uppercase color-lilac-darkest">{slide.founder.companyName}</p>
+            <p className="primary-md uppercase color-lilac-very-dark">
+              {slide.founder.companyName}
+            </p>
           </div>
           <div className="FeaturedFoundersCarousel__bio secondary-sm col-9 md:col-6">
             <PortableText blocks={slide.companyDescription} />
             <LineIconWithButton
-              color="lilac-darkest"
+              color="lilac-very-dark"
               link={
                 slide.company?.companyDetailPageReference
                   ? generateCompanyDetailUrl(slide.company.companyDetailPageReference.slug)

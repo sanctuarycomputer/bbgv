@@ -33,25 +33,6 @@ export default {
               validation: (Rule) => Rule.required(),
             },
             {
-              title: 'Founder(s)',
-              name: 'founders',
-              type: 'array',
-              description: 'Add the Founder(s) name(s).',
-              validation: (Rule) => Rule.required().min(1),
-              of: [
-                {
-                  type: 'string',
-                },
-              ],
-            },
-            {
-              title: 'Company Tag',
-              name: 'companyTag',
-              type: 'string',
-              description:
-                'This is an optional tag that can be the status of a company, such as "exited".',
-            },
-            {
               title: 'Brief description with optional button',
               name: 'description',
               type: 'paragraphWithButton',
