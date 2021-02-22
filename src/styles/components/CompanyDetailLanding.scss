@@ -7,8 +7,18 @@
     height: 80%;
   }
 
-  &__heading p {
-    display: inline;
+  &__heading {
+    font-size: 4.5rem;
+    line-height: 4.725rem;
+
+    @media (min-width: 1366px) {
+      font-size: 6.25rem;
+      line-height: 6.25rem;
+    }
+
+    p {
+      display: inline;
+    }
   }
 
   &__images-container {

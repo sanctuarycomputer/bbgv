@@ -77,7 +77,7 @@ const AboutView: FC<Props> = (props) => {
       </div>
       <TextModule
         className="border-top-nutella text-module-container-padding-x py3_75 lg:py7_5"
-        variant="default"
+        variant="default-with-border"
         heading={contact.heading}
         subheading={contact.subheading}
         briefParagraph={contact.briefParagraph}

@@ -1,8 +1,24 @@
 .MenuOverlay {
   min-height: -webkit-fill-available;
 
+  &__section-one,
+  &__section-two,
+  &__section-three {
+    @include media('lg-up') {
+      padding-top: 20%;
+    }
+
+    @include media('xl-up') {
+      padding-top: 15%;
+    }
+  }
+
   &__section-one {
-    height: 2.9375rem;
+    height: $nav-height-mobile;
+
+    @include media('md-up') {
+      height: $nav-height-desktop;
+    }
 
     @include media('lg-up') {
       height: unset;
@@ -23,7 +39,8 @@
     }
 
     @include media('lg-up') {
-      padding-left: 4%;
+      padding-left: 3%;
+      padding-right: 2%;
       transform: translate3d(-30rem, 0, 0);
 
       &--active {
@@ -86,6 +103,13 @@
   &__heading-indentation {
     @include media('md-up') {
       padding-right: 13.9375rem;
+    }
+  }
+
+  &__section-two-inner-container,
+  &__section-three-inner-container {
+    @include media('lg-up') {
+      justify-content: unset;
     }
   }
 

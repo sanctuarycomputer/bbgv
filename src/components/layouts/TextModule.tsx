@@ -6,7 +6,7 @@ import { LineIcon, LineIconWithButton } from 'components/icons';
 
 type Props = {
   className?: string;
-  variant: 'mulberry' | 'default';
+  variant: 'mulberry' | 'default' | 'default-with-border';
   subheading?: string;
   heading: Block[];
   briefParagraph?: ParagraphWithButton;
@@ -26,7 +26,10 @@ const TextModule: React.FC<Props> = ({
   return (
     <div
       className={cx(
-        `TextModule TextModule--style-${variant} ${className} ${bgColor} color-${fontColor} text-module-inner-padding`
+        `TextModule TextModule--style-${variant} ${className} ${bgColor} color-${fontColor} `,
+        {
+          'text-module-inner-padding': variant !== 'default-with-border',
+        }
       )}
     >
       <div

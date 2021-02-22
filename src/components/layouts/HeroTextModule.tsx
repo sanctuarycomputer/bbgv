@@ -67,7 +67,7 @@ const HeroTextModule: React.FC<Props> = ({
           <span className="primary-xxl vertical-align-middle">
             {introBylineLinks.map((link: MenuLink, i: number) => {
               return (
-                <>
+                <span key={`HeroTextModule-link-${link.label}`}>
                   <HashLink
                     key={link.link}
                     className={cx(
@@ -101,7 +101,7 @@ const HeroTextModule: React.FC<Props> = ({
                       {Language.t('Global.and')}
                     </span>
                   )}
-                </>
+                </span>
               );
             })}
           </span>

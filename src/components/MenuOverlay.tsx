@@ -36,16 +36,16 @@ const MenuOverlay: React.FC<Props> = ({ closeMenu, globalSettings, isOpen, media
     >
       <div
         className={cx(
-          'MenuOverlay__section-one bg-color-lilac-darker lg:col-6 col-12 flex flex-col lg:px3_75 lg:pb3_75 transition-medium',
+          'MenuOverlay__section-one bg-color-lilac-darker lg:col-6 col-12 flex flex-col lg:px3_75 transition-medium',
           {
             'MenuOverlay__section-one--active': isOpen,
           }
         )}
       >
-        <div className="MenuOverlay__section-one-inner-container h100 flex flex-col">
+        <div className="MenuOverlay__section-one-inner-container h100 flex flex-col h100">
           <div
             className={cx(
-              'MenuOverlay__heading hyphens opacity-0 col-12 primary-xl flex flex-col justify-center h100',
+              'MenuOverlay__heading hyphens opacity-0 col-12 primary-xl flex flex-col h100',
               {
                 none: !breakpointIsLgUp,
                 'MenuOverlay__heading--active': isOpen,
@@ -58,7 +58,7 @@ const MenuOverlay: React.FC<Props> = ({ closeMenu, globalSettings, isOpen, media
             </span>
           </div>
 
-          <div className="MenuOverlay__newsletter flex none lg:block secondary-bold-sm items-end">
+          <div className="MenuOverlay__newsletter flex none lg:block secondary-bold-sm items-end pb3_75">
             <div
               className={cx('MenuOverlay__newsletter-inner-container opacity-0', {
                 'MenuOverlay__newsletter-inner-container--active': isOpen,
@@ -79,9 +79,12 @@ const MenuOverlay: React.FC<Props> = ({ closeMenu, globalSettings, isOpen, media
         )}
       >
         <div
-          className={cx('MenuOverlay__section-two-inner-container opacity-0 flex flex-col', {
-            'MenuOverlay__section-two-inner-container--active': isOpen,
-          })}
+          className={cx(
+            'MenuOverlay__section-two-inner-container opacity-0 flex flex-col h100 justify-center',
+            {
+              'MenuOverlay__section-two-inner-container--active': isOpen,
+            }
+          )}
         >
           {menu.links.map((link: IButton) => (
             <Button
@@ -102,7 +105,7 @@ const MenuOverlay: React.FC<Props> = ({ closeMenu, globalSettings, isOpen, media
 
       <div
         className={cx(
-          'MenuOverlay__section-three justify-center bg-color-lilac-lightest pt1_5 md:pt0 pb5 px_75 lg:px0 lg:col-2 flex flex-col transition-medium',
+          'MenuOverlay__section-three justify-center bg-color-lilac-lightest pt1_5 md:pt0 px_75 lg:px0 lg:col-2 flex flex-col transition-medium',
           {
             'MenuOverlay__section-three--active': isOpen,
           }
@@ -110,7 +113,7 @@ const MenuOverlay: React.FC<Props> = ({ closeMenu, globalSettings, isOpen, media
       >
         <div
           className={cx(
-            'MenuOverlay__section-three-inner-container flex flex-col lg:pr3_75 opacity-0',
+            'MenuOverlay__section-three-inner-container flex flex-col lg:pr3_75 opacity-0 h100 justify-center',
             {
               'MenuOverlay__section-three-inner-container--active': isOpen,
             }

@@ -122,7 +122,7 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
     const { slides, speed, heading } = this.props;
 
     return (
-      <div className="FeaturedFoundersCarousel col-12 px_75 lg:px3_75">
+      <div className="FeaturedFoundersCarousel col-12 md:px_75 lg:px0">
         <div className="FeaturedFoundersCarousel__outer-container col-12 lg:col-8 xxl:col-7 mxauto relative">
           <div className="FeaturedFoundersCarousel__container site-inner-content-max-width mxauto pb3 md:pb5">
             <div className="w100 h100 pb3 md:pb5">

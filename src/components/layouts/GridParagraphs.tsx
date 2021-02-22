@@ -30,13 +30,10 @@ export default GridParagraphs;
 const Paragraph = (section: ParagraphWithHeading) => {
   return (
     <div className="GridParagraphs__section-inner-container">
-      <span className="GridParagraphs__heading pr5 lg:pr7 primary-md vertical-align-middle left">
-        {section.heading}
-      </span>
-
-      <span className="GridParagraphs__paragraph vertical-align-middle secondary-sm">
+      <p className="GridParagraphs__heading primary-md pb_75">{section.heading}</p>
+      <p className="GridParagraphs__paragraph secondary-sm">
         <PortableText blocks={section.paragraph} />
-      </span>
+      </p>
     </div>
   );
 };

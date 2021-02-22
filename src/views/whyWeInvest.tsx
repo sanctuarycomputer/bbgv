@@ -57,7 +57,7 @@ const WhyWeInvestView: FC<Props> = (props) => {
       <div id="apply">
         <TextModule
           className="text-module-container-padding-x py3_75 lg:py7_5"
-          variant="default"
+          variant="default-with-border"
           heading={apply.heading}
           subheading={apply.subheading}
           briefParagraph={apply.briefParagraph}
