@@ -6,11 +6,17 @@ import { Colors, HexColors } from 'constants/Colors';
 interface Props {
   color: Colors;
   className?: string;
+  variant: 'round-border' | 'default';
 }
 
-const RightArrow: React.FC<Props> = ({ color, className = '' }) => {
+const RightArrow: React.FC<Props> = ({ color, className = '', variant }) => {
   return (
-    <div className={cx('RightArrow bg-color-lilac flex items-center justify-center', className)}>
+    <div
+      className={cx(
+        `RightArrow RightArrow--style-${variant} bg-color-lilac flex items-center justify-center`,
+        className
+      )}
+    >
       <svg
         width="31"
         height="19"

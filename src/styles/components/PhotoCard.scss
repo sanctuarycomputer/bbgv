@@ -34,14 +34,17 @@
       height: 24.101875rem;
     }
 
-    &::after {
+    &::before {
       content: '';
       position: absolute;
+      display: grid;
+      place-items: center;
       bottom: 0;
       left: 0;
       right: 0;
       height: 30%;
       background: linear-gradient(180deg, rgba(239, 233, 220, 0) 0%, rgb(0, 0, 0) 98%);
+      z-index: 1;
       width: 13rem;
 
       @include media('lg-up') {

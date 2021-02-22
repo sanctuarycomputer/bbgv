@@ -1,28 +1,33 @@
 .RightArrow {
-  width: 2.3125rem;
-  height: 1.375rem;
-  border-radius: 1.3225rem;
-  @extend %transition;
-
-  &:hover {
-    @include media('lg-up') {
-      transform: translateX(0.25rem);
+  &--style-default,
+  &--style-round-border {
+    > svg {
+      height: 0.625rem;
+      width: 1.0625rem;
     }
   }
 
-  > svg {
-    height: 0.625rem;
-    width: 1.0625rem;
-  }
+  &--style-round-border {
+    width: 2.3125rem;
+    height: 1.375rem;
+    border-radius: 1.3225rem;
+    @extend %transition;
 
-  @include media('lg-up') {
-    height: 2.475rem;
-    width: 4.25rem;
-    border-radius: 2.09125rem;
+    &:hover {
+      @include media('lg-up') {
+        transform: translateX(0.25rem);
+      }
+    }
 
-    > svg {
-      height: 1.1875rem;
-      width: 1.9375rem;
+    @include media('lg-up') {
+      height: 2.475rem;
+      width: 4.25rem;
+      border-radius: 2.09125rem;
+
+      > svg {
+        height: 1.1875rem;
+        width: 1.9375rem;
+      }
     }
   }
 }

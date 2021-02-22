@@ -1,6 +1,7 @@
-import SectorGroq from './Sector';
+import CompanyGroq from './Company';
 
 export default `{
   _type,
-  sectors[]->${SectorGroq},
+  heading,
+  companies[]->${CompanyGroq},
 }`;

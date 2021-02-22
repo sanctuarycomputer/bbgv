@@ -388,7 +388,8 @@ export const FeaturedFoundersCarousel = t.type({
 
 export type PortfolioListingModule = t.TypeOf<typeof PortfolioListingModule>;
 export const PortfolioListingModule = t.type({
-  sectors: t.array(Sector),
+  heading: t.string,
+  companies: t.array(Company),
 });
 
 export type NewsletterModule = t.TypeOf<typeof NewsletterModule>;

@@ -173,7 +173,7 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
             className="text-left bg-color-transparent text-decoration-none color-lilac-very-dark secondary-bold-xs"
             onClick={this.next}
           >
-            <RightArrow color="chalk" />
+            <RightArrow color="chalk" variant="round-border" />
           </Button>
         </div>
 
@@ -184,7 +184,7 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
               className="text-left bg-color-transparent text-decoration-none color-lilac-very-dark secondary-bold-xs"
               onClick={this.next}
             >
-              <RightArrow color="chalk" />
+              <RightArrow color="chalk" variant="round-border" />
             </Button>
           </div>
           <Slider

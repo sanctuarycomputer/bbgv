@@ -90,7 +90,7 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
               className="text-left bg-color-transparent text-decoration-none color-lilac-very-dark secondary-bold-xs"
               onClick={this.next}
             >
-              <RightArrow color="chalk" />
+              <RightArrow color="chalk" variant="round-border" />
             </Button>
           </div>
           <div className="flex flex-col col-12  lg:col-4 pb1_25 lg:pb0">
@@ -135,7 +135,7 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
                   className="text-left bg-color-transparent text-decoration-none color-lilac-very-dark secondary-bold-xs"
                   onClick={this.next}
                 >
-                  <RightArrow color="chalk" />
+                  <RightArrow color="chalk" variant="round-border" />
                 </Button>
               </div>
 

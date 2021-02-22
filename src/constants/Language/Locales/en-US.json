@@ -17,6 +17,7 @@
     "bbgv": "BBG Ventures, LLC",
     "loaderAltLabel": "Loader",
     "loadMore": "Load more",
+    "readMore": "Read more",
     "portableTextLink": {
       "ariaLabel": "Navigate to %{label}"
     },

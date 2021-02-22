@@ -29,7 +29,10 @@ const CompaniesView: FC<Props> = (props) => {
         briefParagraph={hero.briefParagraph}
       />
       <div id="current-investments">
-        <PortfolioListing sectors={portfolioListing.sectors} />
+        <PortfolioListing
+          heading={portfolioListing.heading}
+          companies={portfolioListing.companies}
+        />
       </div>
       <div id="previous-funds" className="text-module-container-padding-x pt3_75 lg:pt7_5">
         <InvestmentsList heading={investmentsList.heading} items={investmentsList.items} />

@@ -21,9 +21,9 @@ const PhotoCard: React.FC<Props> = ({ founder }) => {
           {companyName}
         </div>
       </div>
-      <div className="PhotoCard__img-container relative">
+      <div className="PhotoCard__img-container radius-xs relative overflow-hidden">
         <Img
-          className="PhotoCard__img radius-xs w100 h100 absolute t0 r0 fit-cover"
+          className="PhotoCard__img radius-xs w100 h100 fit-cover"
           src={founderPortrait.src}
           alt={founderPortrait.alt || Language.t('Global.fallbackAltLabel')}
         ></Img>
