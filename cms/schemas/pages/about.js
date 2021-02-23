@@ -9,8 +9,13 @@ export default {
       options: { collapsible: true, collapsed: true },
     },
     {
-      name: 'teamSection',
-      title: 'Team',
+      name: 'bbgvTeamSection',
+      title: 'BBGV Team Section',
+      options: { collapsible: true, collapsed: false },
+    },
+    {
+      name: 'optionalTeamSection',
+      title: 'Optional Team Section',
       options: { collapsible: true, collapsed: false },
     },
     {
@@ -49,14 +54,27 @@ export default {
       title: 'Heading',
       name: 'teamHeading',
       type: 'textModule',
-      fieldset: 'teamSection',
+    },
+    {
+      title: 'BBGV Team',
+      name: 'bbgvTeamMembers',
+      type: 'array',
+      description:
+        'This module should be used for the BBGV Team. Add Team Members using the dropdown menu below.',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'teamMember' }],
+        },
+      ],
+      fieldset: 'bbgvTeamSection',
     },
     {
       title: 'Sections of Team Members',
-      name: 'teamMembers',
+      name: 'optionalTeamMembers',
       type: 'array',
       description:
-        'Add sections of Team Members. Each section can have an optional heading, such as "Founders", or "Advisory Board".',
+        'This is an optional module can be used to add several groups of Team Members. Each section can have an optional heading, such as "Founders", or "Advisory Board".',
       of: [
         {
           type: 'object',
@@ -82,7 +100,7 @@ export default {
           ],
         },
       ],
-      fieldset: 'teamSection',
+      fieldset: 'optionalTeamSection',
     },
     {
       title: 'Copy',

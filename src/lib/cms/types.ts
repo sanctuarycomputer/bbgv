@@ -105,6 +105,7 @@ export const TeamMember = t.intersection([
     image: Image,
   }),
   t.partial({
+    isJobListing: t.boolean,
     bio: t.array(Block),
     twitter: t.string,
     instagram: t.string,
@@ -445,6 +446,7 @@ export const AboutPage = t.type({
   seo: SeoSettings,
   hero: HeroTextModule,
   teamHeading: TextModule,
+  bbgvTeamMembers: t.array(TeamMember),
   teamMemberGrids: t.array(TeamMemberGrid),
   valuesSection: TextModuleWithParagraphs,
   pressHeading: TextModule,

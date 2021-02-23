@@ -1,0 +1,80 @@
+.TeamMembersTwoColLayout {
+  &__grid-container {
+    display: none;
+
+    @include media('md-up') {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 1.5rem;
+      grid-row-gap: 1.5rem;
+      grid-auto-rows: 15rem;
+    }
+
+    @include media('lg-up') {
+      grid-auto-rows: 18rem;
+    }
+
+    @include media('xl-up') {
+      grid-auto-rows: 26rem;
+    }
+  }
+
+  &__list-item-container {
+    transition: all 2s cubic-bezier(0.35, 0, 0.15, 1);
+    border-bottom: 1px solid color('charcoal');
+
+    &:first-of-type {
+      padding-top: 0;
+    }
+  }
+
+  &__list-item-contents {
+    max-height: 0;
+  }
+
+  &__list-item-contents--active {
+    max-height: unset;
+  }
+
+  &__bio {
+    div {
+      p {
+        padding-bottom: 1rem;
+
+        &:last-of-type {
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &__image {
+    height: 11.25rem;
+
+    @include media('xs-up') {
+      height: 17rem;
+    }
+
+    @include media('sm-up') {
+      height: 19rem;
+    }
+  }
+
+  &__image-container {
+    &--active {
+      .color-img {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__down-arrow {
+    height: 1.125rem;
+  }
+
+  &__person-details {
+    letter-spacing: 0.0125rem;
+    font-size: 1.125rem;
+    line-height: 1.18125rem;
+  }
+}

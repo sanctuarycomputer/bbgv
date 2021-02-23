@@ -118,6 +118,14 @@
       "ariaLabel": "Accept"
     }
   },
+  "TeamMembersTwoColLayout": {
+    "openBioButton": {
+      "ariaLabel": "Expand %{teamMember}'s biography contents."
+    },
+    "closeBioButton": {
+      "ariaLabel": "Collapse %{teamMember} biography contents."
+    }
+  },
   "PageNotFound": {
     "error404": "Error 404",
     "heading": "We weren’t able to find the page you were looking for.",

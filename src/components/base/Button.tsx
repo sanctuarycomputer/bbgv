@@ -8,7 +8,7 @@ interface Props {
   className: string;
   containerClassName: string;
   style: React.CSSProperties;
-  variant?: 'primary';
+  variant?: 'primary' | 'no-style';
   type?: 'button' | 'submit' | 'reset';
   label?: string;
   ariaLabel: string;

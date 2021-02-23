@@ -1,5 +1,6 @@
 export default `{
   _type,
+  isJobListing,
   'image': {
     'src': image.asset->url,
     'caption': image.caption,

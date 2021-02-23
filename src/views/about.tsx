@@ -8,7 +8,7 @@ import HeroTextModule from 'components/layouts/HeroTextModule';
 import TextModule from 'components/layouts/TextModule';
 import TextModuleWithParagraphs from 'components/layouts/TextModuleWithParagraphs';
 import PressList from 'components/layouts/PressList';
-import TeamMemberGrid from 'components/layouts/TeamMemberGrid';
+import TeamMembersTwoColLayout from 'components/layouts/TeamMembersTwoColLayout';
 
 type Props = ContainerProps & {
   model: AboutPage;
@@ -24,6 +24,7 @@ const AboutView: FC<Props> = (props) => {
     pressList,
     valuesSection,
     contact,
+    bbgvTeamMembers,
     teamMemberGrids,
   } = model;
 
@@ -46,7 +47,7 @@ const AboutView: FC<Props> = (props) => {
           subheading={teamHeading.subheading}
           briefParagraph={teamHeading.briefParagraph}
         />
-        <TeamMemberGrid className="pb3_75 lg:pb1_5" teamMemberGrids={teamMemberGrids} />
+        <TeamMembersTwoColLayout className="pb3_75 lg:pb1_5" teamMembers={bbgvTeamMembers} />
       </div>
       <div
         id="values"

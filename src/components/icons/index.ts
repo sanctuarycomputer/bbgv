@@ -6,6 +6,7 @@ import CloseIcon from 'components/icons/CloseIcon';
 import LineIcon from 'components/icons/LineIcon';
 import LineIconWithButton from 'components/icons/LineIconWithButton';
 import RightArrow from 'components/icons/RightArrow';
+import DownArrow from 'components/icons/DownArrow';
 
 export {
   MenuIcon,
@@ -16,4 +17,5 @@ export {
   LineIcon,
   LineIconWithButton,
   RightArrow,
+  DownArrow,
 };

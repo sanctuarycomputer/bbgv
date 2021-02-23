@@ -72,4 +72,15 @@
   &__bio p {
     display: inline;
   }
+
+  &__heading {
+    font-size: 1.125rem;
+    letter-spacing: 0.02rem;
+    line-height: 1.18125rem;
+
+    @include media('md-up') {
+      font-size: 1.5rem;
+      line-height: 1.575rem;
+    }
+  }
 }

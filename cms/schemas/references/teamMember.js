@@ -11,6 +11,13 @@ export default {
   ],
   fields: [
     {
+      title: 'Is Job Listing',
+      name: 'isJobListing',
+      type: 'boolean',
+      description:
+        'If this "team member" is a job listing, toggle this field. This will hide the placeholder image on mobile devices, and show the placeholder image on tablet and larger screens.',
+    },
+    {
       title: 'Image',
       name: 'image',
       type: 'imageField',
@@ -91,6 +98,9 @@ export default {
       fieldset: 'socialMediaLinks',
     },
   ],
+  initialValue: {
+    isJobListing: false,
+  },
   preview: {
     select: {
       firstName: 'firstName',

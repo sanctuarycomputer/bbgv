@@ -9,6 +9,7 @@ import FoundersImpactSlideshowGroq from './groq/FoundersImpactSlideshow';
 import TextModuleGroq from './groq/TextModule';
 import TextModuleWithParagraphsGroq from './groq/TextModuleWithParagraphs';
 import PressListModuleGroq from './groq/PressList';
+import TeamMemberGroq from './groq/TeamMember';
 import TeamMemberGridGroq from './groq/TeamMemberGrid';
 import InvestmentsListModuleGroq from './groq/InvestmentsListModule';
 import DefaultPageContentGroq from './groq/DefaultPageContent';
@@ -55,7 +56,8 @@ const ApiClient: {
       'seo': ${SeoSettingsGroq},
       'hero': ${HeroTextModuleGroq},
       'teamHeading': teamHeading${TextModuleGroq},
-      'teamMemberGrids': teamMembers[]${TeamMemberGridGroq},
+      'bbgvTeamMembers': bbgvTeamMembers[]->${TeamMemberGroq},
+      'teamMemberGrids': optionalTeamMembers[]${TeamMemberGridGroq},
       'valuesSection': valuesSection${TextModuleWithParagraphsGroq},
       'pressHeading': pressHeading${TextModuleGroq},
       'pressList': pressList${PressListModuleGroq},

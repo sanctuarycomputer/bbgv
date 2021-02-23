@@ -167,3 +167,13 @@ body {
     column-gap: 3rem;
   }
 }
+
+.low-opacity-img {
+  filter: opacity(30%) brightness(90%);
+  mix-blend-mode: multiply;
+}
+
+.color-img {
+  opacity: 0;
+  transition: $transition-duration-medium $transition-easing;
+}

@@ -4,4 +4,10 @@
   &--wrap {
     white-space: normal;
   }
+
+  &--style {
+    &-no-style {
+      background-color: color('transparent');
+    }
+  }
 }
