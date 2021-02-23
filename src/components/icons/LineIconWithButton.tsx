@@ -15,17 +15,16 @@ interface Props {
 
 const LineIconWithButton: React.FC<Props> = ({ color, link, label, onClick, variant }) => {
   return (
-    <span className="LineIconWithButton ml_25 secondary-sm">
+    <span className="LineIconWithButton__button ml_25 secondary-sm">
       <Button
         wrap={true}
         className={cx(
-          `LineIconWithButton__button inline-flex items-center text-decoration-none vertical-align-middle color-${color} bg-color-transparent`,
+          `inline-flex items-center text-decoration-none vertical-align-middle color-${color} bg-color-transparent`,
           {
             'secondary-bold-xs': variant === 'cookie-consent',
             'secondary-bold-sm': variant !== 'cookie-consent',
           }
         )}
-        containerClassName="inline"
         to={link}
         onClick={onClick}
         ariaLabel={Language.t('Global.generalButtonAriaLabel', {

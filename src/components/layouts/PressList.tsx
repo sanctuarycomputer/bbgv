@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import withBreakpoints, {
   MediaQuery,
   InjectedProps as WithBreakpointsProps,
 } from 'lib/withBreakpoints';
 import { PressListItem } from 'lib/cms/types';
-import { LineIconWithButton } from 'components/icons';
+import { Button } from 'components/base';
+import { LineIcon } from 'components/icons';
 
 type PassedProps = {
   className?: string;
@@ -52,11 +53,16 @@ const PressItem = (item: PressListItem, mediaQuery: MediaQuery) => {
             block: !breakpointIsMdUp,
           })}
         >
-          <LineIconWithButton
-            link={item.link.link}
-            color="lilac-very-dark"
-            label={item.link.label}
-          />
+          {item.link.label && item.link.link && (
+            <Button
+              className="PressList__button inline secondary-bold-sm text-decoration-none bg-color-transparent color-lilac-very-dark vertical-align-middle inline-flex items-center"
+              ariaLabel={item.link.label}
+              to={item.link.link}
+            >
+              <LineIcon className="PressList__button-line-icon mr_25" color="lilac-very-dark" />
+              {item.link.label}
+            </Button>
+          )}
         </span>
       </div>
     </div>
