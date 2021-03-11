@@ -37,6 +37,12 @@
   }
 
   &__bio {
+    p a {
+      font-weight: 500;
+      text-decoration: none;
+      color: currentColor;
+    }
+
     div {
       p {
         padding-bottom: 1rem;
@@ -57,14 +63,6 @@
 
     @include media('sm-up') {
       height: 19rem;
-    }
-  }
-
-  &__image-container {
-    &--active {
-      .color-img {
-        opacity: 1;
-      }
     }
   }
 

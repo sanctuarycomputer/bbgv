@@ -46,12 +46,7 @@ const TeamMembersTwoColLayout: React.FC<Props> = ({ teamMembers, className }) =>
               <Img
                 src={teamMember.image.src}
                 alt={teamMember.image.alt || Language.t('Global.fallbackAltLabel')}
-                className="low-opacity-img fit-cover w100 h100 radius-xs"
-              />
-              <Img
-                src={teamMember.image.src}
-                alt={teamMember.image.alt || Language.t('Global.fallbackAltLabel')}
-                className="color-img absolute t0 r0 l0 w100 h100 fit-cover radius-xs"
+                className="fit-cover w100 h100 radius-xs"
               />
             </div>
           );

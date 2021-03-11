@@ -110,7 +110,7 @@ const HeroTextModule: React.FC<Props> = ({
         {briefParagraph && (
           <div
             className={cx(
-              `HeroTextModule__paragraph HeroTextModule--style-${variant}__paragraph secondary-sm col-8 md:col-5 pt3_75`
+              `HeroTextModule__paragraph HeroTextModule--style-${variant}__paragraph secondary-sm col-12 md:col-5 pt3_75`
             )}
           >
             <PortableText blocks={briefParagraph} />

@@ -14,23 +14,20 @@ type Props = {
   items: InvestmentsListItem[];
 };
 
-const investmentsListPaginationPerPage: number = 3;
+const investmentsListStartingAmountShown: number = 3;
+const investmentsListMaximumAmountShown: number = 1000;
 
 const InvestmentsList: React.FC<Props> = ({ heading, items, className }) => {
   const [listOfItems, setListOfItems] = useState(items);
-  const [amountShown, setAmountShown] = useState(investmentsListPaginationPerPage);
+  const [amountShown, setAmountShown] = useState(investmentsListStartingAmountShown);
 
-  const didClickShowMore = useCallback(() => {
-    const nextAmountShown = Math.min(
-      amountShown + investmentsListPaginationPerPage,
-      listOfItems.length
-    );
-    setAmountShown(nextAmountShown);
-  }, [amountShown, listOfItems]);
+  const didClickShowMore = () => {
+    setAmountShown(investmentsListMaximumAmountShown);
+  };
 
   useEffect(() => {
     setListOfItems(items);
-    setAmountShown(investmentsListPaginationPerPage);
+    setAmountShown(investmentsListStartingAmountShown);
   }, [items]);
 
   const displayedItems = listOfItems.slice(0, amountShown);
@@ -55,7 +52,7 @@ const InvestmentsList: React.FC<Props> = ({ heading, items, className }) => {
           <LineIconWithButton
             onClick={didClickShowMore}
             color="lilac-very-dark"
-            label={Language.t('Global.loadMore')}
+            label={Language.t('Global.loadAll')}
           />
         </div>
       )}

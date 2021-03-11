@@ -5,7 +5,7 @@
   &__section-two,
   &__section-three {
     @include media('lg-up') {
-      padding-top: 20%;
+      padding-top: 10%;
     }
 
     @include media('xl-up') {

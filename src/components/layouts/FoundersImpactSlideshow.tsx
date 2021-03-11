@@ -21,12 +21,11 @@ type State = {
 };
 
 class FoundersImpactSlideshow extends PureComponent<Props, State> {
-  private interval: number | undefined;
   private sliderRef = createRef<Slider>();
 
   static defaultProps = {
     showPagination: true,
-    speed: 5000,
+    speed: 500,
   };
 
   state = {
@@ -34,36 +33,17 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
     shouldCancelNextTimeout: false,
   };
 
-  componentDidMount() {
-    this.interval = setInterval(this.attemptNextSlide, this.props.speed);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
+  previous = () => {
+    this.sliderRef.current?.slickPrev();
+  };
 
   next = () => {
-    const { slides } = this.props;
-    const { currentSlide } = this.state;
-    const index = currentSlide + 1 >= slides.length ? 0 : currentSlide + 1;
-
-    this.goTo(index);
+    this.sliderRef.current?.slickNext();
   };
 
-  previous = () => {
-    const { slides } = this.props;
-    const { currentSlide } = this.state;
-    const index = currentSlide <= 0 ? slides.length - 1 : currentSlide - 1;
-
-    this.goTo(index);
-  };
-
-  goTo = (currentSlide: number, shouldCancelNextTimeout = false) => {
-    if (this.state.currentSlide === currentSlide) return;
-
-    return this.setState({ currentSlide, shouldCancelNextTimeout }, () => {
-      this.sliderRef.current?.slickGoTo(currentSlide);
-    });
+  goTo = (slideIndex: number, shouldCancelNextTimeout = false) => {
+    this.sliderRef.current?.slickGoTo(slideIndex);
+    this.setState({ shouldCancelNextTimeout });
   };
 
   attemptNextSlide = () => {
@@ -150,7 +130,6 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
                   alt={slide.company.logo.alt || Language.t('Global.fallbackAltLabel')}
                 />
               </div>
-
               <p className="primary-lg">{slide.rightHeadline}</p>
             </div>
           </Button>
@@ -160,13 +139,10 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
   };
 
   render() {
-    const { slides, heading } = this.props;
+    const { slides, speed } = this.props;
 
     return (
       <div className="FoundersImpactSlideshow relative site-inner-content-max-width mxauto pb6">
-        <div className="FoundersImpactSlideshow__heading color-charcoal primary-md col-12 lg:col-8 mxauto px_75 lg:px0 pb1_25 lg:pb2_5">
-          {heading}
-        </div>
         <div className="FoundersImpactSlideshow__pagination-container--style-mobile absolute z-7 absolute pr_75 md:none">
           <Button
             ariaLabel={Language.t('Slideshow.viewNextFounder')}
@@ -196,7 +172,7 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
             dots={false}
             centerMode={true}
             centerPadding="0px"
-            speed={1000}
+            speed={speed}
           >
             {slides.map((slide: FoundersImpactSlide) => {
               return (

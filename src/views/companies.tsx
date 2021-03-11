@@ -38,7 +38,7 @@ const CompaniesView: FC<Props> = (props) => {
         <InvestmentsList heading={investmentsList.heading} items={investmentsList.items} />
       </div>
       <TextModule
-        className="text-module-container-padding-x py3_75 lg:py7_5"
+        className="site-inner-content-max-width py3_75 lg:py7_5"
         variant="default"
         heading={contact.heading}
         subheading={contact.subheading}
