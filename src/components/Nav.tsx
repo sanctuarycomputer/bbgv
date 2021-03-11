@@ -29,13 +29,13 @@ const Nav: React.FC<Props> = (props) => {
   const { onOpenMenu, onCloseMenu, theme, menuIsOpen, mediaQuery } = props;
 
   /* Determines if the current scroll position is before of after the hero module. On pages where a hero module has a mulberry background, the nav logo should change to charcoal after passing the hero module. **/
-  const statisticsModule = document.getElementById(Classes.whyWeInvestStatisticsModule);
   const companyDetailLandingModule = document.querySelector(`.${Classes.companyDetailLanding}`);
-  const hasPassedStatisticsModule = statisticsModule && hasPassedElement(statisticsModule);
+  const whyWeInvestHero = document.querySelector(`.${Classes.whyWeInvestHero}`);
+  const hasPassedWhyWeInvestHero = whyWeInvestHero && hasPassedElement(whyWeInvestHero);
   const hasPassedCompanyDetailLanding =
     companyDetailLandingModule && hasPassedElement(companyDetailLandingModule);
   const iconColor =
-    theme === 'default' || menuIsOpen || hasPassedStatisticsModule || hasPassedCompanyDetailLanding
+    theme === 'default' || menuIsOpen || hasPassedWhyWeInvestHero || hasPassedCompanyDetailLanding
       ? 'charcoal'
       : 'chalk';
 

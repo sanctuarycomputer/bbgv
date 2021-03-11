@@ -21,17 +21,21 @@ const WhyWeInvestView: FC<Props> = (props) => {
   return (
     <div className="ThesisView">
       <Meta seo={seo} title={hero.title} />
-      <HeroTextModule
-        variant="mulberry"
-        title={hero.title}
-        heading={hero.heading}
-        introLine={hero.introLine}
-        introBylineLinks={WhyWeInvestLinks}
-        briefParagraph={hero.briefParagraph}
-      />
-      <div id="opportunity">
-        <StatisticsModule facts={statistics} />
+      <div className="WhyWeInvestHero">
+        <HeroTextModule
+          variant="mulberry"
+          title={hero.title}
+          heading={hero.heading}
+          introLine={hero.introLine}
+          introBylineLinks={WhyWeInvestLinks}
+          briefParagraph={hero.briefParagraph}
+        />
       </div>
+      {!!statistics.length && (
+        <div id="opportunity">
+          <StatisticsModule facts={statistics} />
+        </div>
+      )}
       <div id="thesis">
         <TextModuleWithParagraphs
           className="text-module-container-padding-x py3_75 lg:py7_5"

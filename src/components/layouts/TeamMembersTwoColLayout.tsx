@@ -108,14 +108,14 @@ const TeamMembersTwoColLayout: React.FC<Props> = ({ teamMembers, className }) =>
 
                     <DownArrow
                       className={cx('TeamMembersTwoColLayout__down-arrow md:none', {
-                        'rotate-90': listItemIsActive,
+                        'rotate-180': listItemIsActive,
                       })}
                       color="charcoal"
                     />
                   </div>
                   <DownArrow
                     className={cx('TeamMembersTwoColLayout__down-arrow none md:block', {
-                      'rotate-90': listItemIsActive,
+                      'rotate-180': listItemIsActive,
                     })}
                     color="charcoal"
                   />

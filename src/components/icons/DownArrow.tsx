@@ -12,14 +12,14 @@ const DownArrow: React.FC<Props> = ({ color, className = '' }) => {
   return (
     <div className={cx('DownArrow transition-shortest', className)}>
       <svg
-        width="13"
-        height="18"
-        viewBox="0 0 13 18"
+        width="18"
+        height="13"
+        viewBox="0 0 18 13"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M12.4183 8.8661L2.37425 0.3125L0.689453 2.4185L7.13705 7.4405V7.5701L8.68945 9.00098L7.13705 10.2917C6.97505 10.2917 0.786652 15.3137 0.786652 15.3137L2.47145 17.4197L12.4183 8.8661Z"
+          d="M8.86437 12.418L17.418 2.37401L15.312 0.689209L10.29 7.13681L10.1604 7.13681L8.72949 8.68921L7.43877 7.13681C7.43877 6.97481 2.41677 0.786407 2.41677 0.786407L0.310768 2.47121L8.86437 12.418Z"
           fill={HexColors[color]}
         />
       </svg>

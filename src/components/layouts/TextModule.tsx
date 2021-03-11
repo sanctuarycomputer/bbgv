@@ -62,7 +62,7 @@ const TextModule: React.FC<Props> = ({
             )}
           >
             <PortableText blocks={briefParagraph.paragraph} />
-            {briefParagraph.button && (
+            {briefParagraph.button && briefParagraph.button.link && briefParagraph.button.label && (
               <LineIconWithButton
                 link={briefParagraph.button.link}
                 color={iconColor}

@@ -8,8 +8,13 @@
   }
 
   &__heading {
-    font-size: 4.5rem;
-    line-height: 4.725rem;
+    font-size: 3.125rem;
+    line-height: 3.125rem;
+
+    @include media('sm-up') {
+      font-size: 4.5rem;
+      line-height: 4.725rem;
+    }
 
     @media (min-width: 1366px) {
       font-size: 6.25rem;

@@ -99,7 +99,7 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
               {slide.founder.companyName}
             </p>
           </div>
-          <div className="FeaturedFoundersCarousel__bio secondary-sm col-9 md:col-6">
+          <div className="FeaturedFoundersCarousel__bio secondary-sm col-12 md:col-6">
             <PortableText blocks={slide.companyDescription} />
             <LineIconWithButton
               color="lilac-very-dark"
