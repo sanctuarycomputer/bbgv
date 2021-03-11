@@ -51,10 +51,13 @@ const CarouselVideo: React.FC<Props> = ({ images, vimeoId }) => {
         </div>
 
         <div
-          className={cx('CarouselVideo__video-outer-container radius-xs overflow-hidden h100', {
-            'events-none': !showVideo,
-            'events-all': showVideo,
-          })}
+          className={cx(
+            'CarouselVideo__video-outer-container overflow-hidden radius-xs h100 events-all',
+            {
+              'events-none': !showVideo,
+              'events-all': showVideo,
+            }
+          )}
         >
           <Video vimeoId={vimeoId} />
         </div>
