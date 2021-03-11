@@ -4,6 +4,8 @@ import cx from 'classnames';
 import get from 'lodash/get';
 
 interface Props {
+  currentSlide?: number;
+  shouldPauseVideo?: boolean;
   vimeoId: string;
   className?: string;
 }
@@ -21,6 +23,16 @@ class Video extends Component<Props, State> {
       player: null,
       error: false,
     };
+  }
+
+  componentDidUpdate(prevProps: Props) {
+    const { player } = this.state;
+    const shouldPauseVideo = get(this, 'props.shouldPauseVideo');
+    const currentSlide = get(this, 'props.currentSlide');
+
+    if (player && shouldPauseVideo && prevProps.currentSlide !== currentSlide) {
+      player.pause();
+    }
   }
 
   componentDidMount() {

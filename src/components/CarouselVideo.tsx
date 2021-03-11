@@ -7,11 +7,13 @@ import { LineIcon } from 'components/icons';
 import { Image } from 'lib/cms/types';
 
 interface Props {
+  currentSlide: number;
+  shouldPauseVideo: boolean;
   images: Image[];
   vimeoId: string;
 }
 
-const CarouselVideo: React.FC<Props> = ({ images, vimeoId }) => {
+const CarouselVideo: React.FC<Props> = ({ currentSlide, shouldPauseVideo, images, vimeoId }) => {
   const [showVideo, setShowVideo] = useState(false);
 
   if (!vimeoId) {
@@ -51,12 +53,16 @@ const CarouselVideo: React.FC<Props> = ({ images, vimeoId }) => {
         </div>
 
         <div
-          className={cx('CarouselVideo__video-outer-container radius-xs overflow-hidden h100', {
+          className={cx('CarouselVideo__video-outer-container overflow-hidden radius-xs h100', {
             'events-none': !showVideo,
             'events-all': showVideo,
           })}
         >
-          <Video vimeoId={vimeoId} />
+          <Video
+            currentSlide={currentSlide}
+            shouldPauseVideo={shouldPauseVideo}
+            vimeoId={vimeoId}
+          />
         </div>
       </div>
     </div>

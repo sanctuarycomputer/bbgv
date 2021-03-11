@@ -20,6 +20,7 @@ type Props = {
 type State = {
   currentSlide: number;
   shouldCancelNextTimeout: boolean;
+  shouldPauseVideo: boolean;
 };
 
 class FeaturedFoundersCarousel extends PureComponent<Props, State> {
@@ -33,29 +34,20 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
   state = {
     currentSlide: 0,
     shouldCancelNextTimeout: false,
-  };
-
-  previous = () => {
-    this.sliderRef.current?.slickPrev();
+    shouldPauseVideo: false,
   };
 
   next = () => {
+    const { currentSlide } = this.state;
+    const { slides } = this.props;
+    const currentIndex = currentSlide + 1 >= slides.length ? 0 : currentSlide + 1;
+
     this.sliderRef.current?.slickNext();
-  };
 
-  goTo = (slideIndex: number, shouldCancelNextTimeout = false) => {
-    this.sliderRef.current?.slickGoTo(slideIndex);
-    this.setState({ shouldCancelNextTimeout });
-  };
-
-  attemptNextSlide = () => {
-    if (this.state.shouldCancelNextTimeout) {
-      return this.setState({
-        shouldCancelNextTimeout: false,
-      });
-    }
-
-    this.next();
+    this.setState({
+      currentSlide: currentIndex,
+      shouldPauseVideo: true,
+    });
   };
 
   renderSlide = (slide: FeaturedFoundersCarouselSlide) => {
@@ -67,7 +59,12 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
         <div className="col-12 h100 mxauto flex flex-row mb1_25 md:mb1_5">
           {slide.vimeoId ? (
             <div className="FeaturedFoundersCarousel__video-container col-12">
-              <CarouselVideo vimeoId={slide.vimeoId} images={slide.images} />
+              <CarouselVideo
+                currentSlide={this.state.currentSlide}
+                shouldPauseVideo={this.state.shouldPauseVideo}
+                vimeoId={slide.vimeoId}
+                images={slide.images}
+              />
             </div>
           ) : (
             slide.images &&
@@ -126,7 +123,7 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
         <div className="FeaturedFoundersCarousel__outer-container col-12 lg:col-8 xxl:col-7 mxauto relative">
           <div className="FeaturedFoundersCarousel__container site-inner-content-max-width mxauto pb3 md:pb5">
             <div className="w100 h100 pb3 md:pb5">
-              <div className="FeaturedFoundersCarousel__heading color-charcoal font-primary px_75 md:px0 pb1_25">
+              <div className="FeaturedFoundersCarousel__heading color-charcoal font-primary px_75 md:px0 pb1_25 text-inline-subheader">
                 {heading}
               </div>
               <div className="FeaturedFoundersCarousel__pagination-container absolute z-7 none lg:block">
