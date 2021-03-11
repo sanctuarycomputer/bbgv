@@ -33,6 +33,7 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
   state = {
     currentSlide: 0,
     shouldCancelNextTimeout: false,
+    shouldPauseVideo: false,
   };
 
   previous = () => {
@@ -41,6 +42,13 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
 
   next = () => {
     this.sliderRef.current?.slickNext();
+  };
+
+  stopVideo = () => {
+    document.querySelectorAll('iframe').forEach((iframe) => {
+      const iframeSrc = iframe.src;
+      iframe.src = iframeSrc;
+    });
   };
 
   goTo = (slideIndex: number, shouldCancelNextTimeout = false) => {
@@ -150,6 +158,7 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
                   fade={true}
                   centerMode={true}
                   centerPadding="0px"
+                  beforeChange={this.stopVideo}
                 >
                   {slides.map((slide: FeaturedFoundersCarouselSlide, index: number) => {
                     return (
