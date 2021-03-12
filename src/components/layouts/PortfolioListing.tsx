@@ -36,12 +36,7 @@ const PortfolioListing: React.FC<Props> = ({ heading, companies, mediaQuery }) =
             }
             key={`PortfolioListing__company-container-${company.name}`}
             wrap={true}
-            containerClassName={cx(
-              'PortfolioListing__company-container flex flex-col md:mr1_25 mb2_25 md:mb3_75 relative',
-              {
-                w100: !breakpointIsSmUp && company.founders.length < 2,
-              }
-            )}
+            containerClassName="PortfolioListing__company-container flex flex-col md:mr1_25 mb2_25 md:mb3_75 relative"
             className="bg-color-transparent text-left"
           >
             <p className="PortfolioListing__company-name color-charcoal uppercase text-inline-subheader pb1 px_75 md:px0">
