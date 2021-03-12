@@ -41,7 +41,7 @@ const AboutView: FC<Props> = (props) => {
       />
       <div id="team" className="flex flex-col">
         <TextModule
-          className="py3_75 lg:pb7_5 lg:pt7_5"
+          className="py3_75 lg:py5"
           variant="default"
           heading={teamHeading.heading}
           subheading={teamHeading.subheading}
@@ -54,7 +54,7 @@ const AboutView: FC<Props> = (props) => {
         className="text-module-container-padding-x border-top-nutella border-bottom-nutella"
       >
         <TextModuleWithParagraphs
-          className="py3_75 lg:py7_5"
+          className="py3_75 lg:py5"
           variant={valuesSection.variant}
           heading={valuesSection.heading}
           subheading={valuesSection.subheading}
@@ -63,7 +63,7 @@ const AboutView: FC<Props> = (props) => {
       </div>
       <div id="press" className="">
         <TextModule
-          className="py3_75 lg:py7_5"
+          className="py3_75 lg:py5"
           variant="default"
           heading={pressHeading.heading}
           subheading={pressHeading.subheading}
@@ -71,13 +71,13 @@ const AboutView: FC<Props> = (props) => {
         />
         <PressList
           variant={pressList.variant}
-          className="col-12 md:col-10 mxauto pb3_75 lg:pb7_5"
+          className="col-12 md:col-10 mxauto pb3_75 lg:pb5"
           heading={pressList.heading}
           items={pressList.items}
         />
       </div>
       <TextModule
-        className="border-top-nutella text-module-container-padding-x py3_75 lg:py7_5"
+        className="border-top-nutella text-module-container-padding-x py3_75 lg:py5"
         variant="default-with-border"
         heading={contact.heading}
         subheading={contact.subheading}

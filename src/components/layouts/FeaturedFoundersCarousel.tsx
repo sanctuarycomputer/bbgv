@@ -121,8 +121,8 @@ class FeaturedFoundersCarousel extends PureComponent<Props, State> {
     return (
       <div className="FeaturedFoundersCarousel col-12 md:px_75 lg:px0">
         <div className="FeaturedFoundersCarousel__outer-container col-12 lg:col-8 xxl:col-7 mxauto relative">
-          <div className="FeaturedFoundersCarousel__container site-inner-content-max-width mxauto pb3 md:pb5">
-            <div className="w100 h100 pb3 md:pb5">
+          <div className="FeaturedFoundersCarousel__container site-inner-content-max-width mxauto">
+            <div className="w100 h100 pb3_75 md:pb5">
               <div className="FeaturedFoundersCarousel__heading color-charcoal font-primary px_75 md:px0 pb1_25 text-inline-subheader">
                 {heading}
               </div>

@@ -23,7 +23,7 @@ const DefaultView: FC<Props> = (props) => {
     <div className="DefaultView page-style--margin-top">
       <Meta seo={seo} />
       <TextModule
-        className="py3_75 lg:py7_5"
+        className="py3_75 lg:py5"
         variant="default"
         heading={intro.heading}
         subheading={intro.subheading}

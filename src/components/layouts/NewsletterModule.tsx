@@ -13,7 +13,7 @@ const NewsletterModule: React.FC<Props> = ({ bgColor, title, headline }) => {
   return (
     <div
       style={{ backgroundColor: bgColor }}
-      className="NewsletterModule site-max-width mxauto color-chalk py6 md:py7_5"
+      className="NewsletterModule site-max-width mxauto color-chalk py3_75 md:py5"
     >
       <div className="NewsletterModule__container mxauto col-12 lg:col-8 xxl:col-7">
         <span className="NewsletterModule__title text-inline-subheader pr3_75 vertical-align-middle">
