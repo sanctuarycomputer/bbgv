@@ -4,7 +4,12 @@
   }
 
   &__product-image {
+    max-height: 14rem;
     height: 80%;
+
+    @include media('xs-up') {
+      max-height: unset;
+    }
   }
 
   &__heading {
@@ -35,6 +40,12 @@
   }
 
   &__images {
+    max-height: 14rem;
+
+    @include media('xs-up') {
+      max-height: unset;
+    }
+
     @include media('md-up') {
       max-height: 80vh;
     }
@@ -46,5 +57,9 @@
     @include media('md-up') {
       bottom: 0;
     }
+  }
+
+  @include media('xs-up') {
+    height: 100vh;
   }
 }

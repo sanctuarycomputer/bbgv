@@ -56,7 +56,7 @@ export default {
       name: 'customFooterMenuHeading',
       fieldset: 'footerMenuLinks',
       type: 'string',
-      validation: (Rule) => Rule.required(),
+      description: 'This is an optional heading, for example: "Resources".',
     },
     {
       title: 'Links',

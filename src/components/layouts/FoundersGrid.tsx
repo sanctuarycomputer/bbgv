@@ -12,10 +12,12 @@ type Props = {
 };
 
 const FoundersGrid: React.FC<Props> = ({ founders, className }) => {
+  const header = founders.length > 1 ? Language.t('Global.founders') : Language.t('Global.founder');
+
   return (
     <div className={cx('FoundersGrid text-module-container-padding-x', className)}>
       <div className="pb2_25 md:pb2_25 col-12 md:col-10 mxauto color-charcoal primary-sm">
-        {Language.t('Global.founders')}
+        {header}
       </div>
       <div className="FoundersGrid__grid-container col-12 md:col-10 mxauto">
         {founders.map((founder: Founder) => (

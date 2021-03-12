@@ -3,15 +3,15 @@ import { MenuLink } from 'types';
 
 export const AboutUsLinks: MenuLink[] = [
   {
-    link: '/why-us#team',
+    link: '/about-us#team',
     label: Language.t('Footer.team'),
   },
   {
-    link: '/why-us#values',
+    link: '/about-us#values',
     label: Language.t('Footer.values'),
   },
   {
-    link: '/why-us#press',
+    link: '/about-us#press',
     label: Language.t('Footer.newsAndPress'),
   },
 ];

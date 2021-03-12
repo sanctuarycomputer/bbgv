@@ -3,15 +3,15 @@ import { MenuLink } from 'types';
 
 export const AboutUsLinks: MenuLink[] = [
   {
-    link: '/why-us#team',
+    link: '/about-us#team',
     label: Language.t('HomeHeroIntroLinks.aboutUs.us'),
   },
   {
-    link: '/why-us#values',
+    link: '/about-us#values',
     label: Language.t('HomeHeroIntroLinks.aboutUs.ourValues'),
   },
   {
-    link: '/why-us#press',
+    link: '/about-us#press',
     label: Language.t('HomeHeroIntroLinks.aboutUs.news'),
   },
 ];

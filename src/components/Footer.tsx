@@ -103,10 +103,11 @@ const Footer: React.FC<Props> = ({ globalSettings }) => {
 
       <div className="Footer__section-two bg-color-lilac-lighter lg:col-3 px_75 md:px1_5 py3_75 flex flex-row lg:flex-col relative">
         <div className="flex flex-col col-6 lg:col-12">
-          <div className="color-charcoal secondary-bold-sm mb1_5 lg:mb3_75">
-            {footerMenu.secondSectionHeading}
-          </div>
-
+          {footerMenu.secondSectionHeading && (
+            <div className="color-charcoal secondary-bold-sm mb1_5 lg:mb3_75">
+              {footerMenu.secondSectionHeading}
+            </div>
+          )}
           <div className="Footer__sublinks flex flex-col">
             {footerMenu.secondSectionLinks.map((link: IButton) => (
               <Button

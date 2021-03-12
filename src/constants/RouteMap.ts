@@ -19,7 +19,7 @@ export const RouteMap: { [id: string]: RouteObject } = {
     component: CompanyDetailContainer,
   },
   ABOUT: {
-    path: '/why-us',
+    path: '/about-us',
     exact: true,
     component: AboutContainer,
   },

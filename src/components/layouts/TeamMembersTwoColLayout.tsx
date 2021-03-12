@@ -33,21 +33,27 @@ const TeamMembersTwoColLayout: React.FC<Props> = ({ teamMembers, className }) =>
       <div className="TeamMembersTwoColLayout__grid-container col-6 md:mr1_25 none md:block">
         {teamMembers.map((teamMember: TeamMember, index: number) => {
           const listItemIsActive = activeListItemIndex === index;
+          const fullName = generateFullName(teamMember);
 
           return (
             <div
               key={`TeamMembersTwoColLayout__${teamMember.firstName}`}
-              className={cx('TeamMembersTwoColLayout__image-container relative', {
-                'TeamMembersTwoColLayout__image-container--active': listItemIsActive,
+              className={cx('TeamMembersTwoColLayout__image-outer-container relative', {
+                'TeamMembersTwoColLayout__image-outer-container--active': listItemIsActive,
               })}
               onMouseEnter={() => toggleListItem(index)}
               onMouseLeave={() => toggleListItem(-1)}
             >
-              <Img
-                src={teamMember.image.src}
-                alt={teamMember.image.alt || Language.t('Global.fallbackAltLabel')}
-                className="fit-cover w100 h100 radius-xs"
-              />
+              <div className="p_75 absolute b0 l0 z-2 color-chalk font-primary uppercase">
+                {fullName}
+              </div>
+              <div className="TeamMembersTwoColLayout__image-container h100 radius-xs relative overflow-hidden">
+                <Img
+                  src={teamMember.image.src}
+                  alt={teamMember.image.alt || Language.t('Global.fallbackAltLabel')}
+                  className="fit-cover w100 h100 radius-xs"
+                />
+              </div>
             </div>
           );
         })}
@@ -146,7 +152,7 @@ const TeamMembersTwoColLayout: React.FC<Props> = ({ teamMembers, className }) =>
 
                     {twitter && (
                       <Button
-                        containerClassName="mt_125 lg:mt0 mr1_25"
+                        containerClassName="mr1_25"
                         className="text-decoration-none bg-color-transparent color-charcoal hover-lighten-charcoal transition-shorter"
                         ariaLabel={Language.t('Global.twitterLink.ariaLabel', {
                           person: fullName,
@@ -158,7 +164,6 @@ const TeamMembersTwoColLayout: React.FC<Props> = ({ teamMembers, className }) =>
 
                     {instagram && (
                       <Button
-                        containerClassName="mt_125 lg:mt0 r1_25"
                         className="text-decoration-none bg-color-transparent color-charcoal hover-lighten-charcoal transition-shorter"
                         ariaLabel={Language.t('Global.instagramLink.ariaLabel', {
                           person: fullName,

@@ -32,8 +32,8 @@ const CompanyDetailLanding: React.FC<Props> = ({
   const hasFounderImage = !!founderPortrait?.src;
 
   return (
-    <div className={cx('CompanyDetailLanding col-12 mb3_75 md:mb7_5 flex vh100', className)}>
-      <div className="CompanyDetailLanding__inner-container col-12 flex flex-col md:flex-row vh100">
+    <div className={cx('CompanyDetailLanding col-12 mb3_75 md:mb7_5 flex h100', className)}>
+      <div className="CompanyDetailLanding__inner-container col-12 flex flex-col md:flex-row h100">
         <div
           className={cx(
             'CompanyDetailLanding__left-column bg-color-mulberry site-padding-x-left pr2 pb1_75 md:pb2_75 flex flex-col col-12 md:col-6 justify-between',

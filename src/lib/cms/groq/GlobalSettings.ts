@@ -10,5 +10,4 @@ export default `{
     "secondSectionHeading": customFooterMenuHeading
   },
   cookieConsentText,
-  ...
 }`;
