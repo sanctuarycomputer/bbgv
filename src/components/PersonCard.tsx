@@ -34,7 +34,7 @@ const PersonCard: React.FC<Props> = ({
       />
 
       <span>
-        <div className="uppercase primary-sm flex flex-col pb1_5">
+        <div className="uppercase primary-sm flex flex-col pb1_5 md:pb3_75">
           <p className="color-charcoal">{fullName}</p>
           <p className="color-lilac-very-dark">{jobTitle}</p>
         </div>

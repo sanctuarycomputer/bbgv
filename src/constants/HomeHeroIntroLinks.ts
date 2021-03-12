@@ -11,7 +11,7 @@ export const AboutUsLinks: MenuLink[] = [
     label: Language.t('HomeHeroIntroLinks.aboutUs.ourValues'),
   },
   {
-    link: '/about-us#press',
+    link: '/about-us#news',
     label: Language.t('HomeHeroIntroLinks.aboutUs.news'),
   },
 ];

@@ -21,7 +21,7 @@ const PortfolioListing: React.FC<Props> = ({ heading, companies, mediaQuery }) =
   const breakpointIsSmUp = mediaQuery.isSmallUp;
 
   return (
-    <div className="PortfolioListing site-max-width pt3_75 md:px_75 lg:px0 mxauto">
+    <div className="PortfolioListing site-max-width pt2 md:px_75 lg:px0 mxauto">
       <div className="color-charcoal px_75 md:px0 pb3 md:pb6 text-inline-subheader">{heading}</div>
       <div className="PortfolioListing__companies-container flex flex-row flex-wrap">
         {companies.map((company: Company) => (

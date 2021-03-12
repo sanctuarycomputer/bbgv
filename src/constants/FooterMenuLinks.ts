@@ -11,8 +11,8 @@ export const AboutUsLinks: MenuLink[] = [
     label: Language.t('Footer.values'),
   },
   {
-    link: '/about-us#press',
-    label: Language.t('Footer.newsAndPress'),
+    link: '/about-us#news',
+    label: Language.t('Footer.news'),
   },
 ];
 

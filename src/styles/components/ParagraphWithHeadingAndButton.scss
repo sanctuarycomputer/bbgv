@@ -16,6 +16,10 @@
       p {
         display: inline;
         padding-bottom: 2.6875rem;
+
+        &:last-of-type {
+          padding-bottom: 0;
+        }
       }
     }
 

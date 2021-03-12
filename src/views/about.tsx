@@ -61,7 +61,7 @@ const AboutView: FC<Props> = (props) => {
           text={valuesSection.text}
         />
       </div>
-      <div id="press" className="">
+      <div id="news" className="">
         <TextModule
           className="py3_75 lg:py5"
           variant="default"
