@@ -1,10 +1,13 @@
 $abcdiatype: 'ABCDiatype-Regular', 'Arial', sans-serif;
 $abcdiatype-bold: 'ABCDiatype-Bold', 'Arial', sans-serif;
-$benton: 'Benton', 'Oswald', sans-serif;
+$benton: 'Benton Sans Comp Bd', 'Oswald', sans-serif;
 
 /** Families */
 .font-primary {
-  font-family: $benton;
+  font-family: 'Benton Sans Comp Bd', 'Oswald', sans-serif;
+  font-display: swap;
+  font-style: normal;
+  font-weight: normal;
 }
 
 .font-secondary {

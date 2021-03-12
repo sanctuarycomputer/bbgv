@@ -142,7 +142,7 @@ class FoundersImpactSlideshow extends PureComponent<Props, State> {
     const { slides, speed } = this.props;
 
     return (
-      <div className="FoundersImpactSlideshow relative site-inner-content-max-width mxauto pb6">
+      <div className="FoundersImpactSlideshow relative site-inner-content-max-width mxauto pb5">
         <div className="FoundersImpactSlideshow__pagination-container--style-mobile absolute z-7 absolute pr_75 md:none">
           <Button
             ariaLabel={Language.t('Slideshow.viewNextFounder')}

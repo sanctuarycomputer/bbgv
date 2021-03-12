@@ -29,7 +29,7 @@ const HeroTextModule: React.FC<Props> = ({
   return (
     <div
       className={cx(
-        `HeroTextModule HeroTextModule--style-${variant} bg-color-${variant} site-max-width site-padding-x mxauto px_75 md:px1_5 xl:px15 pt6 pb_75 md:py7_5 ${fontColor}`
+        `HeroTextModule HeroTextModule--style-${variant} bg-color-${variant} site-max-width site-padding-x mxauto px_75 md:px1_5 xl:px15 pt6 pb_75 md:pt7_5 md:pb5 ${fontColor}`
       )}
     >
       <span className="HeroTextModule__inner-container">

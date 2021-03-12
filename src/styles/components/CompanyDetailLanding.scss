@@ -47,7 +47,7 @@
     }
 
     @include media('md-up') {
-      max-height: 80vh;
+      max-height: 85vh;
     }
   }
 
@@ -60,6 +60,6 @@
   }
 
   @include media('xs-up') {
-    height: 100vh;
+    min-height: 100vh;
   }
 }

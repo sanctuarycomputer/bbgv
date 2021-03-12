@@ -32,8 +32,8 @@ const CompanyDetailLanding: React.FC<Props> = ({
   const hasFounderImage = !!founderPortrait?.src;
 
   return (
-    <div className={cx('CompanyDetailLanding col-12 mb3_75 md:mb7_5 flex h100', className)}>
-      <div className="CompanyDetailLanding__inner-container col-12 flex flex-col md:flex-row h100">
+    <div className={cx('CompanyDetailLanding col-12 mb3_75 md:mb7_5 flex', className)}>
+      <div className="CompanyDetailLanding__inner-container col-12 flex flex-col md:flex-row">
         <div
           className={cx(
             'CompanyDetailLanding__left-column bg-color-mulberry site-padding-x-left pr2 pb1_75 md:pb2_75 flex flex-col col-12 md:col-6 justify-between',
@@ -109,7 +109,7 @@ const CompanyDetailLanding: React.FC<Props> = ({
             <div className="col-6 flex flex-col md:pl2">
               {company.instagram?.link && (
                 <Button
-                  className="text-decoration-none link--style-body-charcoal hover-lighten-charcoal color-charcoal pb_25 md:pb_75"
+                  className="text-decoration-none link--style-body-charcoal hover-lighten-charcoal color-charcoal pb_25 md:pb_25"
                   to={company.instagram.link}
                   label={company.instagram.label}
                   ariaLabel={company.instagram.label}
