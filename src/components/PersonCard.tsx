@@ -34,55 +34,57 @@ const PersonCard: React.FC<Props> = ({
       />
 
       <span>
-        <div className="uppercase primary-sm flex flex-col pb1_5 md:pb3_75">
+        <div className="uppercase primary-sm flex flex-col pb1_5">
           <p className="color-charcoal">{fullName}</p>
           <p className="color-lilac-very-dark">{jobTitle}</p>
         </div>
 
-        <div
-          className={cx(
-            'PersonCard__social-links flex flex-col secondary-bold-xs pb_75 md:pb1_25',
-            {
-              'lg:flex-row ': !!bio,
-            }
-          )}
-        >
-          {linkedIn && (
-            <Button
-              containerClassName="mr1_25"
-              className="text-decoration-none bg-color-transparent color-charcoal hover-lighten-charcoal transition-shorter"
-              ariaLabel={Language.t('Global.linkedInLink.ariaLabel', {
-                person: fullName,
-              })}
-              to={linkedIn}
-              label={Language.t('Global.linkedInLink.label')}
-            />
-          )}
+        {(linkedIn || twitter || instagram) && (
+          <div
+            className={cx(
+              'PersonCard__social-links flex flex-col secondary-bold-xs pb_75 md:pb1_25',
+              {
+                'lg:flex-row ': !!bio,
+              }
+            )}
+          >
+            {linkedIn && (
+              <Button
+                containerClassName="mr1_25"
+                className="text-decoration-none bg-color-transparent color-charcoal hover-lighten-charcoal transition-shorter"
+                ariaLabel={Language.t('Global.linkedInLink.ariaLabel', {
+                  person: fullName,
+                })}
+                to={linkedIn}
+                label={Language.t('Global.linkedInLink.label')}
+              />
+            )}
 
-          {twitter && (
-            <Button
-              containerClassName="mt_125 lg:mt0 mr1_25"
-              className="text-decoration-none bg-color-transparent color-charcoal hover-lighten-charcoal transition-shorter"
-              ariaLabel={Language.t('Global.twitterLink.ariaLabel', {
-                person: fullName,
-              })}
-              to={twitter}
-              label={Language.t('Global.twitterLink.label')}
-            />
-          )}
+            {twitter && (
+              <Button
+                containerClassName="mt_125 lg:mt0 mr1_25"
+                className="text-decoration-none bg-color-transparent color-charcoal hover-lighten-charcoal transition-shorter"
+                ariaLabel={Language.t('Global.twitterLink.ariaLabel', {
+                  person: fullName,
+                })}
+                to={twitter}
+                label={Language.t('Global.twitterLink.label')}
+              />
+            )}
 
-          {instagram && (
-            <Button
-              containerClassName="mt_125 lg:mt0 r1_25"
-              className="text-decoration-none bg-color-transparent color-charcoal hover-lighten-charcoal transition-shorter"
-              ariaLabel={Language.t('Global.instagramLink.ariaLabel', {
-                person: fullName,
-              })}
-              to={instagram}
-              label={Language.t('Global.instagramLink.label')}
-            />
-          )}
-        </div>
+            {instagram && (
+              <Button
+                containerClassName="mt_125 lg:mt0 r1_25"
+                className="text-decoration-none bg-color-transparent color-charcoal hover-lighten-charcoal transition-shorter"
+                ariaLabel={Language.t('Global.instagramLink.ariaLabel', {
+                  person: fullName,
+                })}
+                to={instagram}
+                label={Language.t('Global.instagramLink.label')}
+              />
+            )}
+          </div>
+        )}
 
         {bio && (
           <span className="secondary-sm">
