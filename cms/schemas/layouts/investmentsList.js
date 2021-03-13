@@ -27,6 +27,12 @@ export default {
               validation: (Rule) => Rule.required(),
             },
             {
+              title: 'Tag',
+              name: 'tag',
+              type: 'string',
+              description: 'Add an optional tag, such as "Acquired" or "Exited".',
+            },
+            {
               title: 'Company Logo',
               name: 'companyLogo',
               type: 'imageField',

@@ -5,6 +5,7 @@ export default `{
   heading,
   items[]{
     companyLogo${Image},
+    tag,
     description
   },
 }`;

@@ -65,13 +65,19 @@ export default InvestmentsList;
 const InvestmentListItem = (item: InvestmentsListItem) => {
   return (
     <div className="InvestmentsList__item-inner-container col-12 flex flex-col md:flex-row py1_5">
-      <div className="InvestmentsList__logo-container flex col-2 pb_75 md:pb0">
+      <div className="InvestmentsList__logo-container flex flex-col col-2 pb_75 md:pb0">
         <Img
           src={item.companyLogo.src}
           alt={item.companyLogo.alt || Language.t('Global.fallbackAltLabel')}
           className="InvestmentsList__logo w100 h100"
         />
+        {item.tag && (
+          <div className="secondary-xs bg-color-lilac color-charcoal my_75 md:mb0 md:mt_75 py_5 px1 flex flex-col self-start items-center radius-xs">
+            {item.tag}
+          </div>
+        )}
       </div>
+
       <div className="InvestmentsList__description-container color-charcoal secondary-sm col-12 md:col-10">
         <span className="InvestmentsList__description secondary-sm">
           <PortableText blocks={item.description.paragraph} />
