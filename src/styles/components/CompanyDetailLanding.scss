@@ -31,23 +31,17 @@
     }
   }
 
-  &__images-container {
-    max-height: 35vh;
-
-    @include media('md-up') {
-      max-height: unset;
-    }
-  }
-
   &__images {
-    max-height: 14rem;
-
-    @include media('xs-up') {
-      max-height: unset;
+    @include media('sm-up') {
+      height: 19rem;
     }
 
     @include media('md-up') {
-      max-height: 85vh;
+      height: 75vh;
+    }
+
+    @include media('lg-up') {
+      height: 78vh;
     }
   }
 
