@@ -14,7 +14,7 @@ type Props = {
   items: InvestmentsListItem[];
 };
 
-const investmentsListStartingAmountShown: number = 3;
+const investmentsListStartingAmountShown: number = 6;
 const investmentsListMaximumAmountShown: number = 1000;
 
 const InvestmentsList: React.FC<Props> = ({ heading, items, className }) => {

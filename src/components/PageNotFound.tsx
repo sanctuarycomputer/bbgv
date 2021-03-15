@@ -31,7 +31,7 @@ class PageNotFound extends Component<Props> {
         <Meta />
         <div className="bg-color-mulberry site-padding-x">
           <div className="mxauto col-12 lg:col-8 xxl:col-7 px_75lg:px1_5 vh100 color-white flex flex-col justify-center">
-            <div className="">
+            <div>
               <span className="primary-sm pr3_75 vertical-align-middle inline">
                 {Language.t('PageNotFound.error404')}
               </span>
@@ -44,14 +44,14 @@ class PageNotFound extends Component<Props> {
                 {Language.t('PageNotFound.description')}
               </p>
 
-              <p className="secondary-sm color-white md:col-8 pt1_5 md:pt2_25">
+              <div className="secondary-sm color-white md:col-8 pt1_5 md:pt2_25">
                 {Language.t('PageNotFound.solutions')}
                 <LineIconWithButton
                   color="white"
                   link="/"
                   label={Language.t('PageNotFound.homePageButtonLabel')}
                 />
-              </p>
+              </div>
             </div>
           </div>
         </div>

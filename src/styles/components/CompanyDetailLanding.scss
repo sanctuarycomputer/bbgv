@@ -31,9 +31,19 @@
     }
   }
 
+  &__images-container {
+    max-height: 35vh;
+
+    @include media('md-up') {
+      max-height: unset;
+    }
+  }
+
   &__images {
-    @include media('sm-up') {
-      height: 19rem;
+    max-height: 14rem;
+
+    @include media('xs-up') {
+      max-height: unset;
     }
 
     @include media('md-up') {
