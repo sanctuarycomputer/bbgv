@@ -24,35 +24,43 @@ const PortfolioListing: React.FC<Props> = ({ heading, companies, mediaQuery }) =
     <div className="PortfolioListing site-max-width pt2 md:px_75 lg:px0 mxauto">
       <div className="color-charcoal px_75 md:px0 pb3 md:pb6 text-inline-subheader">{heading}</div>
       <div className="PortfolioListing__companies-container flex flex-row flex-wrap">
-        {companies.map((company: Company) => (
-          <Button
-            ariaLabel={Language.t('Global.generalButtonAriaLabel', {
-              link: company.name,
-            })}
-            to={
-              company.companyDetailPageReference
-                ? generateCompanyDetailUrl(company.companyDetailPageReference.slug)
-                : RouteMap.COMPANIES.path
-            }
-            key={`PortfolioListing__company-container-${company.name}`}
-            wrap={true}
-            containerClassName="PortfolioListing__company-container flex flex-col md:mr1_25 mb2_25 md:mb3_75 relative"
-            className="bg-color-transparent text-left"
-          >
-            <p className="PortfolioListing__company-name color-charcoal uppercase text-inline-subheader pb1 px_75 md:px0">
-              {company.name}
-            </p>
-            <div className="PortfolioListing__button-container bg-color-lilac color-charcoal secondary-bold-sm absolute b0 r0 opacity-0 events-none transition-shorter z-7 p_75 flex flex-row items-center w100 md:flex none">
-              <span className="pr_25">{Language.t('Global.readMore')}</span>
-              <RightArrow color="charcoal" variant="default" />
-            </div>
-            <div className="PortfolioListing__founders-container flex flex-row">
-              {company.founders.map((founder: Founder, index: number) =>
-                FounderCard(founder, index, company?.tag)
-              )}
-            </div>
-          </Button>
-        ))}
+        {companies.map((company: Company) => {
+          const hasMoreThanTwoFounders = company.founders.length > 2;
+
+          return (
+            <Button
+              ariaLabel={Language.t('Global.generalButtonAriaLabel', {
+                link: company.name,
+              })}
+              to={
+                company.companyDetailPageReference
+                  ? generateCompanyDetailUrl(company.companyDetailPageReference.slug)
+                  : RouteMap.COMPANIES.path
+              }
+              key={`PortfolioListing__company-container-${company.name}`}
+              wrap={true}
+              containerClassName="PortfolioListing__company-container flex flex-col md:mr1_25 mb2_25 md:mb3_75 relative"
+              className="bg-color-transparent text-left"
+            >
+              <p className="PortfolioListing__company-name color-charcoal uppercase text-inline-subheader pb1 px_75 md:px0">
+                {company.name}
+              </p>
+              <div className="PortfolioListing__button-container bg-color-lilac color-charcoal secondary-bold-sm absolute b0 r0 opacity-0 events-none transition-shorter z-7 p_75 flex flex-row items-center w100 md:flex none">
+                <span className="pr_25">{Language.t('Global.readMore')}</span>
+                <RightArrow color="charcoal" variant="default" />
+              </div>
+              <div
+                className={cx('PortfolioListing__founders-container flex flex-row', {
+                  'flex-wrap': hasMoreThanTwoFounders,
+                })}
+              >
+                {company.founders.map((founder: Founder, index: number) => {
+                  return FounderCard(founder, index, company?.tag);
+                })}
+              </div>
+            </Button>
+          );
+        })}
       </div>
     </div>
   );
@@ -71,7 +79,6 @@ const FounderCard = (founder: Founder, index: number, tag: string | undefined) =
           {tag}
         </div>
       )}
-
       <div className="FounderCard__text flex flex-col items-start z-3 absolute t0 r0 l0 w100 h100">
         <p className="absolute pb_75 pl_75 b0 l0 uppercase color-chalk primary-sm">
           {generateFullName(founder)}

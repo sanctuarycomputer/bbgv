@@ -18,10 +18,6 @@ export const AboutUsLinks: MenuLink[] = [
 
 export const WhereWeInvestLinks: MenuLink[] = [
   {
-    link: '/where-we-invest#opportunity',
-    label: Language.t('Footer.opportunity'),
-  },
-  {
     link: '/where-we-invest#thesis',
     label: Language.t('Footer.thesis'),
   },
