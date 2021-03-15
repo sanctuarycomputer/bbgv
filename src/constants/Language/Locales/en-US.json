@@ -64,7 +64,7 @@
     "paginationDot": "Advance carousel to slide %{slideNumber}",
     "readMoreAboutCompanyButtonAriaLabel": "Read more about %{company}",
     "readMoreButtonLabel": "Read more about %{founder}",
-    "readMoreButtonAriaLabel": "Read more about %{founder} and her company."
+    "readMoreButtonAriaLabel": "Read more about %{founder} and her company"
   },
   "EmailSignup": {
     "name": "EMAIL",

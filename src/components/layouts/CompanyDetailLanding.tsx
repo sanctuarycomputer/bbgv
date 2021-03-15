@@ -42,7 +42,7 @@ const CompanyDetailLanding: React.FC<Props> = ({
             }
           )}
         >
-          <span className="pb7_5 md:pb0">
+          <span className="pb7_5 md:pb2">
             <span className="inline primary-sm color-lilac uppercase pr1_5 md:pr3_75">
               {foundersText}
             </span>
@@ -109,6 +109,7 @@ const CompanyDetailLanding: React.FC<Props> = ({
             <div className="col-6 flex flex-col md:pl2">
               {company.instagram?.link && (
                 <Button
+                  wrap={true}
                   className="text-decoration-none link--style-body-charcoal hover-lighten-charcoal color-charcoal pb_25 md:pb_25"
                   to={company.instagram.link}
                   label={company.instagram.label}
@@ -117,6 +118,7 @@ const CompanyDetailLanding: React.FC<Props> = ({
               )}
               {company.linkedIn?.link && (
                 <Button
+                  wrap={true}
                   className="text-decoration-none link--style-body-charcoal hover-lighten-charcoal color-charcoal"
                   to={company.linkedIn.link}
                   label={company.linkedIn.label}
