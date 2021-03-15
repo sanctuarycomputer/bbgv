@@ -33,9 +33,11 @@ const CompanyDetailView: FC<Props> = (props) => {
         founderPortrait={companyDetailLanding.founderPortrait}
         productImage={companyDetailLanding.productImage}
       />
-      <article>
-        <CompanyDetailPageContent content={content} />
-      </article>
+      {content.body && (
+        <article>
+          <CompanyDetailPageContent content={content} />
+        </article>
+      )}
       {!!founders.length && (
         <FoundersGrid className="border-top-lilac py3_75 lg:py5" founders={founders} />
       )}
