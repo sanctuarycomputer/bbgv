@@ -47,10 +47,14 @@
     }
 
     @include media('md-up') {
-      height: 75vh;
+      height: 70vh;
     }
 
     @include media('lg-up') {
+      height: 72vh;
+    }
+
+    @include media('xl-up') {
       height: 78vh;
     }
   }
