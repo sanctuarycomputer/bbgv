@@ -56,7 +56,9 @@
     "thesis": "Thesis",
     "opportunity": "Opportunity",
     "investmentGuidelines": "Investment Guidelines",
-    "apply": "Apply"
+    "apply": "Apply",
+    "currentInvestments": "Current Investments",
+    "previousFunds": "Previous Funds"
   },
   "Slideshow": {
     "viewNext": "View next",

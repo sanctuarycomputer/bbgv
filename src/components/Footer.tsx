@@ -7,7 +7,7 @@ import Language from 'constants/Language';
 import { MenuLink } from 'types';
 import { GlobalSettings, Button as IButton } from 'lib/cms/types';
 import { RouteMap } from 'constants/RouteMap';
-import { AboutUsLinks, WhereWeInvestLinks } from 'constants/FooterMenuLinks';
+import { CompaniesLinks, AboutUsLinks, WhereWeInvestLinks } from 'constants/FooterMenuLinks';
 
 import { Img, Button } from 'components/base';
 import EmailSignup from 'components/EmailSignup';
@@ -41,13 +41,25 @@ const Footer: React.FC<Props> = ({ globalSettings }) => {
       <div className="Footer__section-one bg-color-lilac-darker lg:col-7 flex flex-col px_75 md:px1_5 pb2_25 lg:p3_75">
         <div className="Footer__section-one-inner-container flex flex-col relative h100">
           <div className="flex flex-col lg:flex-row col-12">
-            <div className="col-12 lg:col-4 mb4 lg:mb0">
+            <div className="flex flex-col col-12 lg:col-4 mb4 lg:mb0 lg:pr1">
               <Button
-                className="color-charcoal transition-shorter hover-lighten-charcoal secondary-bold-sm items-center bg-color-transparent text-decoration-none inline lg:mb3_75"
+                className="color-charcoal transition-shorter hover-lighten-charcoal secondary-bold-sm items-center bg-color-transparent text-decoration-none inline"
                 ariaLabel={Language.t('Global.companiesButtonAriaLabel')}
                 to={RouteMap.COMPANIES.path}
                 label={Language.t('Global.companies')}
               />
+              <div className="Footer__sublinks flex flex-col mt1_5 lg:mt3_75 ">
+                {CompaniesLinks.map((link: MenuLink) => (
+                  <HashLink
+                    key={link.link}
+                    className="color-charcoal transition-shorter hover-lighten-charcoal secondary-bold-sm items-center bg-color-transparent text-decoration-none"
+                    smooth
+                    to={link.link}
+                  >
+                    {link.label}
+                  </HashLink>
+                ))}
+              </div>
             </div>
 
             <div className="col-12 lg:col-8 flex flex-row">

@@ -1,6 +1,17 @@
 import Language from 'constants/Language';
 import { MenuLink } from 'types';
 
+export const CompaniesLinks: MenuLink[] = [
+  {
+    link: '/companies#current-investments',
+    label: Language.t('Footer.currentInvestments'),
+  },
+  {
+    link: '/companies#previous-funds',
+    label: Language.t('Footer.previousFunds'),
+  },
+];
+
 export const AboutUsLinks: MenuLink[] = [
   {
     link: '/about-us#team',
