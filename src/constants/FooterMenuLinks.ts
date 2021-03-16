@@ -37,7 +37,7 @@ export const WhereWeInvestLinks: MenuLink[] = [
     label: Language.t('Footer.investmentGuidelines'),
   },
   {
-    link: '/where-we-invest#apply',
+    link: '/where-we-invest#contact',
     label: Language.t('Footer.apply'),
   },
 ];
