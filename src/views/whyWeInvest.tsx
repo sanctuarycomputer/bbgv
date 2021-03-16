@@ -58,7 +58,7 @@ const WhyWeInvestView: FC<Props> = (props) => {
         />
         <GridParagraphs className="pt4 pb3_75 lg:pb5" sections={investmentParagraphs} />
       </div>
-      <div id="apply">
+      <div id="contact">
         <TextModule
           className="text-module-container-padding-x py3_75 lg:py5"
           variant="default-with-border"

@@ -25,7 +25,6 @@ const AboutView: FC<Props> = (props) => {
     valuesSection,
     contact,
     bbgvTeamMembers,
-    teamMemberGrids,
   } = model;
 
   return (
@@ -61,7 +60,7 @@ const AboutView: FC<Props> = (props) => {
           text={valuesSection.text}
         />
       </div>
-      <div id="news" className="">
+      <div id="news">
         <TextModule
           className="py3_75 lg:py5"
           variant="default"

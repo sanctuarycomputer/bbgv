@@ -7,7 +7,7 @@
 
       a {
         @extend .transition-shorter;
-        font-weight: 600;
+        font-family: $abcdiatype-bold;
       }
     }
   }
@@ -40,6 +40,10 @@
         color: color('charcoal');
       }
     }
+  }
+
+  p {
+    display: inline;
   }
 
   &__inner-container {

@@ -3,8 +3,8 @@ import { MenuLink } from 'types';
 
 export const CompaniesLinks: MenuLink[] = [
   {
-    link: '/companies#current-investments',
-    label: Language.t('Footer.currentInvestments'),
+    link: '/companies#current-fund',
+    label: Language.t('Footer.currentFund'),
   },
   {
     link: '/companies#previous-funds',

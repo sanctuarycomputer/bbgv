@@ -37,7 +37,7 @@ export const WhyWeInvestLinks: MenuLink[] = [
     label: Language.t('HomeHeroIntroLinks.whyWeInvest.investmentGuidelines'),
   },
   {
-    link: '/where-we-invest#apply',
-    label: Language.t('HomeHeroIntroLinks.whyWeInvest.howToApply'),
+    link: '/where-we-invest#contact',
+    label: Language.t('HomeHeroIntroLinks.whyWeInvest.howToReachUs'),
   },
 ];

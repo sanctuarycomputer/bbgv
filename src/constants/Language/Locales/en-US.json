@@ -57,7 +57,7 @@
     "opportunity": "Opportunity",
     "investmentGuidelines": "Investment Guidelines",
     "apply": "Apply",
-    "currentInvestments": "Current Investments",
+    "currentFund": "Current Fund",
     "previousFunds": "Previous Funds"
   },
   "Slideshow": {
@@ -113,7 +113,7 @@
     "whyWeInvest": {
       "ourThesis": "Our Thesis",
       "investmentGuidelines": "Investment Guidelines",
-      "howToApply": "How to apply"
+      "howToReachUs": "How to reach us"
     }
   },
   "CookieConsent": {

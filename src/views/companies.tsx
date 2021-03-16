@@ -28,7 +28,7 @@ const CompaniesView: FC<Props> = (props) => {
         introBylineLinks={CompaniesLinks}
         briefParagraph={hero.briefParagraph}
       />
-      <div id="current-investments">
+      <div id="current-fund">
         <PortfolioListing
           heading={portfolioListing.heading}
           companies={portfolioListing.companies}
