@@ -66,7 +66,7 @@ const CompanyDetailLanding: React.FC<Props> = ({
         </div>
 
         <div className="CompanyDetailLanding__images-container h100 col-12 md:col-6 flex flex-col relative md:pb2_75">
-          <div className="CompanyDetailLanding__images flex h100 col-12 pb2_25 md:pb0">
+          <div className="CompanyDetailLanding__images h100 flex col-12 pb2_25 md:pb0">
             {founderPortrait?.src && (
               <Img
                 className={cx('fit-cover', {
